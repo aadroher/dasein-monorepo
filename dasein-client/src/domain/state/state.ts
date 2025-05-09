@@ -20,7 +20,7 @@ type Automergeable = {
 type AutomergeableTeacherEntity = TeacherEntity & Automergeable;
 
 type State = {
-  teachers: AutomergeableTeacherEntity[];
+  teachers: TeacherEntity[];
 };
 
 type Repository<T extends Entity> = {
@@ -55,12 +55,8 @@ const createRepositories = (): Repositories => {
     const automergeDocumentId = event.handle.documentId;
     const automergeTeacherDocument = await event.handle.doc();
     console.log("Document: ", automergeTeacherDocument);
-    const automergeableTeacherEntity = {
-      ...automergeTeacherDocument,
-      automergeId: automergeDocumentId,
-    };
     setStore({
-      teachers: [...store.teachers, automergeableTeacherEntity],
+      teachers: automergeTeacherDocument,
     });
   });
 
@@ -69,9 +65,7 @@ const createRepositories = (): Repositories => {
     console.log("Event: ", event);
     const documentId = event.documentId;
     setStore({
-      teachers: store.teachers.filter(
-        (teacher) => teacher.automergeId !== documentId
-      ),
+      teachers: store.teachers.filter((teacher) => teacher.id !== documentId),
     });
   });
 
@@ -80,19 +74,33 @@ const createRepositories = (): Repositories => {
     console.log("Event: ", event);
   });
 
+  const handle = automergeRepository.create<State>({
+    teachers: [],
+  });
+
   return {
     teachers: {
       add: async (item) => {
+        console.log("🚨 Add teacher", item);
+        const handles = automergeRepository.handles;
+        console.log("🚨 Handles", handles);
         const teacherEntity = newTeacherEntity(item);
-        automergeRepository.create(teacherEntity);
+
+        const document = await handle.doc();
+        console.log("🚨 Document", document);
+        document.teachers.push(teacherEntity);
       },
       remove: async ({ id }) => {
         console.log("🚨 Remove teacher", id);
 
         const teacher = store.teachers.find((teacher) => teacher.id === id);
-        if (teacher?.automergeId) {
-          automergeRepository.delete(teacher.automergeId);
-        }
+
+        await handle.whenReady();
+        handle.change((document) => {
+          document.teachers = document.teachers.filter(
+            (teacher) => teacher.id !== id
+          );
+        });
       },
       find: ({ id }) => {
         return store.teachers.find((teacher) => teacher.id === id);
