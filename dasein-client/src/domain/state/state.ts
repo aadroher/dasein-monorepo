@@ -3,6 +3,7 @@ import type {
   DeleteDocumentPayload,
   AnyDocumentId,
 } from "@automerge/automerge-repo";
+import { isValidAutomergeUrl } from "@automerge/automerge-repo";
 import type { Entity } from "../entities/entity";
 import type { TeacherEntity, Teacher } from "../entities/teacher";
 
@@ -87,9 +88,13 @@ const createRepositories = ({
         console.log("🚨 Handles", handles);
         const teacherEntity = newTeacherEntity(item);
 
-        const document = await handle.doc();
-        console.log("🚨 Document", document);
-        document.teachers.push(teacherEntity);
+        console.log("teacherEntity", teacherEntity);
+
+        await handle.whenReady();
+        handle.change((document: State) => {
+          console.log("🚨 Document", document);
+          document.teachers.push(teacherEntity);
+        });
       },
       remove: async ({ id }) => {
         console.log("🚨 Remove teacher", id);
@@ -97,7 +102,7 @@ const createRepositories = ({
         const teacher = store.teachers.find((teacher) => teacher.id === id);
 
         await handle.whenReady();
-        handle.change((document) => {
+        handle.change((document: State) => {
           document.teachers = document.teachers.filter(
             (teacher) => teacher.id !== id
           );
@@ -113,6 +118,11 @@ const createRepositories = ({
   };
 };
 
-const repositories = createRepositories();
+const hardcodedDocumentId = "automerge:QAxh5hkWwzCoevh5oqArL7bvqBk";
+const repositories = isValidAutomergeUrl(hardcodedDocumentId)
+  ? createRepositories({
+      documentId: hardcodedDocumentId,
+    })
+  : createRepositories();
 
 export { createRepositories, repositories };
