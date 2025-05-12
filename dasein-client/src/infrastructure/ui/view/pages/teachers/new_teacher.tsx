@@ -8,6 +8,7 @@ const NewTeacher = () => {
   createEffect(() => {
     console.log("🚨 teacher", teacher());
     console.log("🚨 teachers", repositories.teachers.list());
+    console.log("🚨 documentId", repositories.teachers.documentId);
   });
 
   return (

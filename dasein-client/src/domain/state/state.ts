@@ -14,16 +14,12 @@ import { BroadcastChannelNetworkAdapter } from "@automerge/automerge-repo-networ
 import { MessageChannelNetworkAdapter } from "@automerge/automerge-repo-network-messagechannel";
 import { newTeacherEntity } from "../entities/teacher";
 
-type Automergeable = {
-  automergeId?: AnyDocumentId;
-};
-type AutomergeableTeacherEntity = TeacherEntity & Automergeable;
-
 type State = {
   teachers: TeacherEntity[];
 };
 
 type Repository<T extends Entity> = {
+  documentId: AnyDocumentId;
   add: (item: Omit<T, keyof Entity>) => Promise<void>;
   remove: ({ id }: { id: string }) => Promise<T | void>;
   find: ({ id }: { id: string }) => T | void;
@@ -31,10 +27,14 @@ type Repository<T extends Entity> = {
 };
 
 type Repositories = {
-  teachers: Repository<AutomergeableTeacherEntity>;
+  teachers: Repository<TeacherEntity>;
 };
 
-const createRepositories = (): Repositories => {
+const createRepositories = ({
+  documentId,
+}: {
+  documentId?: AnyDocumentId;
+} = {}): Repositories => {
   console.log("🚨 Creating repositories");
   const [store, setStore] = createStore<State>({
     teachers: [],
@@ -44,29 +44,33 @@ const createRepositories = (): Repositories => {
   const networkAdapter = new BroadcastChannelNetworkAdapter({
     channelName: "dasein-main",
   });
+
   const automergeRepository = new Repo({
     storage: storageAdapter,
     network: [networkAdapter],
   });
 
+  console.log("🚨 Document ID", documentId);
+  const handle = !documentId
+    ? automergeRepository.create<State>({
+        teachers: [],
+      })
+    : automergeRepository.find<State>(documentId);
+
   automergeRepository.on("document", async (event) => {
     console.log("🚨 New document event received");
     console.log("Event: ", event);
     const automergeDocumentId = event.handle.documentId;
-    const automergeTeacherDocument = await event.handle.doc();
+    const automergeTeacherDocument = await handle.doc();
     console.log("Document: ", automergeTeacherDocument);
     setStore({
-      teachers: automergeTeacherDocument,
+      teachers: automergeTeacherDocument.teachers,
     });
   });
 
   automergeRepository.on("delete-document", (event) => {
     console.log("🚨 Delete document event received");
     console.log("Event: ", event);
-    const documentId = event.documentId;
-    setStore({
-      teachers: store.teachers.filter((teacher) => teacher.id !== documentId),
-    });
   });
 
   automergeRepository.on("unavailable-document", (event) => {
@@ -74,12 +78,9 @@ const createRepositories = (): Repositories => {
     console.log("Event: ", event);
   });
 
-  const handle = automergeRepository.create<State>({
-    teachers: [],
-  });
-
   return {
     teachers: {
+      documentId: handle.documentId,
       add: async (item) => {
         console.log("🚨 Add teacher", item);
         const handles = automergeRepository.handles;
