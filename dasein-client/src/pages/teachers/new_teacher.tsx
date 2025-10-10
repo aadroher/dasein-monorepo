@@ -1,4 +1,5 @@
 import { createSignal, createEffect } from "solid-js";
+import { Replicache } from "replicache";
 import { mainStore, setMainStore } from "../../stores/main";
 import type { Teacher } from "../../domain/entities/teacher";
 import { newTeacherEntity } from "../../domain/entities/teacher";
