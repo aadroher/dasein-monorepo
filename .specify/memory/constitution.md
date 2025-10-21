@@ -35,6 +35,14 @@ We will chose the most appropriate testing framework for the public interface in
 
 ### VIII. Vendor neutrality
 
+### IX. Technology agnostic
+
+### X. Separation of concerns
+
+### XI. Functional programming style
+
+### XII. Monorepo
+
 ### [PRINCIPLE_4_NAME]
 <!-- Example: IV. Integration Testing -->
 [PRINCIPLE_4_DESCRIPTION]
