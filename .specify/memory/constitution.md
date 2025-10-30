@@ -30,45 +30,32 @@ Only public interfaces require tests as opposed to implementation details. A pub
 We will chose the most appropriate testing framework for the public interface in question. For example, unit tests for libraries, integration tests for backend APIs, and end-to-end tests for browser UIs.
 
 ### VI. Accessibility (NON-NEGOTIABLE)
+All user interfaces in Dasein must comply with WCAG 2.1 AA standards to ensure accessibility for users with disabilities. This includes considerations for color contrast, keyboard navigation, screen reader compatibility, and other accessibility best practices.
+In addition to that, the accessibilty features of the user interface will be such that they can be easyly used by test frameworks to search for elements, interact with them, and verify their state.
 
 ### VII. Observability
+The design of the system needs to be ready by default to support observability practices such as logging, monitoring, and tracing. It will implement the client side of the OpenTelemetry standard to facilitate this.
 
 ### VIII. Vendor neutrality
+The codebase of Dasein must avoid lock-in to specific cloud providers, third-party services, or proprietary technologies. Every time a third-party service or technology is considered for use it will need to be wrapped by an adapter which will always present the same local interface, so that the rest of the code can remain agnostic to its implementation. This will allow for easier replacement of said services or technologies in the future if needed.
 
 ### IX. Technology agnostic
+Even though in some other places this constitution may give examples of specific technologies to be used, these are not mandatory. The only mandatory aspects are the principles themselves. The specific technologies used to implement them can be changed as long as they are the best fit for the purpose at the time of implementation.
 
 ### X. Separation of concerns
+Dasein's architecture must follow the principle of separation of concerns, ensuring that different functionalities and components are modular and independent. This facilitates easier maintenance, testing, and scalability of the application.
 
 ### XI. Functional programming style
+Dasein's codebase should adhere to functional programming principles where feasible. This includes:
+- Immutability: Data structures should be immutable wherever possible to prevent unintended side effects.
+- Pure functions: Functions should avoid side effects and return consistent outputs for the same inputs.
+- First-class functions: Functions should be treated as first-class citizens, allowing them to be passed as arguments, returned from other functions, and assigned to variables.
+- Referential transparency: Expressions should be replaceable with their corresponding values without changing the program's behavior.
+Using a functional programming style can enhance code readability, maintainability, and testability, aligning with Dasein's overall architectural principles.
+However, this does not mean that we can shoehorn the functional style into every part of the codebase regardless of the technology used.
+For example, while in Rust it is possible to keep cloning values around to maintain immutability, this would be too big of a performances penalty to indiscriminately apply this principle everywhere. In such cases, we will use functional programming principles where they make sense, while balancing performance and practicality.
 
 ### XII. Monorepo
+Dasein's codebase will be organized as a monorepo, consolidating all related projects, services, and libraries into a single repository. This approach facilitates easier code sharing, dependency management, and coordinated releases across the entire codebase.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
-
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
-
-<!-- ## Governance -->
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
-
-<!-- [GOVERNANCE_RULES] -->
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: 0.1.0 | **Ratified**: 2025-10-20 | **Last Amended**: 2025-10-20
+**Version**: 0.1.0 | **Ratified**: 2025-10-30 | **Last Amended**: 2025-10-30
