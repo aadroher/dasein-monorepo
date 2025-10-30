@@ -4,7 +4,7 @@ import { TeacherStoragePort, StorageResult } from './storage-port';
 /**
  * IndexedDB adapter for teacher storage with automatic fallback handling.
  * Implements the TeacherStoragePort interface for local-first persistence.
- * 
+ *
  * Features:
  * - Automatic database initialization and migration
  * - Alphabetical sorting of teachers by full_name
@@ -25,7 +25,7 @@ export class IndexedDBAdapter implements TeacherStoragePort {
           error: {
             code: 'STORAGE_UNAVAILABLE',
             message: 'IndexedDB is not available in this environment',
-          }
+          },
         };
       }
 
@@ -37,8 +37,8 @@ export class IndexedDBAdapter implements TeacherStoragePort {
         error: {
           code: 'STORAGE_UNAVAILABLE',
           message: 'Failed to initialize IndexedDB',
-          cause: error instanceof Error ? error : new Error(String(error))
-        }
+          cause: error instanceof Error ? error : new Error(String(error)),
+        },
       };
     }
   }
@@ -49,7 +49,7 @@ export class IndexedDBAdapter implements TeacherStoragePort {
     }
 
     try {
-      await this.performTransaction('readwrite', async (store) => {
+      await this.performTransaction('readwrite', async store => {
         await store.add(teacher);
       });
 
@@ -60,8 +60,8 @@ export class IndexedDBAdapter implements TeacherStoragePort {
         error: {
           code: 'UNKNOWN_ERROR',
           message: 'Failed to create teacher',
-          cause: error instanceof Error ? error : new Error(String(error))
-        }
+          cause: error instanceof Error ? error : new Error(String(error)),
+        },
       };
     }
   }
@@ -72,14 +72,17 @@ export class IndexedDBAdapter implements TeacherStoragePort {
     }
 
     try {
-      const teachers = await this.performTransaction('readonly', async (store) => {
-        const index = store.index('full_name');
-        const request = index.getAll();
-        return new Promise<Teacher[]>((resolve, reject) => {
-          request.onsuccess = () => resolve(request.result);
-          request.onerror = () => reject(request.error);
-        });
-      });
+      const teachers = await this.performTransaction(
+        'readonly',
+        async store => {
+          const index = store.index('full_name');
+          const request = index.getAll();
+          return new Promise<Teacher[]>((resolve, reject) => {
+            request.onsuccess = () => resolve(request.result);
+            request.onerror = () => reject(request.error);
+          });
+        }
+      );
 
       return { success: true, data: teachers };
     } catch (error) {
@@ -88,8 +91,8 @@ export class IndexedDBAdapter implements TeacherStoragePort {
         error: {
           code: 'UNKNOWN_ERROR',
           message: 'Failed to list teachers',
-          cause: error instanceof Error ? error : new Error(String(error))
-        }
+          cause: error instanceof Error ? error : new Error(String(error)),
+        },
       };
     }
   }
@@ -100,7 +103,7 @@ export class IndexedDBAdapter implements TeacherStoragePort {
     }
 
     try {
-      const teacher = await this.performTransaction('readonly', async (store) => {
+      const teacher = await this.performTransaction('readonly', async store => {
         const request = store.get(id);
         return new Promise<Teacher | undefined>((resolve, reject) => {
           request.onsuccess = () => resolve(request.result);
@@ -113,8 +116,8 @@ export class IndexedDBAdapter implements TeacherStoragePort {
           success: false,
           error: {
             code: 'ITEM_NOT_FOUND',
-            message: `Teacher with ID ${id} not found`
-          }
+            message: `Teacher with ID ${id} not found`,
+          },
         };
       }
 
@@ -125,8 +128,8 @@ export class IndexedDBAdapter implements TeacherStoragePort {
         error: {
           code: 'UNKNOWN_ERROR',
           message: 'Failed to get teacher by ID',
-          cause: error instanceof Error ? error : new Error(String(error))
-        }
+          cause: error instanceof Error ? error : new Error(String(error)),
+        },
       };
     }
   }
@@ -140,10 +143,10 @@ export class IndexedDBAdapter implements TeacherStoragePort {
       // Update the updated_at timestamp
       const updatedTeacher = {
         ...teacher,
-        updated_at: new Date().toISOString()
+        updated_at: new Date().toISOString(),
       };
 
-      await this.performTransaction('readwrite', async (store) => {
+      await this.performTransaction('readwrite', async store => {
         await store.put(updatedTeacher);
       });
 
@@ -154,8 +157,8 @@ export class IndexedDBAdapter implements TeacherStoragePort {
         error: {
           code: 'UNKNOWN_ERROR',
           message: 'Failed to update teacher',
-          cause: error instanceof Error ? error : new Error(String(error))
-        }
+          cause: error instanceof Error ? error : new Error(String(error)),
+        },
       };
     }
   }
@@ -166,7 +169,7 @@ export class IndexedDBAdapter implements TeacherStoragePort {
     }
 
     try {
-      await this.performTransaction('readwrite', async (store) => {
+      await this.performTransaction('readwrite', async store => {
         await store.delete(id);
       });
 
@@ -177,8 +180,8 @@ export class IndexedDBAdapter implements TeacherStoragePort {
         error: {
           code: 'UNKNOWN_ERROR',
           message: 'Failed to delete teacher',
-          cause: error instanceof Error ? error : new Error(String(error))
-        }
+          cause: error instanceof Error ? error : new Error(String(error)),
+        },
       };
     }
   }
@@ -189,7 +192,7 @@ export class IndexedDBAdapter implements TeacherStoragePort {
     }
 
     try {
-      await this.performTransaction('readwrite', async (store) => {
+      await this.performTransaction('readwrite', async store => {
         await store.clear();
       });
 
@@ -200,8 +203,8 @@ export class IndexedDBAdapter implements TeacherStoragePort {
         error: {
           code: 'UNKNOWN_ERROR',
           message: 'Failed to clear teachers',
-          cause: error instanceof Error ? error : new Error(String(error))
-        }
+          cause: error instanceof Error ? error : new Error(String(error)),
+        },
       };
     }
   }
@@ -223,12 +226,12 @@ export class IndexedDBAdapter implements TeacherStoragePort {
       request.onerror = () => reject(request.error);
       request.onsuccess = () => resolve(request.result);
 
-      request.onupgradeneeded = (event) => {
+      request.onupgradeneeded = event => {
         const db = (event.target as IDBOpenDBRequest).result;
-        
+
         // Create teachers object store
         const store = db.createObjectStore(this.storeName, { keyPath: 'id' });
-        
+
         // Create index for alphabetical sorting by full_name
         store.createIndex('full_name', 'full_name', { unique: false });
       };
@@ -248,7 +251,7 @@ export class IndexedDBAdapter implements TeacherStoragePort {
 
     try {
       const result = await operation(store);
-      
+
       // Wait for transaction to complete
       await new Promise<void>((resolve, reject) => {
         transaction.oncomplete = () => resolve();
@@ -263,13 +266,13 @@ export class IndexedDBAdapter implements TeacherStoragePort {
     }
   }
 
-  private createNotInitializedError(): StorageResult<any> {
+  private createNotInitializedError(): StorageResult<never> {
     return {
       success: false,
       error: {
         code: 'STORAGE_UNAVAILABLE',
-        message: 'Storage not initialized. Call initialize() first.'
-      }
+        message: 'Storage not initialized. Call initialize() first.',
+      },
     };
   }
 }

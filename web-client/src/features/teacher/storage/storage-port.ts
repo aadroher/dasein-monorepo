@@ -3,19 +3,25 @@ import { Teacher } from '../model/teacher';
 /**
  * Storage operation results for better error handling
  */
-export type StorageResult<T> = {
-  success: true;
-  data: T;
-} | {
-  success: false;
-  error: StorageError;
-};
+export type StorageResult<T> =
+  | {
+      success: true;
+      data: T;
+    }
+  | {
+      success: false;
+      error: StorageError;
+    };
 
 /**
  * Storage error types for debugging and user feedback
  */
 export interface StorageError {
-  code: 'STORAGE_UNAVAILABLE' | 'ITEM_NOT_FOUND' | 'VALIDATION_ERROR' | 'UNKNOWN_ERROR';
+  code:
+    | 'STORAGE_UNAVAILABLE'
+    | 'ITEM_NOT_FOUND'
+    | 'VALIDATION_ERROR'
+    | 'UNKNOWN_ERROR';
   message: string;
   cause?: Error;
 }
@@ -24,7 +30,7 @@ export interface StorageError {
  * Storage port interface defining the contract for teacher persistence.
  * This abstraction allows switching between IndexedDB, in-memory, and future
  * storage implementations (e.g., remote sync with Replicache).
- * 
+ *
  * All operations are async to support both local and remote storage.
  * Results use a Result type for explicit error handling.
  */
