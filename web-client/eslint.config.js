@@ -19,11 +19,11 @@ export default config(
       ...reactPlugin.configs['jsx-runtime'].rules,
       ...reactHooksPlugin.configs.recommended.rules,
       ...jsxA11y.configs.recommended.rules,
-      
+
       // React 19 specific
       'react/react-in-jsx-scope': 'off',
       'react/jsx-uses-react': 'off',
-      
+
       // Accessibility rules (enhanced)
       'jsx-a11y/alt-text': 'error',
       'jsx-a11y/aria-props': 'error',
@@ -31,9 +31,12 @@ export default config(
       'jsx-a11y/aria-unsupported-elements': 'error',
       'jsx-a11y/role-has-required-aria-props': 'error',
       'jsx-a11y/role-supports-aria-props': 'error',
-      
+
       // Code quality
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_' },
+      ],
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',

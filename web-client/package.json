@@ -41,6 +41,7 @@
     "vite": "^5.0.0",
     "vitest": "^1.5.0",
     "typescript": "^5.4.0",
-    "playwright": "^1.48.0"
+    "playwright": "^1.48.0",
+    "@playwright/test": "^1.48.0"
   }
 }
