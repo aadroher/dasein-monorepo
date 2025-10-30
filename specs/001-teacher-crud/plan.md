@@ -87,7 +87,7 @@ No constitutional violations introduced. No additional complexity requiring just
 Artifacts created:
 - `research.md` (Phase 0 decisions; remaining clarifications noted)
 - `data-model.md` (Teacher entity, validation, lifecycle)
-- `contracts/openapi.yaml` (Conceptual local API for future backend alignment)
+- `contracts/teacher-operations.md` (Transport-agnostic operation contracts for CRUD actions)
 - `quickstart.md` (Implementation & test-first guidance)
 
 ## Post-Design Constitution Re-Check

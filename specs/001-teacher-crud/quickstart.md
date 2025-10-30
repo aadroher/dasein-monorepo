@@ -46,6 +46,9 @@ npm run e2e
 - Ensure focus states visible and keyboard navigation works.
 - Use `role="alert"` or polite live region for validation messages.
 
+## Contract Reference
+Refer to `specs/001-teacher-crud/contracts/teacher-operations.md` for operation shapes (CreateTeacher, UpdateTeacher, etc.) independent of transport.
+
 ## Persistence Choice Notes
 - IndexedDB scales; asynchronous; choose if planning more complex queries soon.
 - localStorage simpler; synchronous; acceptable for very small data (<500 records).
