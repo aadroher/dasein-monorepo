@@ -12,18 +12,18 @@
 - [x] T002 Initialize TypeScript + React + Vite config  
 - [x] T003 Add initial package.json dependencies
 
-## Phase 2: Foundational (Blocking)
-- [ ] T010 [P] Add ESLint + Prettier config in `web-client/` (enforce code style & accessibility lint)
-- [ ] T011 [P] Add Vitest config (`vitest.config.ts`) and test setup file (`test/setup.ts`) with testing-library + axe hooks
-- [ ] T012 [P] Add Playwright config (`playwright.config.ts`) & basic E2E folder `web-client/test/teacher/e2e`
-- [ ] T013 Implement storage abstraction interface `web-client/src/features/teacher/storage/storage-port.ts` (types only)
-- [ ] T014 Implement IndexedDB initializer & fallback `web-client/src/features/teacher/storage/indexeddb-adapter.ts`
-- [ ] T015 Implement in-memory fallback adapter `web-client/src/features/teacher/storage/memory-adapter.ts`
-- [ ] T016 Add logger utility (simple toggle) `web-client/src/lib/logger.ts`
-- [ ] T017 Accessibility testing helpers `web-client/src/test/a11y/assertA11y.ts`
-- [ ] T018 Define sorting pure function `web-client/src/features/teacher/services/sort.ts` + unit test stub
-- [ ] T019 Define UUID generation wrapper (for testability) `web-client/src/lib/uuid.ts`
-- [ ] T020 Create initial README section referencing Quickstart
+## Phase 2: Foundational (✅ Completed)
+- [x] T010 [P] Add ESLint + Prettier config in `web-client/` (enforce code style & accessibility lint)
+- [x] T011 [P] Add Vitest config (`vitest.config.ts`) and test setup file (`test/setup.ts`) with testing-library + axe hooks
+- [x] T012 [P] Add Playwright config (`playwright.config.ts`) & basic E2E folder `web-client/test/teacher/e2e`
+- [x] T013 Implement storage abstraction interface `web-client/src/features/teacher/storage/storage-port.ts` (types only)
+- [x] T014 Implement IndexedDB initializer & fallback `web-client/src/features/teacher/storage/indexeddb-adapter.ts`
+- [x] T015 Implement in-memory fallback adapter `web-client/src/features/teacher/storage/memory-adapter.ts`
+- [x] T016 Add logger utility (simple toggle) `web-client/src/lib/logger.ts`
+- [x] T017 Accessibility testing helpers `web-client/src/test/a11y/assertA11y.ts`
+- [x] T018 Define sorting pure function `web-client/src/features/teacher/services/sort.ts` + unit test stub
+- [x] T019 Define UUID generation wrapper (for testability) `web-client/src/lib/uuid.ts`
+- [x] T020 Create initial README section referencing Quickstart
 
 **Checkpoint**: Foundation ready; CRUD operations can proceed.
 
