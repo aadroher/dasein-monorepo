@@ -11,8 +11,8 @@ Dasein is primarily a web application designed to run in modern browsers both in
 Dasein prioritizes local data storage and processing on the user's device, minimizing reliance on external servers to enhance privacy, performance, and offline capabilities.
 Existing frameworks can be used to facilitate local-first development (e.g. Replicache, Automerge, etc.), but their use must be carefully evaluated to ensure they align with Dasein's core principles, particularly regarding privacy and performance.
 
-### III. Centralised authentication
-Dasein uses a centralised authentication system to manage user identities and access control. This system must be secure, scalable, and support common authentication protocols (e.g. OAuth2, OpenID Connect, etc.). The authentication system should also support single sign-on (SSO) capabilities to enhance user experience across multiple services.
+### III. Centralized authentication
+Dasein uses a centralized authentication system to manage user identities and access control. This system must be secure, scalable, and support common authentication protocols (e.g. OAuth2, OpenID Connect, etc.). The authentication system should also support single sign-on (SSO) capabilities to enhance user experience across multiple services.
 
 ### IV. Privacy by design (NON-NEGOTIABLE)
 Some of the users of Dasein are minors, therefore privacy is a paramount concern. Dasein adheres to the principle of privacy by design, ensuring that all features and functionalities are developed with user privacy as a core consideration. This includes:
@@ -27,11 +27,11 @@ Only public interfaces require tests as opposed to implementation details. A pub
 - The browser UI of a web app is a public interface, as it is consumed by the user.
 - The backend HTTP API of a web app is a public interface, as it is consumed by the frontend.
 - A reusable library is a public interface, as it is consumed by other code.
-We will chose the most appropriate testing framework for the public interface in question. For example, unit tests for libraries, integration tests for backend APIs, and end-to-end tests for browser UIs.
+We will choose the most appropriate testing framework for the public interface in question. For example, unit tests for libraries, integration tests for backend APIs, and end-to-end tests for browser UIs.
 
 ### VI. Accessibility (NON-NEGOTIABLE)
 All user interfaces in Dasein must comply with WCAG 2.1 AA standards to ensure accessibility for users with disabilities. This includes considerations for color contrast, keyboard navigation, screen reader compatibility, and other accessibility best practices.
-In addition to that, the accessibilty features of the user interface will be such that they can be easyly used by test frameworks to search for elements, interact with them, and verify their state.
+In addition to that, the accessibility features of the user interface will be such that they can be easily used by test frameworks to search for elements, interact with them, and verify their state.
 
 ### VII. Observability
 The design of the system needs to be ready by default to support observability practices such as logging, monitoring, and tracing. It will implement the client side of the OpenTelemetry standard to facilitate this.
@@ -53,7 +53,7 @@ Dasein's codebase should adhere to functional programming principles where feasi
 - Referential transparency: Expressions should be replaceable with their corresponding values without changing the program's behavior.
 Using a functional programming style can enhance code readability, maintainability, and testability, aligning with Dasein's overall architectural principles.
 However, this does not mean that we can shoehorn the functional style into every part of the codebase regardless of the technology used.
-For example, while in Rust it is possible to keep cloning values around to maintain immutability, this would be too big of a performances penalty to indiscriminately apply this principle everywhere. In such cases, we will use functional programming principles where they make sense, while balancing performance and practicality.
+For example, while in Rust it is possible to keep cloning values around to maintain immutability, this would be too big of a performance penalty to indiscriminately apply this principle everywhere. In such cases, we will use functional programming principles where they make sense, while balancing performance and practicality.
 
 ### XII. Monorepo
 Dasein's codebase will be organized as a monorepo, consolidating all related projects, services, and libraries into a single repository. This approach facilitates easier code sharing, dependency management, and coordinated releases across the entire codebase.
