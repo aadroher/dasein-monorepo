@@ -7,10 +7,10 @@
 ## Format
 `[ID] [P?] [Story] Description`
 
-## Phase 1: Setup (Already Initiated)
-- [ ] T001 Create `web-client` base structure
-- [ ] T002 Initialize TypeScript + React + Vite config
-- [ ] T003 Add initial package.json dependencies
+## Phase 1: Setup (✅ Completed)
+- [x] T001 Create `web-client` base structure
+- [x] T002 Initialize TypeScript + React + Vite config  
+- [x] T003 Add initial package.json dependencies
 
 ## Phase 2: Foundational (Blocking)
 - [ ] T010 [P] Add ESLint + Prettier config in `web-client/` (enforce code style & accessibility lint)
