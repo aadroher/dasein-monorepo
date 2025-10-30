@@ -3,7 +3,13 @@
 **Feature Branch**: `001-teacher-crud`  
 **Created**: 2025-10-30  
 **Status**: Draft  
-**Input**: User description: "The first feature that we our new app will have is the ability to create, update, edit and delete (CRUD) teacher entities. For each teacher entity we will store - A UUID  - Their full name For now, the application will be local only, that is, it will work only in the browser and not try to store data in any backend. Ideally, we want to be able to persist the data in the teachers collection across browser sessions."
+**Input**: User description: "The first feature that we our new app will have is the ability to create, update, edit and delete (CRUD) teacher entities. For each teacher entity we will store a `uuid` and their `full_name`. For now, the application will be local only, that is, it will work only in the browser and not try to store data in any backend. Ideally, we want to be able to persist the data in the teachers collection across browser sessions."
+
+## Clarifications
+
+### Session 2025-10-30
+
+- Q: What deterministic ordering rule should the teachers list use? → A: Alphabetical by full name (case-insensitive)
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -58,7 +64,7 @@ A user opens the app and sees a list of all stored teachers in a clear, determin
 **Independent Test**: With existing teachers, opening the app shows the complete list in defined order; no interaction needed.
 
 **Acceptance Scenarios**:
-1. **Given** multiple teachers exist, **When** the user opens the app, **Then** all teachers are displayed in the chosen default order (assumed: alphabetical by full name).
+1. **Given** multiple teachers exist, **When** the user opens the app, **Then** all teachers are displayed in alphabetical order by full name (case-insensitive).
 2. **Given** teachers exist, **When** there are none (empty store state), **Then** the UI indicates no teachers yet with a clear empty state message.
 
 ---
