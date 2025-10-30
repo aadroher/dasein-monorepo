@@ -61,21 +61,22 @@ specs/[###-feature]/
 -->
 
 ```
-src/
-  features/
+web-client/
+  src/
+    features/
+      teacher/
+        model/            # pure data types & validation
+        storage/          # persistence adapter (IndexedDB + fallback)
+        ui/               # React components/pages for list + form
+        services/         # orchestration, sorting logic
+  test/
     teacher/
-      model/            # pure data types & validation
-      storage/          # persistence adapter (IndexedDB or localStorage)
-      ui/               # components/pages for list + form
-      services/         # orchestration, sorting logic
-tests/
-  teacher/
-    unit/              # model + storage + sorting tests
-    e2e/               # user stories (create/edit/delete/view)
-docs/ (optional)       # quickstart, contracts reference
+      unit/              # model + storage + sorting tests
+      e2e/               # user stories (create/edit/delete/view)
+docs/ (optional)         # quickstart, contracts reference
 ```
 
-**Structure Decision**: Single web frontend React feature module under `src/features/teacher` with clear separation of model, storage, UI (React components), and service orchestration to uphold separation of concerns and test-first principles.
+**Structure Decision**: Single web frontend React feature module under `web-client/src/features/teacher` with clear separation of model, storage, UI (React components), and service orchestration to uphold separation of concerns and test-first principles.
 
 ## Complexity Tracking
 
@@ -134,6 +135,6 @@ None (all clarifications resolved).
 | Test naming                   | Use behavior-driven describe blocks; file name mirrors component                                |
 | Accessibility assertions      | Use testing-library queries by role/name; axe automated check in each component root test       |
 | E2E specs                     | Under `tests/teacher/e2e/` with filenames matching user stories: `create-teacher.spec.ts`, etc. |
-| Sorting logic tests           | In `src/features/teacher/services/__tests__/sorting.test.ts` (pure function tests)              |
-| Data model tests              | In `src/features/teacher/model/__tests__/teacher-validation.test.ts`                            |
+| Sorting logic tests           | In `web-client/src/features/teacher/services/__tests__/sorting.test.ts` (pure function tests)   |
+| Data model tests              | In `web-client/src/features/teacher/model/__tests__/teacher-validation.test.ts`                 |
 

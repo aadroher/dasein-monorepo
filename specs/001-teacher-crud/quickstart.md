@@ -12,11 +12,13 @@ Implement and test local-first CRUD operations for Teacher entities using a simp
 
 ## Directory Setup
 ```
-src/features/teacher/
-  model/
-  storage/
-  services/
-  ui/
+web-client/
+  src/features/teacher/
+    model/
+    storage/
+    services/
+    ui/
+  test/ (later)
 ```
 
 ## Implementation Steps (Test-First)
