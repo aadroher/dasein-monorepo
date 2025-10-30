@@ -1,0 +1,109 @@
+openapi: 3.1.0
+info:
+  title: Teacher Local API (In-Browser Abstraction)
+  version: 0.1.0
+  description: |-
+    Local in-browser abstraction for Teacher CRUD operations. This is a conceptual contract; actual implementation may use direct function calls rather than HTTP until a backend exists.
+servers:
+  - url: http://localhost/ (conceptual)
+paths:
+  /teachers:
+    get:
+      summary: List teachers
+      operationId: listTeachers
+      responses:
+        '200':
+          description: Teachers list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Teacher'
+    post:
+      summary: Create teacher
+      operationId: createTeacher
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTeacherRequest'
+      responses:
+        '201':
+          description: Created teacher
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+        '400':
+          description: Validation error
+  /teachers/{uuid}:
+    put:
+      summary: Update teacher
+      operationId: updateTeacher
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTeacherRequest'
+      responses:
+        '200':
+          description: Updated teacher
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+        '400':
+          description: Validation error
+        '404':
+          description: Teacher not found
+    delete:
+      summary: Delete teacher
+      operationId: deleteTeacher
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Deleted
+        '404':
+          description: Teacher not found
+components:
+  schemas:
+    Teacher:
+      type: object
+      required: [uuid, full_name]
+      properties:
+        uuid:
+          type: string
+          description: Unique identifier (UUIDv4)
+        full_name:
+          type: string
+          description: Full name (1-100 chars)
+    CreateTeacherRequest:
+      type: object
+      required: [full_name]
+      properties:
+        full_name:
+          type: string
+          minLength: 1
+          maxLength: 100
+    UpdateTeacherRequest:
+      type: object
+      required: [full_name]
+      properties:
+        full_name:
+          type: string
+          minLength: 1
+          maxLength: 100
