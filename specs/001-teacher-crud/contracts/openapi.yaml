@@ -12,14 +12,14 @@ paths:
       summary: List teachers
       operationId: listTeachers
       responses:
-        '200':
+        "200":
           description: Teachers list
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Teacher'
+                  $ref: "#/components/schemas/Teacher"
     post:
       summary: Create teacher
       operationId: createTeacher
@@ -28,15 +28,15 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateTeacherRequest'
+              $ref: "#/components/schemas/CreateTeacherRequest"
       responses:
-        '201':
+        "201":
           description: Created teacher
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Teacher'
-        '400':
+                $ref: "#/components/schemas/Teacher"
+        "400":
           description: Validation error
   /teachers/{uuid}:
     put:
@@ -53,17 +53,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateTeacherRequest'
+              $ref: "#/components/schemas/UpdateTeacherRequest"
       responses:
-        '200':
+        "200":
           description: Updated teacher
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Teacher'
-        '400':
+                $ref: "#/components/schemas/Teacher"
+        "400":
           description: Validation error
-        '404':
+        "404":
           description: Teacher not found
     delete:
       summary: Delete teacher
@@ -75,9 +75,9 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        "204":
           description: Deleted
-        '404':
+        "404":
           description: Teacher not found
 components:
   schemas:

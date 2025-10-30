@@ -9,10 +9,10 @@ Implement local-first browser-based CRUD for Teacher entities (UUID + full name)
 
 ## Technical Context
 
-**Language/Version**: NEEDS CLARIFICATION (likely TypeScript/JavaScript for web app)  
-**Primary Dependencies**: NEEDS CLARIFICATION (potential lightweight state + storage helper; no framework mandated yet)  
-**Storage**: Local browser storage (e.g., IndexedDB vs. localStorage) – NEEDS CLARIFICATION (choose mechanism)  
-**Testing**: NEEDS CLARIFICATION (unit + browser E2E framework)  
+**Language/Version**: TypeScript (ESNext)  
+**Primary Dependencies**: React (UI), potential lightweight storage helper (to be decided)  
+**Storage**: IndexedDB (teacher store) with in-memory fallback on init failure  
+**Testing**: Vitest (unit) + @testing-library/react (component) + Playwright (E2E) + axe-core (accessibility audits)  
 **Target Platform**: Modern browsers (desktop + mobile)  
 **Project Type**: Web (frontend only initial slice)  
 **Performance Goals**: List render < 3s for 50 teachers (from spec)  
@@ -21,20 +21,20 @@ Implement local-first browser-based CRUD for Teacher entities (UUID + full name)
 
 ## Constitution Check
 
-| Principle | Alignment | Notes |
-|-----------|-----------|-------|
-| Web app (I) | ✅ | Pure browser implementation |
-| Local-first (II) | ✅ | All data stored locally; no backend |
-| Centralized auth (III) | N/A (Deferred) | No auth needed for local MVP |
-| Privacy by design (IV) | ✅ | Minimal data: only UUID + full name |
-| Test-first (V) | ⚠️ NEEDS CLARIFICATION | Must select testing stack before implementation |
-| Accessibility (VI) | ⚠️ NEEDS CLARIFICATION | Need approach (semantic HTML + testing) |
-| Observability (VII) | ⚠️ Deferred | Minimal logging; formal telemetry later |
-| Vendor neutrality (VIII) | ✅ | Avoid storage APIs that lock-in; use standard browser APIs |
-| Technology agnostic (IX) | ✅ | No hard framework choice yet |
-| Separation of concerns (X) | ✅ | Plan for distinct modules: model, persistence, UI, tests |
-| Functional programming style (XI) | ✅ | Favor pure functions for CRUD operations |
-| Monorepo (XII) | ✅ | Feature lives within monorepo structure |
+| Principle                         | Alignment             | Notes                                                      |
+| --------------------------------- | --------------------- | ---------------------------------------------------------- |
+| Web app (I)                       | ✅                     | Pure browser implementation                                |
+| Local-first (II)                  | ✅                     | All data stored locally; no backend                        |
+| Centralized auth (III)            | N/A (Deferred)        | No auth needed for local MVP                               |
+| Privacy by design (IV)            | ✅                     | Minimal data: only UUID + full name                        |
+| Test-first (V)                    | ⚠️ NEEDS CLARIFICATION | Must select testing stack before implementation            |
+| Accessibility (VI)                | ⚠️ NEEDS CLARIFICATION | Need approach (semantic HTML + testing)                    |
+| Observability (VII)               | ⚠️ Deferred            | Minimal logging; formal telemetry later                    |
+| Vendor neutrality (VIII)          | ✅                     | Avoid storage APIs that lock-in; use standard browser APIs |
+| Technology agnostic (IX)          | ✅                     | React chosen for UI but architecture remains decoupled     |
+| Separation of concerns (X)        | ✅                     | Plan for distinct modules: model, persistence, UI, tests   |
+| Functional programming style (XI) | ✅                     | Favor pure functions for CRUD operations                   |
+| Monorepo (XII)                    | ✅                     | Feature lives within monorepo structure                    |
 
 Gate Outcome: Proceed but resolve NEEDS CLARIFICATION items (language/framework, storage mechanism choice, testing + accessibility strategy) in Phase 0 research.
 
@@ -75,7 +75,7 @@ tests/
 docs/ (optional)       # quickstart, contracts reference
 ```
 
-**Structure Decision**: Single web frontend feature module under `src/features/teacher` with clear separation of model, storage, UI, and service orchestration to uphold separation of concerns and test-first principles.
+**Structure Decision**: Single web frontend React feature module under `src/features/teacher` with clear separation of model, storage, UI (React components), and service orchestration to uphold separation of concerns and test-first principles.
 
 ## Complexity Tracking
 
@@ -91,20 +91,20 @@ Artifacts created:
 
 ## Post-Design Constitution Re-Check
 
-| Principle | Status After Design | Notes |
-|-----------|---------------------|-------|
-| Web app (I) | ✅ | Still pure browser artifacts |
-| Local-first (II) | ✅ | Storage abstraction remains local only |
-| Centralized auth (III) | Deferred | No auth introduced prematurely |
-| Privacy by design (IV) | ✅ | Minimal PII (names only) maintained |
-| Test-first (V) | ⚠️ Pending | Tests planned; framework selection pending confirmation |
-| Accessibility (VI) | ⚠️ Pending | Guidance added; concrete a11y acceptance tests to be written |
-| Observability (VII) | Deferred | MVP logging approach outlined in research |
-| Vendor neutrality (VIII) | ✅ | Standard browser APIs only |
-| Technology agnostic (IX) | ✅ | No framework lock-in yet |
-| Separation of concerns (X) | ✅ | Structure partitions model/storage/ui/services |
-| Functional programming style (XI) | ✅ | CRUD pure function approach specified |
-| Monorepo (XII) | ✅ | Feature isolated within monorepo plan |
+| Principle                         | Status After Design | Notes                                                        |
+| --------------------------------- | ------------------- | ------------------------------------------------------------ |
+| Web app (I)                       | ✅                   | Still pure browser artifacts                                 |
+| Local-first (II)                  | ✅                   | Storage abstraction remains local only                       |
+| Centralized auth (III)            | Deferred            | No auth introduced prematurely                               |
+| Privacy by design (IV)            | ✅                   | Minimal PII (names only) maintained                          |
+| Test-first (V)                    | ⚠️ Pending           | Tests planned; framework selection pending confirmation      |
+| Accessibility (VI)                | ⚠️ Pending           | Guidance added; concrete a11y acceptance tests to be written |
+| Observability (VII)               | Deferred            | MVP logging approach outlined in research                    |
+| Vendor neutrality (VIII)          | ✅                   | Standard browser APIs only                                   |
+| Technology agnostic (IX)          | ✅                   | React adopted; abstraction layers keep future swap feasible  |
+| Separation of concerns (X)        | ✅                   | Structure partitions model/storage/ui/services               |
+| Functional programming style (XI) | ✅                   | CRUD pure function approach specified                        |
+| Monorepo (XII)                    | ✅                   | Feature isolated within monorepo plan                        |
 
 Gate Check: All non-negotiable principles satisfied or appropriately deferred (auth not required). Pending items (test stack, accessibility tooling, storage choice) to be finalized before implementation tasks.
 
@@ -123,7 +123,17 @@ Planned task themes (to be formalized via `/speckit.tasks`):
 10. Documentation updates (README + quickstart refinements).
 
 Pending Clarifications Before Coding:
-- Final decision: IndexedDB vs localStorage for initial persistence.
-- Confirm test stack (Vitest + Playwright) and any accessibility audit tool (e.g., axe automation).
-- Decide on framework choice (none vs lightweight library) for UI; default is framework-free.
+None (all clarifications resolved).
+
+## Testing Conventions
+
+| Aspect                        | Convention                                                                                      |
+| ----------------------------- | ----------------------------------------------------------------------------------------------- |
+| Unit/component test placement | Colocated next to source: `ComponentName.test.tsx`                                              |
+| Hooks tests                   | Colocated: `useThing.test.ts` in same folder as hook                                            |
+| Test naming                   | Use behavior-driven describe blocks; file name mirrors component                                |
+| Accessibility assertions      | Use testing-library queries by role/name; axe automated check in each component root test       |
+| E2E specs                     | Under `tests/teacher/e2e/` with filenames matching user stories: `create-teacher.spec.ts`, etc. |
+| Sorting logic tests           | In `src/features/teacher/services/__tests__/sorting.test.ts` (pure function tests)              |
+| Data model tests              | In `src/features/teacher/model/__tests__/teacher-validation.test.ts`                            |
 

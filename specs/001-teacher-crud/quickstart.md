@@ -22,11 +22,12 @@ src/features/teacher/
 ## Implementation Steps (Test-First)
 1. Define `Teacher` type and validation in `model/` with unit tests.
 2. Implement pure CRUD functions (create/update/delete/list + sort) returning new arrays (no mutation) with tests.
-3. Implement storage adapter (decide IndexedDB vs localStorage) with persistence tests.
+3. Implement IndexedDB storage adapter (with in-memory fallback) and persistence tests.
 4. Compose service layer combining CRUD + storage; test load & save semantics.
-5. Build minimal UI: list view + form + edit/delete controls with accessibility roles.
+5. Build minimal React UI: list view + form + edit/delete controls with accessibility roles.
 6. Write E2E tests for user stories (create, edit, delete, view list ordering, empty state).
-7. Add edge case tests (long name, duplicate name, invalid input).
+7. Add edge case tests (long name, duplicate name, invalid input, persistence failure simulation).
+8. Integrate axe-core accessibility assertions in component tests.
 
 ## Running Tests (Example Commands)
 (Actual setup may vary; placeholder commands)
@@ -47,5 +48,12 @@ npm run e2e
 - IndexedDB scales; asynchronous; choose if planning more complex queries soon.
 - localStorage simpler; synchronous; acceptable for very small data (<500 records).
 
+## Testing Conventions
+- Component tests colocated: `ComponentName.test.tsx` adjacent to source.
+- Hook tests: `useSomething.test.ts` adjacent to hook file.
+- Pure logic tests (sorting, validation) under `__tests__` folder inside their respective module.
+- E2E specs in `tests/teacher/e2e/` named after user stories.
+- Axe accessibility check executed once per component mount test.
+
 ## Next Steps
-- Resolve pending clarifications (framework presence, persistence mechanism, test runners) before coding.
+- All clarifications resolved; proceed to task generation and initial scaffolding.

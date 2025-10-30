@@ -3,14 +3,14 @@
 ## Decisions & Rationale
 
 ### Language / Framework
-- **Decision**: TypeScript + minimal framework-free (progressive enhancement) or a light component approach (NEEDS CLARIFICATION: consider React vs. no-framework).
-- **Rationale**: TypeScript improves reliability and test-first development; aligns with web app principle.
-- **Alternatives Considered**: Pure JavaScript (less type safety), React (adds dependency), Svelte (compile step), Web Components (native but less common patterns).
+- **Decision**: TypeScript + React.
+- **Rationale**: React widely adopted, rich ecosystem for test-first (component testing & accessibility), facilitates future expansion to more complex interactive features while remaining technology agnostic at architecture level.
+- **Alternatives Considered**: Pure JavaScript (reduced type safety), Framework-free (more manual state/UI orchestration), Svelte (compile step + different paradigm), Web Components (native but less standard patterns for team onboarding).
 
 ### Storage Mechanism
-- **Decision**: IndexedDB via a small wrapper (NEEDS CLARIFICATION: may fallback to localStorage for simplicity initially).
-- **Rationale**: IndexedDB scales better for future features (scheduling data) and supports structured querying; localStorage simpler but limited size and synchronous.
-- **Alternatives**: localStorage (simple API, synchronous performance considerations), Cache API (not for structured data), Plain in-memory (no persistence), WebSQL (deprecated).
+- **Decision**: IndexedDB via a small wrapper (fallback to in-memory ephemeral only if IndexedDB initialization fails).
+- **Rationale**: Scales for future entities (schedules, attendance), supports indexing/query evolution, non-blocking async operations; aligns with local-first and future offline sync patterns.
+- **Alternatives**: localStorage (simpler but synchronous & less scalable), Cache API (unsuited for structured records), Plain in-memory (no persistence), WebSQL (deprecated).
 
 ### Testing Stack
 - **Decision**: Vitest for unit tests (NEEDS CLARIFICATION) + Playwright for E2E (NEEDS CLARIFICATION) with accessibility assertions.
@@ -34,9 +34,7 @@
 
 ## Outstanding NEEDS CLARIFICATION
 
-1. Final choice of UI framework (None vs. React).  
-2. IndexedDB wrapper vs. initial localStorage MVP.  
-3. Testing stack (Vitest + Playwright) acceptance.  
+None (test stack finalized: Vitest + @testing-library/react + Playwright + axe-core).
 
 These will be resolved in early Phase 1 planning or next clarification cycle.
 
