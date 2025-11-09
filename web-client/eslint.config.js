@@ -1,12 +1,12 @@
 import js from '@eslint/js';
-import { config, configs } from 'typescript-eslint';
+import tseslint from 'typescript-eslint';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 
-export default config(
+export default [
   js.configs.recommended,
-  ...configs.recommended,
+  ...tseslint.configs.recommended,
   {
     files: ['**/*.{ts,tsx}'],
     plugins: {
@@ -52,5 +52,5 @@ export default config(
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
     },
-  }
-);
+  },
+];
