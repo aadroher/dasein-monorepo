@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Test outputs
+playwright-report/
+test-results/
+
+# Configuration
+vite.config.ts.timestamp-*

@@ -14,6 +14,35 @@ export interface Teacher {
 }
 
 /**
+ * Validation error class for teacher-related validation failures.
+ */
+export class ValidationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'ValidationError';
+  }
+}
+
+/**
+ * Validates a teacher object according to business rules:
+ * - full_name must not be empty (after trimming)
+ * - full_name must not exceed 200 characters
+ *
+ * @throws {ValidationError} if validation fails
+ */
+export function validateTeacher(teacher: Teacher): void {
+  const trimmedName = teacher.full_name.trim();
+
+  if (trimmedName.length === 0) {
+    throw new ValidationError('Full name cannot be empty');
+  }
+
+  if (trimmedName.length > 200) {
+    throw new ValidationError('Full name cannot exceed 200 characters');
+  }
+}
+
+/**
  * Basic validation for teacher data.
  * This will be expanded with more comprehensive validation rules.
  */
