@@ -97,14 +97,14 @@ export class IndexedDBAdapter implements TeacherStoragePort {
     }
   }
 
-  async getById(id: string): Promise<StorageResult<Teacher>> {
+  async getById(uuid: string): Promise<StorageResult<Teacher>> {
     if (!this.db) {
       return this.createNotInitializedError();
     }
 
     try {
       const teacher = await this.performTransaction('readonly', async store => {
-        const request = store.get(id);
+        const request = store.get(uuid);
         return new Promise<Teacher | undefined>((resolve, reject) => {
           request.onsuccess = () => resolve(request.result);
           request.onerror = () => reject(request.error);
@@ -116,7 +116,7 @@ export class IndexedDBAdapter implements TeacherStoragePort {
           success: false,
           error: {
             code: 'ITEM_NOT_FOUND',
-            message: `Teacher with ID ${id} not found`,
+            message: `Teacher with UUID ${uuid} not found`,
           },
         };
       }
@@ -163,14 +163,14 @@ export class IndexedDBAdapter implements TeacherStoragePort {
     }
   }
 
-  async delete(id: string): Promise<StorageResult<void>> {
+  async delete(uuid: string): Promise<StorageResult<void>> {
     if (!this.db) {
       return this.createNotInitializedError();
     }
 
     try {
       await this.performTransaction('readwrite', async store => {
-        await store.delete(id);
+        await store.delete(uuid);
       });
 
       return { success: true, data: undefined };
@@ -230,7 +230,7 @@ export class IndexedDBAdapter implements TeacherStoragePort {
         const db = (event.target as IDBOpenDBRequest).result;
 
         // Create teachers object store
-        const store = db.createObjectStore(this.storeName, { keyPath: 'id' });
+        const store = db.createObjectStore(this.storeName, { keyPath: 'uuid' });
 
         // Create index for alphabetical sorting by full_name
         store.createIndex('full_name', 'full_name', { unique: false });

@@ -55,11 +55,11 @@ export interface TeacherStoragePort {
   list(): Promise<StorageResult<Teacher[]>>;
 
   /**
-   * Get a specific teacher by ID.
-   * @param id - Teacher UUID
+   * Get a specific teacher by UUID.
+   * @param uuid - Teacher UUID
    * @returns Promise resolving to teacher or error
    */
-  getById(id: string): Promise<StorageResult<Teacher>>;
+  getById(uuid: string): Promise<StorageResult<Teacher>>;
 
   /**
    * Update an existing teacher.
@@ -69,11 +69,11 @@ export interface TeacherStoragePort {
   update(teacher: Teacher): Promise<StorageResult<Teacher>>;
 
   /**
-   * Delete a teacher by ID.
-   * @param id - Teacher UUID
+   * Delete a teacher by UUID.
+   * @param uuid - Teacher UUID
    * @returns Promise resolving to success result or error
    */
-  delete(id: string): Promise<StorageResult<void>>;
+  delete(uuid: string): Promise<StorageResult<void>>;
 
   /**
    * Clear all teacher data (useful for testing).

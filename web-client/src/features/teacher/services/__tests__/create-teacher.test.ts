@@ -7,11 +7,11 @@ describe('Create Teacher Service', () => {
     it('should create a teacher with valid name', () => {
       const result = createTeacher('Jane Doe');
 
-      expect(result).toHaveProperty('id');
+      expect(result).toHaveProperty('uuid');
       expect(result.full_name).toBe('Jane Doe');
       expect(result).toHaveProperty('created_at');
       expect(result).toHaveProperty('updated_at');
-      expect(result.id).toMatch(
+      expect(result.uuid).toMatch(
         /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
       );
     });
@@ -19,7 +19,7 @@ describe('Create Teacher Service', () => {
     it('should trim whitespace from name', () => {
       const result = createTeacher('  John Smith  ');
 
-      expect(result.full_name).toBe('  John Smith  ');
+      expect(result.full_name).toBe('John Smith');
     });
 
     it('should throw ValidationError for empty name', () => {
@@ -51,7 +51,7 @@ describe('Create Teacher Service', () => {
       const teacher1 = createTeacher('Alice');
       const teacher2 = createTeacher('Bob');
 
-      expect(teacher1.id).not.toBe(teacher2.id);
+      expect(teacher1.uuid).not.toBe(teacher2.uuid);
     });
 
     it('should set created_at and updated_at to same timestamp', () => {

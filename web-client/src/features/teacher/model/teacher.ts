@@ -1,16 +1,17 @@
 /**
- * Teacher entity model for the local-first CRUD application.
+ * Teacher entity representation for the local-first CRUD application.
  *
- * This is a placeholder implementation that defines the core Teacher interface
- * and basic validation functions. The actual storage implementation will be
- * added in subsequent tasks.
+ * The canonical data model (spec) requires a UUID and a trimmed full name.
+ *
+ * Additional metadata such as timestamps can be layered on top in later
+ * phases. For now we keep them optional to avoid blocking future evolution.
  */
 
 export interface Teacher {
-  id: string; // UUID
+  uuid: string;
   full_name: string;
-  created_at: string; // ISO 8601 timestamp
-  updated_at: string; // ISO 8601 timestamp
+  created_at?: string;
+  updated_at?: string;
 }
 
 /**
@@ -24,14 +25,23 @@ export class ValidationError extends Error {
 }
 
 /**
- * Validates a teacher object according to business rules:
- * - full_name must not be empty (after trimming)
- * - full_name must not exceed 200 characters
+ * Normalize a teacher full name by trimming surrounding whitespace.
+ */
+export function normalizeFullName(fullName: string): string {
+  return fullName.trim();
+}
+
+/**
+ * Validate that a teacher object satisfies the business rules.
  *
- * @throws {ValidationError} if validation fails
+ * Rules:
+ * - full_name MUST be non-empty after trimming
+ * - full_name MUST NOT exceed 200 characters (hard cap)
+ *
+ * @throws {ValidationError} when rules are violated
  */
 export function validateTeacher(teacher: Teacher): void {
-  const trimmedName = teacher.full_name.trim();
+  const trimmedName = normalizeFullName(teacher.full_name);
 
   if (trimmedName.length === 0) {
     throw new ValidationError('Full name cannot be empty');
@@ -43,28 +53,10 @@ export function validateTeacher(teacher: Teacher): void {
 }
 
 /**
- * Basic validation for teacher data.
- * This will be expanded with more comprehensive validation rules.
+ * Type guard to assert that an arbitrary value satisfies the Teacher contract.
  */
 export function isValidTeacher(teacher: Partial<Teacher>): teacher is Teacher {
-  return !!(
-    teacher.id &&
-    teacher.full_name &&
-    teacher.created_at &&
-    teacher.updated_at
+  return (
+    typeof teacher.uuid === 'string' && typeof teacher.full_name === 'string'
   );
-}
-
-/**
- * Creates a new Teacher object with generated ID and timestamps.
- * This is a placeholder - will be moved to appropriate service layer.
- */
-export function createTeacherRecord(full_name: string): Teacher {
-  const now = new Date().toISOString();
-  return {
-    id: crypto.randomUUID(),
-    full_name,
-    created_at: now,
-    updated_at: now,
-  };
 }

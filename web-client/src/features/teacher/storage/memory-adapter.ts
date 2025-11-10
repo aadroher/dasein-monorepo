@@ -26,18 +26,18 @@ export class MemoryAdapter implements TeacherStoragePort {
     }
 
     try {
-      // Check for duplicate ID (though UUID collisions are extremely unlikely)
-      if (this.teachers.has(teacher.id)) {
+      // Check for duplicate UUID (though collisions are extremely unlikely)
+      if (this.teachers.has(teacher.uuid)) {
         return {
           success: false,
           error: {
             code: 'VALIDATION_ERROR',
-            message: `Teacher with ID ${teacher.id} already exists`,
+            message: `Teacher with UUID ${teacher.uuid} already exists`,
           },
         };
       }
 
-      this.teachers.set(teacher.id, { ...teacher });
+      this.teachers.set(teacher.uuid, { ...teacher });
       return { success: true, data: teacher };
     } catch (error) {
       return {
@@ -77,20 +77,20 @@ export class MemoryAdapter implements TeacherStoragePort {
     }
   }
 
-  async getById(id: string): Promise<StorageResult<Teacher>> {
+  async getById(uuid: string): Promise<StorageResult<Teacher>> {
     if (!this.initialized) {
       return this.createNotInitializedError();
     }
 
     try {
-      const teacher = this.teachers.get(id);
+      const teacher = this.teachers.get(uuid);
 
       if (!teacher) {
         return {
           success: false,
           error: {
             code: 'ITEM_NOT_FOUND',
-            message: `Teacher with ID ${id} not found`,
+            message: `Teacher with UUID ${uuid} not found`,
           },
         };
       }
@@ -114,12 +114,12 @@ export class MemoryAdapter implements TeacherStoragePort {
     }
 
     try {
-      if (!this.teachers.has(teacher.id)) {
+      if (!this.teachers.has(teacher.uuid)) {
         return {
           success: false,
           error: {
             code: 'ITEM_NOT_FOUND',
-            message: `Teacher with ID ${teacher.id} not found`,
+            message: `Teacher with UUID ${teacher.uuid} not found`,
           },
         };
       }
@@ -130,7 +130,7 @@ export class MemoryAdapter implements TeacherStoragePort {
         updated_at: new Date().toISOString(),
       };
 
-      this.teachers.set(teacher.id, updatedTeacher);
+      this.teachers.set(teacher.uuid, updatedTeacher);
       return { success: true, data: updatedTeacher };
     } catch (error) {
       return {
@@ -144,20 +144,20 @@ export class MemoryAdapter implements TeacherStoragePort {
     }
   }
 
-  async delete(id: string): Promise<StorageResult<void>> {
+  async delete(uuid: string): Promise<StorageResult<void>> {
     if (!this.initialized) {
       return this.createNotInitializedError();
     }
 
     try {
-      const deleted = this.teachers.delete(id);
+      const deleted = this.teachers.delete(uuid);
 
       if (!deleted) {
         return {
           success: false,
           error: {
             code: 'ITEM_NOT_FOUND',
-            message: `Teacher with ID ${id} not found`,
+            message: `Teacher with UUID ${uuid} not found`,
           },
         };
       }
@@ -231,7 +231,7 @@ export class MemoryAdapter implements TeacherStoragePort {
     try {
       this.teachers.clear();
       for (const teacher of teachers) {
-        this.teachers.set(teacher.id, { ...teacher });
+        this.teachers.set(teacher.uuid, { ...teacher });
       }
       return { success: true, data: undefined };
     } catch (error) {
