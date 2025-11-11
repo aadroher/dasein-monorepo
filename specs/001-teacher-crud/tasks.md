@@ -54,17 +54,17 @@
 **Independent Test**: E2E edit flow + reload shows updated value.
 
 ### Tests First
-- [ ] T050 [US2] Unit test: update operation service `web-client/src/features/teacher/services/__tests__/update-teacher.test.ts`
-- [ ] T051 [US2] Integration: update + persistence `web-client/test/teacher/unit/update-persist.test.ts`
-- [ ] T052 [US2] E2E: edit teacher name `web-client/test/teacher/e2e/edit-teacher.spec.ts`
-- [ ] T053 [P] [US2] A11y component test `web-client/src/features/teacher/ui/__tests__/edit-form-a11y.test.tsx`
+- [x] T050 [US2] Unit test: update operation service `web-client/src/features/teacher/services/__tests__/update-teacher.test.ts`
+- [x] T051 [US2] Integration: update + persistence `web-client/src/features/teacher/__tests__/update-persist.test.ts`
+- [x] T052 [US2] E2E: edit teacher name `web-client/test/teacher/e2e/edit-teacher.spec.ts`
+- [x] T053 [P] [US2] A11y component test `web-client/src/features/teacher/ui/__tests__/edit-form-a11y.test.tsx`
 
 ### Implementation
-- [ ] T060 [US2] Update service `web-client/src/features/teacher/services/updateTeacher.ts`
-- [ ] T061 [US2] UI component edit form `web-client/src/features/teacher/ui/TeacherEditForm.tsx`
-- [ ] T062 [US2] Hook for edit logic `web-client/src/features/teacher/ui/useEditTeacher.ts`
-- [ ] T063 [US2] Integrate updated record into list rendering
-- [ ] T064 [US2] A11y axe assertions in edit component tests
+- [x] T060 [US2] Update service `web-client/src/features/teacher/services/updateTeacher.ts`
+- [x] T061 [US2] UI component edit form `web-client/src/features/teacher/ui/TeacherEditForm.tsx`
+- [x] T062 [US2] Hook for edit logic `web-client/src/features/teacher/ui/useEditTeacher.ts`
+- [x] T063 [US2] Integrate updated record into list rendering
+- [x] T064 [US2] A11y axe assertions in edit component tests
 
 **Checkpoint**: Edit flow functional & tests green.
 
