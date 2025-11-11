@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react';
-import { createTeacher } from '../services/createTeacher';
+import { useState, useCallback, type FormEvent } from 'react';
+import { createTeacher } from '../services/create-teacher';
 import { validateTeacher, ValidationError } from '../model/teacher';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';

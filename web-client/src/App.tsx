@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { IndexedDBAdapter } from './features/teacher/storage/indexeddb-adapter';
 import { MemoryAdapter } from './features/teacher/storage/memory-adapter';
-import { TeacherCreateForm } from './features/teacher/ui/TeacherCreateForm';
-import { TeacherList } from './features/teacher/ui/TeacherList';
-import { useTeachers } from './features/teacher/ui/useTeachers';
+import { TeacherCreateForm } from './features/teacher/ui/teacher-create-form';
+import { TeacherList } from './features/teacher/ui/teacher-list';
+import { useTeachers } from './features/teacher/ui/use-teachers';
 import type { TeacherStoragePort } from './features/teacher/storage/storage-port';
 
 function App() {

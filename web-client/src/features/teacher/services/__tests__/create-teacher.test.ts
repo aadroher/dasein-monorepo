@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { createTeacher } from '../createTeacher';
+import { createTeacher } from '../create-teacher';
 import { ValidationError } from '../../model/teacher';
 
 describe('Create Teacher Service', () => {

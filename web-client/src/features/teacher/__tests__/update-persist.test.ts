@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { createTeacher } from '../services/createTeacher';
-import { updateTeacher } from '../services/updateTeacher';
+import { createTeacher } from '../services/create-teacher';
+import { updateTeacher } from '../services/update-teacher';
 import { MemoryAdapter } from '../storage/memory-adapter';
 import type { StorageResult } from '../storage/storage-port';
 

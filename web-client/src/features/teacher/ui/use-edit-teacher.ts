@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef } from 'react';
-import { updateTeacher } from '../services/updateTeacher';
+import { updateTeacher } from '../services/update-teacher';
 import { validateTeacher, ValidationError } from '../model/teacher';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';

@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { TeacherCreateForm } from '../TeacherCreateForm';
+import { TeacherCreateForm } from '../teacher-create-form';
 import { MemoryAdapter } from '../../storage/memory-adapter';
 import { assertA11y } from '../../../../test/a11y/assertA11y';
 

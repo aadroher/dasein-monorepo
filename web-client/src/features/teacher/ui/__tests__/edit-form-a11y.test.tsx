@@ -1,10 +1,10 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { TeacherEditForm } from '../TeacherEditForm';
+import { TeacherEditForm } from '../teacher-edit-form';
 import { MemoryAdapter } from '../../storage/memory-adapter';
 import { assertA11y } from '../../../../test/a11y/assertA11y';
-import { createTeacher } from '../../services/createTeacher';
+import { createTeacher } from '../../services/create-teacher';
 
 describe('TeacherEditForm Accessibility', () => {
   let storage: MemoryAdapter;

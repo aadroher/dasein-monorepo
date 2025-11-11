@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
-import { TeacherEditForm } from './TeacherEditForm';
+import { TeacherEditForm } from './teacher-edit-form';
 
 export interface TeacherListProps {
   teachers: Teacher[];

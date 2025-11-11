@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { createTeacher } from '../../../src/features/teacher/services/createTeacher';
+import { createTeacher } from '../../../src/features/teacher/services/create-teacher';
 import { MemoryAdapter } from '../../../src/features/teacher/storage/memory-adapter';
 import type { StorageResult } from '../../../src/features/teacher/storage/storage-port';
 

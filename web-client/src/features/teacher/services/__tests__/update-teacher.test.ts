@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { updateTeacher } from '../updateTeacher';
+import { updateTeacher } from '../update-teacher';
 import { ValidationError } from '../../model/teacher';
-import { createTeacher } from '../createTeacher';
+import { createTeacher } from '../create-teacher';
 
 describe('Update Teacher Service', () => {
   describe('updateTeacher', () => {
