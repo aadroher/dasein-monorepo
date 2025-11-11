@@ -34,18 +34,18 @@
 ### Tests First
 - [x] T030 [US1] Unit test: validation `web-client/src/features/teacher/model/__tests__/teacher-validation.test.ts`
 - [x] T031 [US1] Unit test: create operation service `web-client/src/features/teacher/services/__tests__/create-teacher.test.ts`
-- [ ] T032 [US1] Integration test: storage create + load `web-client/test/teacher/unit/create-persist.test.ts`
-- [ ] T033 [US1] E2E spec: create teacher flow `web-client/test/teacher/e2e/create-teacher.spec.ts`
-- [ ] T034 [P] [US1] A11y component test placeholder `web-client/src/features/teacher/ui/__tests__/form-a11y.test.tsx`
+- [x] T032 [US1] Integration test: storage create + load `web-client/test/teacher/unit/create-persist.test.ts`
+- [x] T033 [US1] E2E spec: create teacher flow `web-client/test/teacher/e2e/create-teacher.spec.ts`
+- [x] T034 [P] [US1] A11y component test placeholder `web-client/src/features/teacher/ui/__tests__/form-a11y.test.tsx`
 
 ### Implementation
 - [x] T040 [US1] Implement teacher creation service `web-client/src/features/teacher/services/createTeacher.ts`
 - [x] T041 [US1] Implement model validation function finalize `web-client/src/features/teacher/model/teacher.ts` (extend if needed)
-- [ ] T042 [US1] Integrate storage adapter `web-client/src/features/teacher/storage/indexeddb-adapter.ts` create logic
-- [ ] T043 [US1] UI form component `web-client/src/features/teacher/ui/TeacherCreateForm.tsx`
-- [ ] T044 [US1] Hook for form state `web-client/src/features/teacher/ui/useCreateTeacher.ts`
-- [ ] T045 [US1] Wire App root to show teachers list after create
-- [ ] T046 [US1] A11y axe assertions in component tests
+- [x] T042 [US1] Integrate storage adapter `web-client/src/features/teacher/storage/indexeddb-adapter.ts` create logic
+- [x] T043 [US1] UI form component `web-client/src/features/teacher/ui/TeacherCreateForm.tsx`
+- [x] T044 [US1] Hook for form state `web-client/src/features/teacher/ui/useCreateTeacher.ts`
+- [x] T045 [US1] Wire App root to show teachers list after create
+- [x] T046 [US1] A11y axe assertions in component tests
 
 **Checkpoint**: Create flow fully functional & test suite green.
 

@@ -16,13 +16,10 @@ export const axe = configureAxe({
   rules: {
     // WCAG 2.1 AA rules
     'color-contrast': { enabled: true },
-    'keyboard-navigation': { enabled: true },
-    'focus-management': { enabled: true },
-    'aria-labels': { enabled: true },
-    'landmark-roles': { enabled: true },
-    'heading-order': { enabled: true },
-    'alt-text': { enabled: true },
-    'form-labels': { enabled: true },
+    label: { enabled: true },
+    'button-name': { enabled: true },
+    'image-alt': { enabled: true },
+    'form-field-multiple-labels': { enabled: true },
   },
 } satisfies JestAxeConfigureOptions);
 
