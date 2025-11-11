@@ -21,22 +21,22 @@ Implement local-first browser-based CRUD for Teacher entities (UUID + full name)
 
 ## Constitution Check
 
-| Principle                         | Alignment             | Notes                                                      |
-| --------------------------------- | --------------------- | ---------------------------------------------------------- |
-| Web app (I)                       | ✅                     | Pure browser implementation                                |
-| Local-first (II)                  | ✅                     | All data stored locally; no backend                        |
-| Centralized auth (III)            | N/A (Deferred)        | No auth needed for local MVP                               |
-| Privacy by design (IV)            | ✅                     | Minimal data: only UUID + full name                        |
-| Test-first (V)                    | ⚠️ NEEDS CLARIFICATION | Must select testing stack before implementation            |
-| Accessibility (VI)                | ⚠️ NEEDS CLARIFICATION | Need approach (semantic HTML + testing)                    |
-| Observability (VII)               | ⚠️ Deferred            | Minimal logging; formal telemetry later                    |
-| Vendor neutrality (VIII)          | ✅                     | Avoid storage APIs that lock-in; use standard browser APIs |
-| Technology agnostic (IX)          | ✅                     | React chosen for UI but architecture remains decoupled     |
-| Separation of concerns (X)        | ✅                     | Plan for distinct modules: model, persistence, UI, tests   |
-| Functional programming style (XI) | ✅                     | Favor pure functions for CRUD operations                   |
-| Monorepo (XII)                    | ✅                     | Feature lives within monorepo structure                    |
+| Principle                         | Alignment      | Notes                                                      |
+| --------------------------------- | -------------- | ---------------------------------------------------------- |
+| Web app (I)                       | ✅              | Pure browser implementation                                |
+| Local-first (II)                  | ✅              | All data stored locally; no backend                        |
+| Centralized auth (III)            | N/A (Deferred) | No auth needed for local MVP                               |
+| Privacy by design (IV)            | ✅              | Minimal data: only UUID + full name                        |
+| Test-first (V)                    | ✅              | Vitest + Playwright + @testing-library/react selected      |
+| Accessibility (VI)                | ✅              | Semantic HTML + axe-core testing implemented               |
+| Observability (VII)               | ⚠️ Deferred     | Minimal logging; formal telemetry later                    |
+| Vendor neutrality (VIII)          | ✅              | Avoid storage APIs that lock-in; use standard browser APIs |
+| Technology agnostic (IX)          | ✅              | React chosen for UI but architecture remains decoupled     |
+| Separation of concerns (X)        | ✅              | Plan for distinct modules: model, persistence, UI, tests   |
+| Functional programming style (XI) | ✅              | Favor pure functions for CRUD operations                   |
+| Monorepo (XII)                    | ✅              | Feature lives within monorepo structure                    |
 
-Gate Outcome: Proceed but resolve NEEDS CLARIFICATION items (language/framework, storage mechanism choice, testing + accessibility strategy) in Phase 0 research.
+Gate Outcome: Proceed - all critical principles satisfied. Testing stack (Vitest, Playwright, axe-core) and storage mechanism (IndexedDB with fallback) selected and implemented.
 
 ## Project Structure
 
@@ -53,12 +53,6 @@ specs/[###-feature]/
 ```
 
 ### Source Code (repository root)
-<!--
-  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
-  for this feature. Delete unused options and expand the chosen structure with
-  real paths (e.g., apps/admin, packages/something). The delivered plan must
-  not include Option labels.
--->
 
 ```
 web-client/
@@ -92,22 +86,22 @@ Artifacts created:
 
 ## Post-Design Constitution Re-Check
 
-| Principle                         | Status After Design | Notes                                                        |
-| --------------------------------- | ------------------- | ------------------------------------------------------------ |
-| Web app (I)                       | ✅                   | Still pure browser artifacts                                 |
-| Local-first (II)                  | ✅                   | Storage abstraction remains local only                       |
-| Centralized auth (III)            | Deferred            | No auth introduced prematurely                               |
-| Privacy by design (IV)            | ✅                   | Minimal PII (names only) maintained                          |
-| Test-first (V)                    | ⚠️ Pending           | Tests planned; framework selection pending confirmation      |
-| Accessibility (VI)                | ⚠️ Pending           | Guidance added; concrete a11y acceptance tests to be written |
-| Observability (VII)               | Deferred            | MVP logging approach outlined in research                    |
-| Vendor neutrality (VIII)          | ✅                   | Standard browser APIs only                                   |
-| Technology agnostic (IX)          | ✅                   | React adopted; abstraction layers keep future swap feasible  |
-| Separation of concerns (X)        | ✅                   | Structure partitions model/storage/ui/services               |
-| Functional programming style (XI) | ✅                   | CRUD pure function approach specified                        |
-| Monorepo (XII)                    | ✅                   | Feature isolated within monorepo plan                        |
+| Principle                         | Status After Design | Notes                                                       |
+| --------------------------------- | ------------------- | ----------------------------------------------------------- |
+| Web app (I)                       | ✅                   | Still pure browser artifacts                                |
+| Local-first (II)                  | ✅                   | Storage abstraction remains local only                      |
+| Centralized auth (III)            | Deferred            | No auth introduced prematurely                              |
+| Privacy by design (IV)            | ✅                   | Minimal PII (names only) maintained                         |
+| Test-first (V)                    | ✅                   | Tests implemented with Vitest + Playwright + axe-core       |
+| Accessibility (VI)                | ✅                   | Semantic HTML + axe-core automated testing implemented      |
+| Observability (VII)               | Deferred            | MVP logging approach outlined in research                   |
+| Vendor neutrality (VIII)          | ✅                   | Standard browser APIs only                                  |
+| Technology agnostic (IX)          | ✅                   | React adopted; abstraction layers keep future swap feasible |
+| Separation of concerns (X)        | ✅                   | Structure partitions model/storage/ui/services              |
+| Functional programming style (XI) | ✅                   | CRUD pure function approach specified                       |
+| Monorepo (XII)                    | ✅                   | Feature isolated within monorepo plan                       |
 
-Gate Check: All non-negotiable principles satisfied or appropriately deferred (auth not required). Pending items (test stack, accessibility tooling, storage choice) to be finalized before implementation tasks.
+Gate Check: All non-negotiable principles satisfied or appropriately deferred (auth not required). Testing stack (Vitest, Playwright, axe-core) and accessibility tooling confirmed and implemented.
 
 ## Phase 2 Preview (Tasks Not Generated Here)
 
@@ -122,9 +116,6 @@ Planned task themes (to be formalized via `/speckit.tasks`):
 8. Edge case tests (long name, duplicates, invalid input, persistence failure simulation).
 9. Minimal logging hook.
 10. Documentation updates (README + quickstart refinements).
-
-Pending Clarifications Before Coding:
-None (all clarifications resolved).
 
 ## Testing Conventions
 

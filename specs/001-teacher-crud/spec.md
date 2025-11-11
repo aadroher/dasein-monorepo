@@ -95,7 +95,21 @@ A user opens the app and sees a list of all stored teachers in a clear, determin
 
 ### Key Entities
 
-- **Teacher**: Represents an individual instructor with attributes: UUID (unique identifier), Full Name (string as entered). No relationships to other entities at this stage.
+- **Teacher**: Represents an individual instructor with attributes: 
+  - **uuid** (string): Unique identifier, automatically generated
+  - **full_name** (string): Name as entered by user
+  - **created_at** (string): ISO 8601 timestamp of creation
+  - **updated_at** (string): ISO 8601 timestamp of last modification
+  
+  No relationships to other entities at this stage.
+
+### Non-Functional Requirements
+
+- **NFR-001**: UI MUST comply with WCAG 2.1 AA accessibility standards (semantic HTML, keyboard navigation, screen reader support, sufficient color contrast) per constitution principle VI.
+- **NFR-002**: List rendering MUST complete within 3 seconds when displaying 50 teachers (aligns with SC-004).
+- **NFR-003**: CRUD operations MUST complete within 5 seconds from user action to UI update (aligns with SC-001).
+- **NFR-004**: System MUST provide console logging for errors and key operations to support debugging (minimal observability per constitution principle VII).
+- **NFR-005**: Data persistence layer MUST use standard browser APIs (IndexedDB) to avoid vendor lock-in per constitution principle VIII.
 
 ## Success Criteria *(mandatory)*
 

@@ -5,6 +5,8 @@
 ### Teacher
 - **uuid**: string (generated, canonical unique identifier)
 - **full_name**: string (1-100 chars, trimmed)
+- **created_at**: string (ISO 8601 timestamp, set on creation)
+- **updated_at**: string (ISO 8601 timestamp, updated on modification)
 
 ## Validation Rules
 - `full_name` MUST be non-empty after trimming whitespace.
