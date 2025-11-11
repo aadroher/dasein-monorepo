@@ -10,19 +10,19 @@ describe('Teacher Sorting Functions', () => {
   // Sample test data
   const mockTeachers: Teacher[] = [
     {
-      id: '1',
+      uuid: '1',
       full_name: 'John Smith',
       created_at: '2023-01-01T00:00:00Z',
       updated_at: '2023-01-01T00:00:00Z',
     },
     {
-      id: '2',
+      uuid: '2',
       full_name: 'Alice Johnson',
       created_at: '2023-01-02T00:00:00Z',
       updated_at: '2023-01-02T00:00:00Z',
     },
     {
-      id: '3',
+      uuid: '3',
       full_name: 'Bob Wilson',
       created_at: '2023-01-03T00:00:00Z',
       updated_at: '2023-01-03T00:00:00Z',
