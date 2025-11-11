@@ -77,7 +77,12 @@ function App() {
               {error}
             </div>
           )}
-          <TeacherList teachers={teachers} isLoading={isLoading} />
+          <TeacherList
+            teachers={teachers}
+            storage={storage}
+            isLoading={isLoading}
+            onTeacherUpdated={refresh}
+          />
         </section>
       </main>
     </div>
