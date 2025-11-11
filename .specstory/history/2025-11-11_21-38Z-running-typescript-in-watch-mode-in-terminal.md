@@ -28,6 +28,28 @@ _**User (2025-11-11 21:42Z)**_
 
 _**Agent (model copilot/gpt-5-codex)**_
 
+**Providing TypeScript config fix**Add `"composite": true` to the referenced config so TypeScript can build project references.
+
+````TypeScript
+{
+  "compilerOptions": {
+    "composite": true,
+    // ...existing code...
+  },
+  // ...existing code...
+}
+````
+
+---
+
+_**User (2025-11-11 21:48Z)**_
+
+/clear 
+
+---
+
+_**Agent**_
+
 
 
 ---

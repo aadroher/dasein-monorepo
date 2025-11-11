@@ -10,8 +10,8 @@
 export interface Teacher {
   uuid: string;
   full_name: string;
-  created_at?: string;
-  updated_at?: string;
+  created_at: string;
+  updated_at: string;
 }
 
 /**
