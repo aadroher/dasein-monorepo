@@ -68,22 +68,22 @@
 
 **Checkpoint**: Edit flow functional & tests green.
 
-## Phase 5: User Story 3 - Delete Teacher (P3)
+## Phase 5: User Story 3 - Delete Teacher (P3) ✅
 **Goal**: User can delete a teacher and confirm removal persists.
 **Independent Test**: E2E delete flow + reload confirms absence.
 
 ### Tests First
-- [ ] T070 [US3] Unit test: delete operation service `web-client/src/features/teacher/services/__tests__/delete-teacher.test.ts`
-- [ ] T071 [US3] Integration: delete + persistence `web-client/test/teacher/unit/delete-persist.test.ts`
-- [ ] T072 [US3] E2E: delete teacher `web-client/test/teacher/e2e/delete-teacher.spec.ts`
-- [ ] T073 [P] [US3] A11y component test `web-client/src/features/teacher/ui/__tests__/delete-action-a11y.test.tsx`
+- [x] T070 [US3] Unit test: delete operation service `web-client/src/features/teacher/services/__tests__/delete-teacher.test.ts`
+- [x] T071 [US3] Integration: delete + persistence `web-client/test/teacher/unit/delete-persist.test.ts`
+- [x] T072 [US3] E2E: delete teacher `web-client/test/teacher/e2e/delete-teacher.spec.ts`
+- [x] T073 [P] [US3] A11y component test `web-client/src/features/teacher/ui/__tests__/delete-action-a11y.test.tsx`
 
 ### Implementation
-- [ ] T080 [US3] Delete service `web-client/src/features/teacher/services/deleteTeacher.ts`
-- [ ] T081 [US3] UI delete control `web-client/src/features/teacher/ui/TeacherDeleteButton.tsx`
-- [ ] T082 [US3] Hook for delete logic `web-client/src/features/teacher/ui/useDeleteTeacher.ts`
-- [ ] T083 [US3] Update list after delete & handle empty state
-- [ ] T084 [US3] A11y axe assertions for delete component tests
+- [x] T080 [US3] Delete service `web-client/src/features/teacher/services/delete-teacher.ts`
+- [x] T081 [US3] UI delete control `web-client/src/features/teacher/ui/teacher-delete-button.tsx`
+- [x] T082 [US3] Hook for delete logic `web-client/src/features/teacher/ui/use-delete-teacher.ts`
+- [x] T083 [US3] Update list after delete & handle empty state
+- [x] T084 [US3] A11y axe assertions for delete component tests
 
 **Checkpoint**: Delete flow functional & tests green.
 

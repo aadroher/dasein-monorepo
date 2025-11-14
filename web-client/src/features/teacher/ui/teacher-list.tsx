@@ -2,16 +2,18 @@ import { useState } from 'react';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
 import { TeacherEditForm } from './teacher-edit-form';
+import { TeacherDeleteButton } from './teacher-delete-button';
 
 export interface TeacherListProps {
   teachers: Teacher[];
   storage: TeacherStoragePort;
   isLoading?: boolean;
   onTeacherUpdated?: () => void;
+  onTeacherDeleted?: () => void;
 }
 
 /**
- * Component for displaying a list of teachers with edit functionality.
+ * Component for displaying a list of teachers with edit and delete functionality.
  *
  * Features:
  * - Displays teachers in alphabetical order (assumed from data source)
@@ -19,18 +21,20 @@ export interface TeacherListProps {
  * - Accessible list markup with proper ARIA roles
  * - Loading state support
  * - Inline editing with cancel support
- * - Edit buttons for each teacher
+ * - Edit and delete buttons for each teacher
  *
  * @param teachers - Array of teacher objects to display
  * @param storage - Storage adapter for persistence
  * @param isLoading - Optional loading state indicator
  * @param onTeacherUpdated - Callback when a teacher is updated
+ * @param onTeacherDeleted - Callback when a teacher is deleted
  */
 export function TeacherList({
   teachers,
   storage,
   isLoading = false,
   onTeacherUpdated,
+  onTeacherDeleted,
 }: TeacherListProps) {
   const [editingTeacherId, setEditingTeacherId] = useState<string | null>(null);
 
@@ -63,6 +67,10 @@ export function TeacherList({
     onTeacherUpdated?.();
   };
 
+  const handleDelete = () => {
+    onTeacherDeleted?.();
+  };
+
   return (
     <div className="teacher-list">
       <h2>Teachers ({teachers.length})</h2>
@@ -79,13 +87,21 @@ export function TeacherList({
             ) : (
               <div className="teacher-item-view">
                 <span className="teacher-name">{teacher.full_name}</span>
-                <button
-                  onClick={() => handleEditClick(teacher.uuid)}
-                  aria-label={`Edit ${teacher.full_name}`}
-                  className="edit-button"
-                >
-                  Edit
-                </button>
+                <div className="teacher-actions">
+                  <button
+                    onClick={() => handleEditClick(teacher.uuid)}
+                    aria-label={`Edit ${teacher.full_name}`}
+                    className="edit-button"
+                  >
+                    Edit
+                  </button>
+                  <TeacherDeleteButton
+                    teacherId={teacher.uuid}
+                    teacherName={teacher.full_name}
+                    storage={storage}
+                    onDelete={handleDelete}
+                  />
+                </div>
               </div>
             )}
           </li>

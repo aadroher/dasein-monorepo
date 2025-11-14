@@ -82,6 +82,7 @@ function App() {
             storage={storage}
             isLoading={isLoading}
             onTeacherUpdated={refresh}
+            onTeacherDeleted={refresh}
           />
         </section>
       </main>
