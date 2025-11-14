@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
+import { sortTeachersAlphabetically } from '../services/sort';
 
 export interface UseTeachersReturn {
   teachers: Teacher[];
@@ -16,7 +17,7 @@ export interface UseTeachersReturn {
  * - Loads teachers from storage on mount
  * - Provides loading and error states
  * - Exposes refresh function for manual reload
- * - Teachers are sorted alphabetically by the storage adapter
+ * - Teachers are sorted alphabetically (case-insensitive)
  *
  * @param storage - Storage adapter for loading teachers
  * @returns Teachers list state and refresh function
@@ -37,7 +38,9 @@ export function useTeachers(storage: TeacherStoragePort): UseTeachersReturn {
         setError(result.error.message);
         setTeachers([]);
       } else {
-        setTeachers(result.data);
+        // Sort teachers alphabetically (case-insensitive) after loading
+        const sortedTeachers = sortTeachersAlphabetically(result.data);
+        setTeachers(sortedTeachers);
       }
     } catch {
       setError('Failed to load teachers. Please try again.');

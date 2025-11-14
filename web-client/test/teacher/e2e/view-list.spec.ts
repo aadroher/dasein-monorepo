@@ -22,7 +22,7 @@ test.describe('View Teachers List (E2E)', () => {
     ).toBeVisible();
 
     // Verify no teacher entries are shown
-    const teacherListItems = page.locator('[role="list"] [role="listitem"]');
+    const teacherListItems = page.getByRole('listitem');
     await expect(teacherListItems).toHaveCount(0);
   });
 
@@ -41,9 +41,7 @@ test.describe('View Teachers List (E2E)', () => {
     await expect(page.getByText('Bob')).toBeVisible();
 
     // Verify list shows both teachers
-    const teacherNames = await page
-      .locator('[role="list"] [role="listitem"]')
-      .allTextContents();
+    const teacherNames = await page.getByRole('listitem').allTextContents();
 
     expect(teacherNames.some(name => name.includes('Alice'))).toBeTruthy();
     expect(teacherNames.some(name => name.includes('Bob'))).toBeTruthy();
@@ -79,7 +77,7 @@ test.describe('View Teachers List (E2E)', () => {
     await expect(page.getByText('Michael Chen')).toBeVisible();
 
     // Verify alphabetical order
-    const teacherListItems = page.locator('[role="list"] [role="listitem"]');
+    const teacherListItems = page.getByRole('listitem');
     const count = await teacherListItems.count();
 
     const names: string[] = [];
@@ -116,13 +114,19 @@ test.describe('View Teachers List (E2E)', () => {
       .getByRole('button', { name: /add teacher|create teacher/i })
       .click();
 
+    // Wait for all teachers to be visible
+    await expect(page.getByText('alice')).toBeVisible();
+    await expect(page.getByText('Bob')).toBeVisible();
+    await expect(page.getByText('CHARLIE')).toBeVisible();
+
     // Get all list items
-    const teacherListItems = page.locator('[role="list"] [role="listitem"]');
+    const teacherListItems = page.getByRole('listitem');
     const count = await teacherListItems.count();
 
     const names: string[] = [];
     for (let i = 0; i < count; i++) {
-      const text = await teacherListItems.nth(i).textContent();
+      const nameSpan = teacherListItems.nth(i).locator('.teacher-name');
+      const text = await nameSpan.textContent();
       if (text) names.push(text);
     }
 
@@ -158,19 +162,31 @@ test.describe('View Teachers List (E2E)', () => {
       .getByRole('button', { name: /add teacher|create teacher/i })
       .click();
 
+    // Wait for all teachers to be visible before reload
+    await expect(page.getByText('Zoe')).toBeVisible();
+    await expect(page.getByText('Alice')).toBeVisible();
+    await expect(page.getByText('Mike')).toBeVisible();
+
     // Reload the page
     await page.reload();
 
-    // Wait for list to load
+    // Wait for list to load - wait for the list itself first
+    const teacherList = page.getByRole('list', { name: /teachers list/i });
+    await expect(teacherList).toBeVisible();
+
+    // Then verify teachers are present
     await expect(page.getByText('Alice')).toBeVisible();
+    await expect(page.getByText('Mike')).toBeVisible();
+    await expect(page.getByText('Zoe')).toBeVisible();
 
     // Verify alphabetical order is maintained
-    const teacherListItems = page.locator('[role="list"] [role="listitem"]');
+    const teacherListItems = page.getByRole('listitem');
     const count = await teacherListItems.count();
 
     const names: string[] = [];
     for (let i = 0; i < count; i++) {
-      const text = await teacherListItems.nth(i).textContent();
+      const nameSpan = teacherListItems.nth(i).locator('.teacher-name');
+      const text = await nameSpan.textContent();
       if (text) names.push(text);
     }
 
@@ -222,16 +238,12 @@ test.describe('View Teachers List (E2E)', () => {
       page.getByText(/no teachers|no teachers yet|empty/i)
     ).not.toBeVisible();
 
-    // Delete the teacher
-    await page
-      .getByRole('button', { name: /delete|remove/i })
-      .first()
-      .click();
+    // Delete the teacher (handle confirmation dialog)
+    page.once('dialog', dialog => dialog.accept());
+    await page.getByRole('button', { name: /delete test teacher/i }).click();
 
     // Verify empty state is shown again
-    await expect(
-      page.getByText(/no teachers|no teachers yet|empty/i)
-    ).toBeVisible();
+    await expect(page.getByText(/no teachers yet/i)).toBeVisible();
   });
 
   test('should display list with proper semantic structure', async ({
@@ -245,12 +257,12 @@ test.describe('View Teachers List (E2E)', () => {
       .getByRole('button', { name: /add teacher|create teacher/i })
       .click();
 
-    // Verify list has proper ARIA role
-    const list = page.locator('[role="list"]');
+    // Verify list has proper semantic structure (ul has implicit list role)
+    const list = page.getByRole('list', { name: /teachers list/i });
     await expect(list).toBeVisible();
 
-    // Verify list items have proper ARIA role
-    const listItems = page.locator('[role="list"] [role="listitem"]');
+    // Verify list items have proper semantic structure (li has implicit listitem role)
+    const listItems = page.getByRole('listitem');
     await expect(listItems).toHaveCount(1);
   });
 
@@ -274,7 +286,7 @@ test.describe('View Teachers List (E2E)', () => {
 
     // Verify either empty state or list is shown after loading
     const emptyState = page.getByText(/no teachers|no teachers yet|empty/i);
-    const list = page.locator('[role="list"]');
+    const list = page.getByRole('list', { name: /teachers list/i });
 
     const hasEmptyState = await emptyState.isVisible().catch(() => false);
     const hasList = await list.isVisible().catch(() => false);

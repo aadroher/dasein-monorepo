@@ -24,11 +24,13 @@ test.describe('Delete Teacher Flow (E2E)', () => {
   });
 
   test('should delete teacher and remove from list', async ({ page }) => {
+    // Handle confirmation dialog
+    page.once('dialog', dialog => dialog.accept());
+
     // Find and click delete button for the teacher
-    const teacherRow = page
-      .locator('li, tr, div')
-      .filter({ hasText: 'Teacher To Delete' });
-    await teacherRow.getByRole('button', { name: /delete|remove/i }).click();
+    await page
+      .getByRole('button', { name: 'Delete Teacher To Delete', exact: true })
+      .click();
 
     // Verify teacher is removed from list
     await expect(page.getByText('Teacher To Delete')).not.toBeVisible();
@@ -38,11 +40,13 @@ test.describe('Delete Teacher Flow (E2E)', () => {
   });
 
   test('should persist deletion after page reload', async ({ page }) => {
+    // Handle confirmation dialog
+    page.once('dialog', dialog => dialog.accept());
+
     // Delete the teacher
-    const teacherRow = page
-      .locator('li, tr, div')
-      .filter({ hasText: 'Teacher To Delete' });
-    await teacherRow.getByRole('button', { name: /delete|remove/i }).click();
+    await page
+      .getByRole('button', { name: 'Delete Teacher To Delete', exact: true })
+      .click();
 
     // Verify deletion
     await expect(page.getByText('Teacher To Delete')).not.toBeVisible();
@@ -71,11 +75,13 @@ test.describe('Delete Teacher Flow (E2E)', () => {
       .click();
     await expect(page.getByText('Bob')).toBeVisible();
 
+    // Handle confirmation dialog
+    page.once('dialog', dialog => dialog.accept());
+
     // Delete the middle teacher (Teacher To Delete)
-    const teacherRow = page
-      .locator('li, tr, div')
-      .filter({ hasText: 'Teacher To Delete' });
-    await teacherRow.getByRole('button', { name: /delete|remove/i }).click();
+    await page
+      .getByRole('button', { name: 'Delete Teacher To Delete', exact: true })
+      .click();
 
     // Verify only the targeted teacher is deleted
     await expect(page.getByText('Teacher To Delete')).not.toBeVisible();
@@ -85,17 +91,16 @@ test.describe('Delete Teacher Flow (E2E)', () => {
 
   test('should show confirmation dialog before deleting', async ({ page }) => {
     // Set up dialog handler
-    page.on('dialog', async dialog => {
+    page.once('dialog', async dialog => {
       expect(dialog.type()).toBe('confirm');
       expect(dialog.message()).toMatch(/delete|remove/i);
       await dialog.accept();
     });
 
     // Click delete button
-    const teacherRow = page
-      .locator('li, tr, div')
-      .filter({ hasText: 'Teacher To Delete' });
-    await teacherRow.getByRole('button', { name: /delete|remove/i }).click();
+    await page
+      .getByRole('button', { name: 'Delete Teacher To Delete', exact: true })
+      .click();
 
     // Verify teacher is deleted after confirmation
     await expect(page.getByText('Teacher To Delete')).not.toBeVisible();
@@ -105,16 +110,15 @@ test.describe('Delete Teacher Flow (E2E)', () => {
     page,
   }) => {
     // Set up dialog handler to dismiss
-    page.on('dialog', async dialog => {
+    page.once('dialog', async dialog => {
       expect(dialog.type()).toBe('confirm');
       await dialog.dismiss();
     });
 
     // Click delete button
-    const teacherRow = page
-      .locator('li, tr, div')
-      .filter({ hasText: 'Teacher To Delete' });
-    await teacherRow.getByRole('button', { name: /delete|remove/i }).click();
+    await page
+      .getByRole('button', { name: 'Delete Teacher To Delete', exact: true })
+      .click();
 
     // Verify teacher is NOT deleted after dismissing confirmation
     await expect(page.getByText('Teacher To Delete')).toBeVisible();
@@ -126,11 +130,13 @@ test.describe('Delete Teacher Flow (E2E)', () => {
     // Verify we start with one teacher
     await expect(page.getByText('Teacher To Delete')).toBeVisible();
 
+    // Handle confirmation dialog
+    page.once('dialog', dialog => dialog.accept());
+
     // Delete it
-    const teacherRow = page
-      .locator('li, tr, div')
-      .filter({ hasText: 'Teacher To Delete' });
-    await teacherRow.getByRole('button', { name: /delete|remove/i }).click();
+    await page
+      .getByRole('button', { name: 'Delete Teacher To Delete', exact: true })
+      .click();
 
     // Verify empty state
     await expect(page.getByText(/no teachers/i)).toBeVisible();
@@ -148,21 +154,25 @@ test.describe('Delete Teacher Flow (E2E)', () => {
       .getByRole('button', { name: /add teacher|create teacher/i })
       .click();
 
+    // Handle all confirmation dialogs
+    page.on('dialog', dialog => dialog.accept());
+
     // Delete first teacher
-    let teacherRow = page.locator('li, tr, div').filter({ hasText: 'First' });
-    await teacherRow.getByRole('button', { name: /delete|remove/i }).click();
+    await page
+      .getByRole('button', { name: 'Delete First', exact: true })
+      .click();
     await expect(page.getByText('First')).not.toBeVisible();
 
     // Delete second teacher
-    teacherRow = page.locator('li, tr, div').filter({ hasText: 'Second' });
-    await teacherRow.getByRole('button', { name: /delete|remove/i }).click();
+    await page
+      .getByRole('button', { name: 'Delete Second', exact: true })
+      .click();
     await expect(page.getByText('Second')).not.toBeVisible();
 
     // Delete original teacher
-    teacherRow = page
-      .locator('li, tr, div')
-      .filter({ hasText: 'Teacher To Delete' });
-    await teacherRow.getByRole('button', { name: /delete|remove/i }).click();
+    await page
+      .getByRole('button', { name: 'Delete Teacher To Delete', exact: true })
+      .click();
     await expect(page.getByText('Teacher To Delete')).not.toBeVisible();
 
     // Verify all are gone and empty state shows
@@ -183,24 +193,37 @@ test.describe('Delete Teacher Flow (E2E)', () => {
       .getByRole('button', { name: /add teacher|create teacher/i })
       .click();
 
+    // Handle confirmation dialog
+    page.once('dialog', dialog => dialog.accept());
+
     // Delete the middle one (Teacher To Delete comes alphabetically between Alice and Charlie)
     // Note: "Teacher To Delete" comes after "Charlie" alphabetically, so we'll delete Alice
-    const teacherRow = page.locator('li, tr, div').filter({ hasText: 'Alice' });
-    await teacherRow.getByRole('button', { name: /delete|remove/i }).click();
+    await page
+      .getByRole('button', { name: 'Delete Alice', exact: true })
+      .click();
+
+    // Wait for deletion to complete
+    await expect(page.getByText('Alice')).not.toBeVisible();
+    await expect(page.getByText('Charlie')).toBeVisible();
+    await expect(page.getByText('Teacher To Delete')).toBeVisible();
 
     // Verify remaining teachers are still in alphabetical order
-    const remainingTeachers = await page
-      .locator('li, tr, div')
-      .allTextContents();
+    const teacherListItems = page.getByRole('listitem');
+    const count = await teacherListItems.count();
+
+    const names: string[] = [];
+    for (let i = 0; i < count; i++) {
+      const nameSpan = teacherListItems.nth(i).locator('.teacher-name');
+      const text = await nameSpan.textContent();
+      if (text) names.push(text);
+    }
 
     // Charlie should come before Teacher To Delete
-    const charlieIndex = remainingTeachers.findIndex(text =>
-      text.includes('Charlie')
-    );
-    const teacherIndex = remainingTeachers.findIndex(text =>
-      text.includes('Teacher To Delete')
-    );
+    const charlieIndex = names.findIndex(name => name.includes('Charlie'));
+    const teacherIndex = names.findIndex(name => name.includes('Teacher'));
 
+    expect(charlieIndex).toBeGreaterThanOrEqual(0);
+    expect(teacherIndex).toBeGreaterThanOrEqual(0);
     expect(charlieIndex).toBeLessThan(teacherIndex);
   });
 });

@@ -77,15 +77,11 @@ test.describe('Create Teacher Flow (E2E)', () => {
   });
 
   test('should show validation error for empty name', async ({ page }) => {
-    // Try to submit empty form
-    await page
-      .getByRole('button', { name: /add teacher|create teacher/i })
-      .click();
-
-    // Expect validation error message
-    await expect(
-      page.getByText(/full name cannot be empty|name is required/i)
-    ).toBeVisible();
+    // Verify button is disabled when form is empty
+    const addButton = page.getByRole('button', {
+      name: /add teacher|create teacher/i,
+    });
+    await expect(addButton).toBeDisabled();
 
     // Verify no teacher was added
     await expect(page.getByText(/no teachers/i)).toBeVisible();
@@ -96,14 +92,12 @@ test.describe('Create Teacher Flow (E2E)', () => {
   }) => {
     // Fill with only whitespace
     await page.getByRole('textbox', { name: /full name/i }).fill('   ');
-    await page
-      .getByRole('button', { name: /add teacher|create teacher/i })
-      .click();
 
-    // Expect validation error
-    await expect(
-      page.getByText(/full name cannot be empty|name is required/i)
-    ).toBeVisible();
+    // Verify button is still disabled for whitespace-only input
+    const addButton = page.getByRole('button', {
+      name: /add teacher|create teacher/i,
+    });
+    await expect(addButton).toBeDisabled();
 
     // Verify no teacher was added
     await expect(page.getByText(/no teachers/i)).toBeVisible();

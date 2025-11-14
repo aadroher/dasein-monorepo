@@ -107,21 +107,126 @@
 **Checkpoint**: View list functionality complete.
 
 ## Phase 7: Cross-Cutting / Polish
-- [ ] T110 Refactor duplication across hooks/services
-- [ ] T111 Add performance measurement harness (simple timestamp logs)
-- [ ] T112 Add documentation updates to root README
-- [ ] T113 Add conflict resolution stub fields (version, last_updated) in data model (no logic yet)
-- [ ] T114 Improve error messaging components
-- [ ] T115 Add manual testing notes
+**Goal**: Refine implementation quality, improve DX, address tech debt, and prepare for production.
+**Independent Test**: All existing tests remain green; documentation complete; code quality improved.
+
+### Code Quality & Refactoring
+- [ ] T110 [P] Extract common error handling pattern from hooks into `web-client/src/features/teacher/ui/use-operation-state.ts`
+- [ ] T111 [P] Extract common validation pattern from create/edit hooks into `web-client/src/features/teacher/ui/use-form-validation.ts`
+- [ ] T112 [P] Review and consolidate duplicate type definitions across service and UI layers in `web-client/src/features/teacher/`
+- [ ] T113 Run ESLint with auto-fix across all teacher feature files in `web-client/src/features/teacher/`
+
+### Testing & Quality Assurance
+- [x] T114 Install Playwright browsers with `npx playwright install` in `web-client/` for E2E testing
+- [ ] T115 Run full E2E test suite and verify all 99 tests pass in `web-client/`
+- [ ] T116 [P] Add canvas package to resolve axe-core warnings in `web-client/package.json` (optional accessibility enhancement)
+- [ ] T117 Create manual testing checklist in `specs/001-teacher-crud/manual-testing.md` covering all user stories
+- [ ] T118 Execute manual testing checklist and document results in `specs/001-teacher-crud/manual-testing.md`
+
+### Performance & Observability
+- [ ] T119 [P] Add performance timing wrapper in `web-client/src/lib/performance.ts` for operation measurement
+- [ ] T120 [P] Instrument CRUD operations with performance logging in service layer `web-client/src/features/teacher/services/`
+- [ ] T121 Add storage operation timing to logger in `web-client/src/features/teacher/storage/indexeddb-adapter.ts`
+
+### Documentation
+- [ ] T122 [P] Update root README with getting started guide in `web-client/README.md`
+- [ ] T123 [P] Add testing guide section to README covering unit/integration/E2E in `web-client/README.md`
+- [ ] T124 [P] Document architecture decisions in `specs/001-teacher-crud/architecture.md`
+- [ ] T125 Update quickstart.md with final implementation details in `specs/001-teacher-crud/quickstart.md`
+- [ ] T126 Create deployment guide for static hosting in `web-client/DEPLOYMENT.md`
+
+### Future-Proofing (Stubs Only)
+- [ ] T127 [P] Add version field to Teacher type in `web-client/src/features/teacher/model/teacher.ts` (no conflict resolution logic)
+- [ ] T128 [P] Add sync_status field to Teacher type for future backend sync in `web-client/src/features/teacher/model/teacher.ts`
+- [ ] T129 Update teacher validation to include new optional fields in `web-client/src/features/teacher/model/teacher.ts`
+
+### Error Handling & UX Polish
+- [ ] T130 [P] Create reusable error message component in `web-client/src/features/teacher/ui/error-message.tsx`
+- [ ] T131 Replace inline error displays with ErrorMessage component in create/edit/delete components
+- [ ] T132 [P] Add loading spinner component in `web-client/src/features/teacher/ui/loading-spinner.tsx`
+- [ ] T133 Add loading indicators to all async operations (create/edit/delete/load)
+
+### Build & Production Readiness
+- [ ] T134 Run production build with `npm run build` in `web-client/` and verify no errors
+- [ ] T135 [P] Add build size analysis script to package.json in `web-client/`
+- [ ] T136 Test production build locally with preview server in `web-client/`
+- [ ] T137 [P] Add environment variable handling for future API integration in `web-client/.env.example`
+
+### Final Validation
+- [ ] T138 Run complete test suite (unit + integration + E2E + a11y) and verify 100% pass rate
+- [ ] T139 Review all acceptance criteria from spec.md and verify completion
+- [ ] T140 Update tasks.md to mark all tasks complete and add completion summary
+
+**Checkpoint**: Feature production-ready; all quality gates passed.
+
+## Dependencies & Execution Order
+
+### Story Completion Order
+1. **Setup & Foundation** (Phase 1-2): Required for all subsequent work
+2. **User Story 1** (Phase 3): Create Teacher - foundational for all other stories
+3. **User Story 2** (Phase 4): Edit Teacher - independent, can run after US1
+4. **User Story 3** (Phase 5): Delete Teacher - independent, can run after US1
+5. **User Story 4** (Phase 6): View List - independent, can run after US1
+6. **Polish** (Phase 7): Cross-cutting improvements after all stories complete
+
+### Parallel Execution Opportunities
+
+**Phase 2 (Foundational)**: T010-T012, T017, T019 can run in parallel (different files)
+
+**Phase 3 (US1 Tests)**: T034 can run in parallel with T030-T032 (E2E vs unit tests)
+
+**Phase 3 (US1 Implementation)**: T040-T041, T044 can run in parallel (services vs hooks)
+
+**Phase 4-6**: Each user story is independent after Phase 3 completes
+
+**Phase 7 Categories**:
+- Code Quality (T110-T113): All parallel
+- Testing (T116-T117): Parallel after T114-T115
+- Performance (T119-T120): All parallel
+- Documentation (T122-T126): All parallel
+- Future-Proofing (T127-T129): All parallel
+- UX Polish (T130, T132): Parallel components
+- Build (T135, T137): Parallel additions
+
+## Implementation Strategy
+
+### MVP Scope (Minimum Viable Product)
+**Just User Story 1** would constitute an MVP:
+- Create teachers (T030-T046)
+- Persist data (covered in foundational)
+- Basic list view (minimal, covered in create flow)
+
+This delivers immediate value: users can add teachers and see them persist.
+
+### Incremental Delivery Milestones
+1. **M1**: Setup + US1 (Phases 1-3) → Can create & persist teachers
+2. **M2**: + US2 (Phase 4) → Can edit existing teachers
+3. **M3**: + US3 (Phase 5) → Can delete teachers (full CRUD)
+4. **M4**: + US4 (Phase 6) → Polished list experience
+5. **M5**: + Phase 7 → Production-ready, optimized, documented
 
 ## Parallelization Notes
-- Tasks marked [P] are parallelizable.
-- Each user story’s test tasks should precede implementation tasks.
-- Services can progress while UI form components are developed independently.
+- Tasks marked [P] are parallelizable (different files, no dependencies on incomplete tasks)
+- All test tasks in a story phase should precede implementation tasks for that story
+- Services can be developed while UI components are built independently
+- Documentation tasks can proceed alongside implementation once contracts are stable
+- Code quality tasks (T110-T113) should wait until all implementation is complete
 
 ## Completion Definition
-- All user story checkpoints reached
-- All specified tests pass (unit, integration, E2E, a11y)
-- No unresolved clarifications remain
-- Documentation (quickstart + README) reflects final implementation
+- ✅ All user story checkpoints reached (Phases 3-6 complete)
+- ✅ All specified tests pass: 100 unit/integration + 99 E2E + accessibility checks
+- ✅ No unresolved clarifications remain in spec.md
+- ✅ Documentation updated: README, quickstart, architecture guide
+- ✅ Production build successful with no errors
+- ✅ Code quality: no ESLint errors, consistent style
+- ✅ Performance goals met: SC-001 through SC-004 validated
+- ✅ Manual testing checklist executed successfully
+
+## Format Validation
+✅ All tasks follow required format: `- [ ] [TaskID] [P?] [Story?] Description with file path`
+- Checkboxes: Present on all tasks
+- Task IDs: Sequential T001-T140
+- [P] markers: Applied to parallelizable tasks only
+- Story labels: Applied to user story phases (US1-US4)
+- File paths: Included in all task descriptions
 
