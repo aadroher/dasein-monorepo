@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
-import { ValidationError } from '../model/teacher';
 import { useEditTeacher } from './use-edit-teacher';
 
 export interface TeacherEditFormProps {

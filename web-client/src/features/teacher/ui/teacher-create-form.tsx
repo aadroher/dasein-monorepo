@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
-import { ValidationError } from '../model/teacher';
 import { useCreateTeacher } from './use-create-teacher';
 
 export interface TeacherCreateFormProps {
