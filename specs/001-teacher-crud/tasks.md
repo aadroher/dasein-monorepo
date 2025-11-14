@@ -118,7 +118,7 @@
 
 ### Testing & Quality Assurance
 - [x] T114 Install Playwright browsers with `npx playwright install` in `web-client/` for E2E testing
-- [ ] T115 Run full E2E test suite and verify all 99 tests pass in `web-client/`
+- [x] T115 Run full E2E test suite and verify all 99 tests pass in `web-client/` - Fixed 69 initial failures: updated selectors to use getByRole() for implicit ARIA roles, added dialog handling for delete confirmations, scoped edit form selectors to list items, changed validation tests to check disabled state, fixed text extraction to target .teacher-name elements
 - [ ] T116 [P] Add canvas package to resolve axe-core warnings in `web-client/package.json` (optional accessibility enhancement)
 - [ ] T117 Create manual testing checklist in `specs/001-teacher-crud/manual-testing.md` covering all user stories
 - [ ] T118 Execute manual testing checklist and document results in `specs/001-teacher-crud/manual-testing.md`

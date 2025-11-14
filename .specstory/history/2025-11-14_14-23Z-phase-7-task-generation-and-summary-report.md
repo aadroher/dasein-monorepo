@@ -421,7 +421,7 @@ Now for the delete test, I suspect the delete action isn't completing. Let me ch
 
 ---
 
-_**User (2025-11-14 14:49Z)**_
+_**User (2025-11-14 15:03Z)**_
 
 @agent Continue: "Continue to iterate?"
 
@@ -437,7 +437,168 @@ Now let's run the tests again: Excellent! Only 1 test failing now! The issue is 
 ```
 
 ```
+This is an interesting Chromium-specific issue. Alice loads but Mike doesn't. Let me check the error context file to get more details: Aha! The page only has "Alice" and "Zoe", but not "Mike". This means that in Chromium, the "Mike" teacher wasn't persisted to IndexedDB before the reload. This is likely a race condition where the test reloads before IndexedDB finishes writing.
 
+Let me wait for all three teachers to be visible before reloading: 
+```
+
+```
+Perfect! All 27 view-list tests are passing now! Let me now run the full E2E suite to see the overall status: Excellent progress! Now we're at **45 passed, 54 failed** (down from 69 failures). The view-list tests are all passing (27 tests), and the remaining failures are:
+
+1. **6 validation tests** - trying to click disabled buttons (create + edit)
+2. **48 delete/edit tests** - selector issues with strict mode
+
+Now let's tackle the delete and edit tests. Let me check the current state of delete-teacher.spec.ts: I see the delete test is already trying to use exact name matching but it's missing the confirmation dialog handling. Let me check if that's the issue and update all delete tests systematically: I can see most delete buttons use the regex pattern `/delete|remove/i`. Let me read the whole file to create a comprehensive fix: Now I understand the pattern. The tests need to:
+1. Handle confirmation dialogs consistently
+2. Use exact button name matching to avoid strict mode violations
+
+Let me create a comprehensive fix for the delete tests. I'll add dialog handling where it's missing and fix the selectors: 
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+Perfect! Now let me test the delete tests: Great progress! 21 out of 24 delete tests passing! The last test has an issue - it's getting index -1 for "Teacher To Delete", which means the teacher name wasn't found. The test is looking for "Teacher To Delete" in the text content but the .teacher-name span might not have loaded yet. Let me fix that test: 
+```
+
+```
+Excellent! All 24 delete tests passing! Now let me run a quick check on the overall progress and then tackle the edit tests. Let me get a count summary: Perfect! We're now at **69 passed, 30 failed**. The remaining failures are:
+- 6 validation tests (disabled button issue)
+- 24 edit tests (selector issues)
+
+Now let me tackle the edit tests similarly. Let me check edit-teacher.spec.ts: I can see the edit tests have similar issues - using regex selectors for buttons and text boxes. The challenge is that there are multiple forms/inputs on the page (create form and edit form), so we need to scope the selectors properly. Let me check how many edit tests there are and what patterns are used: 8 edit tests × 3 browsers = 24 failures. Let me check the edit form component to understand how to uniquely identify edit inputs/buttons: Good! The edit form uses unique IDs based on the teacher UUID. But for E2E tests, using getByRole is better. The issue is that when an edit form is shown, there are TWO "Full name" textboxes on the page (create form + edit form). I need to scope the selector to within the list item being edited.
+
+Let me read more of the edit form and see what buttons it has: Perfect! The buttons have aria-labels: "Save changes" and "Cancel editing". Now I need to update the edit tests to:
+1. Use exact button matching for "Edit {name}"
+2. Scope edit inputs/buttons to within the list item being edited
+
+Let me create a comprehensive fix. First, let me read the full edit test file to understand all patterns: Given the file size and complexity, let me create a systematic approach. I'll create a helper pattern that I can apply consistently. Let me start by updating the first test as a pattern, then apply it to others: 
+```
+
+```
+Now let me continue with the other tests. Let me read and fix them in batches: Now let me fix these tests systematically: 
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+Now let me continue with the remaining tests: Let me fix the remaining tests: 
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+Now the last test: 
+```
+
+```
+Perfect! Now let me run the edit tests: Perfect! All 24 edit tests passing! Now let me run the full E2E suite to see the final status: Excellent! We're now at **93 passed, 6 failed**! The only remaining failures are the 6 validation tests (2 create × 3 browsers) that try to click disabled buttons.
+
+The issue is that these tests are attempting to test validation by clicking a disabled button, which Playwright correctly prevents. According to the bug report strategy, we have two options:
+1. Change the UI to allow clicking and show validation errors
+2. Change tests to check that the button is disabled instead of trying to click it
+
+Since the current UI behavior (disabling the button) is actually good UX, let's update the tests to check the disabled state instead: Now I understand. The tests expect to see validation error messages, but the current UI prevents submission by disabling the button. Let me update the tests to check for the disabled state instead: 
+```
+
+```
+Now let me run the full E2E suite to verify all tests pass: 🎉 **PERFECT! All 99 E2E tests are now passing!**
+
+Let me run the full test suite one more time to confirm and get the complete summary: Perfect! Now let me update the bug report to document what was fixed: Let me just add a resolution summary at the top of the bug report: 
+```
+
+```
+Perfect! Now let me run all tests (unit + E2E) to get the final comprehensive result: Excellent! All 100 unit tests still passing. Now let me create a summary of what was accomplished:
+
+**🎉 E2E Test Fix Complete!**
+
+Successfully fixed all 69 E2E test failures. Final test status:
+
+## Test Results
+- **Unit/Integration Tests**: 100/100 passing ✅
+- **E2E Tests**: 99/99 passing ✅  
+- **Total**: 199/199 passing ✅
+
+## What Was Fixed
+
+### 1. **View List Tests** (27 tests - all fixed)
+- ✅ Changed from explicit role selectors to `getByRole()` for implicit ARIA roles
+- ✅ Fixed text extraction to use `.teacher-name` span instead of full list item text
+- ✅ Added dialog handling for delete operations
+- ✅ Fixed IndexedDB timing issues with proper waits
+
+### 2. **Delete Tests** (24 tests - all fixed)
+- ✅ Added confirmation dialog handling (`page.once('dialog', ...)`)
+- ✅ Changed to exact button name matching: `getByRole('button', { name: 'Delete Alice', exact: true })`
+- ✅ Fixed text extraction for alphabetical order verification
+
+### 3. **Edit Tests** (24 tests - all fixed)
+- ✅ Scoped edit form selectors to list item being edited
+- ✅ Used exact button matching for edit buttons
+- ✅ Changed validation tests to check disabled state instead of attempting clicks
+
+### 4. **Create Tests** (6 validation tests - fixed)
+- ✅ Changed approach from clicking disabled buttons to verifying disabled state
+- ✅ Tests now properly validate that submit is prevented for empty/whitespace input
+
+## Files Modified
+1. `view-list.spec.ts` - Fixed all selector issues
+2. `delete-teacher.spec.ts` - Added dialog handling, exact selectors
+3. `edit-teacher.spec.ts` - Scoped selectors, fixed validation tests
+4. `create-teacher.spec.ts` - Changed validation test approach
+5. `e2e-bug-report.md` - Updated with resolution summary
+
+The feature is now fully validated with comprehensive E2E test coverage! 🚀
+
+---
+
+_**User (2025-11-14 15:04Z)**_
+
+Can you now update `tasks.md`?
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+I'll update the tasks.md file to mark T115 as complete and document the E2E test fixes. 
 
 ---
 
