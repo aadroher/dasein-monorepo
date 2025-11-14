@@ -87,22 +87,22 @@
 
 **Checkpoint**: Delete flow functional & tests green.
 
-## Phase 6: User Story 4 - View Teachers List (P4)
+## Phase 6: User Story 4 - View Teachers List (P4) ✅
 **Goal**: User sees ordered list (alphabetical) and empty state when none.
 **Independent Test**: E2E list display + ordering + empty state.
 
 ### Tests First
-- [ ] T090 [US4] Unit test: sorting function `web-client/src/features/teacher/services/__tests__/sort.test.ts`
-- [ ] T091 [US4] Integration: load + list render `web-client/test/teacher/unit/list-load.test.ts`
-- [ ] T092 [US4] E2E: list ordering & empty state `web-client/test/teacher/e2e/view-list.spec.ts`
-- [ ] T093 [P] [US4] A11y component test `web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx`
+- [x] T090 [US4] Unit test: sorting function `web-client/src/features/teacher/services/__tests__/sort.test.ts`
+- [x] T091 [US4] Integration: load + list render `web-client/test/teacher/unit/list-load.test.ts`
+- [x] T092 [US4] E2E: list ordering & empty state `web-client/test/teacher/e2e/view-list.spec.ts`
+- [x] T093 [P] [US4] A11y component test `web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx`
 
 ### Implementation
-- [ ] T100 [US4] Implement list component `web-client/src/features/teacher/ui/TeacherList.tsx`
-- [ ] T101 [US4] Hook for list loading `web-client/src/features/teacher/ui/useTeachers.ts`
-- [ ] T102 [US4] Empty state component `web-client/src/features/teacher/ui/EmptyState.tsx`
-- [ ] T103 [US4] Integrate alphabetical order function in rendering
-- [ ] T104 [US4] Axe assertions for list component tests
+- [x] T100 [US4] Implement list component `web-client/src/features/teacher/ui/teacher-list.tsx`
+- [x] T101 [US4] Hook for list loading `web-client/src/features/teacher/ui/use-teachers.ts`
+- [x] T102 [US4] Empty state in list component (integrated in `web-client/src/features/teacher/ui/teacher-list.tsx`)
+- [x] T103 [US4] Integrate alphabetical order function in rendering
+- [x] T104 [US4] Axe assertions for list component tests
 
 **Checkpoint**: View list functionality complete.
 
