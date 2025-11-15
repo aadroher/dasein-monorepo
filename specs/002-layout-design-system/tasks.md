@@ -16,13 +16,13 @@
 ## Phase 1: Setup (Project & Tooling)
 **Purpose**: Establish directory skeleton and styling tooling required before token & component implementation.
 
-- [ ] T001 Create initial research scaffold file specs/002-layout-design-system/research.md
-- [ ] T002 Create design-system directory structure web-client/src/design-system/{tokens,theme,layout,components,hooks,accessibility}
-- [ ] T003 Install Tailwind CSS dependencies (tailwindcss, postcss, autoprefixer) in web-client/package.json
-- [ ] T004 [P] Add Tailwind config file web-client/tailwind.config.js
-- [ ] T005 [P] Add PostCSS config file web-client/postcss.config.js
-- [ ] T006 [P] Create base CSS entry with Tailwind directives web-client/src/index.css
-- [ ] T007 Integrate CSS import into index.html (link) or main entry web-client/index.html
+- [X] T001 Create initial research scaffold file specs/002-layout-design-system/research.md
+- [X] T002 Create design-system directory structure web-client/src/design-system/{tokens,theme,layout,components,hooks,accessibility}
+- [X] T003 Install Tailwind CSS dependencies (tailwindcss, postcss, autoprefixer) in web-client/package.json
+- [X] T004 [P] Add Tailwind config file web-client/tailwind.config.js
+- [X] T005 [P] Add PostCSS config file web-client/postcss.config.js
+- [X] T006 [P] Create base CSS entry with Tailwind directives web-client/src/index.css
+- [X] T007 Integrate CSS import into index.html (link) or main entry web-client/index.html
 
 ---
 ## Phase 2: Foundational (Design Tokens & Theme Infrastructure)
