@@ -10,7 +10,7 @@ _**User (2025-10-30 13:37Z)**_
 
 ---
 
-_**Agent (model copilot/claude-sonnet-4)**_
+_**Assistant (copilot/claude-sonnet-4)**_
 
 Available tools: 
 - create_directory
@@ -56,7 +56,7 @@ _**User (2025-10-30 13:42Z)**_
 
 ---
 
-_**Agent**_
+_**Assistant**_
 
 
 

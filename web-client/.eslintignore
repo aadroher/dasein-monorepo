@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+.vite/
+
+# Generated files
+*.min.js
+*.bundle.js
+
+# Test outputs
+playwright-report/
+test-results/
+
+# Configuration
+vite.config.ts.timestamp-*
