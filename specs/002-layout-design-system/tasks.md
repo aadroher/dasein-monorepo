@@ -29,18 +29,18 @@
 **Purpose**: Provide token layer & Tailwind theme so all user stories can rely on consistent primitives. BLOCKS all user stories.
 **Exit Criteria**: Tokens exported, Tailwind theme extended, unit & contrast tests pass.
 
-- [ ] T008 [P] Create color tokens map web-client/src/design-system/tokens/colors.ts
-- [ ] T009 [P] Create spacing tokens map web-client/src/design-system/tokens/spacing.ts
-- [ ] T010 [P] Create typography scale tokens web-client/src/design-system/tokens/typography.ts
-- [ ] T011 [P] Create radii tokens map web-client/src/design-system/tokens/radii.ts
-- [ ] T012 [P] Create shadows tokens map web-client/src/design-system/tokens/shadows.ts
-- [ ] T013 [P] Create breakpoints tokens map web-client/src/design-system/tokens/breakpoints.ts
-- [ ] T014 Aggregate token exports index web-client/src/design-system/tokens/index.ts
-- [ ] T015 Extend Tailwind theme with tokens web-client/tailwind.config.js
-- [ ] T016 Define theme CSS variables (light base) web-client/src/design-system/theme/variables.css
-- [ ] T017 Create dark theme override variables web-client/src/design-system/theme/dark.css
-- [ ] T018 Unit tests: token integrity web-client/test/design-system/unit/tokens-integrity.test.ts
-- [ ] T019 Unit tests: contrast ratio validation web-client/test/design-system/unit/tokens-contrast.test.ts
+- [X] T008 [P] Create color tokens map web-client/src/design-system/tokens/colors.ts
+- [X] T009 [P] Create spacing tokens map web-client/src/design-system/tokens/spacing.ts
+- [X] T010 [P] Create typography scale tokens web-client/src/design-system/tokens/typography.ts
+- [X] T011 [P] Create radii tokens map web-client/src/design-system/tokens/radii.ts
+- [X] T012 [P] Create shadows tokens map web-client/src/design-system/tokens/shadows.ts
+- [X] T013 [P] Create breakpoints tokens map web-client/src/design-system/tokens/breakpoints.ts
+- [X] T014 Aggregate token exports index web-client/src/design-system/tokens/index.ts
+- [X] T015 Extend Tailwind theme with tokens web-client/tailwind.config.js
+- [X] T016 Define theme CSS variables (light base) web-client/src/design-system/theme/variables.css
+- [X] T017 Create dark theme override variables web-client/src/design-system/theme/dark.css
+- [X] T018 Unit tests: token integrity web-client/test/design-system/unit/tokens-integrity.test.ts
+- [X] T019 Unit tests: contrast ratio validation web-client/test/design-system/unit/tokens-contrast.test.ts
 
 ---
 ## Phase 3: User Story 1 - Visual Consistency Across All Pages (Priority: P1) 🎯 MVP
