@@ -1,0 +1,28 @@
+/**
+ * Light Theme CSS Variables
+ * 
+ * Base theme with Braun-inspired warm neutrals.
+ * Applied by default to :root.
+ */
+
+:root {
+  /* Semantic color mappings for light theme */
+  --theme-text-primary: var(--color-neutral-700);
+  --theme-text-secondary: var(--color-neutral-600);
+  --theme-text-tertiary: var(--color-neutral-500);
+  
+  --theme-bg-primary: var(--color-background);
+  --theme-bg-secondary: var(--color-surface);
+  --theme-bg-tertiary: var(--color-neutral-50);
+  
+  --theme-border-primary: var(--color-neutral-200);
+  --theme-border-secondary: var(--color-neutral-100);
+  
+  --theme-interactive-primary: var(--color-primary-500);
+  --theme-interactive-primary-hover: var(--color-primary-600);
+  --theme-interactive-primary-active: var(--color-primary-700);
+  
+  --theme-interactive-secondary: var(--color-secondary-500);
+  --theme-interactive-secondary-hover: var(--color-secondary-600);
+  --theme-interactive-secondary-active: var(--color-secondary-700);
+}

@@ -1,0 +1,29 @@
+/**
+ * Dark Theme CSS Variables
+ * 
+ * Applied when .dark class is present on root element.
+ * Inverts neutrals and adjusts colors for dark backgrounds.
+ */
+
+.dark {
+  /* Semantic color mappings for dark theme */
+  --theme-text-primary: var(--color-neutral-100);
+  --theme-text-secondary: var(--color-neutral-200);
+  --theme-text-tertiary: var(--color-neutral-300);
+  
+  --theme-bg-primary: var(--color-neutral-900);
+  --theme-bg-secondary: var(--color-neutral-800);
+  --theme-bg-tertiary: var(--color-neutral-700);
+  
+  --theme-border-primary: var(--color-neutral-700);
+  --theme-border-secondary: var(--color-neutral-800);
+  
+  /* Accent colors remain the same but may need slight adjustments */
+  --theme-interactive-primary: var(--color-primary-400);
+  --theme-interactive-primary-hover: var(--color-primary-300);
+  --theme-interactive-primary-active: var(--color-primary-200);
+  
+  --theme-interactive-secondary: var(--color-secondary-400);
+  --theme-interactive-secondary-hover: var(--color-secondary-300);
+  --theme-interactive-secondary-active: var(--color-secondary-200);
+}

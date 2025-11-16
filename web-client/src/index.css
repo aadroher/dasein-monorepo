@@ -1,3 +1,110 @@
 @import "tailwindcss";
+@import "./design-system/theme/variables.css";
+@import "./design-system/theme/dark.css";
 
-/* Design system theme configuration will be extended here in Phase 2 */
+@theme {
+  /* Color Palette - Braun-Inspired Warm Neutrals */
+  --color-background: #f6f5f2;
+  --color-surface: #d7d5cf;
+  
+  /* Primary Scale (Bronze-copper) */
+  --color-primary-50: #fdf6f2;
+  --color-primary-100: #f7e5d9;
+  --color-primary-200: #ebcab4;
+  --color-primary-300: #d89870;
+  --color-primary-400: #c17953;
+  --color-primary-500: #9e5e36;
+  --color-primary-600: #8a5230;
+  --color-primary-700: #6f4226;
+  --color-primary-800: #5c361f;
+  --color-primary-900: #4d2e1a;
+  
+  /* Secondary Scale (Olive-green) */
+  --color-secondary-50: #f7f8f6;
+  --color-secondary-100: #e8eae5;
+  --color-secondary-200: #d1d5cb;
+  --color-secondary-300: #a8ae9e;
+  --color-secondary-400: #888f7c;
+  --color-secondary-500: #686e5a;
+  --color-secondary-600: #5a604e;
+  --color-secondary-700: #4a4f40;
+  --color-secondary-800: #3d4136;
+  --color-secondary-900: #33372d;
+  
+  /* Neutral Scale (Charcoal) */
+  --color-neutral-50: #f5f5f5;
+  --color-neutral-100: #e6e6e5;
+  --color-neutral-200: #ccccca;
+  --color-neutral-300: #a3a3a0;
+  --color-neutral-400: #6e6e6b;
+  --color-neutral-500: #4a4a47;
+  --color-neutral-600: #3a3a38;
+  --color-neutral-700: #2e2e2c;
+  --color-neutral-800: #232321;
+  --color-neutral-900: #1a1a19;
+  
+  /* Semantic Colors */
+  --color-success: #6b8e5a;
+  --color-warning: #c78b3c;
+  --color-error: #b85a4f;
+  --color-info: #5a7d8e;
+  
+  /* Spacing - Base-8 Progression */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
+  
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", "Courier New", monospace;
+  
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 40px;
+  --font-size-4xl: 48px;
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Border Radius */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-base: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-base: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-xl: 0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04);
+  
+  /* Breakpoints */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1440px;
+  
+  /* Container Max-Widths */
+  --container-tablet: 720px;
+  --container-desktop: 960px;
+  --container-wide: 1200px;
+}
