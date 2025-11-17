@@ -1,0 +1,89 @@
+/**
+ * Global Focus Ring Styles
+ * 
+ * Ensures visible focus indicators for keyboard navigation
+ * Meets WCAG 2.1 Success Criterion 2.4.7 (Focus Visible)
+ * 
+ * Strategy:
+ * - Use :focus-visible to show indicators only for keyboard navigation
+ * - 2px ring with 2px offset for clear visibility
+ * - Primary color for consistency with brand
+ * - Applied globally to all interactive elements
+ */
+
+/* Base focus-visible styles for all interactive elements */
+:focus-visible {
+  outline: 2px solid var(--color-primary, #9E5E36);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove default browser outline to avoid double rings */
+:focus {
+  outline: none;
+}
+
+/* Specific overrides for form elements to match design system */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary, #9E5E36);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Button focus styles - slightly larger ring for prominence */
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--color-primary, #9E5E36);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Link focus styles */
+a:focus-visible {
+  outline: 2px solid var(--color-primary, #9E5E36);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Card/interactive container focus styles */
+[role="article"]:focus-visible,
+[role="region"]:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 2px solid var(--color-primary, #9E5E36);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Dark theme support - lighter ring for better contrast */
+.dark :focus-visible {
+  outline-color: var(--color-primary-light, #D89870);
+}
+
+/* Skip link gets special treatment - more prominent */
+.skip-link:focus-visible {
+  outline: 3px solid var(--color-primary, #9E5E36);
+  outline-offset: 3px;
+}
+
+/**
+ * High Contrast Mode Support
+ * Ensures focus indicators remain visible in Windows High Contrast Mode
+ */
+@media (prefers-contrast: high) {
+  :focus-visible {
+    outline-width: 3px;
+    outline-offset: 3px;
+  }
+}
+
+/**
+ * Reduced Motion Support
+ * Disable focus transition animations for users who prefer reduced motion
+ */
+@media (prefers-reduced-motion: reduce) {
+  :focus-visible {
+    transition: none;
+  }
+}

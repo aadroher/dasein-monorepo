@@ -109,12 +109,12 @@
 **Independent Test**: Keyboard-only navigation & automated axe runs show zero violations; contrast tests all pass.
 
 ### Implementation & Tests (US4)
-- [ ] T054 [P] [US4] Implement global focus ring CSS web-client/src/design-system/accessibility/focus-ring.css
-- [ ] T055 [P] [US4] Keyboard navigation test for SkipLink web-client/test/design-system/a11y/skip-link.test.tsx
-- [ ] T056 [P] [US4] Heading hierarchy audit test web-client/test/design-system/a11y/heading-hierarchy.test.tsx
-- [ ] T057 [US4] Ensure labeled form inputs (associate labels) web-client/src/features/teacher/ui/teacher-create-form.tsx
-- [ ] T058 [US4] Global axe sweep for components web-client/test/design-system/a11y/components-a11y.test.tsx
-- [ ] T059 [P] [US4] Contrast regression test using tokens web-client/test/design-system/unit/contrast-regression.test.ts
+- [X] T054 [P] [US4] Implement global focus ring CSS web-client/src/design-system/accessibility/focus-ring.css
+- [X] T055 [P] [US4] Keyboard navigation test for SkipLink web-client/test/design-system/a11y/skip-link.test.tsx
+- [X] T056 [P] [US4] Heading hierarchy audit test web-client/test/design-system/a11y/heading-hierarchy.test.tsx
+- [X] T057 [US4] Ensure labeled form inputs (associate labels) web-client/src/features/teacher/ui/teacher-create-form.tsx
+- [X] T058 [US4] Global axe sweep for components web-client/test/design-system/a11y/components-a11y.test.tsx
+- [X] T059 [P] [US4] Contrast regression test using tokens web-client/test/design-system/unit/contrast-regression.test.ts
 
 **Checkpoint**: Zero accessibility violations & all contrast + keyboard tests pass.
 

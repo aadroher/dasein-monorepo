@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./design-system/theme/variables.css";
 @import "./design-system/theme/dark.css";
+@import "./design-system/accessibility/focus-ring.css";
 
 @theme {
   /* Color Palette - Braun-Inspired Warm Neutrals */
