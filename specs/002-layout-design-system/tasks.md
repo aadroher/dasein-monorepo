@@ -77,15 +77,15 @@
 **Independent Test**: Switch between pages verifying identical placement & presence of layout landmarks and max-width container.
 
 ### Implementation & Tests (US2)
-- [ ] T040 [P] [US2] Implement Header component web-client/src/design-system/layout/header.tsx
-- [ ] T041 [P] [US2] Implement NavContainer component web-client/src/design-system/layout/nav-container.tsx
-- [ ] T042 [P] [US2] Implement MainContainer component web-client/src/design-system/layout/main-container.tsx
-- [ ] T043 [P] [US2] Implement Footer component web-client/src/design-system/layout/footer.tsx
-- [ ] T044 [US2] Implement AppLayout composition web-client/src/design-system/layout/app-layout.tsx
-- [ ] T045 [P] [US2] Implement SkipLink component web-client/src/design-system/accessibility/skip-link.tsx
-- [ ] T046 [US2] Integration test layout rendering web-client/test/design-system/integration/layout-render.test.tsx
-- [ ] T047 [P] [US2] Axe test for layout landmarks web-client/test/design-system/a11y/layout-a11y.test.tsx
-- [ ] T048 [US2] Integrate AppLayout at application root web-client/src/App.tsx
+- [X] T040 [P] [US2] Implement Header component web-client/src/design-system/layout/header.tsx
+- [X] T041 [P] [US2] Implement NavContainer component web-client/src/design-system/layout/nav-container.tsx
+- [X] T042 [P] [US2] Implement MainContainer component web-client/src/design-system/layout/main-container.tsx
+- [X] T043 [P] [US2] Implement Footer component web-client/src/design-system/layout/footer.tsx
+- [X] T044 [US2] Implement AppLayout composition web-client/src/design-system/layout/app-layout.tsx
+- [X] T045 [P] [US2] Implement SkipLink component web-client/src/design-system/accessibility/skip-link.tsx
+- [X] T046 [US2] Integration test layout rendering web-client/test/design-system/integration/layout-render.test.tsx
+- [X] T047 [P] [US2] Axe test for layout landmarks web-client/test/design-system/a11y/layout-a11y.test.tsx
+- [X] T048 [US2] Integrate AppLayout at application root web-client/src/App.tsx
 
 **Checkpoint**: Layout landmarks & structure consistent across all pages.
 

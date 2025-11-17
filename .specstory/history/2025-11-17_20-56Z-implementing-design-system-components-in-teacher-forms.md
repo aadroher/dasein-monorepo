@@ -156,7 +156,7 @@ The design system MVP is now ready with consistent typography, colors, spacing, 
 
 ---
 
-_**User (2025-11-17 21:07Z)**_
+_**User (2025-11-17 21:09Z)**_
 
 I you run the Typescript typechecker on `src/design-system/components/heading.tsx` you should be able to notice that there is an error.
 
@@ -172,6 +172,32 @@ Good! The `JSX.IntrinsicElements` error is fixed. The remaining error is about t
 ```
 
 ```
+
+```
+
+```
+Perfect! The TypeScript error is now fixed. Let me verify the tests still pass: Excellent! The TypeScript error has been fixed. The issue was:
+
+1. **Original problem**: Using `JSX.IntrinsicElements` which required the `JSX` namespace
+2. **First fix**: Changed to explicit union type `'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'`
+3. **Second fix**: Removed the default React import (which was incompatible with `esModuleInterop: false`) and used named imports instead (`createElement`, `FC`, `HTMLAttributes`, `ReactNode`)
+
+The component now:
+- ✅ Has no TypeScript errors
+- ✅ All 21 tests still pass
+- ✅ Uses proper named imports compatible with the project's tsconfig
+- ✅ Works correctly with the new JSX transform (`react-jsx`)
+
+---
+
+_**User (2025-11-17 21:09Z)**_
+
+/clear 
+
+---
+
+_**Agent**_
+
 
 
 ---
