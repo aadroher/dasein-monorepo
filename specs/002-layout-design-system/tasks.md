@@ -48,26 +48,26 @@
 **Independent Test**: Navigate existing pages (teacher feature) and verify identical styling for headings, body text, buttons, inputs, links, cards + spacing scale adherence.
 
 ### Implementation & Tests (US1)
-- [ ] T020 [P] [US1] Implement Button component (variants) web-client/src/design-system/components/button.tsx
-- [ ] T021 [P] [US1] Implement Input component web-client/src/design-system/components/input.tsx
-- [ ] T022 [P] [US1] Implement Heading component web-client/src/design-system/components/heading.tsx
-- [ ] T023 [P] [US1] Implement Link component web-client/src/design-system/components/link.tsx
-- [ ] T024 [P] [US1] Implement Card component web-client/src/design-system/components/card.tsx
-- [ ] T025 [US1] Create components barrel export web-client/src/design-system/components/index.ts
-- [ ] T026 [P] [US1] Unit/a11y test Button web-client/test/design-system/unit/button.test.tsx
-- [ ] T027 [P] [US1] Unit/a11y test Input web-client/test/design-system/unit/input.test.tsx
-- [ ] T028 [P] [US1] Unit/a11y test Heading web-client/test/design-system/unit/heading.test.tsx
-- [ ] T029 [P] [US1] Unit/a11y test Link web-client/test/design-system/unit/link.test.tsx
-- [ ] T030 [P] [US1] Unit/a11y test Card web-client/test/design-system/unit/card.test.tsx
-- [ ] T031 [US1] Implement theming hook useTheme web-client/src/design-system/hooks/useTheme.ts
-- [ ] T032 [US1] Implement ThemeProvider web-client/src/design-system/theme/ThemeProvider.tsx
-- [ ] T033 [P] [US1] Implement dark theme token overrides module web-client/src/design-system/theme/dark.ts
-- [ ] T034 [P] [US1] Add theme persistence utility (localStorage) web-client/src/design-system/theme/persist.ts
-- [ ] T035 [US1] Integrate ThemeProvider at root web-client/src/App.tsx
-- [ ] T036 [P] [US1] Retrofit teacher create form to use Button/Input web-client/src/features/teacher/ui/teacher-create-form.tsx
-- [ ] T037 [P] [US1] Retrofit teacher edit form to use Button/Input web-client/src/features/teacher/ui/teacher-edit-form.tsx
-- [ ] T038 [US1] Retrofit teacher list to use Card/Heading/Link web-client/src/features/teacher/ui/teacher-list.tsx
-- [ ] T039 [US1] Visual consistency audit checklist section (initial draft) specs/002-layout-design-system/manual-testing.md
+- [X] T020 [P] [US1] Implement Button component (variants) web-client/src/design-system/components/button.tsx
+- [X] T021 [P] [US1] Implement Input component web-client/src/design-system/components/input.tsx
+- [X] T022 [P] [US1] Implement Heading component web-client/src/design-system/components/heading.tsx
+- [X] T023 [P] [US1] Implement Link component web-client/src/design-system/components/link.tsx
+- [X] T024 [P] [US1] Implement Card component web-client/src/design-system/components/card.tsx
+- [X] T025 [US1] Create components barrel export web-client/src/design-system/components/index.ts
+- [X] T026 [P] [US1] Unit/a11y test Button web-client/test/design-system/unit/button.test.tsx
+- [X] T027 [P] [US1] Unit/a11y test Input web-client/test/design-system/unit/input.test.tsx
+- [X] T028 [P] [US1] Unit/a11y test Heading web-client/test/design-system/unit/heading.test.tsx
+- [X] T029 [P] [US1] Unit/a11y test Link web-client/test/design-system/unit/link.test.tsx
+- [X] T030 [P] [US1] Unit/a11y test Card web-client/test/design-system/unit/card.test.tsx
+- [X] T031 [US1] Implement theming hook useTheme web-client/src/design-system/hooks/useTheme.ts
+- [X] T032 [US1] Implement ThemeProvider web-client/src/design-system/theme/ThemeProvider.tsx
+- [X] T033 [P] [US1] Implement dark theme token overrides module web-client/src/design-system/theme/dark.ts
+- [X] T034 [P] [US1] Add theme persistence utility (localStorage) web-client/src/design-system/theme/persist.ts
+- [X] T035 [US1] Integrate ThemeProvider at root web-client/src/App.tsx
+- [X] T036 [P] [US1] Retrofit teacher create form to use Button/Input web-client/src/features/teacher/ui/teacher-create-form.tsx
+- [X] T037 [P] [US1] Retrofit teacher edit form to use Button/Input web-client/src/features/teacher/ui/teacher-edit-form.tsx
+- [X] T038 [US1] Retrofit teacher list to use Card/Heading/Link web-client/src/features/teacher/ui/teacher-list.tsx
+- [X] T039 [US1] Visual consistency audit checklist section (initial draft) specs/002-layout-design-system/manual-testing.md
 
 **Checkpoint**: All pages render with unified component set & consistent tokens (visual audit passes).
 

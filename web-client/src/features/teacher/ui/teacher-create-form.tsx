@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from '../../../design-system/components/button';
+import { Input } from '../../../design-system/components/input';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
 import { useCreateTeacher } from './use-create-teacher';
@@ -30,45 +32,25 @@ export function TeacherCreateForm({
 
   return (
     <form onSubmit={handleSubmit} className="teacher-create-form">
-      <div className="form-group">
-        <label htmlFor="teacher-full-name">
-          Full Name
-          <span className="required" aria-label="required">
-            *
-          </span>
-        </label>
-        <input
-          id="teacher-full-name"
-          type="text"
-          value={fullName}
-          onChange={e => setFullName(e.target.value)}
-          aria-label="Full name"
-          aria-required="true"
-          aria-invalid={error ? 'true' : 'false'}
-          aria-describedby={error ? 'teacher-name-error' : undefined}
-          disabled={isCreating}
-          placeholder="Enter teacher's full name"
-          autoComplete="name"
-        />
-        {error && (
-          <div
-            id="teacher-name-error"
-            className="error-message"
-            role="alert"
-            aria-live="polite"
-          >
-            {error}
-          </div>
-        )}
-      </div>
+      <Input
+        id="teacher-full-name"
+        type="text"
+        label="Full Name"
+        value={fullName}
+        onChange={e => setFullName(e.target.value)}
+        error={error || undefined}
+        disabled={isCreating}
+        placeholder="Enter teacher's full name"
+        aria-required="true"
+      />
 
-      <button
+      <Button
         type="submit"
         disabled={isCreating || !fullName.trim()}
         aria-label={isCreating ? 'Creating teacher...' : 'Add teacher'}
       >
         {isCreating ? 'Adding...' : 'Add Teacher'}
-      </button>
+      </Button>
     </form>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../../../design-system/components/button';
 import { useDeleteTeacher } from './use-delete-teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
 
@@ -40,16 +41,16 @@ export function TeacherDeleteButton({
 
   return (
     <div className="teacher-delete-button">
-      <button
+      <Button
+        variant="tertiary"
+        size="small"
         onClick={handleClick}
         disabled={isDeleting}
         aria-label={`Delete ${teacherName}`}
-        aria-disabled={isDeleting}
-        className="delete-button"
         type="button"
       >
         {isDeleting ? 'Deleting...' : 'Delete'}
-      </button>
+      </Button>
       {error && (
         <div role="alert" className="error-message">
           {error}

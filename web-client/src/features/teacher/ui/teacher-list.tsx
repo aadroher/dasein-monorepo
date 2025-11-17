@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { Card } from '../../../design-system/components/card';
+import { Heading } from '../../../design-system/components/heading';
+import { Button } from '../../../design-system/components/button';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
 import { TeacherEditForm } from './teacher-edit-form';
@@ -73,36 +76,41 @@ export function TeacherList({
 
   return (
     <div className="teacher-list">
-      <h2>Teachers ({teachers.length})</h2>
+      <Heading level={2}>Teachers ({teachers.length})</Heading>
       <ul aria-label="Teachers list">
         {teachers.map(teacher => (
           <li key={teacher.uuid} className="teacher-list-item">
             {editingTeacherId === teacher.uuid ? (
-              <TeacherEditForm
-                teacher={teacher}
-                storage={storage}
-                onSave={handleEditSave}
-                onCancel={handleEditCancel}
-              />
+              <Card>
+                <TeacherEditForm
+                  teacher={teacher}
+                  storage={storage}
+                  onSave={handleEditSave}
+                  onCancel={handleEditCancel}
+                />
+              </Card>
             ) : (
-              <div className="teacher-item-view">
-                <span className="teacher-name">{teacher.full_name}</span>
-                <div className="teacher-actions">
-                  <button
-                    onClick={() => handleEditClick(teacher.uuid)}
-                    aria-label={`Edit ${teacher.full_name}`}
-                    className="edit-button"
-                  >
-                    Edit
-                  </button>
-                  <TeacherDeleteButton
-                    teacherId={teacher.uuid}
-                    teacherName={teacher.full_name}
-                    storage={storage}
-                    onDelete={handleDelete}
-                  />
+              <Card>
+                <div className="teacher-item-view">
+                  <span className="teacher-name">{teacher.full_name}</span>
+                  <div className="teacher-actions">
+                    <Button
+                      variant="secondary"
+                      size="small"
+                      onClick={() => handleEditClick(teacher.uuid)}
+                      aria-label={`Edit ${teacher.full_name}`}
+                    >
+                      Edit
+                    </Button>
+                    <TeacherDeleteButton
+                      teacherId={teacher.uuid}
+                      teacherName={teacher.full_name}
+                      storage={storage}
+                      onDelete={handleDelete}
+                    />
+                  </div>
                 </div>
-              </div>
+              </Card>
             )}
           </li>
         ))}
