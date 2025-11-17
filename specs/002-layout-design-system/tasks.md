@@ -122,15 +122,17 @@
 ## Phase 7: Polish & Cross-Cutting Concerns
 **Purpose**: Documentation, performance validation, cleanup, final audits.
 
-- [ ] T060 [P] Create architecture decisions document specs/002-layout-design-system/architecture.md
-- [ ] T061 [P] Create developer quickstart guide specs/002-layout-design-system/quickstart.md
-- [ ] T062 Create success criteria & manual test checklist specs/002-layout-design-system/manual-testing.md
-- [ ] T063 [P] Add CSS size measurement script web-client/scripts/measure-css-size.mjs
-- [ ] T064 Refactor/remove legacy inline styles teacher feature web-client/src/features/teacher/ui/*.tsx
-- [ ] T065 [P] Update web-client README with design system section web-client/README.md
-- [ ] T066 Final evidence capture & audit recording specs/002-layout-design-system/manual-testing.md
-- [ ] T067 [P] Create design system barrel index web-client/src/design-system/index.ts
-- [ ] T068 [P] Update research decisions with security review specs/002-layout-design-system/research.md
+- [X] T060 [P] Create architecture decisions document specs/002-layout-design-system/architecture.md
+- [X] T061 [P] Create developer quickstart guide specs/002-layout-design-system/quickstart.md
+- [X] T062 Create success criteria & manual test checklist specs/002-layout-design-system/manual-testing.md
+- [X] T063 [P] Add CSS size measurement script web-client/scripts/measure-css-size.mjs
+- [X] T064 Refactor/remove legacy inline styles teacher feature web-client/src/features/teacher/ui/*.tsx
+- [X] T065 [P] Update web-client README with design system section web-client/README.md
+- [X] T066 Final evidence capture & audit recording specs/002-layout-design-system/manual-testing.md
+- [X] T067 [P] Create design system barrel index web-client/src/design-system/index.ts
+- [X] T068 [P] Update research decisions with security review specs/002-layout-design-system/research.md
+
+**Checkpoint**: Documentation complete, performance measured, design system ready for production use.
 
 ---
 ## Dependencies & Execution Order

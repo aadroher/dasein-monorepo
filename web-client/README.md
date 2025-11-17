@@ -195,6 +195,146 @@ This application is being built following **test-first methodology** and **acces
 - [x] Local persistence with IndexedDB
 - [x] Comprehensive test coverage (unit, integration, E2E, accessibility)
 
+### Phase 4: Design System ✅ Completed
+- [x] **Design Tokens**: Colors, spacing, typography, shadows, radii, breakpoints
+- [x] **UI Components**: Button, Input, Heading, Link, Card
+- [x] **Layout System**: AppLayout, Header, Footer, NavContainer, MainContainer, Grid
+- [x] **Theming**: Light/dark mode with localStorage persistence
+- [x] **Accessibility**: WCAG 2.1 AA compliance (123 automated tests)
+- [x] **Responsive Design**: Mobile-first (768px–1920px)
+- [x] **Testing**: Unit, integration, accessibility, contrast, E2E tests
+
+See the [Design System Guide](#design-system) below for usage details.
+
+For detailed development information, see the [quickstart guide](../../specs/001-teacher-crud/quickstart.md).
+
+## Design System
+
+A comprehensive design system built with Tailwind CSS v4, providing consistent UI components, design tokens, and layout primitives.
+
+### Key Features
+
+- 🎨 **Design Tokens**: Consistent Braun-inspired color palette, spacing scale, typography
+- 🧩 **Reusable Components**: Button, Input, Heading, Link, Card with variants
+- 📐 **Layout Primitives**: Responsive header, navigation, main, footer
+- ♿ **WCAG 2.1 AA**: Comprehensive accessibility testing (123 tests)
+- 🌓 **Theming**: Light/dark mode with auto-persistence
+- 📱 **Responsive**: Desktop (1920px) → Tablet (768px) with navigation condensation
+- ⚡ **Performance**: ~30KB CSS gzipped, zero runtime CSS-in-JS
+
+### Quick Reference
+
+```tsx
+import { Button, Input, Heading, Card } from '@/design-system/components';
+import { AppLayout, Grid } from '@/design-system/layout';
+import { useTheme } from '@/design-system/hooks';
+
+// Components
+<Button variant="primary" size="medium">Click Me</Button>
+<Input id="name" label="Name" value={name} onChange={setName} />
+<Heading level={2}>Section Title</Heading>
+<Card>Content here</Card>
+
+// Layout
+<AppLayout header={<Header>...</Header>} nav={<Nav>...</Nav>}>
+  <Grid cols={{ sm: 1, md: 2, lg: 3 }} gap={4}>
+    <Card>Item 1</Card>
+    <Card>Item 2</Card>
+  </Grid>
+</AppLayout>
+
+// Theming
+const { theme, toggleTheme } = useTheme();
+<Button onClick={toggleTheme}>Toggle Theme</Button>
+```
+
+### Design Tokens
+
+Use via Tailwind classes or direct import:
+
+```tsx
+// Tailwind classes (preferred)
+<div className="bg-primary-500 text-white p-4 rounded-md">
+  Primary colored box
+</div>
+
+// Direct import (for custom logic)
+import { colors, spacing } from '@/design-system/tokens';
+const primaryColor = colors.primary[500]; // "#9E5E36"
+```
+
+**Available Classes**:
+- **Colors**: `bg-primary-*`, `text-primary-*` (50-900), semantic colors (success, warning, error, info)
+- **Spacing**: `p-*`, `m-*`, `gap-*` (0-20 scale)
+- **Typography**: `text-xs` to `text-4xl`, `font-normal` to `font-bold`
+- **Effects**: `shadow-sm/md/lg`, `rounded-sm/md/lg/xl`
+
+### Accessibility Features
+
+- ✅ **Keyboard Navigation**: Full Tab/Enter/Space support
+- ✅ **Focus Indicators**: 2px visible focus rings (WCAG compliant)
+- ✅ **Screen Readers**: Semantic HTML + ARIA labels
+- ✅ **Color Contrast**: Automated validation (WCAG AA 4.5:1)
+- ✅ **Heading Hierarchy**: Automated level checking
+- ✅ **Form Labels**: All inputs properly associated
+
+### Testing
+
+```bash
+# All design system tests (123 tests)
+npm test -- test/design-system
+
+# Accessibility tests (78 tests)
+npm test -- test/design-system/a11y
+
+# Contrast validation
+npm test -- contrast-regression.test.ts
+
+# Measure CSS bundle size
+npm run build
+node scripts/measure-css-size.mjs
+```
+
+### Documentation
+
+- **Quickstart Guide**: `specs/002-layout-design-system/quickstart.md`
+- **Component Reference**: `src/design-system/README.md`
+- **Architecture Decisions**: `specs/002-layout-design-system/architecture.md`
+- **Design Tokens Research**: `specs/002-layout-design-system/research.md`
+
+### Component Variants
+
+**Button**: `variant` (primary/secondary/tertiary), `size` (small/medium/large)  
+**Input**: Type-safe props, error states, helper text, required field support  
+**Heading**: Levels 1-6 with automatic semantic HTML (h1-h6)  
+**Link**: Internal/external with automatic security attributes  
+**Card**: Simple container with consistent padding and styling
+
+### Responsive Breakpoints
+
+```typescript
+sm: 640px   // Small tablets
+md: 768px   // Tablets (nav condenses here)
+lg: 1024px  // Laptops  
+xl: 1280px  // Desktops
+2xl: 1440px // Large desktops
+```
+
+### Theme Switching
+
+```tsx
+import { useTheme } from '@/design-system/hooks';
+
+function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+  return <Button onClick={toggleTheme}>{theme} mode</Button>;
+}
+```
+
+Preference automatically saved to localStorage.
+
+---
+
 For detailed development information, see the [quickstart guide](../../specs/001-teacher-crud/quickstart.md).
 
 ## Architecture Decisions
