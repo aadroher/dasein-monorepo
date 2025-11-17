@@ -95,11 +95,11 @@
 **Independent Test**: Resize from 1440px → 780px confirming container width adjustments, grid stacking, nav condensation (keyboard accessible).
 
 ### Implementation & Tests (US3)
-- [ ] T049 [US3] Add responsive breakpoint classes to MainContainer web-client/src/design-system/layout/main-container.tsx
-- [ ] T050 [P] [US3] Implement grid system utilities web-client/src/design-system/layout/grid.tsx
-- [ ] T051 [P] [US3] Implement responsive navigation condensation component web-client/src/design-system/layout/nav-responsive.tsx
-- [ ] T052 [US3] Integration test resizing behavior web-client/test/design-system/integration/responsive-layout.test.tsx
-- [ ] T053 [P] [US3] E2E test navigation condensation at tablet width web-client/test/design-system/integration/nav-condense.test.tsx
+- [X] T049 [US3] Add responsive breakpoint classes to MainContainer web-client/src/design-system/layout/main-container.tsx
+- [X] T050 [P] [US3] Implement grid system utilities web-client/src/design-system/layout/grid.tsx
+- [X] T051 [P] [US3] Implement responsive navigation condensation component web-client/src/design-system/layout/nav-responsive.tsx
+- [X] T052 [US3] Integration test resizing behavior web-client/test/design-system/integration/responsive-layout.test.tsx
+- [X] T053 [P] [US3] E2E test navigation condensation at tablet width web-client/test/design-system/e2e/nav-condense.spec.ts
 
 **Checkpoint**: Layout adapts across breakpoints with no horizontal scroll and nav remains accessible.
 

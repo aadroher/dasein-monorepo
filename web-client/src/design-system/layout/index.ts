@@ -13,3 +13,9 @@ export type { FooterProps } from './footer';
 
 export { AppLayout } from './app-layout';
 export type { AppLayoutProps } from './app-layout';
+
+export { Grid, GridItem } from './grid';
+export type { GridProps, GridItemProps } from './grid';
+
+export { ResponsiveNav } from './nav-responsive';
+export type { ResponsiveNavProps, NavItem } from './nav-responsive';
