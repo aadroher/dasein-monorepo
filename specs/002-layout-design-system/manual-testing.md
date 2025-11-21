@@ -333,6 +333,33 @@ Use VoiceOver (Mac), NVDA (Windows), or JAWS:
 - [ ] **Button Labels**: Button purposes clear
 - [ ] **Error Announcements**: Form errors announced when present
 
+### 200% Zoom Validation (FR-020)
+
+**WCAG Success Criterion 1.4.4** requires text to remain readable at 200% zoom without horizontal scrolling.
+
+Test at each supported viewport width:
+
+**Desktop (1440px)**:
+- [ ] Zoom browser to 200% (Ctrl/Cmd + or browser settings)
+- [ ] **No Horizontal Scroll**: Page remains usable without left-right scrolling
+- [ ] **Text Readable**: All text remains legible (no truncation or overlap)
+- [ ] **Layout Intact**: Buttons, inputs, cards do not break or overlap
+- [ ] **Navigation Accessible**: Navigation remains functional and usable
+
+**Tablet (800px)**:
+- [ ] Zoom browser to 200%
+- [ ] **No Horizontal Scroll**: Content stays within viewport width
+- [ ] **Text Readable**: Line length remains comfortable
+- [ ] **Interactive Elements**: Buttons/inputs remain clickable without overlap
+
+**Testing Notes**:
+- Use browser zoom (Ctrl/Cmd + or View → Zoom In), not OS-level scaling
+- Test in Chrome, Firefox, and Safari for cross-browser validation
+- Common issues: Fixed-width containers, absolute positioning, non-fluid layouts
+- Expected behavior: Content reflows, text wraps, no overflow
+
+**Result**: ☐ Pass (readable at 200% all viewports) ☐ Fail (horizontal scroll or broken layout)
+
 ---
 
 ## Success Criteria - Final Validation
@@ -426,25 +453,103 @@ node scripts/measure-css-size.mjs
 
 ---
 
-### SC-006: Component Reusability (Target: ≥5 components used in multiple contexts)
+### SC-006: Development Time Reduction (Target: ≥30% decrease)
 
-**Components Used in Multiple Places**:
-- [ ] **Button**: Create form, Edit form, List page, Delete actions = 4+ contexts
-- [ ] **Input**: Create form, Edit form = 2+ contexts
-- [ ] **Heading**: List page, Forms, Layout = 3+ contexts
-- [ ] **Card**: Teacher list items = reused per item
-- [ ] **Link**: Navigation, List actions = 2+ contexts
-- [ ] **AppLayout**: All pages
+**Measurement Methodology**:
 
-**Count**: ___ components reused in multiple contexts
+This metric compares development time for implementing new pages before vs. after design system availability.
 
-**Result**: ☐ Pass (≥5 components) ☐ Fail (<5 components)
+**Baseline (Pre-Design System)**:
+- Estimate average time to implement a typical CRUD page (list + create + edit forms)
+- Include: component creation, styling, responsiveness, accessibility considerations
+- Reference: Teacher feature implementation time (if tracked)
+- Estimated baseline: ~4-6 hours for complete CRUD feature with styling
+
+**Post-Design System Measurement**:
+- Track time to implement next feature using design system components
+- Include: page structure, component usage, feature-specific logic
+- Exclude: business logic unrelated to UI (same for both measurements)
+- Expected: ~2.5-4 hours for equivalent feature (30-40% reduction)
+
+**Proxy Metrics** (if time tracking unavailable):
+1. **Lines of Code Reduction**:
+   - Count custom CSS lines removed from teacher feature during retrofit
+   - Calculate percentage reduction in styling code
+   - Target: ≥30% fewer styling-related LOC
+
+2. **Component Reuse Evidence**:
+   - [ ] **Button**: Create form, Edit form, List page, Delete actions = 4+ contexts
+   - [ ] **Input**: Create form, Edit form = 2+ contexts
+   - [ ] **Heading**: List page, Forms, Layout = 3+ contexts
+   - [ ] **Card**: Teacher list items = reused per item
+   - [ ] **Link**: Navigation, List actions = 2+ contexts
+   - [ ] **AppLayout**: All pages
+
+**Calculation**:
+- If time tracked: (Baseline time - New time) / Baseline time × 100 = ____%
+- If LOC proxy: Lines removed / Original styling LOC × 100 = ____%
+
+**Recorded Evidence**:
+- Pre-DS implementation time: _____ hours
+- Post-DS implementation time: _____ hours
+- OR custom CSS lines removed: _____ lines
+- OR component reuse count: _____ components used ≥2 times
+
+**Result**: ☐ Pass (≥30% reduction) ☐ Fail (<30% reduction)
+
+**Notes**: Development time reduction is best measured prospectively on the next feature implementation after design system completion.
 
 ---
 
-### SC-007: Visual Consistency (Target: 100% same appearance)
+### SC-007: Design Consistency Score (Target: ≥90%)
 
-**Audit Checklist**:
+**Measurement Methodology**:
+
+Audit component usage across all pages to calculate percentage of UI elements using design system components vs. custom/ad-hoc styling.
+
+**Component Instance Counting**:
+
+Systematically review each page and count instances of each UI element type:
+
+1. **Buttons** (all clickable actions):
+   - Using DS Button component: _____
+   - Custom/inline styled: _____
+   - Total button instances: _____
+
+2. **Text Inputs** (form fields):
+   - Using DS Input component: _____
+   - Custom/inline styled: _____
+   - Total input instances: _____
+
+3. **Headings** (h1-h6):
+   - Using DS Heading component: _____
+   - Custom/inline styled: _____
+   - Total heading instances: _____
+
+4. **Links** (navigation, actions):
+   - Using DS Link component: _____
+   - Custom/inline styled: _____
+   - Total link instances: _____
+
+5. **Cards** (content containers):
+   - Using DS Card component: _____
+   - Custom/inline styled: _____
+   - Total card instances: _____
+
+6. **Layout Structure** (page wrappers):
+   - Using AppLayout: _____
+   - Custom layout: _____
+   - Total pages: _____
+
+**Consistency Score Calculation**:
+
+Formula: (Total DS component instances / Total UI instances) × 100
+
+- Total DS instances: _____ (sum of all "Using DS" counts)
+- Total UI instances: _____ (sum of all "Total" counts)
+- **Consistency Score**: _____%
+
+**Audit Checklist** (qualitative validation):
 - [ ] Typography identical across all pages
 - [ ] Button styles consistent everywhere
 - [ ] Input fields styled identically
@@ -457,7 +562,7 @@ node scripts/measure-css-size.mjs
 - [ ] Teacher Create vs. Edit form: Consistent
 - [ ] All pages use same layout structure
 
-**Result**: ☐ Pass (visually consistent) ☐ Fail (inconsistencies found)
+**Result**: ☐ Pass (≥90% consistency) ☐ Fail (<90% consistency)
 
 ---
 

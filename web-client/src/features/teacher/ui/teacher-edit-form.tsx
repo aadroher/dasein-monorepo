@@ -61,6 +61,7 @@ export function TeacherEditForm({
   return (
     <form onSubmit={handleFormSubmit} className="teacher-edit-form">
       <Input
+        ref={inputRef}
         id={`teacher-edit-name-${teacher.uuid}`}
         type="text"
         label="Full Name"

@@ -64,7 +64,7 @@ Design system introduces structural abstraction plus Tailwind dependency. Mitiga
 | ---------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------- |
 | 0 Research                   | Gather palette inspirations, spacing scale, contrast validation | `research.md` created with token rationale & references               |
 | 1 Tokens Foundation          | Implement design tokens & Tailwind theme extension + CSS vars   | All tokens defined, Tailwind config updated, unit tests for scale     |
-| 2 Layout Framework           | Create structural layout components + landmarks                 | Header/Main/Footer & skip link render with tests                      |
+| 2 Layout Framework           | Create structural layout components + landmarks                 | Header/MainContainer/Footer & skip link render with tests             |
 | 3 Core Components            | Implement Button, Input, Heading, Link, Card                    | Components pass a11y + unit tests for variants                        |
 | 4 Theming                    | Light/dark theme switch (manual + system preference)            | Theme toggles persist (assumption: localStorage) & contrast validated |
 | 5 Accessibility Enhancements | Focus styles, skip nav, semantic checks                         | Axe suite passes for all components/layout                            |

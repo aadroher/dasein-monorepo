@@ -14,7 +14,7 @@ const elevationClasses: Record<NonNullable<CardProps['elevation']>, string> = {
   lg: 'shadow-lg',
 };
 
-const baseClasses = 'bg-surface rounded-lg border border-neutral-200';
+const baseClasses = 'bg-surface rounded-lg border border-border';
 
 export const Card: React.FC<CardProps> = ({
   header,
@@ -31,11 +31,11 @@ export const Card: React.FC<CardProps> = ({
   return (
     <div className={classes} {...props}>
       {header && (
-        <div className="px-6 py-4 border-b border-neutral-200">{header}</div>
+        <div className="px-6 py-4 border-b border-border">{header}</div>
       )}
       <div className="px-6 py-4">{children}</div>
       {footer && (
-        <div className="px-6 py-4 border-t border-neutral-200">{footer}</div>
+        <div className="px-6 py-4 border-t border-border">{footer}</div>
       )}
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -8,19 +8,19 @@ export interface InputProps
 }
 
 const baseClasses =
-  'w-full px-3 py-2 text-text-primary bg-surface border rounded-md transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed';
+  'w-full px-3 py-2 text-text bg-surface border rounded-md transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed';
 
-const normalStateClasses = 'border-neutral-300 hover:border-neutral-400';
-const errorStateClasses = 'border-error-500 focus:ring-error-400';
+const normalStateClasses = 'border-border hover:border-neutral-500';
+const errorStateClasses = 'border-error focus:ring-error';
 
-export const Input: React.FC<InputProps> = ({
+export const Input = forwardRef<HTMLInputElement, InputProps>(({
   label,
   error,
   helperText,
   id,
   className = '',
   ...props
-}) => {
+}, ref) => {
   const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
   const hasError = Boolean(error);
 
@@ -37,12 +37,13 @@ export const Input: React.FC<InputProps> = ({
       {label && (
         <label
           htmlFor={inputId}
-          className="block text-sm font-medium text-text-primary mb-1"
+          className="block text-sm font-medium text-text mb-1"
         >
           {label}
         </label>
       )}
       <input
+        ref={ref}
         id={inputId}
         className={inputClasses}
         aria-invalid={hasError}
@@ -58,17 +59,19 @@ export const Input: React.FC<InputProps> = ({
       {error && (
         <p
           id={`${inputId}-error`}
-          className="mt-1 text-sm text-error-500"
+          className="mt-1 text-sm text-error"
           role="alert"
         >
           {error}
         </p>
       )}
       {!error && helperText && (
-        <p id={`${inputId}-helper`} className="mt-1 text-sm text-neutral-500">
+        <p id={`${inputId}-helper`} className="mt-1 text-sm text-text-secondary">
           {helperText}
         </p>
       )}
     </div>
   );
-};
+});
+
+Input.displayName = 'Input';

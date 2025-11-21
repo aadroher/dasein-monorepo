@@ -49,7 +49,7 @@ describe('Card Component', () => {
         'bg-surface',
         'rounded-lg',
         'border',
-        'border-neutral-200'
+        'border-border'
       );
     });
 
@@ -100,7 +100,7 @@ describe('Card Component', () => {
         'px-6',
         'py-4',
         'border-b',
-        'border-neutral-200'
+        'border-border'
       );
     });
 
@@ -111,7 +111,7 @@ describe('Card Component', () => {
         'px-6',
         'py-4',
         'border-t',
-        'border-neutral-200'
+        'border-border'
       );
     });
 

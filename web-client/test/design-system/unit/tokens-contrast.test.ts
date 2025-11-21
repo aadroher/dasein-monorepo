@@ -45,131 +45,171 @@ describe('Contrast Ratio Validation', () => {
   const WCAG_AA_NORMAL = 4.5; // Normal text
   const WCAG_AA_LARGE = 3.0; // Large text (18pt+) or UI components
 
-  describe('Text on Background Colors', () => {
-    it('should have sufficient contrast for primary text on background', () => {
-      const ratio = getContrastRatio(colors.neutral[700], colors.background);
+  // Dark mode (default) background colors
+  const darkBg = colors.neutral[900]; // #0d1117
+  const darkSurface = colors.neutral[800]; // #212529
+
+  // Light mode background colors
+  const lightBg = colors.neutral[50]; // #f8f9fa
+  const lightSurface = '#ffffff';
+
+  describe('Dark Mode (Default) - Text on Background', () => {
+    it('should have sufficient contrast for primary text on dark background', () => {
+      const ratio = getContrastRatio(colors.neutral[50], darkBg);
       expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_NORMAL);
-      // Research.md specifies 12.48:1 for this combination
-      expect(ratio).toBeCloseTo(12.48, 1);
+      // Light text on dark background should have excellent contrast
+      expect(ratio).toBeGreaterThan(15);
     });
 
-    it('should have sufficient contrast for primary text on surface', () => {
-      const ratio = getContrastRatio(colors.neutral[700], colors.surface);
+    it('should have sufficient contrast for secondary text on dark background', () => {
+      const ratio = getContrastRatio(colors.neutral[300], darkBg);
       expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_NORMAL);
-      // Research.md specifies 9.27:1 for this combination
-      expect(ratio).toBeCloseTo(9.27, 1);
     });
 
-    it('should have sufficient contrast for primary action on background', () => {
-      const ratio = getContrastRatio(colors.primary[500], colors.background);
+    it('should have sufficient contrast for primary text on dark surface', () => {
+      const ratio = getContrastRatio(colors.neutral[50], darkSurface);
       expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_NORMAL);
-      // Research.md specifies 4.69:1 for this combination
-      expect(ratio).toBeCloseTo(4.69, 1);
     });
 
-    it('should have sufficient contrast for secondary action on background', () => {
-      const ratio = getContrastRatio(colors.secondary[500], colors.background);
+    it('should have sufficient contrast for primary magenta on dark background', () => {
+      const ratio = getContrastRatio(colors.primary[500], darkBg);
       expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_NORMAL);
-      // Research.md specifies 4.86:1 for this combination
-      expect(ratio).toBeCloseTo(4.86, 1);
-    });
-  });
-
-  describe('Semantic Colors on Background', () => {
-    it('should have sufficient contrast for success on background', () => {
-      const ratio = getContrastRatio(colors.success, colors.background);
-      // Note: Actual ratio is ~3.41, which meets WCAG AA Large (3:1) for UI components
-      // but falls short of normal text (4.5:1). Semantic colors are typically used for
-      // icons and UI elements, not body text.
-      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
+      // Magenta #cc4bae should have good contrast on dark
     });
 
-    it('should have sufficient contrast for warning on background', () => {
-      const ratio = getContrastRatio(colors.warning, colors.background);
-      // Note: Actual ratio is ~2.68. Warning colors often need adjustment.
-      // For UI components, consider using darker shades or icons with text labels.
-      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE - 0.7); // Allow slightly lower for warning
-    });
-
-    it('should have sufficient contrast for error on background', () => {
-      const ratio = getContrastRatio(colors.error, colors.background);
-      // Note: Actual ratio is ~4.18, very close to AA normal text requirement
-      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
-    });
-
-    it('should have sufficient contrast for info on background', () => {
-      const ratio = getContrastRatio(colors.info, colors.background);
-      // Note: Actual ratio is ~4.05
+    it('should have sufficient contrast for secondary cyan as UI accent on dark background', () => {
+      const ratio = getContrastRatio(colors.secondary[400], darkBg);
+      // Secondary is used for accents, not body text - WCAG AA Large is appropriate
       expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
     });
   });
 
-  describe('Interactive States (Inverse Text)', () => {
-    it('should have sufficient contrast for light text on primary-700', () => {
-      const ratio = getContrastRatio(colors.background, colors.primary[700]);
+  describe('Light Mode - Text on Background', () => {
+    it('should have sufficient contrast for primary text on light background', () => {
+      const ratio = getContrastRatio(colors.neutral[900], lightBg);
       expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_NORMAL);
-      // Actual ratio is ~7.76, which exceeds requirements
+      // Dark text on light background should have excellent contrast
+      expect(ratio).toBeGreaterThan(15);
     });
 
-    it('should have sufficient contrast for light text on secondary-700', () => {
-      const ratio = getContrastRatio(colors.background, colors.secondary[700]);
+    it('should have sufficient contrast for secondary text on light background', () => {
+      const ratio = getContrastRatio(colors.neutral[700], lightBg);
       expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_NORMAL);
-      // Actual ratio is ~7.76, which exceeds requirements
+    });
+
+    it('should have sufficient contrast for primary text on light surface', () => {
+      const ratio = getContrastRatio(colors.neutral[900], lightSurface);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_NORMAL);
+    });
+
+    it('should have sufficient contrast for darker magenta on light background', () => {
+      const ratio = getContrastRatio(colors.primary[600], lightBg);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_NORMAL);
+      // Using darker primary-600 for better light mode contrast
+    });
+
+    it('should have sufficient contrast for secondary as UI accent on light background', () => {
+      const ratio = getContrastRatio(colors.secondary[600], lightBg);
+      // Use darker shade for light mode, suitable for UI accents
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
     });
   });
 
-  describe('UI Component Contrast (WCAG AA Large)', () => {
-    it('should meet UI component contrast for primary color', () => {
-      const ratio = getContrastRatio(colors.primary[500], colors.background);
+  describe('Semantic Colors - Dark Mode', () => {
+    it('should have sufficient contrast for success on dark background', () => {
+      const ratio = getContrastRatio(colors.semantic.success.dark, darkBg);
       expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
     });
 
-    it('should meet UI component contrast for secondary color', () => {
-      const ratio = getContrastRatio(colors.secondary[500], colors.background);
+    it('should have sufficient contrast for warning on dark background', () => {
+      const ratio = getContrastRatio(colors.semantic.warning.dark, darkBg);
       expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
     });
 
-    it('should meet UI component contrast for semantic colors (where applicable)', () => {
-      // Success, error, and info meet WCAG AA Large (3:1)
-      expect(
-        getContrastRatio(colors.success, colors.background)
-      ).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
-      expect(
-        getContrastRatio(colors.error, colors.background)
-      ).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
-      expect(
-        getContrastRatio(colors.info, colors.background)
-      ).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
-      // Warning is intentionally close to background for subtle alerts
-      // Should be used with icons or darker variants for important warnings
+    it('should have sufficient contrast for error on dark background', () => {
+      const ratio = getContrastRatio(colors.semantic.error.dark, darkBg);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
+    });
+
+    it('should have sufficient contrast for info on dark background', () => {
+      const ratio = getContrastRatio(colors.semantic.info.dark, darkBg);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
+    });
+  });
+
+  describe('Semantic Colors - Light Mode', () => {
+    it('should have sufficient contrast for success on light background', () => {
+      const ratio = getContrastRatio(colors.semantic.success.light, lightBg);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
+    });
+
+    it('should have sufficient contrast for warning on light background', () => {
+      const ratio = getContrastRatio(colors.semantic.warning.light, lightBg);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
+    });
+
+    it('should have sufficient contrast for error on light background', () => {
+      const ratio = getContrastRatio(colors.semantic.error.light, lightBg);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
+    });
+
+    it('should have sufficient contrast for info on light background', () => {
+      const ratio = getContrastRatio(colors.semantic.info.light, lightBg);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
+    });
+  });
+
+  describe('Interactive States - Dark Mode', () => {
+    it('should have sufficient contrast for light text on primary button', () => {
+      const ratio = getContrastRatio(colors.neutral[50], colors.primary[500]);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
+    });
+
+    it('should have sufficient contrast for dark text on secondary button', () => {
+      // Cyan secondary buttons use dark text for better contrast
+      const ratio = getContrastRatio(colors.neutral[900], colors.secondary[400]);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_NORMAL);
+    });
+  });
+
+  describe('Interactive States - Light Mode', () => {
+    it('should have sufficient contrast for light text on darker primary button', () => {
+      const ratio = getContrastRatio(colors.neutral[50], colors.primary[600]);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_NORMAL);
+    });
+
+    it('should have sufficient contrast for light text on secondary button', () => {
+      const ratio = getContrastRatio(colors.neutral[50], colors.secondary[600]);
+      expect(ratio).toBeGreaterThanOrEqual(WCAG_AA_LARGE);
     });
   });
 
   describe('Color Scale Contrast Progression', () => {
-    it('should have increasing contrast from 50 to 900 in primary scale', () => {
+    it('should have increasing contrast from 50 to 900 in primary scale (dark bg)', () => {
       const ratios = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900].map(
         shade =>
           getContrastRatio(
             colors.primary[shade as keyof typeof colors.primary],
-            colors.background
+            darkBg
           )
       );
 
-      // Ratios should generally increase (lighter shades have less contrast)
-      expect(ratios[9]).toBeGreaterThan(ratios[0]);
-      expect(ratios[5]).toBeGreaterThan(ratios[2]);
+      // Lighter shades should have higher contrast on dark background
+      expect(ratios[0]).toBeGreaterThan(ratios[9]);
+      expect(ratios[3]).toBeGreaterThan(ratios[7]);
     });
 
-    it('should have increasing contrast from 50 to 900 in neutral scale', () => {
+    it('should have increasing contrast from 50 to 900 in neutral scale (dark bg)', () => {
       const ratios = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900].map(
         shade =>
           getContrastRatio(
             colors.neutral[shade as keyof typeof colors.neutral],
-            colors.background
+            darkBg
           )
       );
 
-      expect(ratios[9]).toBeGreaterThan(ratios[0]);
+      // Lighter neutrals should have higher contrast on dark background
+      expect(ratios[0]).toBeGreaterThan(ratios[9]);
     });
   });
 });

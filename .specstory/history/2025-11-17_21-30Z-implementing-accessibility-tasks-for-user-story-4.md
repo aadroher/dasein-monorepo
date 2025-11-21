@@ -269,13 +269,106 @@ The design system is now fully documented with:
 
 ---
 
-_**User (2025-11-21 10:05Z)**_
+_**User (2025-11-21 10:06Z)**_
 
 If you typecheck `src/design-system/index.ts` with `tsc` you'll see that there is an error with an import. Can you solve that?
 
 ---
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
+
+I'll check the TypeScript error in the design system index file. The main issue is that `./hooks` doesn't exist as a barrel export. Let me check what's in the hooks directory: I need to create the missing barrel export for hooks and fix the export in the main index: 
+```
+
+```
+Now let's verify the fix: Good! The missing module error is fixed (down from 29 to 28 errors). The remaining errors are about `--jsx` not being set when running `tsc` directly without the project config. Let me verify it works with the proper tsconfig: Perfect! Now there's just one real error - `Theme` is not exported from `ThemeProvider.tsx`, it's in `useTheme.ts`. Let me fix that: 
+```
+
+```
+Now let's verify it's fixed: Perfect! The TypeScript error is now fixed. The issue was that the barrel export was trying to re-export the `Theme` type from `ThemeProvider.tsx`, but `Theme` is actually defined in `useTheme.ts`. I've corrected the import to export it from the correct location.
+
+**Changes made:**
+1. Created missing `hooks/index.ts` barrel export
+2. Fixed the `Theme` type export to come from `./hooks/useTheme` instead of `./theme/ThemeProvider`
+
+The design system index now typechecks successfully! ✅
+
+---
+
+_**User (2025-11-21 11:41Z)**_
+
+@workspace /explain Unknown at rule @theme
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+The `@theme` at-rule you're using is part of **Tailwind CSS v4's new configuration syntax**. The "unknown at-rule" warning is likely coming from your CSS language server not recognizing this newer Tailwind feature.
+
+## Why This Happens
+
+Tailwind CSS v4 introduced a new way to define design tokens directly in CSS using the `@theme` directive. However, many CSS linters and language servers haven't updated their rules to recognize this syntax yet.
+
+## Solutions
+
+### 1. **Update PostCSS Language Support** (Recommended)
+
+If you're using VS Code, ensure you have the latest Tailwind CSS IntelliSense extension:
+
+1. Install/update the official extension: `bradlc.vscode-tailwindcss`
+2. Add to your VS Code settings:
+
+```json
+{
+  "css.lint.unknownAtRules": "ignore"
+}
+```
+
+### 2. **Suppress the Warning in CSS**
+
+Add a comment to disable the warning for this file:
+
+````css
+/* stylelint-disable-next-line scss/at-rule-no-unknown */
+@theme {
+  /* Color Palette - Braun-Inspired Warm Neutrals */
+  --color-background: #f6f5f2;
+  /* ...existing code... */
+}
+````
+
+### 3. **Configure Your Linter**
+
+If using stylelint, update your config:
+
+```json
+{
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["theme", "import", "tailwindcss"]
+      }
+    ]
+  }
+}
+```
+
+## Note on Your Setup
+
+Your color scale looks great! The Braun-inspired warm neutrals are well-structured. Just be aware that `@theme` is **Tailwind v4 only** – if you need to support v3, you'd need to use the JavaScript config file instead.
+
+Is the warning preventing your build, or is it just a visual annoyance in the editor?
+
+---
+
+_**User (2025-11-21 11:42Z)**_
+
+/clear 
+
+---
+
+_**Agent**_
 
 
 
