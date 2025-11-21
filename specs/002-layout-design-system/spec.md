@@ -106,7 +106,7 @@ As a user with accessibility needs, I can navigate and interact with the applica
 
 - **FR-007**: System MUST provide a page container component that enforces maximum width and consistent horizontal padding
 - **FR-008**: System MUST provide a header component for top-of-page content including branding and navigation
-- **FR-009**: System MUST provide a main content area component with appropriate semantic HTML structure
+- **FR-009**: System MUST provide a MainContainer component with appropriate semantic HTML structure
 - **FR-010**: System MUST provide a footer component for bottom-of-page content
 - **FR-011**: System MUST provide a grid system for organizing content in rows and columns
 
