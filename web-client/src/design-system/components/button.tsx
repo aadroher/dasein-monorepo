@@ -46,7 +46,12 @@ export const Button: React.FC<ButtonProps> = ({
     .join(' ');
 
   return (
-    <button className={classes} disabled={disabled} {...props}>
+    <button
+      {...props}
+      className={classes}
+      disabled={disabled}
+      aria-disabled={disabled}
+    >
       {children}
     </button>
   );

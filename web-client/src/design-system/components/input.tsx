@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -13,14 +13,14 @@ const baseClasses =
 const normalStateClasses = 'border-neutral-300 hover:border-neutral-400';
 const errorStateClasses = 'border-error-500 focus:ring-error-400';
 
-export const Input: React.FC<InputProps> = ({
+export const Input = forwardRef<HTMLInputElement, InputProps>(({
   label,
   error,
   helperText,
   id,
   className = '',
   ...props
-}) => {
+}, ref) => {
   const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
   const hasError = Boolean(error);
 
@@ -43,6 +43,7 @@ export const Input: React.FC<InputProps> = ({
         </label>
       )}
       <input
+        ref={ref}
         id={inputId}
         className={inputClasses}
         aria-invalid={hasError}
@@ -71,4 +72,6 @@ export const Input: React.FC<InputProps> = ({
       )}
     </div>
   );
-};
+});
+
+Input.displayName = 'Input';
