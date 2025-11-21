@@ -84,7 +84,8 @@ describe('TeacherEditForm Accessibility', () => {
 
     const input = screen.getByLabelText(/full name/i);
     expect(input).toBeInTheDocument();
-    expect(input).toHaveAttribute('aria-label', 'Full name');
+    // Input is properly labeled via <label> element, no aria-label needed
+    expect(input).toHaveAttribute('type', 'text');
   });
 
   it('should mark required field appropriately', () => {

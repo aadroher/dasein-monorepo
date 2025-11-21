@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { Button } from '../../../design-system/components/button';
+import { Input } from '../../../design-system/components/input';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
 import { useEditTeacher } from './use-edit-teacher';
@@ -58,57 +60,36 @@ export function TeacherEditForm({
 
   return (
     <form onSubmit={handleFormSubmit} className="teacher-edit-form">
-      <div className="form-group">
-        <label htmlFor={`teacher-edit-name-${teacher.uuid}`}>
-          Full Name
-          <span className="required" aria-label="required">
-            *
-          </span>
-        </label>
-        <input
-          id={`teacher-edit-name-${teacher.uuid}`}
-          ref={inputRef}
-          type="text"
-          value={fullName}
-          onChange={e => setFullName(e.target.value)}
-          aria-label="Full name"
-          aria-required="true"
-          aria-invalid={error ? 'true' : 'false'}
-          aria-describedby={
-            error ? `teacher-edit-error-${teacher.uuid}` : undefined
-          }
-          disabled={isUpdating}
-          placeholder="Enter teacher's full name"
-          autoComplete="name"
-        />
-        {error && (
-          <div
-            id={`teacher-edit-error-${teacher.uuid}`}
-            className="error-message"
-            role="alert"
-            aria-live="polite"
-          >
-            {error}
-          </div>
-        )}
-      </div>
+      <Input
+        ref={inputRef}
+        id={`teacher-edit-name-${teacher.uuid}`}
+        type="text"
+        label="Full Name"
+        value={fullName}
+        onChange={e => setFullName(e.target.value)}
+        error={error || undefined}
+        disabled={isUpdating}
+        placeholder="Enter teacher's full name"
+        aria-required="true"
+      />
 
       <div className="form-actions">
-        <button
+        <Button
           type="submit"
           disabled={isUpdating || !fullName.trim()}
           aria-label={isUpdating ? 'Saving changes...' : 'Save changes'}
         >
           {isUpdating ? 'Saving...' : 'Save'}
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
+          variant="secondary"
           onClick={handleCancelClick}
           disabled={isUpdating}
           aria-label="Cancel editing"
         >
           Cancel
-        </button>
+        </Button>
       </div>
     </form>
   );

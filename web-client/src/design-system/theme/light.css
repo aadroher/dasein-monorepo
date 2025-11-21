@@ -1,0 +1,53 @@
+/**
+ * Light Theme CSS Variables (Alternative)
+ *
+ * Light mode alternative to the default dark theme.
+ * Applied when .light class is present on root element.
+ * Provides excellent readability with clean, bright aesthetics.
+ */
+
+.light {
+  /* Tailwind semantic colors for light theme (overrides dark defaults) */
+  --color-background: #f8f9fa;      /* neutral-50 */
+  --color-surface: #ffffff;         /* pure white */
+  --color-text: #0d1117;            /* neutral-900 */
+  --color-text-secondary: #343a40;  /* neutral-700 */
+  --color-border: #d3d7db;          /* neutral-200 */
+
+  /* Legacy theme variables for light theme */
+  --theme-text-primary: #0d1117;    /* neutral-900 - dark text on light */
+  --theme-text-secondary: #343a40;  /* neutral-700 - medium emphasis */
+  --theme-text-tertiary: #495057;   /* neutral-600 - lower emphasis */
+
+  --theme-bg-primary: #f8f9fa;      /* neutral-50 - clean white background */
+  --theme-bg-secondary: #ffffff;    /* pure white - cards, panels */
+  --theme-bg-tertiary: #e9ecef;     /* neutral-100 - elevated surfaces */
+
+  --theme-border-primary: #d3d7db;  /* neutral-200 - visible borders */
+  --theme-border-secondary: #e9ecef;/* neutral-100 - subtle dividers */
+
+  --theme-interactive-primary: #b73d9a;        /* primary-600 - darker for contrast */
+  --theme-interactive-primary-hover: #992f7f;  /* primary-700 - darker on hover */
+  --theme-interactive-primary-active: #7a2765; /* primary-800 - darkest active */
+
+  --theme-interactive-secondary: #a855f7;      /* secondary-500 - violet accent */
+  --theme-interactive-secondary-hover: #9333ea;/* secondary-600 - darker on hover */
+  --theme-interactive-secondary-active: #7e22ce;/* secondary-700 - darkest active */
+
+  /* Semantic state colors for light theme */
+  --theme-success: #059669;   /* Emerald-600 */
+  --theme-warning: #d97706;   /* Amber-600 */
+  --theme-error: #dc2626;     /* Rose-600 */
+  --theme-info: #2563eb;      /* Blue-600 */
+}
+
+/* Apply light background to html/body when light class is active */
+html.light {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+html.light body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
