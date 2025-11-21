@@ -21,21 +21,22 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 
   // Apply initial theme on mount
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+    // Dark mode is default (no class), light mode needs 'light' class
+    if (theme === 'light') {
+      document.documentElement.classList.add('light');
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove('light');
     }
   }, [theme]);
 
   // Listen to system theme changes (optional enhancement)
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
 
     const handleChange = (e: MediaQueryListEvent) => {
       // Only update if no stored preference exists
       if (!getStoredTheme()) {
-        setThemeState(e.matches ? 'dark' : 'light');
+        setThemeState(e.matches ? 'light' : 'dark');
       }
     };
 
@@ -50,11 +51,11 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
         setThemeState(newTheme);
         setStoredTheme(newTheme);
 
-        // Apply theme to document root
-        if (newTheme === 'dark') {
-          document.documentElement.classList.add('dark');
+        // Apply theme to document root (dark is default, light needs class)
+        if (newTheme === 'light') {
+          document.documentElement.classList.add('light');
         } else {
-          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.remove('light');
         }
       },
       toggleTheme: () => {
@@ -62,10 +63,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
         setThemeState(newTheme);
         setStoredTheme(newTheme);
 
-        if (newTheme === 'dark') {
-          document.documentElement.classList.add('dark');
+        if (newTheme === 'light') {
+          document.documentElement.classList.add('light');
         } else {
-          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.remove('light');
         }
       },
     }),

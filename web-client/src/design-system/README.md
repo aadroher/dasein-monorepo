@@ -5,11 +5,11 @@
 A comprehensive design system built with Tailwind CSS v4, providing consistent UI components, design tokens, and layout primitives for building accessible, responsive web applications.
 
 **Features:**
-- 🎨 **Design Tokens**: Consistent colors, spacing, typography, shadows
+- 🎨 **Design Tokens**: Magenta (#cc4bae) corporate identity with cyan accents
 - 🧩 **Reusable Components**: Button, Input, Heading, Link, Card
 - 📐 **Layout System**: Responsive header, navigation, main content, footer
 - ♿ **Accessibility**: WCAG 2.1 AA compliant with automated testing
-- 🌓 **Theming**: Light/dark mode with localStorage persistence
+- 🌓 **Theming**: Dark-first with light mode alternative, localStorage persistence
 - 📱 **Responsive**: Mobile-first design supporting 768px–1920px
 
 ## Quick Start
@@ -123,17 +123,29 @@ Access tokens directly or via Tailwind classes:
 ```typescript
 import { colors, spacing, typography } from '@/design-system/tokens';
 
-const primaryColor = colors.primary[500]; // "#9E5E36"
+const primaryColor = colors.primary[500]; // "#cc4bae" (Magenta - Corporate Identity)
+const secondaryColor = colors.secondary[500]; // "#14b8c5" (Cyan)
+const darkBackground = colors.neutral[900]; // "#0d1117" (Dark mode default)
 ```
 
+**Color Scheme:**
+- **Primary (Magenta)**: #cc4bae - Corporate identity color for CTAs, links, focus states
+- **Secondary (Cyan)**: #14b8c5 - Complementary accent for secondary actions and highlights
+- **Neutral (Cool Gray)**: Modern dark-first scale from #0d1117 (dark) to #f8f9fa (light)
+- **Semantic Colors**: Success (green), Warning (amber), Error (red), Info (blue) with light/dark variants
+
 **Tailwind Classes:**
-- Colors: `bg-primary-500`, `text-secondary-600`
+- Colors: `bg-primary-500`, `text-secondary-400`, `text-neutral-50`
 - Spacing: `p-4`, `m-2`, `gap-6`
 - Typography: `text-xl`, `font-bold`
 - Radii: `rounded-md`, `rounded-lg`
 - Shadows: `shadow-sm`, `shadow-lg`
 
 ## Theming
+
+### Dark-First Approach
+
+The design system defaults to dark mode with a modern dark background (#0d1117) and light text. Light mode is available as an alternative theme.
 
 ### Theme Toggle
 
@@ -142,7 +154,7 @@ import { useTheme } from '@/design-system/hooks';
 
 function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-  
+
   return (
     <Button onClick={toggleTheme}>
       {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
@@ -151,7 +163,7 @@ function ThemeToggle() {
 }
 ```
 
-Theme automatically persists to localStorage.
+Theme preference automatically persists to localStorage and respects system preferences when no stored preference exists.
 
 ## Accessibility
 
@@ -212,11 +224,11 @@ npm test -- test/design-system/unit
 
 ### Test Coverage
 
-- **123 total tests** across all components
-- **Unit tests**: Component behavior and rendering
+- **217 total tests** across all components and design tokens
+- **Unit tests**: Component behavior, rendering, and token integrity
 - **Integration tests**: Layout and responsive behavior
-- **Accessibility tests**: WCAG compliance with jest-axe
-- **Contrast tests**: Automated color contrast validation
+- **Accessibility tests**: WCAG 2.1 AA compliance with jest-axe
+- **Contrast tests**: Automated WCAG contrast validation for dark and light modes
 - **E2E tests**: Navigation and user workflows
 
 ## Performance

@@ -17,12 +17,7 @@ import {
 
 describe('Token Integrity', () => {
   describe('Colors', () => {
-    it('should have foundation colors defined', () => {
-      expect(colors.background).toBe('#F6F5F2');
-      expect(colors.surface).toBe('#D7D5CF');
-    });
-
-    it('should have complete primary scale (50-900)', () => {
+    it('should have complete primary scale (50-900) with magenta base', () => {
       expect(colors.primary).toHaveProperty('50');
       expect(colors.primary).toHaveProperty('100');
       expect(colors.primary).toHaveProperty('200');
@@ -33,30 +28,40 @@ describe('Token Integrity', () => {
       expect(colors.primary).toHaveProperty('700');
       expect(colors.primary).toHaveProperty('800');
       expect(colors.primary).toHaveProperty('900');
+      // Verify the corporate identity color
+      expect(colors.primary[500]).toBe('#cc4bae');
     });
 
-    it('should have complete secondary scale (50-900)', () => {
+    it('should have complete secondary scale (50-900) with cyan base', () => {
       expect(colors.secondary).toHaveProperty('50');
       expect(colors.secondary).toHaveProperty('900');
+      expect(colors.secondary[500]).toBe('#14b8c5');
     });
 
-    it('should have complete neutral scale (50-900)', () => {
+    it('should have complete neutral scale (50-900) with cool grays', () => {
       expect(colors.neutral).toHaveProperty('50');
       expect(colors.neutral).toHaveProperty('900');
+      // Verify dark mode background
+      expect(colors.neutral[900]).toBe('#0d1117');
     });
 
-    it('should have all semantic colors', () => {
-      expect(colors.success).toBeDefined();
-      expect(colors.warning).toBeDefined();
-      expect(colors.error).toBeDefined();
-      expect(colors.info).toBeDefined();
+    it('should have all semantic colors with light and dark variants', () => {
+      expect(colors.semantic.success).toHaveProperty('light');
+      expect(colors.semantic.success).toHaveProperty('dark');
+      expect(colors.semantic.warning).toHaveProperty('light');
+      expect(colors.semantic.warning).toHaveProperty('dark');
+      expect(colors.semantic.error).toHaveProperty('light');
+      expect(colors.semantic.error).toHaveProperty('dark');
+      expect(colors.semantic.info).toHaveProperty('light');
+      expect(colors.semantic.info).toHaveProperty('dark');
     });
 
     it('should use valid hex color format', () => {
       const hexPattern = /^#[0-9A-F]{6}$/i;
-      expect(colors.background).toMatch(hexPattern);
       expect(colors.primary[500]).toMatch(hexPattern);
-      expect(colors.success).toMatch(hexPattern);
+      expect(colors.neutral[50]).toMatch(hexPattern);
+      expect(colors.semantic.success.dark).toMatch(hexPattern);
+      expect(colors.semantic.success.light).toMatch(hexPattern);
     });
   });
 

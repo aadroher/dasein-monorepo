@@ -1,28 +1,34 @@
 /**
- * Light Theme CSS Variables
- * 
- * Base theme with Braun-inspired warm neutrals.
- * Applied by default to :root.
+ * Dark Theme CSS Variables (Default)
+ *
+ * Modern dark-first theme with magenta accent and cool neutrals.
+ * Applied by default to :root - dark mode is the primary experience.
  */
 
 :root {
-  /* Semantic color mappings for light theme */
-  --theme-text-primary: var(--color-neutral-700);
-  --theme-text-secondary: var(--color-neutral-600);
-  --theme-text-tertiary: var(--color-neutral-500);
-  
-  --theme-bg-primary: var(--color-background);
-  --theme-bg-secondary: var(--color-surface);
-  --theme-bg-tertiary: var(--color-neutral-50);
-  
-  --theme-border-primary: var(--color-neutral-200);
-  --theme-border-secondary: var(--color-neutral-100);
-  
-  --theme-interactive-primary: var(--color-primary-500);
-  --theme-interactive-primary-hover: var(--color-primary-600);
-  --theme-interactive-primary-active: var(--color-primary-700);
-  
-  --theme-interactive-secondary: var(--color-secondary-500);
-  --theme-interactive-secondary-hover: var(--color-secondary-600);
-  --theme-interactive-secondary-active: var(--color-secondary-700);
+  /* Semantic color mappings for dark theme (default) */
+  --theme-text-primary: #f8f9fa;    /* neutral-50 - high contrast on dark */
+  --theme-text-secondary: #adb5bd;  /* neutral-300 - medium contrast */
+  --theme-text-tertiary: #868e96;   /* neutral-400 - lower emphasis */
+
+  --theme-bg-primary: #0d1117;      /* neutral-900 - main canvas */
+  --theme-bg-secondary: #212529;    /* neutral-800 - cards, panels */
+  --theme-bg-tertiary: #343a40;     /* neutral-700 - elevated surfaces */
+
+  --theme-border-primary: #495057;  /* neutral-600 - visible borders */
+  --theme-border-secondary: #343a40;/* neutral-700 - subtle dividers */
+
+  --theme-interactive-primary: #cc4bae;        /* primary-500 - brand magenta */
+  --theme-interactive-primary-hover: #dd6dc9;  /* primary-400 - lighter on hover */
+  --theme-interactive-primary-active: #ed99dd; /* primary-300 - lightest active */
+
+  --theme-interactive-secondary: #2dc9d9;      /* secondary-400 - cyan accent */
+  --theme-interactive-secondary-hover: #5de2ed;/* secondary-300 - lighter on hover */
+  --theme-interactive-secondary-active: #99eff5;/* secondary-200 - lightest active */
+
+  /* Semantic state colors for dark theme */
+  --theme-success: #10b981;   /* Emerald-500 */
+  --theme-warning: #f59e0b;   /* Amber-500 */
+  --theme-error: #f43f5e;     /* Rose-500 */
+  --theme-info: #3b82f6;      /* Blue-500 */
 }
