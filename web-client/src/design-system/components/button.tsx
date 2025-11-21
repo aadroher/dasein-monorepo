@@ -12,9 +12,9 @@ export interface ButtonProps
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-primary-500 text-surface hover:bg-primary-600 focus-visible:ring-primary-400 active:bg-primary-700',
+    'bg-primary-500 text-neutral-50 hover:bg-primary-600 focus-visible:ring-primary-400 active:bg-primary-700',
   secondary:
-    'bg-secondary-500 text-surface hover:bg-secondary-600 focus-visible:ring-secondary-400 active:bg-secondary-700',
+    'bg-secondary-500 text-neutral-50 hover:bg-secondary-600 focus-visible:ring-secondary-400 active:bg-secondary-700',
   tertiary:
     'bg-transparent text-primary-500 border-2 border-primary-500 hover:bg-primary-50 focus-visible:ring-primary-400 active:bg-primary-100',
 };
