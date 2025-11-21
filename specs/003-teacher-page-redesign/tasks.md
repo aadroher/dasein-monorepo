@@ -85,15 +85,15 @@
 
 ### Tests for User Story 2 ⚠️
 
-- [ ] T023 [P] [US2] Create accessibility test for TeacherPage in web-client/test/teacher/teacher-page-a11y.test.tsx
-- [ ] T024 [P] [US2] Create integration test for TeacherPage with CommonLayout in web-client/test/teacher/teacher-page.test.tsx
-- [ ] T025 [US2] Update E2E test to verify common header presence in web-client/test/teacher/app-layout.e2e.ts
+- [X] T023 [P] [US2] Create accessibility test for TeacherPage in web-client/test/teacher/unit/teacher-page-a11y.test.tsx
+- [X] T024 [P] [US2] Create integration test for TeacherPage with CommonLayout in web-client/test/teacher/unit/teacher-page.test.tsx
+- [X] T025 [US2] Update E2E test to verify common header presence in web-client/test/teacher/e2e/app.spec.ts
 
 ### Implementation for User Story 2
 
-- [ ] T026 [US2] Create TeacherPage component in web-client/src/features/teacher/ui/teacher-page.tsx
-- [ ] T027 [US2] Update App.tsx to wrap TeacherPage in CommonLayout in web-client/src/App.tsx
-- [ ] T028 [US2] Update TeacherPage to use PageHeader with "Teachers" title
+- [X] T026 [US2] Create TeacherPage component in web-client/src/features/teacher/ui/teacher-page.tsx
+- [X] T027 [US2] Update App.tsx to wrap TeacherPage in CommonLayout in web-client/src/App.tsx
+- [X] T028 [US2] Update TeacherPage to use PageHeader with "Teachers" title
 - [ ] T029 [US2] Verify logo displays correctly and is accessible (screen reader announces "Dasein")
 - [ ] T030 [US2] Verify page heading hierarchy (h2 for "Teachers" vs h1 in header)
 - [ ] T031 [US2] Verify all E2E tests pass with common layout
