@@ -31,18 +31,18 @@ test.describe('Edit Teacher Flow (E2E)', () => {
       .getByRole('button', { name: 'Edit Original Name', exact: true })
       .click();
 
-    // Fill new name in edit form (scoped to the list item)
-    const editingListItem = page.getByRole('listitem').filter({
+    // Fill new name in edit form (scoped to the table row)
+    const editingRow = page.getByRole('row').filter({
       has: page.getByRole('button', { name: 'Save changes' }),
     });
-    const editInput = editingListItem.getByRole('textbox', {
+    const editInput = editingRow.getByRole('textbox', {
       name: /full name/i,
     });
     await editInput.clear();
     await editInput.fill('Updated Name');
 
     // Save the edit
-    await editingListItem.getByRole('button', { name: 'Save changes' }).click();
+    await editingRow.getByRole('button', { name: 'Save changes' }).click();
 
     // Verify updated name appears
     await expect(page.getByText('Updated Name')).toBeVisible();
@@ -57,16 +57,16 @@ test.describe('Edit Teacher Flow (E2E)', () => {
       .getByRole('button', { name: 'Edit Original Name', exact: true })
       .click();
 
-    const editingListItem = page.getByRole('listitem').filter({
+    const editingRow = page.getByRole('row').filter({
       has: page.getByRole('button', { name: 'Save changes' }),
     });
-    const editInput = editingListItem.getByRole('textbox', {
+    const editInput = editingRow.getByRole('textbox', {
       name: /full name/i,
     });
     await editInput.clear();
     await editInput.fill('Persisted Edit');
 
-    await editingListItem.getByRole('button', { name: 'Save changes' }).click();
+    await editingRow.getByRole('button', { name: 'Save changes' }).click();
     await expect(page.getByText('Persisted Edit')).toBeVisible();
 
     // Reload the page
@@ -86,24 +86,22 @@ test.describe('Edit Teacher Flow (E2E)', () => {
       .click();
 
     // Clear the name
-    const editingListItem = page.getByRole('listitem').filter({
+    const editingRow = page.getByRole('row').filter({
       has: page.getByRole('button', { name: 'Save changes' }),
     });
-    const editInput = editingListItem.getByRole('textbox', {
+    const editInput = editingRow.getByRole('textbox', {
       name: /full name/i,
     });
     await editInput.clear();
 
     // Try to save - the button should be disabled, so we'll check that instead
-    const saveButton = editingListItem.getByRole('button', {
+    const saveButton = editingRow.getByRole('button', {
       name: 'Save changes',
     });
     await expect(saveButton).toBeDisabled();
 
     // Cancel to exit edit mode
-    await editingListItem
-      .getByRole('button', { name: 'Cancel editing' })
-      .click();
+    await editingRow.getByRole('button', { name: 'Cancel editing' }).click();
 
     // Verify original name is still in list
     await expect(page.getByText('Original Name')).toBeVisible();
@@ -118,17 +116,17 @@ test.describe('Edit Teacher Flow (E2E)', () => {
       .click();
 
     // Enter whitespace only
-    const editingListItem = page.getByRole('listitem').filter({
+    const editingRow = page.getByRole('row').filter({
       has: page.getByRole('button', { name: 'Save changes' }),
     });
-    const editInput = editingListItem.getByRole('textbox', {
+    const editInput = editingRow.getByRole('textbox', {
       name: /full name/i,
     });
     await editInput.clear();
     await editInput.fill('   ');
 
     // Try to save - the button should be disabled
-    const saveButton = editingListItem.getByRole('button', {
+    const saveButton = editingRow.getByRole('button', {
       name: 'Save changes',
     });
     await expect(saveButton).toBeDisabled();
@@ -141,19 +139,17 @@ test.describe('Edit Teacher Flow (E2E)', () => {
       .click();
 
     // Change the name
-    const editingListItem = page.getByRole('listitem').filter({
+    const editingRow = page.getByRole('row').filter({
       has: page.getByRole('button', { name: 'Save changes' }),
     });
-    const editInput = editingListItem.getByRole('textbox', {
+    const editInput = editingRow.getByRole('textbox', {
       name: /full name/i,
     });
     await editInput.clear();
     await editInput.fill('Should Not Save');
 
     // Cancel instead of save
-    await editingListItem
-      .getByRole('button', { name: 'Cancel editing' })
-      .click();
+    await editingRow.getByRole('button', { name: 'Cancel editing' }).click();
 
     // Verify original name is still shown
     await expect(page.getByText('Original Name')).toBeVisible();
@@ -182,15 +178,15 @@ test.describe('Edit Teacher Flow (E2E)', () => {
       .getByRole('button', { name: 'Edit Second Teacher', exact: true })
       .click();
 
-    const editingListItem = page.getByRole('listitem').filter({
+    const editingRow = page.getByRole('row').filter({
       has: page.getByRole('button', { name: 'Save changes' }),
     });
-    const editInput = editingListItem.getByRole('textbox', {
+    const editInput = editingRow.getByRole('textbox', {
       name: /full name/i,
     });
     await editInput.clear();
     await editInput.fill('Edited Second');
-    await editingListItem.getByRole('button', { name: 'Save changes' }).click();
+    await editingRow.getByRole('button', { name: 'Save changes' }).click();
 
     // Verify only second teacher was edited
     await expect(page.getByText('Original Name')).toBeVisible();
@@ -215,15 +211,15 @@ test.describe('Edit Teacher Flow (E2E)', () => {
       .getByRole('button', { name: 'Edit Original Name', exact: true })
       .click();
 
-    const editingListItem = page.getByRole('listitem').filter({
+    const editingRow = page.getByRole('row').filter({
       has: page.getByRole('button', { name: 'Save changes' }),
     });
-    const editInput = editingListItem.getByRole('textbox', {
+    const editInput = editingRow.getByRole('textbox', {
       name: /full name/i,
     });
     await editInput.clear();
     await editInput.fill('Duplicate Name');
-    await editingListItem.getByRole('button', { name: 'Save changes' }).click();
+    await editingRow.getByRole('button', { name: 'Save changes' }).click();
 
     // Verify both teachers with same name are visible
     const duplicateNames = page.getByText('Duplicate Name');
@@ -237,16 +233,16 @@ test.describe('Edit Teacher Flow (E2E)', () => {
       .click();
 
     // Enter name with extra whitespace
-    const editingListItem = page.getByRole('listitem').filter({
+    const editingRow = page.getByRole('row').filter({
       has: page.getByRole('button', { name: 'Save changes' }),
     });
-    const editInput = editingListItem.getByRole('textbox', {
+    const editInput = editingRow.getByRole('textbox', {
       name: /full name/i,
     });
     await editInput.clear();
     await editInput.fill('  Trimmed Name  ');
 
-    await editingListItem.getByRole('button', { name: 'Save changes' }).click();
+    await editingRow.getByRole('button', { name: 'Save changes' }).click();
 
     // Verify trimmed name appears (without extra spaces)
     await expect(page.getByText('Trimmed Name')).toBeVisible();

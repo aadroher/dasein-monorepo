@@ -57,19 +57,19 @@
 
 **NOTE: Update existing E2E tests FIRST to reflect new UI structure before implementation**
 
-- [ ] T011 [US1] Update E2E test for teacher list layout in web-client/test/teacher/teacher-list-layout.e2e.ts to expect table structure instead of cards
-- [ ] T012 [US1] Update E2E test for create teacher flow in web-client/test/teacher/create-teacher.e2e.ts to interact with new list layout
-- [ ] T013 [US1] Update E2E test for edit teacher flow in web-client/test/teacher/edit-teacher.e2e.ts to use icon buttons
-- [ ] T014 [US1] Update E2E test for delete teacher flow in web-client/test/teacher/delete-teacher.e2e.ts to use icon buttons
-- [ ] T015 [P] [US1] Create accessibility test for TeacherList in web-client/test/teacher/teacher-list-a11y.test.tsx
-- [ ] T016 [P] [US1] Create unit test for TeacherListItem in web-client/test/teacher/teacher-list-item.test.tsx
+- [X] T011 [US1] Update E2E test for teacher list layout in web-client/test/teacher/e2e/view-list.spec.ts to expect table structure instead of cards
+- [X] T012 [US1] Update E2E test for create teacher flow in web-client/test/teacher/e2e/create-teacher.spec.ts to interact with new list layout
+- [X] T013 [US1] Update E2E test for edit teacher flow in web-client/test/teacher/e2e/edit-teacher.spec.ts to use icon buttons
+- [X] T014 [US1] Update E2E test for delete teacher flow in web-client/test/teacher/e2e/delete-teacher.spec.ts to use icon buttons
+- [X] T015 [P] [US1] Create accessibility test for TeacherList in web-client/test/teacher/unit/teacher-list-a11y.test.tsx
+- [X] T016 [P] [US1] Create unit test for TeacherListItem in web-client/test/teacher/unit/teacher-list-item.test.tsx
 
 ### Implementation for User Story 1
 
-- [ ] T017 [P] [US1] Create TeacherListItem component in web-client/src/features/teacher/ui/teacher-list-item.tsx
-- [ ] T018 [US1] Modify TeacherList component to use table layout in web-client/src/features/teacher/ui/teacher-list.tsx
-- [ ] T019 [US1] Update TeacherEditForm to use IconButton components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
-- [ ] T020 [US1] Update TeacherDeleteButton to use IconButton component in web-client/src/features/teacher/ui/teacher-delete-button.tsx
+- [X] T017 [P] [US1] Create TeacherListItem component in web-client/src/features/teacher/ui/teacher-list-item.tsx
+- [X] T018 [US1] Modify TeacherList component to use table layout in web-client/src/features/teacher/ui/teacher-list.tsx
+- [X] T019 [US1] Update TeacherEditForm to use IconButton components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
+- [X] T020 [US1] Update TeacherDeleteButton to use IconButton component in web-client/src/features/teacher/ui/teacher-delete-button.tsx
 - [ ] T021 [US1] Verify all E2E tests pass with new table layout
 - [ ] T022 [US1] Verify accessibility tests pass for teacher list with icon buttons
 

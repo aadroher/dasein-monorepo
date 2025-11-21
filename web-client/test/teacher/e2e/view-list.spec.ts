@@ -21,9 +21,11 @@ test.describe('View Teachers List (E2E)', () => {
       page.getByText(/no teachers|no teachers yet|empty/i)
     ).toBeVisible();
 
-    // Verify no teacher entries are shown
-    const teacherListItems = page.getByRole('listitem');
-    await expect(teacherListItems).toHaveCount(0);
+    // Verify no teacher entries are shown in table
+    const teacherRows = page
+      .getByRole('row')
+      .filter({ hasNot: page.locator('th') });
+    await expect(teacherRows).toHaveCount(0);
   });
 
   test('should display teachers list when teachers exist', async ({ page }) => {
@@ -40,11 +42,15 @@ test.describe('View Teachers List (E2E)', () => {
       .click();
     await expect(page.getByText('Bob')).toBeVisible();
 
-    // Verify list shows both teachers
-    const teacherNames = await page.getByRole('listitem').allTextContents();
+    // Verify table shows both teachers (excluding header row)
+    const teacherRows = page
+      .getByRole('row')
+      .filter({ hasNot: page.locator('th') });
+    await expect(teacherRows).toHaveCount(2);
 
-    expect(teacherNames.some(name => name.includes('Alice'))).toBeTruthy();
-    expect(teacherNames.some(name => name.includes('Bob'))).toBeTruthy();
+    const rowContents = await teacherRows.allTextContents();
+    expect(rowContents.some(content => content.includes('Alice'))).toBeTruthy();
+    expect(rowContents.some(content => content.includes('Bob'))).toBeTruthy();
 
     // Verify empty state is not visible
     await expect(
@@ -76,13 +82,15 @@ test.describe('View Teachers List (E2E)', () => {
       .click();
     await expect(page.getByText('Michael Chen')).toBeVisible();
 
-    // Verify alphabetical order
-    const teacherListItems = page.getByRole('listitem');
-    const count = await teacherListItems.count();
+    // Verify alphabetical order in table rows (excluding header)
+    const teacherRows = page
+      .getByRole('row')
+      .filter({ hasNot: page.locator('th') });
+    const count = await teacherRows.count();
 
     const names: string[] = [];
     for (let i = 0; i < count; i++) {
-      const text = await teacherListItems.nth(i).textContent();
+      const text = await teacherRows.nth(i).textContent();
       if (text) names.push(text);
     }
 
@@ -119,14 +127,15 @@ test.describe('View Teachers List (E2E)', () => {
     await expect(page.getByText('Bob')).toBeVisible();
     await expect(page.getByText('CHARLIE')).toBeVisible();
 
-    // Get all list items
-    const teacherListItems = page.getByRole('listitem');
-    const count = await teacherListItems.count();
+    // Get all table rows (excluding header)
+    const teacherRows = page
+      .getByRole('row')
+      .filter({ hasNot: page.locator('th') });
+    const count = await teacherRows.count();
 
     const names: string[] = [];
     for (let i = 0; i < count; i++) {
-      const nameSpan = teacherListItems.nth(i).locator('.teacher-name');
-      const text = await nameSpan.textContent();
+      const text = await teacherRows.nth(i).textContent();
       if (text) names.push(text);
     }
 
@@ -170,9 +179,9 @@ test.describe('View Teachers List (E2E)', () => {
     // Reload the page
     await page.reload();
 
-    // Wait for list to load - wait for the list itself first
-    const teacherList = page.getByRole('list', { name: /teachers list/i });
-    await expect(teacherList).toBeVisible();
+    // Wait for table to load - wait for the table itself first
+    const teacherTable = page.getByRole('table', { name: /teachers/i });
+    await expect(teacherTable).toBeVisible();
 
     // Then verify teachers are present
     await expect(page.getByText('Alice')).toBeVisible();
@@ -180,13 +189,14 @@ test.describe('View Teachers List (E2E)', () => {
     await expect(page.getByText('Zoe')).toBeVisible();
 
     // Verify alphabetical order is maintained
-    const teacherListItems = page.getByRole('listitem');
-    const count = await teacherListItems.count();
+    const teacherRows = page
+      .getByRole('row')
+      .filter({ hasNot: page.locator('th') });
+    const count = await teacherRows.count();
 
     const names: string[] = [];
     for (let i = 0; i < count; i++) {
-      const nameSpan = teacherListItems.nth(i).locator('.teacher-name');
-      const text = await nameSpan.textContent();
+      const text = await teacherRows.nth(i).textContent();
       if (text) names.push(text);
     }
 
@@ -246,7 +256,7 @@ test.describe('View Teachers List (E2E)', () => {
     await expect(page.getByText(/no teachers yet/i)).toBeVisible();
   });
 
-  test('should display list with proper semantic structure', async ({
+  test('should display table with proper semantic structure', async ({
     page,
   }) => {
     // Create a teacher
@@ -257,13 +267,13 @@ test.describe('View Teachers List (E2E)', () => {
       .getByRole('button', { name: /add teacher|create teacher/i })
       .click();
 
-    // Verify list has proper semantic structure (ul has implicit list role)
-    const list = page.getByRole('list', { name: /teachers list/i });
-    await expect(list).toBeVisible();
+    // Verify table has proper semantic structure
+    const table = page.getByRole('table', { name: /teachers/i });
+    await expect(table).toBeVisible();
 
-    // Verify list items have proper semantic structure (li has implicit listitem role)
-    const listItems = page.getByRole('listitem');
-    await expect(listItems).toHaveCount(1);
+    // Verify table has rows (1 data row + 1 header row)
+    const rows = page.getByRole('row');
+    await expect(rows).toHaveCount(2);
   });
 
   test('should show loading state briefly when loading teachers', async ({
@@ -284,13 +294,13 @@ test.describe('View Teachers List (E2E)', () => {
       await expect(loadingIndicator).not.toBeVisible();
     }
 
-    // Verify either empty state or list is shown after loading
+    // Verify either empty state or table is shown after loading
     const emptyState = page.getByText(/no teachers|no teachers yet|empty/i);
-    const list = page.getByRole('list', { name: /teachers list/i });
+    const table = page.getByRole('table', { name: /teachers/i });
 
     const hasEmptyState = await emptyState.isVisible().catch(() => false);
-    const hasList = await list.isVisible().catch(() => false);
+    const hasTable = await table.isVisible().catch(() => false);
 
-    expect(hasEmptyState || hasList).toBeTruthy();
+    expect(hasEmptyState || hasTable).toBeTruthy();
   });
 });
