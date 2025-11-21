@@ -34,14 +34,14 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T003 [P] Create IconButton component in web-client/src/design-system/components/icon-button.tsx
-- [ ] T004 [P] Create AppLogo component in web-client/src/design-system/layout/app-logo.tsx
-- [ ] T005 [P] Create PageHeader component in web-client/src/design-system/layout/page-header.tsx
-- [ ] T006 Create CommonLayout component in web-client/src/design-system/layout/common-layout.tsx (depends on T004, T005)
-- [ ] T007 [P] Create accessibility test for IconButton in web-client/test/design-system/components/icon-button-a11y.test.tsx
-- [ ] T008 [P] Create accessibility test for CommonLayout in web-client/test/design-system/layout/common-layout-a11y.test.tsx
-- [ ] T009 [P] Create unit test for IconButton in web-client/test/design-system/components/icon-button.test.tsx
-- [ ] T010 [P] Create unit test for CommonLayout in web-client/test/design-system/layout/common-layout.test.tsx
+- [X] T003 [P] Create IconButton component in web-client/src/design-system/components/icon-button.tsx
+- [X] T004 [P] Create AppLogo component in web-client/src/design-system/layout/app-logo.tsx
+- [X] T005 [P] Create PageHeader component in web-client/src/design-system/layout/page-header.tsx
+- [X] T006 Create CommonLayout component in web-client/src/design-system/layout/common-layout.tsx (depends on T004, T005)
+- [X] T007 [P] Create accessibility test for IconButton in web-client/test/design-system/components/icon-button-a11y.test.tsx
+- [X] T008 [P] Create accessibility test for CommonLayout in web-client/test/design-system/layout/common-layout-a11y.test.tsx
+- [X] T009 [P] Create unit test for IconButton in web-client/test/design-system/components/icon-button.test.tsx
+- [X] T010 [P] Create unit test for CommonLayout in web-client/test/design-system/layout/common-layout.test.tsx
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
