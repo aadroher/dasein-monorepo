@@ -269,3 +269,15 @@ The design system is now fully documented with:
 
 ---
 
+_**User (2025-11-21 10:05Z)**_
+
+If you typecheck `src/design-system/index.ts` with `tsc` you'll see that there is an error with an import. Can you solve that?
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+
+
+---
+

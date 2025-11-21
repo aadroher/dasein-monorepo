@@ -14,8 +14,8 @@ export * from './layout';
 export * from './accessibility';
 
 // Hooks
-export * from './hooks';
+export { useTheme } from './hooks/useTheme';
+export type { Theme } from './hooks/useTheme';
 
 // Theme
 export { ThemeProvider } from './theme/ThemeProvider';
-export type { Theme } from './theme/ThemeProvider';
