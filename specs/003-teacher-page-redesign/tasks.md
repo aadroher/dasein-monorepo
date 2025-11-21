@@ -23,8 +23,8 @@
 
 **Purpose**: Project initialization and dependency installation
 
-- [ ] T001 Install Heroicons React package in web-client/package.json
-- [ ] T002 Verify existing test infrastructure (Vitest, Playwright, jest-axe) is configured
+- [X] T001 Install Heroicons React package in web-client/package.json
+- [X] T002 Verify existing test infrastructure (Vitest, Playwright, jest-axe) is configured
 
 ---
 
