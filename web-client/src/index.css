@@ -47,7 +47,14 @@
   --color-warning: #f59e0b;
   --color-error: #f43f5e;
   --color-info: #3b82f6;
-  
+
+  /* Theme-aware semantic colors (Dark mode default) */
+  --color-background: #0d1117;  /* neutral-900 */
+  --color-surface: #212529;     /* neutral-800 */
+  --color-text: #f8f9fa;        /* neutral-50 */
+  --color-text-secondary: #adb5bd;  /* neutral-300 */
+  --color-border: #495057;      /* neutral-600 */
+
   /* Spacing - Base-8 Progression */
   --spacing-1: 4px;
   --spacing-2: 8px;

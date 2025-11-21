@@ -7,7 +7,14 @@
  */
 
 .light {
-  /* Semantic color mappings for light theme */
+  /* Tailwind semantic colors for light theme (overrides dark defaults) */
+  --color-background: #f8f9fa;      /* neutral-50 */
+  --color-surface: #ffffff;         /* pure white */
+  --color-text: #0d1117;            /* neutral-900 */
+  --color-text-secondary: #343a40;  /* neutral-700 */
+  --color-border: #d3d7db;          /* neutral-200 */
+
+  /* Legacy theme variables for light theme */
   --theme-text-primary: #0d1117;    /* neutral-900 - dark text on light */
   --theme-text-secondary: #343a40;  /* neutral-700 - medium emphasis */
   --theme-text-tertiary: #495057;   /* neutral-600 - lower emphasis */
@@ -32,4 +39,15 @@
   --theme-warning: #d97706;   /* Amber-600 */
   --theme-error: #dc2626;     /* Rose-600 */
   --theme-info: #2563eb;      /* Blue-600 */
+}
+
+/* Apply light background to html/body when light class is active */
+html.light {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+html.light body {
+  background-color: var(--color-background);
+  color: var(--color-text);
 }

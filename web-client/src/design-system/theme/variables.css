@@ -32,3 +32,16 @@
   --theme-error: #f43f5e;     /* Rose-500 */
   --theme-info: #3b82f6;      /* Blue-500 */
 }
+
+/* Apply dark theme as default */
+html {
+  background-color: var(--theme-bg-primary);
+  color: var(--theme-text-primary);
+}
+
+body {
+  background-color: var(--theme-bg-primary);
+  color: var(--theme-text-primary);
+  margin: 0;
+  padding: 0;
+}

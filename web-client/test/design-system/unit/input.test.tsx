@@ -42,13 +42,13 @@ describe('Input Component', () => {
     it('applies normal state classes when no error', () => {
       render(<Input />);
       const input = screen.getByRole('textbox');
-      expect(input).toHaveClass('border-neutral-300');
+      expect(input).toHaveClass('border-border');
     });
 
     it('applies error state classes when error exists', () => {
       render(<Input error="Error" />);
       const input = screen.getByRole('textbox');
-      expect(input).toHaveClass('border-error-500');
+      expect(input).toHaveClass('border-error');
     });
 
     it('applies custom className', () => {
