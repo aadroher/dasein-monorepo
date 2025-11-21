@@ -130,7 +130,7 @@ describe('Layout Components Integration', () => {
       const innerDiv = main?.querySelector('div');
 
       expect(innerDiv).toHaveClass('px-4');
-      expect(innerDiv).toHaveClass('sm:px-6');
+      expect(innerDiv).toHaveClass('md:px-6');
       expect(innerDiv).toHaveClass('lg:px-8');
     });
 
