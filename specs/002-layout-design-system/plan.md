@@ -10,6 +10,7 @@ Establish a reusable, accessible design system and common application layout (he
 **Language**: TypeScript | **UI Library**: React | **Build Tool**: Vite | **Testing**: Vitest (unit), React Testing Library (components), Playwright (layout + integration), axe-core (accessibility checks), visual diff optional (future)  
 **Target Viewports**: Tablet ≥768px, Desktop ≥1024px (adaptive only)  
 **Styling Approach**: Tailwind CSS (utility-first) with custom theme extensions (design tokens surfaced via `tailwind.config.js`), supplemented by minimal CSS variables for runtime theme (light/dark) overrides.  
+**Color Philosophy**: Modern dark-first design with magenta (#cc4bae) as corporate identity color, violet secondary accent, cool gray neutrals; dark mode is the default experience with full light mode alternative.  
 **Performance Considerations**: Minimize CSS payload, avoid unnecessary runtime style recalculation; maintain <10% page load increase.  
 **Accessibility Goals**: WCAG 2.1 AA contrast, keyboard navigability, semantic landmark structure.
 
@@ -81,11 +82,12 @@ Design system introduces structural abstraction plus Tailwind dependency. Mitiga
 - Output: `research.md` capturing decisions, alternatives, rejection reasons.
 
 ### Phase 1: Tokens Foundation
-- Implement token source file exporting JS/TS maps for colors, spacing, radii, shadows.
+- Implement token source file exporting JS/TS maps for colors (magenta primary, violet secondary, cool neutrals, semantic states), spacing, radii, shadows.
 - Extend `tailwind.config.js` theme (colors, spacing scale, font sizes, radii, boxShadow, breakpoints) to mirror tokens.
-- Generate CSS variables (e.g., `--ds-color-primary`) only where runtime switching is required (theme colors); prefer Tailwind utilities for static styling.
-- Unit tests: verify token keys present, spacing is ascending, contrast ratios for text colors (calculated test).
-- File(s): `design-system/tokens/*`, `tailwind.config.js` update.
+- Generate CSS variables (e.g., `--theme-text-primary`) for runtime dark/light theme switching; prefer Tailwind utilities for static styling.
+- Dark mode as default: CSS variables in `variables.css` define dark theme; `light.css` provides overrides when `.light` class applied.
+- Unit tests: verify token keys present, spacing is ascending, contrast ratios for text colors in both dark and light modes (calculated test).
+- File(s): `design-system/tokens/*`, `design-system/theme/variables.css`, `design-system/theme/light.css`, `tailwind.config.js` update.
 
 ### Phase 2: Layout Framework
 - Components: `AppLayout` (composition), `Header`, `NavBar`/`NavContainer`, `MainContainer`, `Footer`, `SkipLink`.

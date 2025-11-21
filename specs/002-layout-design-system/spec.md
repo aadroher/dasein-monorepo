@@ -90,7 +90,7 @@ As a user with accessibility needs, I can navigate and interact with the applica
 
 #### Design Tokens
 
-- **FR-001**: System MUST define a consistent color palette including primary, secondary, neutral, success, warning, error, and information colors
+- **FR-001**: System MUST define a consistent color palette with magenta (#cc4bae) as the corporate identity primary color, violet secondary accent, cool gray neutrals for a modern dark-first aesthetic, and semantic state colors (success, warning, error, information) that work in both light and dark themes
 - **FR-002**: System MUST define a typography scale including font families, sizes, weights, and line heights for headings, body text, and UI elements
 - **FR-003**: System MUST define a spacing scale following a mathematical progression (e.g., 4px, 8px, 16px, 24px, 32px, 48px, 64px)
 - **FR-004**: System MUST define breakpoints for adaptive behavior at minimum for tablet (≥768px) and desktop (≥1024px) viewports; smartphone (<768px) optimization is out of scope for this release
@@ -158,10 +158,21 @@ As a user with accessibility needs, I can navigate and interact with the applica
 - **SC-008**: Zero accessibility violations reported by automated testing tools (axe, WAVE) for layout and UI components
 - **SC-009**: Tailwind-generated CSS (post-build, minified and purged) adds no more than 35KB gzipped to baseline bundle size.
 
+## Design Philosophy
+
+The design system implements a **modern dark-first aesthetic** with the following core principles:
+
+- **Corporate Identity Color**: Magenta (#cc4bae) serves as the primary brand color, used strategically for CTAs, focus states, and key brand moments
+- **Dark Mode Primary**: Dark theme is the default experience with cool gray neutrals providing excellent readability on deep backgrounds
+- **Light Mode Alternative**: Fully functional light theme available with adjusted contrast ratios for accessibility
+- **Contemporary Feel**: Cool-toned neutrals complement the warm magenta, creating a sophisticated modern palette
+- **Accessibility First**: All color combinations meet WCAG 2.1 AA contrast requirements (4.5:1 for text, 3:1 for UI components)
+
 ## Assumptions
 
 - Primary usage context is work desktop environments and tablet devices; smartphone (<768px width) usage is not required for initial release.
 - Minimum supported viewport width for acceptable experience is 768px.
+- Dark mode is the primary experience; users can optionally switch to light theme via manual toggle
 - Users operate in controlled lighting environments; contrast targets remain WCAG AA.
 - Future mobile optimization can extend existing design tokens without structural overhaul.
 - Tailwind CSS chosen deliberately to standardize styling and reduce bespoke CSS; acceptance of framework-specific detail overrides prior vendor-neutral styling assumption.

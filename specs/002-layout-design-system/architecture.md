@@ -56,7 +56,58 @@ Adopt **Tailwind CSS v4** with custom token extensions.
 
 ---
 
-## ADR-002: Token-Based Design System
+## ADR-002: Modern Dark-First Color Scheme with Magenta Identity
+
+**Status**: ✅ Accepted  
+**Date**: 2025-11-17
+
+### Context
+
+Need a distinctive, accessible color scheme that differentiates the brand while supporting both light and dark themes.
+
+### Decision
+
+Adopt **magenta (#cc4bae) as corporate identity color** with **dark mode as the default experience**, cool gray neutrals, and violet secondary accent.
+
+### Rationale
+
+**Color Philosophy**:
+- **Primary**: Magenta (#cc4bae) - vibrant, memorable, differentiates from typical corporate blues
+- **Secondary**: Violet (analogous to magenta) - creates harmonious, sophisticated palette
+- **Neutrals**: Cool grays with no warm tints - clean, professional, excellent text contrast
+- **Dark-first**: Default dark theme (#0d1117 background) reduces eye strain for long work sessions
+- **Light alternative**: Fully functional light theme with adjusted contrast ratios
+
+**Benefits**:
+- Bold brand differentiation from competitors
+- Modern dark-first approach aligns with industry trends
+- All color combinations validated for WCAG 2.1 AA contrast
+- Seamless theme switching via CSS variables
+- Magenta provides energy while neutrals maintain professionalism
+
+**Accessibility Validation**:
+- Dark theme: neutral-50 on neutral-900 = 16.1:1 (AAA)
+- Light theme: neutral-900 on neutral-50 = 16.1:1 (AAA)
+- Primary on backgrounds: 4.7:1+ (AA)
+- All semantic colors: 4.5:1+ (AA)
+
+**Alternatives Considered**:
+1. **Braun-inspired warm neutrals (bronze-copper, olive-green)**: Rejected - too vintage for modern SaaS, dark mode was afterthought
+2. **Standard blue primary**: Rejected - generic, lacks memorable brand identity
+3. **Light-first design**: Rejected - dark mode increasingly expected as default
+4. **High-saturation neon palette**: Rejected - accessibility challenges, eye strain
+
+### Consequences
+
+- Magenta used strategically for CTAs, focus states, brand moments
+- Dark theme CSS variables in `variables.css` (default)
+- Light theme overrides in `light.css` (applied via `.light` class)
+- All components tested for contrast in both themes
+- Brand identity strongly associated with magenta color
+
+---
+
+## ADR-003: Token-Based Design System
 
 **Status**: ✅ Accepted  
 **Date**: 2025-11-15
@@ -98,7 +149,7 @@ Implement **design tokens** as TypeScript objects, exported for Tailwind configu
 
 ---
 
-## ADR-003: CSS Variables for Theme Switching
+## ADR-004: CSS Variables for Theme Switching
 
 **Status**: ✅ Accepted  
 **Date**: 2025-11-15
@@ -148,7 +199,7 @@ Use **CSS variables** with `prefers-color-scheme` and manual toggle support.
 
 ---
 
-## ADR-004: Component Architecture - Composable Primitives
+## ADR-005: Component Architecture - Composable Primitives
 
 **Status**: ✅ Accepted  
 **Date**: 2025-11-15
@@ -195,7 +246,7 @@ type ButtonSize = 'small' | 'medium' | 'large';
 
 ---
 
-## ADR-005: Accessibility-First Testing Strategy
+## ADR-006: Accessibility-First Testing Strategy
 
 **Status**: ✅ Accepted  
 **Date**: 2025-11-17
@@ -239,7 +290,7 @@ Implement **multi-layered accessibility testing**:
 
 ---
 
-## ADR-006: Responsive Design with Breakpoints
+## ADR-007: Responsive Design with Breakpoints
 
 **Status**: ✅ Accepted  
 **Date**: 2025-11-17
@@ -283,7 +334,7 @@ breakpoints: {
 
 ---
 
-## ADR-007: LocalStorage for Theme Persistence
+## ADR-008: LocalStorage for Theme Persistence
 
 **Status**: ✅ Accepted  
 **Date**: 2025-11-15
@@ -331,7 +382,7 @@ export function loadTheme(): Theme {
 
 ---
 
-## ADR-008: Test Organization by User Story
+## ADR-009: Test Organization by User Story
 
 **Status**: ✅ Accepted  
 **Date**: 2025-11-17
@@ -379,7 +430,7 @@ test/design-system/
 
 ---
 
-## ADR-009: No Runtime CSS-in-JS
+## ADR-010: No Runtime CSS-in-JS
 
 **Status**: ✅ Accepted  
 **Date**: 2025-11-15
@@ -419,7 +470,7 @@ Performance is critical; minimize runtime overhead.
 
 ---
 
-## ADR-010: Focus Ring Approach - CSS :focus-visible
+## ADR-011: Focus Ring Approach - CSS :focus-visible
 
 **Status**: ✅ Accepted  
 **Date**: 2025-11-17

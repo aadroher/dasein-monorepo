@@ -235,3 +235,183 @@ The changes:
 
 ---
 
+_**User (2025-11-21 14:24Z)**_
+
+Cool. Now, the hover state of the tertiary button background is completely white, and it does not play well with the other variant styles. Can we do something more subtle?
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+
+```
+
+```
+I've made the tertiary button hover state much more subtle. Instead of `bg-primary-50` (very light pink), it now uses:
+- **Hover**: `bg-primary-900/10` - a very subtle 10% opacity overlay of the darkest magenta
+- **Active**: `bg-primary-900/20` - a slightly more visible 20% opacity for the pressed state
+
+This creates a gentle tint effect that's much less jarring and works better with your dark-first theme.
+
+---
+
+_**User (2025-11-21 14:25Z)**_
+
+Mmm, maybe that was too subtle. Can we make the opacity a bit higher?
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+
+```
+
+```
+Updated! Now the tertiary button has:
+- **Hover**: `bg-primary-900/20` - 20% opacity (more noticeable)
+- **Active**: `bg-primary-900/30` - 30% opacity (even more visible when pressed)
+
+This should provide better visual feedback while still maintaining a subtle, refined look.
+
+---
+
+_**User (2025-11-21 14:25Z)**_
+
+Cool, that worked.
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+Great! The tertiary button hover state now has a nice, noticeable but still subtle effect that complements the other button variants well.
+
+---
+
+_**User (2025-11-21 14:28Z)**_
+
+Now, in general, I am not convinced by this cyan for the secondary colour that we have defined in `web-client/src/design-system/tokens/colors.ts`. Can we try to find another secondary colour base that is not its complementary but that is instead a bit closer to it in the hue spectrum and still plays well with it? 
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+Looking at your primary magenta (#cc4bae), instead of cyan (which is its complementary), we could use colors that are closer on the hue spectrum. Here are some suggestions that would harmonize well with magenta:
+
+**Option 1: Purple/Violet** (#7c3aed / #8b5cf6)
+- Creates an analogous color scheme (neighboring colors on the color wheel)
+- More cohesive, sophisticated feel
+- Both warm tones that blend naturally
+
+**Option 2: Deep Blue** (#3b82f6 / #2563eb)
+- Still cool but closer to magenta than cyan
+- Professional and calming
+- Creates a split-complementary harmony
+
+**Option 3: Coral/Orange-Red** (#f97316 / #ea580c)
+- Warm like magenta but on the opposite side (towards red-orange)
+- Energetic and vibrant
+- Creates a warm, inviting palette
+
+My recommendation would be **Option 1 (Purple/Violet)** as it creates the most harmonious relationship with your magenta while still providing enough distinction for a secondary color. The violet would be around #8b5cf6 (similar vibrancy to your magenta).
+
+Which direction appeals to you? Or would you like to see a specific hex value?
+
+---
+
+_**User (2025-11-21 14:28Z)**_
+
+Yep, let's go with option 1
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+
+```
+
+```
+Done! I've updated the secondary color scale to use violet (#a855f7 as the base) instead of cyan. This creates an analogous color scheme with your magenta primary, resulting in a more harmonious and sophisticated palette. The violet is close enough to magenta on the color wheel to feel cohesive, but still distinct enough to serve as a secondary accent color.
+
+---
+
+_**User (2025-11-21 14:31Z)**_
+
+Sorry, but I can still see that the "Edit" buttons in the main page are Cyan. Did the update in the colour tokens end up being reflected there?
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+Let me check the current state of the colors file and then trace through to see if the changes are being applied: Good, the colors are updated. The issue is likely that the build needs to be refreshed or the browser cache needs to be cleared. Let me check if there's a dev server running and if we need to rebuild: The dev server is now running. The violet colors should now be active. Try refreshing your browser (hard refresh with Cmd+Shift+R or Ctrl+Shift+R) to clear the cache. The "Edit" buttons using the secondary variant should now display in violet instead of cyan.
+
+If you're still seeing cyan after a hard refresh, let me know and I'll check if there are any cached build artifacts that need to be cleared.
+
+---
+
+_**User (2025-11-21 14:32Z)**_
+
+Yes, I can still see cyan.
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+Let me check if there might be hardcoded cyan colors elsewhere or if there's a caching issue. Let me search for where the Edit buttons are defined: Good, the Edit button uses `variant="secondary"` which should pick up the violet color. Let me check if there might be any CSS overrides or if we need to clear the Vite cache: Perfect! The dev server is now running with the cleared cache. Now try doing a hard refresh in your browser (Cmd+Shift+R on Mac or Ctrl+Shift+R on Windows/Linux). The Edit buttons should now display in violet instead of cyan.
+
+If you're still seeing cyan after the hard refresh, there might be compiled CSS that's cached. In that case, you can also try opening the browser's DevTools and disable cache while DevTools is open.
+
+---
+
+_**User (2025-11-21 14:33Z)**_
+
+Still cyan
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+Let me check if there might be hardcoded cyan colors somewhere. Let me search for cyan color values in the codebase: Found it! There are hardcoded cyan values in `index.css` and the theme CSS files. Let me update those: 
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+Perfect! Now all the hardcoded cyan values have been updated to violet. Try refreshing your browser now - the Edit buttons should finally display in violet instead of cyan. The changes are now in:
+
+1. ✅ Token definitions (`colors.ts`)
+2. ✅ Index CSS (`index.css`)
+3. ✅ Dark theme variables (`variables.css`)
+4. ✅ Light theme variables (`light.css`)
+
+---
+
+_**User (2025-11-21 14:33Z)**_
+
+Cool. That worked!
+
+---
+
+_**Agent (model copilot/claude-sonnet-4.5)**_
+
+Excellent! The violet secondary color is now showing up properly. The analogous color scheme with magenta and violet creates a much more harmonious and sophisticated palette than the previous complementary cyan.
+
+---
+
+_**User (2025-11-21 14:34Z)**_
+
+/clear 
+
+---
+
+_**Agent**_
+
+
+
+---
+

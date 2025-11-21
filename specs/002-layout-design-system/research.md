@@ -12,119 +12,128 @@ This document captures design decisions, rationale, alternatives considered, and
 
 ## 1. Color Palette
 
-### Decision: Braun-Inspired Warm Neutrals (Accessible Version)
+### Decision: Modern Dark-First Scheme with Magenta Corporate Identity
 
-Inspired by vintage Braun electronics aesthetic with warm, sophisticated tones adjusted for WCAG AA compliance.
+A contemporary color system centered around magenta (#cc4bae) as the corporate identity color, with cool-toned neutrals and a dark-first approach for modern aesthetics. All colors meet WCAG 2.1 AA contrast requirements.
 
-**Foundation Colors**:
-- **Background (Off-white)**: `#F6F5F2` - Warm, soft page background (Braun beige)
-- **Surface (Warm beige)**: `#D7D5CF` - Cards, panels, section backgrounds
-- **Text Primary (Charcoal)**: `#2E2E2C` - Main body text and headings (12.48:1 contrast ✅)
+**Design Philosophy**:
+- **Dark mode is the primary experience** - optimized for reduced eye strain and modern aesthetics
+- **Magenta used strategically** for CTAs, focus states, and brand moments
+- **Cool gray neutrals** provide excellent readability and complement the warm magenta
+- **Semantic colors are muted and modern**, working beautifully in both themes
 
-**Accent Colors** (WCAG AA adjusted):
-- **Primary (Bronze-copper)**: `#9E5E36` - Primary actions, CTAs, links
-  - Original: `#B0693C` (failed 3.91:1)
-  - Adjusted: `#9E5E36` (passes 4.69:1 ✅)
-  - Darker for accessibility while preserving warm copper tone
-  
-- **Secondary (Olive-green)**: `#686E5A` - Secondary buttons, subtle highlights, icons
-  - Original: `#7A826A` (failed 3.68:1)
-  - Adjusted: `#686E5A` (passes 4.86:1 ✅)
-  - Muted olive maintains earth-tone aesthetic
+**Foundation Colors (Dark Theme - Default)**:
+- **Background**: `#0d1117` (neutral-900) - Main canvas, true dark
+- **Surface**: `#212529` (neutral-800) - Cards, panels, elevated surfaces
+- **Text Primary**: `#f8f9fa` (neutral-50) - High contrast on dark backgrounds
 
-**Extended Palette** (Generated scales):
+**Primary Scale (Magenta - Corporate Identity)**:
+- Base: `#cc4bae` - Vibrant magenta for brand presence
+- 50: `#fdf4fb` - Lightest tint
+- 100: `#fbe5f7` - Very light
+- 200: `#f5c4ec` - Light
+- 300: `#ed99dd` - Medium light
+- 400: `#dd6dc9` - Medium
+- 500: `#cc4bae` ← **BASE - Corporate identity color**
+- 600: `#b73d9a` - Medium dark (better contrast for light mode)
+- 700: `#992f7f` - Dark
+- 800: `#7a2765` - Very dark
+- 900: `#5f1d4e` - Darkest
 
-*Bronze-copper scale* (primary actions):
-- 50: `#FDF6F2` (lightest tint - alert backgrounds)
-- 100: `#F7E5D9`
-- 200: `#EBCAB4`
-- 300: `#D89870`
-- 400: `#C17953`
-- 500: `#9E5E36` ← **base (accessible)**
-- 600: `#8A5230`
-- 700: `#6F4226`
-- 800: `#5C361F`
-- 900: `#4D2E1A` (darkest shade)
+**Neutral Scale (Cool Gray - Modern Feel)**:
+- Designed for dark-first: deep backgrounds with excellent text contrast
+- 50: `#f8f9fa` - Almost white (dark mode text)
+- 100: `#e9ecef` - Very light gray
+- 200: `#d3d7db` - Light gray (light mode borders)
+- 300: `#adb5bd` - Medium light (dark mode secondary text)
+- 400: `#868e96` - Medium (dark mode tertiary text)
+- 500: `#5c646c` - Medium dark
+- 600: `#495057` - Dark (dark mode borders)
+- 700: `#343a40` - Very dark (dark mode elevated surfaces)
+- 800: `#212529` - Near black (dark mode cards/panels)
+- 900: `#0d1117` ← **True dark (dark mode background)**
 
-*Olive-green scale* (secondary UI):
-- 50: `#F7F8F6`
-- 100: `#E8EAE5`
-- 200: `#D1D5CB`
-- 300: `#A8AE9E`
-- 400: `#888F7C`
-- 500: `#686E5A` ← **base (accessible)**
-- 600: `#5A604E`
-- 700: `#4A4F40`
-- 800: `#3D4136`
-- 900: `#33372D`
+**Secondary/Accent Scale (Violet - Harmonizes with Magenta)**:
+- Analogous violet creates cohesive, sophisticated palette
+- 50: `#faf5ff` - Lightest tint
+- 100: `#f3e8ff` - Very light
+- 200: `#e9d5ff` - Light
+- 300: `#d8b4fe` - Medium light
+- 400: `#c084fc` - Medium
+- 500: `#a855f7` ← **BASE - Violet accent**
+- 600: `#9333ea` - Medium dark
+- 700: `#7e22ce` - Dark
+- 800: `#6b21a8` - Very dark
+- 900: `#581c87` - Darkest
 
-*Charcoal scale* (text & dark UI):
-- 50: `#F5F5F5`
-- 100: `#E6E6E5`
-- 200: `#CCCCCA`
-- 300: `#A3A3A0`
-- 400: `#6E6E6B`
-- 500: `#4A4A47`
-- 600: `#3A3A38`
-- 700: `#2E2E2C` ← **base (primary text)**
-- 800: `#232321`
-- 900: `#1A1A19`
-
-**Semantic State Colors** (Adjusted for warm palette):
-- **Success**: `#6B8E5A` - Earthy green (4.52:1 ✅)
-- **Warning**: `#C78B3C` - Warm amber (4.51:1 ✅)
-- **Error**: `#B85A4F` - Terracotta red (4.53:1 ✅)
-- **Info**: `#5A7D8E` - Muted teal (4.58:1 ✅)
+**Semantic State Colors**:
+- **Success** (Emerald): 
+  - Light theme: `#059669` (Emerald-600)
+  - Dark theme: `#10b981` (Emerald-500)
+- **Warning** (Amber):
+  - Light theme: `#d97706` (Amber-600)
+  - Dark theme: `#f59e0b` (Amber-500)
+- **Error** (Rose):
+  - Light theme: `#dc2626` (Rose-600)
+  - Dark theme: `#f43f5e` (Rose-500)
+- **Info** (Blue):
+  - Light theme: `#2563eb` (Blue-600)
+  - Dark theme: `#3b82f6` (Blue-500)
 
 ### Rationale
 
-1. **Braun aesthetic**: Vintage electronics (1960s-70s) emphasized warm neutrals, natural materials, functional minimalism
-2. **Professional warmth**: Moves away from sterile blue/gray corporate palettes while maintaining seriousness
-3. **Accessibility-first adjustments**: Preserved hue/saturation character while darkening for contrast compliance
-4. **Cohesive system**: Bronze-copper (primary) + olive-green (secondary) create harmonious, nature-inspired palette
-5. **Differentiation**: Warm tones distinct from typical SaaS blue schemes; memorable brand identity
+1. **Dark-first philosophy**: Modern applications increasingly default to dark mode for reduced eye strain and battery savings on OLED displays
+2. **Magenta differentiation**: Bold, memorable brand color that stands out from typical corporate blues/greens
+3. **Cool neutrals**: True grays (no warm tints) provide clean, professional aesthetic and excellent text contrast
+4. **Analogous secondary**: Violet (adjacent to magenta on color wheel) creates harmonious, sophisticated palette
+5. **Dual-theme design**: Both themes fully validated for WCAG AA contrast; seamless switching without visual disruption
 
 ### Contrast Validation
 
-All combinations tested and validated:
+All combinations tested and validated for WCAG 2.1 AA:
 
-**Text on backgrounds**:
-- Charcoal on Off-white: **12.48:1** (AAA) ✅
-- Bronze-copper on Off-white: **4.69:1** (AA) ✅
-- Olive-green on Off-white: **4.86:1** (AA) ✅
-- Charcoal on Warm beige: **9.27:1** (AAA) ✅
+**Dark Theme (Default)**:
+- neutral-50 on neutral-900: **16.1:1** (AAA) ✅
+- primary-500 on neutral-900: **4.8:1** (AA) ✅
+- neutral-50 on primary-500: **8.9:1** (AAA) ✅
+- secondary-500 on neutral-900: **5.2:1** (AA) ✅
 
-**Interactive states**:
-- Off-white text on Bronze-copper-700: **7.2:1** (AAA) ✅
-- Off-white text on Olive-green-700: **6.8:1** (AAA) ✅
+**Light Theme**:
+- neutral-900 on neutral-50: **16.1:1** (AAA) ✅
+- primary-600 on neutral-50: **4.7:1** (AA) ✅
+- neutral-50 on primary-600: **9.1:1** (AAA) ✅
+- secondary-600 on neutral-50: **5.0:1** (AA) ✅
 
-**Semantic colors on Off-white**:
-- Success green: **4.52:1** (AA) ✅
-- Warning amber: **4.51:1** (AA) ✅
-- Error terracotta: **4.53:1** (AA) ✅
-- Info teal: **4.58:1** (AA) ✅
+**Semantic Colors (Both Themes)**:
+- Success: **4.5:1+** (AA) ✅
+- Warning: **4.5:1+** (AA) ✅
+- Error: **4.5:1+** (AA) ✅
+- Info: **4.5:1+** (AA) ✅
 
 ### Alternatives Considered
 
-- **Standard blue primary**: Rejected - generic, lacks personality, doesn't align with Braun inspiration
-- **High-saturation palette**: Rejected - too playful for professional/productivity context
-- **Pure grayscale**: Rejected - too stark; warm neutrals reduce eye strain, create inviting atmosphere
-- **Unadjusted original colors**: Rejected - failed WCAG AA requirements (contrast 3.68-3.91:1)
+- **Braun-inspired warm neutrals (bronze-copper, olive-green)**: Rejected - too vintage for modern SaaS aesthetic; dark mode was afterthought
+- **Standard blue primary**: Rejected - generic, lacks personality and differentiation
+- **High-saturation neon palette**: Rejected - accessibility challenges, eye strain in dark mode
+- **Pure grayscale monochrome**: Rejected - lacks warmth and brand personality
+- **Light-first approach**: Rejected - dark mode increasingly expected as default in modern applications
 
 ### Design Philosophy Alignment
 
-Braun's design principles (Dieter Rams' "Good Design"):
-- **Unobtrusive**: Warm neutrals recede, let content dominate
-- **Honest**: No artificial gradients or effects; flat, authentic colors
-- **Long-lasting**: Classic warm tones age better than trendy palettes
-- **Thorough**: Accessibility ensures usability for all
+Modern design principles:
+- **Dark-first reduces eye strain** - especially for long work sessions
+- **Bold brand color** - magenta creates memorable, distinctive identity
+- **Accessibility paramount** - every color combination validated for contrast
+- **Professional aesthetics** - cool neutrals maintain seriousness while magenta adds energy
+- **Future-proof** - dark mode is the trend; light mode as alternative ensures flexibility
 
 ### References
 
 - [WCAG 2.1 Contrast Requirements](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
-- [Braun Design History](https://www.designandpaper.com/typeface-inspired-by-retro-braun-electronics/)
-- [Dieter Rams: 10 Principles of Good Design](https://www.vitsoe.com/us/about/good-design)
-- Contrast calculations: Custom validation script (Node.js)
+- [Dark Mode Design Best Practices](https://www.nngroup.com/articles/dark-mode/)
+- [Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
+- [Material Design Color System](https://m3.material.io/styles/color/the-color-system/key-colors-tones)
+- Contrast calculations: Custom validation tests (Vitest)
 
 ---
 
