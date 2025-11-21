@@ -22,9 +22,9 @@
   --theme-interactive-primary-hover: #dd6dc9;  /* primary-400 - lighter on hover */
   --theme-interactive-primary-active: #ed99dd; /* primary-300 - lightest active */
 
-  --theme-interactive-secondary: #2dc9d9;      /* secondary-400 - cyan accent */
-  --theme-interactive-secondary-hover: #5de2ed;/* secondary-300 - lighter on hover */
-  --theme-interactive-secondary-active: #99eff5;/* secondary-200 - lightest active */
+  --theme-interactive-secondary: #c084fc;      /* secondary-400 - violet accent */
+  --theme-interactive-secondary-hover: #d8b4fe;/* secondary-300 - lighter on hover */
+  --theme-interactive-secondary-active: #e9d5ff;/* secondary-200 - lightest active */
 
   /* Semantic state colors for dark theme */
   --theme-success: #10b981;   /* Emerald-500 */
