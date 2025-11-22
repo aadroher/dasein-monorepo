@@ -159,6 +159,12 @@
 - [X] T048 Update CommonLayout to center content horizontally in web-client/src/design-system/layout/common-layout.tsx
 - [X] T049 Update CommonLayout to set max-width of 1080px for main content in web-client/src/design-system/layout/common-layout.tsx
 - [X] T050 Verify CommonLayout centering and max-width work correctly across all viewport sizes
+- [X] T051 Remove "Teachers" heading from TeacherList component in web-client/src/features/teacher/ui/teacher-list.tsx (already displayed in parent PageHeader)
+- [X] T052 Display teacher count in a subtle way (e.g., in table caption or aria-label) in web-client/src/features/teacher/ui/teacher-list.tsx
+- [X] T053 Add visual distinction to table header in TeacherList (e.g., border-bottom, background color) in web-client/src/features/teacher/ui/teacher-list.tsx
+- [X] T054 Add visible separation between teacher rows in TeacherListItem (e.g., border-bottom) in web-client/src/features/teacher/ui/teacher-list-item.tsx
+- [X] T055 Verify updated TeacherList styling maintains accessibility (table semantics, screen reader announcements)
+- [X] T056 Update E2E tests if selectors changed due to TeacherList heading removal in web-client/test/teacher/e2e/
 
 ---
 
@@ -301,9 +307,9 @@ With multiple developers:
 - **Phase 3 (User Story 1)**: 12 tasks
 - **Phase 4 (User Story 2)**: 9 tasks
 - **Phase 5 (User Story 3)**: 6 tasks
-- **Phase 6 (Polish)**: 13 tasks
+- **Phase 6 (Polish)**: 19 tasks
 
-**Total**: 50 tasks
+**Total**: 56 tasks
 
 **Parallelizable**: 22 tasks marked [P]
 

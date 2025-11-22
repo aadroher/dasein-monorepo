@@ -64,7 +64,7 @@ export function TeacherListItem({
   };
 
   return (
-    <tr className="teacher-list-item">
+    <tr className="teacher-list-item border-b border-neutral-700">
       <td className="teacher-name px-4 py-3 text-neutral-100">
         {teacher.full_name}
       </td>

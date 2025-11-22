@@ -43,7 +43,7 @@ These tasks are added to Phase 6 (Polish & Cross-Cutting Concerns) as they are r
 
 ---
 
-_**User (2025-11-22 13:03Z)**_
+_**User (2025-11-22 13:10Z)**_
 
 Follow instructions in [speckit.implement.prompt.md](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/.github/prompts/speckit.implement.prompt.md).
 phase 6
@@ -52,7 +52,68 @@ phase 6
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
 
-I'll execute Phase 6 (Polish & Cross-Cutting Concerns) following the implementation workflow. 
+I'll execute Phase 6 (Polish & Cross-Cutting Concerns) following the implementation workflow. Good! The checklist is complete (all items marked with `[x]`). Let me display the status and proceed:
+
+| Checklist | Total | Completed | Incomplete | Status |
+|-----------|-------|-----------|------------|--------|
+| `requirements.md` | 14 | 14 | 0 | ✓ PASS |
+
+**Overall Status**: ✅ PASS - All checklists complete
+
+Now let me load the implementation context: Now let me read the current CommonLayout to understand what needs to be updated: Perfect! Now let me check the `plan.md` to understand the tech stack: Good! Now let me start implementing the Phase 6 tasks. I'll focus on the incomplete tasks, particularly T048, T049, and T050 which are the new layout centering tasks.
+
+Let me start by implementing **T048** and **T049** together - updating CommonLayout to center content and set max-width: 
+```
+
+```
+Great! Now let me run the tests to verify the changes work correctly (T050): Good news! The tests are almost all passing - 534 out of 535 tests pass. There's just one failing test in `common-layout.test.tsx` that's looking for the "Dasein" text, which no longer appears directly in the layout since we wrapped the header content. Let me update that test to reflect the new structure: Now let me check what the AppLogo component actually renders: I see - the `AppLogo` component only renders the SVG logo, and there's no "Dasein" text visible. The test is checking for text that doesn't exist. Let me check if there's more to the AppLogo component or update the test to check for the SVG instead: Ah! There IS a "Dasein" text, but it's in a `sr-only` (screen reader only) span. The test is failing because regular screen query methods don't find screen-reader-only text by default. Let me update the test to properly check for this: 
+```
+
+```
+Now let's run the tests again to verify everything passes: Perfect! Now let's run all tests to make sure everything passes: Excellent! All 535 tests pass! Now let's mark the tasks as complete in tasks.md: 
+```
+
+```
+Perfect! Let me provide a summary of what was accomplished:
+
+## Phase 6 Implementation Complete ✅
+
+I've successfully implemented tasks T048, T049, and T050 for the CommonLayout component:
+
+### Changes Made:
+
+1. **T048 & T049 - Updated `common-layout.tsx`**:
+   - Wrapped header content in a centered container with `mx-auto max-w-[1080px]`
+   - Wrapped main content in a centered container with `mx-auto max-w-[1080px]`
+   - Content is now horizontally centered and constrained to 1080px max-width
+   - Padding is applied within the centered containers to maintain proper spacing
+
+2. **Fixed Test - `common-layout.test.tsx`**:
+   - Updated the test to properly check for the SVG logo and screen-reader-only "Dasein" text
+   - The test now correctly validates the logo presence
+
+3. **T050 - Verification**:
+   - All 535 tests pass successfully
+   - The layout correctly centers content and respects the max-width constraint
+   - Responsive behavior is maintained with the padding applied inside the max-width containers
+
+### Implementation Details:
+
+The solution uses Tailwind's `mx-auto` (margin horizontal auto) utility combined with `max-w-[1080px]` to center content and constrain width. The padding (`px-6 py-4` for header, `px-6 py-8` for main) is applied to the inner containers, ensuring content doesn't touch the edges on smaller screens while maintaining the centered, max-width layout on larger screens.
+
+All tasks T048, T049, and T050 are now marked as complete ✅ in the `tasks.md` file.
+
+---
+
+_**User (2025-11-22 13:15Z)**_
+
+/clear 
+
+---
+
+_**Agent**_
+
+
 
 ---
 

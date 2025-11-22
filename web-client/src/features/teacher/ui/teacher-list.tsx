@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Heading } from '../../../design-system/components/heading';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
 import { TeacherListItem } from './teacher-list-item';
@@ -78,12 +77,19 @@ export function TeacherList({
 
   return (
     <div className="teacher-list">
-      <Heading level={2}>Teachers ({teachers.length})</Heading>
       <table className="teacher-table w-full" aria-label="Teachers">
-        <thead>
+        <caption className="sr-only">
+          {teachers.length} {teachers.length === 1 ? 'teacher' : 'teachers'}{' '}
+          registered
+        </caption>
+        <thead className="border-b-2 border-neutral-700">
           <tr>
-            <th className="text-left px-4 py-2 text-neutral-200">Name</th>
-            <th className="text-right px-4 py-2 text-neutral-200">Actions</th>
+            <th className="text-left px-4 py-3 text-neutral-200 bg-neutral-800">
+              Name
+            </th>
+            <th className="text-right px-4 py-3 text-neutral-200 bg-neutral-800">
+              Actions
+            </th>
           </tr>
         </thead>
         <tbody>
