@@ -6,7 +6,7 @@ export const AppLogo: React.FC = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="712.157 510.184 933.588 217.306"
-        className="h-8 w-auto"
+        className="h-8 w-auto text-primary-500"
         aria-hidden="true"
       >
         <path
@@ -34,7 +34,6 @@ export const AppLogo: React.FC = () => {
           fill="currentColor"
         />
       </svg>
-      <span className="text-xl font-semibold text-neutral-900">Dasein</span>
       <span className="sr-only">Dasein - Educational Schedule Management</span>
     </div>
   );
