@@ -45,3 +45,9 @@ body {
   margin: 0;
   padding: 0;
 }
+
+#root {
+  background-color: var(--theme-bg-primary);
+  color: var(--theme-text-primary);
+  min-height: 100vh;
+}

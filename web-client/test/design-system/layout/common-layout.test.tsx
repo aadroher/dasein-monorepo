@@ -31,7 +31,11 @@ describe('CommonLayout Component', () => {
       );
       const header = container.querySelector('header');
       expect(header).toBeInTheDocument();
-      expect(header).toHaveClass('bg-white', 'border-b', 'border-neutral-200');
+      expect(header).toHaveClass(
+        'bg-neutral-800',
+        'border-b',
+        'border-neutral-700'
+      );
     });
 
     it('renders main content area with proper styling', () => {
@@ -64,7 +68,12 @@ describe('CommonLayout Component', () => {
         </CommonLayout>
       );
       const wrapper = container.firstChild as HTMLElement;
-      expect(wrapper).toHaveClass('min-h-screen', 'flex', 'flex-col');
+      expect(wrapper).toHaveClass(
+        'min-h-screen',
+        'flex',
+        'flex-col',
+        'bg-neutral-900'
+      );
     });
   });
 

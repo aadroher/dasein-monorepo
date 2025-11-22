@@ -41,7 +41,11 @@ export function TeacherList({
 
   if (isLoading) {
     return (
-      <div className="teacher-list-loading" role="status" aria-live="polite">
+      <div
+        className="teacher-list-loading text-neutral-300"
+        role="status"
+        aria-live="polite"
+      >
         Loading teachers...
       </div>
     );
@@ -49,7 +53,7 @@ export function TeacherList({
 
   if (teachers.length === 0) {
     return (
-      <div className="teacher-list-empty" role="status">
+      <div className="teacher-list-empty text-neutral-300" role="status">
         <p>No teachers yet. Add your first teacher above!</p>
       </div>
     );
@@ -78,8 +82,8 @@ export function TeacherList({
       <table className="teacher-table w-full" aria-label="Teachers">
         <thead>
           <tr>
-            <th className="text-left px-4 py-2">Name</th>
-            <th className="text-right px-4 py-2">Actions</th>
+            <th className="text-left px-4 py-2 text-neutral-200">Name</th>
+            <th className="text-right px-4 py-2 text-neutral-200">Actions</th>
           </tr>
         </thead>
         <tbody>

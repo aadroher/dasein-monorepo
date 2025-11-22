@@ -6,5 +6,5 @@ export interface PageHeaderProps {
 }
 
 export const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
-  return <h2 className="text-2xl font-bold text-neutral-900 mb-6">{title}</h2>;
+  return <h2 className="text-2xl font-bold text-neutral-50 mb-6">{title}</h2>;
 };

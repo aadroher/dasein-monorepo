@@ -29,7 +29,9 @@ export function TeacherPage({ storage }: TeacherPageProps) {
       <PageHeader title="Teachers" />
 
       <section className="create-section mb-8">
-        <h3 className="text-xl font-semibold mb-4">Add New Teacher</h3>
+        <h3 className="text-xl font-semibold mb-4 text-neutral-100">
+          Add New Teacher
+        </h3>
         <TeacherCreateForm storage={storage} onCreated={refresh} />
       </section>
 

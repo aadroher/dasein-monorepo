@@ -65,7 +65,9 @@ export function TeacherListItem({
 
   return (
     <tr className="teacher-list-item">
-      <td className="teacher-name px-4 py-3">{teacher.full_name}</td>
+      <td className="teacher-name px-4 py-3 text-neutral-100">
+        {teacher.full_name}
+      </td>
       <td className="teacher-actions px-4 py-3">
         <div className="flex gap-2 justify-end">
           <IconButton
