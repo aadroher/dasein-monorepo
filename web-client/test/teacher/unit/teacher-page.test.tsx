@@ -29,10 +29,12 @@ describe('TeacherPage - Integration', () => {
       ).toBeInTheDocument();
     });
 
-    it('renders teacher list section', () => {
+    it('renders teacher list section', async () => {
       render(<TeacherPage storage={storage} />);
-      // Empty state should be visible
-      expect(screen.getByText(/no teachers yet/i)).toBeInTheDocument();
+      // Wait for loading to complete and empty state to be visible
+      await waitFor(() => {
+        expect(screen.getByText(/No teachers yet/i)).toBeInTheDocument();
+      });
     });
   });
 
@@ -56,8 +58,10 @@ describe('TeacherPage - Integration', () => {
     it('refreshes list after creating a teacher', async () => {
       const { container } = render(<TeacherPage storage={storage} />);
 
-      // Initially empty
-      expect(screen.getByText(/no teachers yet/i)).toBeInTheDocument();
+      // Initially empty - wait for loading to complete
+      await waitFor(() => {
+        expect(screen.getByText(/No teachers yet/i)).toBeInTheDocument();
+      });
 
       // Create a teacher through storage directly
       await storage.create({

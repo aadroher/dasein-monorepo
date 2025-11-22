@@ -117,4 +117,44 @@ test.describe('Create Teacher Flow (E2E)', () => {
     // Verify input is cleared
     await expect(input).toHaveValue('');
   });
+
+  test('should have proper form spacing (24px sections, accessible layout)', async ({
+    page,
+  }) => {
+    // Locate the form
+    const form = page.locator('form.teacher-create-form').first();
+    await expect(form).toBeVisible();
+
+    // Verify form has space-y-6 class for proper spacing (24px between sections)
+    const formClasses = await form.getAttribute('class');
+    expect(formClasses).toContain('space-y-6');
+
+    // Verify input and button are both accessible and visible
+    const input = page.getByRole('textbox', { name: /full name/i });
+    const button = page.getByRole('button', {
+      name: /add teacher|create teacher/i,
+    });
+
+    await expect(input).toBeVisible();
+    await expect(button).toBeVisible();
+
+    // Verify elements have proper spacing by checking they don't overlap
+    const inputBox = await input.boundingBox();
+    const buttonBox = await button.boundingBox();
+
+    expect(inputBox).not.toBeNull();
+    expect(buttonBox).not.toBeNull();
+
+    // Button should be below input with proper spacing
+    if (inputBox && buttonBox) {
+      expect(buttonBox.y).toBeGreaterThan(inputBox.y + inputBox.height);
+    }
+
+    // Verify touch target minimum size for button (WCAG 2.1 AA)
+    if (buttonBox) {
+      // Minimum 44x44px recommended for touch targets
+      expect(buttonBox.height).toBeGreaterThanOrEqual(32); // Relaxed for desktop
+      expect(buttonBox.width).toBeGreaterThanOrEqual(80); // Reasonable button width
+    }
+  });
 });

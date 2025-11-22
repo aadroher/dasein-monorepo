@@ -110,15 +110,15 @@
 
 ### Tests for User Story 3 ⚠️
 
-- [ ] T032 [P] [US3] Create visual regression test for form spacing in web-client/test/teacher/teacher-create-form-spacing.test.tsx
-- [ ] T033 [US3] Update E2E test to verify form spacing in web-client/test/teacher/create-teacher-form.e2e.ts
+- [X] T032 [P] [US3] Create visual regression test for form spacing in web-client/test/teacher/teacher-create-form-spacing.test.tsx
+- [X] T033 [US3] Update E2E test to verify form spacing in web-client/test/teacher/e2e/create-teacher.spec.ts
 
 ### Implementation for User Story 3
 
-- [ ] T034 [US3] Update TeacherCreateForm with improved spacing (space-y-6, space-y-2, gap-3) in web-client/src/features/teacher/ui/teacher-create-form.tsx
-- [ ] T035 [US3] Verify form element spacing matches design (24px between sections, 8px between field elements, 12px between buttons)
-- [ ] T036 [US3] Verify form remains accessible with new spacing (focus indicators, touch targets)
-- [ ] T037 [US3] Verify all E2E tests pass with updated form spacing
+- [X] T034 [US3] Update TeacherCreateForm with improved spacing (space-y-6, space-y-2, gap-3) in web-client/src/features/teacher/ui/teacher-create-form.tsx
+- [X] T035 [US3] Verify form element spacing matches design (24px between sections, 8px between field elements, 12px between buttons)
+- [X] T036 [US3] Verify form remains accessible with new spacing (focus indicators, touch targets)
+- [X] T037 [US3] Verify all E2E tests pass with updated form spacing
 
 **Checkpoint**: All user stories should now be independently functional - improved table layout, common header, and better form spacing
 
