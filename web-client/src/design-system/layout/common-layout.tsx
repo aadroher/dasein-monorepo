@@ -10,7 +10,7 @@ export const CommonLayout: React.FC<CommonLayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col bg-neutral-900">
       <header className="bg-neutral-800 border-b border-neutral-700">
-        <div className="mx-auto max-w-[1080px] px-6 py-4">
+        <div className="mx-auto px-6 py-4">
           <AppLogo />
         </div>
       </header>
