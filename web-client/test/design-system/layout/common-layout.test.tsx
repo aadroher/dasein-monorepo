@@ -121,15 +121,14 @@ describe('CommonLayout Component', () => {
       await assertA11y(container);
     });
 
-    it('includes screen reader context for logo', () => {
+    it('includes screen reader heading for accessibility', () => {
       render(
         <CommonLayout>
           <div>Content</div>
         </CommonLayout>
       );
-      expect(
-        screen.getByText('Dasein - Educational Schedule Management')
-      ).toHaveClass('sr-only');
+      const heading = screen.getByRole('heading', { name: 'Dasein', level: 1 });
+      expect(heading).toHaveClass('sr-only');
     });
   });
 });
