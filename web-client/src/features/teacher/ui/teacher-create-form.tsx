@@ -31,7 +31,7 @@ export function TeacherCreateForm({
     useCreateTeacher(storage, onCreated);
 
   return (
-    <form onSubmit={handleSubmit} className="teacher-create-form">
+    <form onSubmit={handleSubmit} className="teacher-create-form space-y-6">
       <Input
         id="teacher-full-name"
         type="text"

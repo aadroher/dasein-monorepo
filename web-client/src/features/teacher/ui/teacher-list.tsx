@@ -1,11 +1,8 @@
 import { useState } from 'react';
-import { Card } from '../../../design-system/components/card';
-import { Heading } from '../../../design-system/components/heading';
-import { Button } from '../../../design-system/components/button';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
+import { TeacherListItem } from './teacher-list-item';
 import { TeacherEditForm } from './teacher-edit-form';
-import { TeacherDeleteButton } from './teacher-delete-button';
 
 export interface TeacherListProps {
   teachers: Teacher[];
@@ -16,15 +13,15 @@ export interface TeacherListProps {
 }
 
 /**
- * Component for displaying a list of teachers with edit and delete functionality.
+ * Component for displaying teachers in a table with edit and delete functionality.
  *
  * Features:
- * - Displays teachers in alphabetical order (assumed from data source)
+ * - Displays teachers in table format with inline actions
  * - Shows empty state when no teachers exist
- * - Accessible list markup with proper ARIA roles
+ * - Accessible table markup with proper semantic structure
  * - Loading state support
  * - Inline editing with cancel support
- * - Edit and delete buttons for each teacher
+ * - Icon buttons for edit and delete actions
  *
  * @param teachers - Array of teacher objects to display
  * @param storage - Storage adapter for persistence
@@ -43,7 +40,11 @@ export function TeacherList({
 
   if (isLoading) {
     return (
-      <div className="teacher-list-loading" role="status" aria-live="polite">
+      <div
+        className="teacher-list-loading text-neutral-300"
+        role="status"
+        aria-live="polite"
+      >
         Loading teachers...
       </div>
     );
@@ -51,14 +52,14 @@ export function TeacherList({
 
   if (teachers.length === 0) {
     return (
-      <div className="teacher-list-empty" role="status">
+      <div className="teacher-list-empty text-neutral-300" role="status">
         <p>No teachers yet. Add your first teacher above!</p>
       </div>
     );
   }
 
-  const handleEditClick = (teacherId: string) => {
-    setEditingTeacherId(teacherId);
+  const handleEdit = (teacher: Teacher) => {
+    setEditingTeacherId(teacher.uuid);
   };
 
   const handleEditCancel = () => {
@@ -76,45 +77,51 @@ export function TeacherList({
 
   return (
     <div className="teacher-list">
-      <Heading level={2}>Teachers ({teachers.length})</Heading>
-      <ul aria-label="Teachers list">
-        {teachers.map(teacher => (
-          <li key={teacher.uuid} className="teacher-list-item">
-            {editingTeacherId === teacher.uuid ? (
-              <Card>
-                <TeacherEditForm
-                  teacher={teacher}
-                  storage={storage}
-                  onSave={handleEditSave}
-                  onCancel={handleEditCancel}
-                />
-              </Card>
-            ) : (
-              <Card>
-                <div className="teacher-item-view">
-                  <span className="teacher-name">{teacher.full_name}</span>
-                  <div className="teacher-actions">
-                    <Button
-                      variant="secondary"
-                      size="small"
-                      onClick={() => handleEditClick(teacher.uuid)}
-                      aria-label={`Edit ${teacher.full_name}`}
-                    >
-                      Edit
-                    </Button>
-                    <TeacherDeleteButton
-                      teacherId={teacher.uuid}
-                      teacherName={teacher.full_name}
+      <table className="teacher-table w-full" aria-label="Teachers">
+        <caption className="sr-only">
+          {teachers.length} {teachers.length === 1 ? 'teacher' : 'teachers'}{' '}
+          registered
+        </caption>
+        <thead className="border-b-2 border-neutral-700">
+          <tr>
+            <th className="text-left px-4 py-3 text-neutral-200 bg-neutral-800">
+              Name
+            </th>
+            <th className="text-right px-4 py-3 text-neutral-200 bg-neutral-800">
+              Actions
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {teachers.map(teacher => {
+            if (editingTeacherId === teacher.uuid) {
+              return (
+                <tr key={teacher.uuid}>
+                  <td colSpan={2} className="px-4 py-3">
+                    <TeacherEditForm
+                      teacher={teacher}
                       storage={storage}
-                      onDelete={handleDelete}
+                      onSave={handleEditSave}
+                      onCancel={handleEditCancel}
                     />
-                  </div>
-                </div>
-              </Card>
-            )}
-          </li>
-        ))}
-      </ul>
+                  </td>
+                </tr>
+              );
+            }
+
+            return (
+              <TeacherListItem
+                key={teacher.uuid}
+                teacher={teacher}
+                storage={storage}
+                onEdit={handleEdit}
+                onDelete={handleDelete}
+                isEditing={false}
+              />
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }

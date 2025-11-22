@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Button } from '../../../design-system/components/button';
+import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { IconButton } from '../../../design-system/components/icon-button';
 import { Input } from '../../../design-system/components/input';
 import type { Teacher } from '../model/teacher';
 import type { TeacherStoragePort } from '../storage/storage-port';
@@ -13,7 +14,7 @@ export interface TeacherEditFormProps {
 }
 
 /**
- * Form component for editing existing teachers.
+ * Form component for editing existing teachers with icon buttons.
  *
  * Features:
  * - Accessible form with proper ARIA labels
@@ -22,7 +23,7 @@ export interface TeacherEditFormProps {
  * - Loading state during submission
  * - Auto-focus on mount for editing
  * - Keyboard navigation support
- * - Cancel option to discard changes
+ * - Icon buttons for save/cancel actions
  *
  * @param teacher - The existing teacher to edit
  * @param storage - Storage adapter for persistence
@@ -59,7 +60,10 @@ export function TeacherEditForm({
   };
 
   return (
-    <form onSubmit={handleFormSubmit} className="teacher-edit-form">
+    <form
+      onSubmit={handleFormSubmit}
+      className="teacher-edit-form flex gap-3 items-start"
+    >
       <Input
         ref={inputRef}
         id={`teacher-edit-name-${teacher.uuid}`}
@@ -73,23 +77,21 @@ export function TeacherEditForm({
         aria-required="true"
       />
 
-      <div className="form-actions">
-        <Button
-          type="submit"
+      <div className="form-actions flex gap-2 mt-8">
+        <IconButton
+          icon={CheckIcon}
+          label={isUpdating ? 'Saving changes...' : 'Save changes'}
+          onClick={handleSubmit}
           disabled={isUpdating || !fullName.trim()}
-          aria-label={isUpdating ? 'Saving changes...' : 'Save changes'}
-        >
-          {isUpdating ? 'Saving...' : 'Save'}
-        </Button>
-        <Button
-          type="button"
-          variant="secondary"
+          variant="primary"
+        />
+        <IconButton
+          icon={XMarkIcon}
+          label="Cancel editing"
           onClick={handleCancelClick}
           disabled={isUpdating}
-          aria-label="Cancel editing"
-        >
-          Cancel
-        </Button>
+          variant="danger"
+        />
       </div>
     </form>
   );

@@ -32,10 +32,10 @@ describe('Token Integrity', () => {
       expect(colors.primary[500]).toBe('#cc4bae');
     });
 
-    it('should have complete secondary scale (50-900) with cyan base', () => {
+    it('should have complete secondary scale (50-900) with purple base', () => {
       expect(colors.secondary).toHaveProperty('50');
       expect(colors.secondary).toHaveProperty('900');
-      expect(colors.secondary[500]).toBe('#14b8c5');
+      expect(colors.secondary[500]).toBe('#a855f7');
     });
 
     it('should have complete neutral scale (50-900) with cool grays', () => {

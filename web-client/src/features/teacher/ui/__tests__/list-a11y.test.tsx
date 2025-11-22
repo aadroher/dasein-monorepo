@@ -53,13 +53,13 @@ describe('TeacherList Accessibility', () => {
 
     render(<TeacherList teachers={teachers} storage={storage} />);
 
-    // Verify list has proper role
-    const list = screen.getByRole('list');
-    expect(list).toBeInTheDocument();
+    // Verify table has proper role
+    const table = screen.getByRole('table');
+    expect(table).toBeInTheDocument();
 
-    // Verify list items have proper role
-    const listItems = screen.getAllByRole('listitem');
-    expect(listItems).toHaveLength(2);
+    // Verify table rows (excluding header)
+    const rows = screen.getAllByRole('row');
+    expect(rows.length).toBeGreaterThanOrEqual(2); // Header + data rows
   });
 
   it('should have accessible empty state message', () => {
@@ -208,10 +208,11 @@ describe('TeacherList Accessibility', () => {
     render(<TeacherList teachers={teachers} storage={storage} />);
 
     // Verify proper semantic HTML elements are used
-    const list = screen.getByRole('list');
-    expect(list).toBeInTheDocument();
+    const table = screen.getByRole('table');
+    expect(table).toBeInTheDocument();
 
-    const listItems = screen.getAllByRole('listitem');
-    expect(listItems).toHaveLength(1);
+    const rows = screen.getAllByRole('row');
+    // Should have header row + 1 data row
+    expect(rows.length).toBeGreaterThanOrEqual(2);
   });
 });

@@ -14,6 +14,14 @@ export type { FooterProps } from './footer';
 export { AppLayout } from './app-layout';
 export type { AppLayoutProps } from './app-layout';
 
+export { CommonLayout } from './common-layout';
+export type { CommonLayoutProps } from './common-layout';
+
+export { PageHeader } from './page-header';
+export type { PageHeaderProps } from './page-header';
+
+export { AppLogo } from './app-logo';
+
 export { Grid, GridItem } from './grid';
 export type { GridProps, GridItemProps } from './grid';
 

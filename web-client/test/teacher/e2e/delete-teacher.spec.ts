@@ -208,13 +208,14 @@ test.describe('Delete Teacher Flow (E2E)', () => {
     await expect(page.getByText('Teacher To Delete')).toBeVisible();
 
     // Verify remaining teachers are still in alphabetical order
-    const teacherListItems = page.getByRole('listitem');
-    const count = await teacherListItems.count();
+    const teacherRows = page
+      .getByRole('row')
+      .filter({ hasNot: page.locator('th') });
+    const count = await teacherRows.count();
 
     const names: string[] = [];
     for (let i = 0; i < count; i++) {
-      const nameSpan = teacherListItems.nth(i).locator('.teacher-name');
-      const text = await nameSpan.textContent();
+      const text = await teacherRows.nth(i).textContent();
       if (text) names.push(text);
     }
 
