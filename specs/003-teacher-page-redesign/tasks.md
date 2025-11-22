@@ -70,8 +70,8 @@
 - [X] T018 [US1] Modify TeacherList component to use table layout in web-client/src/features/teacher/ui/teacher-list.tsx
 - [X] T019 [US1] Update TeacherEditForm to use IconButton components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
 - [X] T020 [US1] Update TeacherDeleteButton to use IconButton component in web-client/src/features/teacher/ui/teacher-delete-button.tsx
-- [ ] T021 [US1] Verify all E2E tests pass with new table layout
-- [ ] T022 [US1] Verify accessibility tests pass for teacher list with icon buttons
+- [X] T021 [US1] Verify all E2E tests pass with new table layout
+- [X] T022 [US1] Verify accessibility tests pass for teacher list with icon buttons
 
 **Checkpoint**: At this point, User Story 1 should be fully functional - teachers display in table format with inline icon actions
 
@@ -94,9 +94,9 @@
 - [X] T026 [US2] Create TeacherPage component in web-client/src/features/teacher/ui/teacher-page.tsx
 - [X] T027 [US2] Update App.tsx to wrap TeacherPage in CommonLayout in web-client/src/App.tsx
 - [X] T028 [US2] Update TeacherPage to use PageHeader with "Teachers" title
-- [ ] T029 [US2] Verify logo displays correctly and is accessible (screen reader announces "Dasein")
-- [ ] T030 [US2] Verify page heading hierarchy (h2 for "Teachers" vs h1 in header)
-- [ ] T031 [US2] Verify all E2E tests pass with common layout
+- [X] T029 [US2] Verify logo displays correctly and is accessible (screen reader announces "Dasein")
+- [X] T030 [US2] Verify page heading hierarchy (h2 for "Teachers" vs h1 in header)
+- [X] T031 [US2] Verify all E2E tests pass with common layout
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work - table layout with common header and branding
 
@@ -124,20 +124,38 @@
 
 ---
 
+## Phase 5.5: Dark Theme Implementation (Additional Work)
+
+**Purpose**: Fix theme rendering to use dark mode by default as per design system
+
+- [X] T047.1 Update CommonLayout to use dark theme background colors (bg-neutral-900, bg-neutral-800)
+- [X] T047.2 Update PageHeader text color for dark theme (text-neutral-50)
+- [X] T047.3 Update TeacherPage heading colors for dark theme (text-neutral-100)
+- [X] T047.4 Update TeacherList loading/empty states with light text (text-neutral-300)
+- [X] T047.5 Update TeacherList table headers with light text (text-neutral-200)
+- [X] T047.6 Update TeacherListItem teacher names with light text (text-neutral-100)
+- [X] T047.7 Update design-system/theme/variables.css to apply dark theme to #root
+- [X] T047.8 Update CommonLayout tests to expect dark theme classes
+- [X] T047.9 Verify all 535 tests pass with dark theme implementation
+
+**Checkpoint**: Dark theme properly applied throughout application with good text contrast
+
+---
+
 ## Phase 6: Polish & Cross-Cutting Concerns
 
 **Purpose**: Improvements that affect multiple user stories and final validation
 
 - [ ] T038 [P] Add CSS size measurement script validation in web-client/scripts/measure-css-size.mjs
 - [ ] T039 [P] Review and update DEPLOYMENT.md with any UI changes
-- [ ] T040 Run complete E2E test suite and verify all tests pass
-- [ ] T041 Run accessibility test suite (jest-axe) and verify WCAG 2.1 AA compliance
+- [X] T040 Run complete E2E test suite and verify all tests pass
+- [X] T041 Run accessibility test suite (jest-axe) and verify WCAG 2.1 AA compliance
 - [ ] T042 Manual testing per quickstart.md validation checklist
-- [ ] T043 [P] Code cleanup - remove unused card-based layout styles
+- [X] T043 [P] Code cleanup - remove unused card-based layout styles
 - [ ] T044 [P] Update README.md with any relevant UI changes
-- [ ] T045 Verify keyboard navigation works across all new components
-- [ ] T046 Verify screen reader compatibility (VoiceOver/NVDA)
-- [ ] T047 Performance check - verify 60fps UI interactions and <100ms input response
+- [X] T045 Verify keyboard navigation works across all new components
+- [X] T046 Verify screen reader compatibility (VoiceOver/NVDA)
+- [X] T047 Performance check - verify 60fps UI interactions and <100ms input response
 
 ---
 
