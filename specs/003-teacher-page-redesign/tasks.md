@@ -156,6 +156,9 @@
 - [X] T045 Verify keyboard navigation works across all new components
 - [X] T046 Verify screen reader compatibility (VoiceOver/NVDA)
 - [X] T047 Performance check - verify 60fps UI interactions and <100ms input response
+- [ ] T048 Update CommonLayout to center content horizontally in web-client/src/design-system/layout/common-layout.tsx
+- [ ] T049 Update CommonLayout to set max-width of 1080px for main content in web-client/src/design-system/layout/common-layout.tsx
+- [ ] T050 Verify CommonLayout centering and max-width work correctly across all viewport sizes
 
 ---
 
@@ -298,9 +301,9 @@ With multiple developers:
 - **Phase 3 (User Story 1)**: 12 tasks
 - **Phase 4 (User Story 2)**: 9 tasks
 - **Phase 5 (User Story 3)**: 6 tasks
-- **Phase 6 (Polish)**: 10 tasks
+- **Phase 6 (Polish)**: 13 tasks
 
-**Total**: 47 tasks
+**Total**: 50 tasks
 
 **Parallelizable**: 22 tasks marked [P]
 
