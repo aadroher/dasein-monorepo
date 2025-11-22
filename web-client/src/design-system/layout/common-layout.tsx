@@ -9,10 +9,14 @@ export interface CommonLayoutProps {
 export const CommonLayout: React.FC<CommonLayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col bg-neutral-900">
-      <header className="bg-neutral-800 border-b border-neutral-700 px-6 py-4">
-        <AppLogo />
+      <header className="bg-neutral-800 border-b border-neutral-700">
+        <div className="mx-auto max-w-[1080px] px-6 py-4">
+          <AppLogo />
+        </div>
       </header>
-      <main className="flex-1 px-6 py-8">{children}</main>
+      <main className="flex-1 px-6 py-8">
+        <div className="mx-auto max-w-[1080px]">{children}</div>
+      </main>
     </div>
   );
 };

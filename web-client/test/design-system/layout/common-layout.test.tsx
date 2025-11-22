@@ -6,12 +6,17 @@ import { assertA11y } from '../../../src/test/a11y/assertA11y';
 describe('CommonLayout Component', () => {
   describe('Rendering', () => {
     it('renders logo and application name', () => {
-      render(
+      const { container } = render(
         <CommonLayout>
           <div>Test content</div>
         </CommonLayout>
       );
-      expect(screen.getByText('Dasein')).toBeInTheDocument();
+      // Check for the SVG logo
+      const logo = container.querySelector('svg');
+      expect(logo).toBeInTheDocument();
+      // Check for screen-reader text
+      const srText = container.querySelector('.sr-only');
+      expect(srText).toHaveTextContent('Dasein');
     });
 
     it('renders children in content area', () => {
