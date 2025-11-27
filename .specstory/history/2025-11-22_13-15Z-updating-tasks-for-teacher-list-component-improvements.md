@@ -131,7 +131,7 @@ All changes maintain WCAG 2.1 AA compliance and improve the visual hierarchy whi
 
 ---
 
-_**User (2025-11-22 13:30Z)**_
+_**User (2025-11-22 13:34Z)**_
 
 Now, I just checked and the application implementation currently works as expected. Can we run the e2e tests and:
 - If there is some accessibility violation, alter the implementation code without altering the behaviour of the app for non-assistive technologies (for example, if a `h1` element is expected to exist and there is none, add one but make it visible only to assistive technologies).
@@ -141,7 +141,77 @@ Now, I just checked and the application implementation currently works as expect
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
 
-I'll run the E2E tests and fix any issues. Let me start by running the tests to see the current state: 
+I'll run the E2E tests and fix any issues. Let me start by running the tests to see the current state: The failures are:
+1. Missing h1 element (accessibility violation - proper heading hierarchy requires h1)
+2. Missing logo with role="img" and accessible name
+
+Let me check the current implementation: I can see the issues:
+
+1. **Missing h1**: The page needs an h1 element for proper heading hierarchy (accessibility requirement)
+2. **Missing img role**: The SVG logo needs `role="img"` to be found by `getByRole('img')`
+
+Both are accessibility violations. I'll fix them by:
+1. Adding an h1 to the CommonLayout header (screen-reader only)
+2. Adding `role="img"` to the SVG and updating the accessible label 
+```
+
+```
+
+```
+
+```
+Now let's run the E2E tests again to verify the fixes: Let me try again: The tests were interrupted. Let me run them again without interruption: Let me run the E2E tests for the specific `app.spec.ts` file to check if the fixes work: Excellent! All the `app.spec.ts` tests pass now. Let me run all E2E tests to make sure everything works: Perfect! All 111 E2E tests now pass! Let me also verify that the unit tests still pass: I see there's a unit test failure. The test is looking for the text "Dasein - Educational Schedule Management" which I removed. Let me check and fix that test: The test is checking for the old screen reader text. I need to update it to check for the h1 instead: 
+```
+
+```
+Now let's run the tests again: Perfect! All 535 unit tests pass. Let me create a summary of what was accomplished:
+
+## ✅ E2E Tests - All Passing (111/111)
+
+### Accessibility Fixes Implemented
+
+**Issue 1: Missing h1 heading (Accessibility Violation)**
+- **Problem**: Page lacked an h1 element, violating proper heading hierarchy (WCAG 2.1 requirement)
+- **Solution**: Added `<h1 className="sr-only">Dasein</h1>` in CommonLayout header
+- **Impact**: Screen-reader only (no visual change for non-assistive technologies)
+
+**Issue 2: SVG logo not accessible as image (Accessibility Violation)**
+- **Problem**: SVG had `aria-hidden="true"` and no `role="img"`, making it invisible to screen readers
+- **Solution**: 
+  - Changed `aria-hidden="true"` to `role="img"`
+  - Added `aria-label="Dasein"` for accessible name
+  - Removed redundant sr-only span
+- **Impact**: Logo now properly announced by screen readers as an image
+
+### Test Results
+
+**Before fixes:**
+- ❌ 6 E2E tests failing (missing h1, missing accessible logo)
+- ✅ 105 E2E tests passing
+
+**After fixes:**
+- ✅ **111/111 E2E tests passing** (100% pass rate)
+- ✅ **535/535 unit tests passing** (including updated CommonLayout test)
+
+### Files Modified
+
+1. `common-layout.tsx` - Added sr-only h1, restored max-width centering
+2. `app-logo.tsx` - Added role="img" and aria-label to SVG
+3. `common-layout.test.tsx` - Updated test to check for h1 instead of old sr-only text
+
+All changes maintain the visual appearance for sighted users while improving accessibility for screen reader users. The application now has proper heading hierarchy and accessible branding.
+
+---
+
+_**User (2025-11-23 13:41Z)**_
+
+/clear 
+
+---
+
+_**Agent**_
+
+
 
 ---
 
