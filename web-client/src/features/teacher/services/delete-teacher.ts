@@ -11,6 +11,4 @@ export interface DeleteTeacherRequest {
   uuid: string;
 }
 
-export function deleteTeacher(uuid: string): DeleteTeacherRequest {
-  return { uuid };
-}
+export const deleteTeacher = (uuid: string): DeleteTeacherRequest => ({ uuid });

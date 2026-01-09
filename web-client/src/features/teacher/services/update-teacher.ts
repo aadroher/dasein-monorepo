@@ -18,7 +18,7 @@ import {
  * @returns A new Teacher object with updated fields
  * @throws {ValidationError} if the new name violates validation rules
  */
-export function updateTeacher(teacher: Teacher, newFullName: string): Teacher {
+export const updateTeacher = (teacher: Teacher, newFullName: string): Teacher => {
   const normalizedFullName = normalizeFullName(newFullName);
   const timestamp = new Date().toISOString();
 
@@ -32,4 +32,4 @@ export function updateTeacher(teacher: Teacher, newFullName: string): Teacher {
   validateTeacher(updatedTeacher);
 
   return updatedTeacher;
-}
+};

@@ -21,7 +21,7 @@ export interface TeacherPageProps {
  *
  * @param storage - Storage port implementation for teacher operations
  */
-export function TeacherPage({ storage }: TeacherPageProps) {
+export const TeacherPage = ({ storage }: TeacherPageProps) => {
   const { teachers, isLoading, error, refresh } = useTeachers(storage);
 
   return (

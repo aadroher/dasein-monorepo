@@ -24,12 +24,12 @@ export interface TeacherDeleteButtonProps {
  * @param storage - Storage adapter for deletion
  * @param onDelete - Callback invoked after successful deletion
  */
-export function TeacherDeleteButton({
+export const TeacherDeleteButton = ({
   teacherId,
   teacherName,
   storage,
   onDelete,
-}: TeacherDeleteButtonProps) {
+}: TeacherDeleteButtonProps) => {
   const { error, isDeleting, handleDelete } = useDeleteTeacher(
     storage,
     onDelete

@@ -28,11 +28,11 @@ export interface UseEditTeacherReturn {
  * @param onSave - Callback invoked after successful teacher update
  * @returns Form state and handlers
  */
-export function useEditTeacher(
+export const useEditTeacher = (
   teacher: Teacher,
   storage: TeacherStoragePort,
   onSave?: (teacher: Teacher) => void
-): UseEditTeacherReturn {
+): UseEditTeacherReturn => {
   const [fullName, setFullName] = useState(teacher.full_name);
   const [error, setError] = useState<string | null>(null);
   const [isUpdating, setIsUpdating] = useState(false);

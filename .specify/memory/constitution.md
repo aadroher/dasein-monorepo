@@ -60,4 +60,4 @@ For example, while in Rust it is possible to keep cloning values around to maint
 ### XII. Monorepo
 Dasein's codebase will be organized as a monorepo, consolidating all related projects, services, and libraries into a single repository. This approach facilitates easier code sharing, dependency management, and coordinated releases across the entire codebase.
 
-**Version**: 0.1.0 | **Ratified**: 2025-10-30 | **Last Amended**: 2025-10-30
+**Version**: 0.2.0 | **Ratified**: 2025-10-30 | **Last Amended**: 2026-01-09

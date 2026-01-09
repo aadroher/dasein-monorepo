@@ -30,12 +30,12 @@ export interface TeacherEditFormProps {
  * @param onSave - Optional callback invoked after successful update
  * @param onCancel - Optional callback invoked when edit is cancelled
  */
-export function TeacherEditForm({
+export const TeacherEditForm = ({
   teacher,
   storage,
   onSave,
   onCancel,
-}: TeacherEditFormProps) {
+}: TeacherEditFormProps) => {
   const { fullName, error, isUpdating, setFullName, handleSubmit, inputRef } =
     useEditTeacher(teacher, storage, onSave);
 

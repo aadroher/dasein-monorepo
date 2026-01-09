@@ -23,10 +23,10 @@ export interface TeacherCreateFormProps {
  * @param storage - Storage adapter for persistence
  * @param onCreated - Optional callback invoked after successful creation
  */
-export function TeacherCreateForm({
+export const TeacherCreateForm = ({
   storage,
   onCreated,
-}: TeacherCreateFormProps) {
+}: TeacherCreateFormProps) => {
   const { fullName, error, isCreating, setFullName, handleSubmit } =
     useCreateTeacher(storage, onCreated);
 

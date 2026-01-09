@@ -62,29 +62,24 @@ let uuidGenerator: UUIDGenerator = new CryptoUUIDGenerator();
 /**
  * Generate a new UUID using the current generator
  */
-export function generateUUID(): string {
-  return uuidGenerator.generate();
-}
+export const generateUUID = (): string => uuidGenerator.generate();
 
 /**
  * Set the UUID generator (useful for testing)
  */
-export function setUUIDGenerator(generator: UUIDGenerator): void {
+export const setUUIDGenerator = (generator: UUIDGenerator): void => {
   uuidGenerator = generator;
-}
+};
 
 /**
  * Reset to the default crypto UUID generator
  */
-export function resetUUIDGenerator(): void {
+export const resetUUIDGenerator = (): void => {
   uuidGenerator = new CryptoUUIDGenerator();
-}
+};
 
 /**
  * Check if the current environment supports crypto.randomUUID
  */
-export function isCryptoUUIDSupported(): boolean {
-  return (
-    typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
-  );
-}
+export const isCryptoUUIDSupported = (): boolean =>
+  typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function';

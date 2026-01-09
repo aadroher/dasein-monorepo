@@ -29,13 +29,13 @@ export interface TeacherListProps {
  * @param onTeacherUpdated - Callback when a teacher is updated
  * @param onTeacherDeleted - Callback when a teacher is deleted
  */
-export function TeacherList({
+export const TeacherList = ({
   teachers,
   storage,
   isLoading = false,
   onTeacherUpdated,
   onTeacherDeleted,
-}: TeacherListProps) {
+}: TeacherListProps) => {
   const [editingTeacherId, setEditingTeacherId] = useState<string | null>(null);
 
   if (isLoading) {

@@ -20,10 +20,10 @@ export interface UseDeleteTeacherReturn {
  * @param onDeleted - Callback invoked after successful teacher deletion
  * @returns Deletion state and handlers
  */
-export function useDeleteTeacher(
+export const useDeleteTeacher = (
   storage: TeacherStoragePort,
   onDeleted?: (uuid: string) => void
-): UseDeleteTeacherReturn {
+): UseDeleteTeacherReturn => {
   const [error, setError] = useState<string | null>(null);
   const [isDeleting, setIsDeleting] = useState(false);
 

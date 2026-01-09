@@ -27,9 +27,7 @@ export class ValidationError extends Error {
 /**
  * Normalize a teacher full name by trimming surrounding whitespace.
  */
-export function normalizeFullName(fullName: string): string {
-  return fullName.trim();
-}
+export const normalizeFullName = (fullName: string): string => fullName.trim();
 
 /**
  * Validate that a teacher object satisfies the business rules.
@@ -40,7 +38,7 @@ export function normalizeFullName(fullName: string): string {
  *
  * @throws {ValidationError} when rules are violated
  */
-export function validateTeacher(teacher: Teacher): void {
+export const validateTeacher = (teacher: Teacher): void => {
   const trimmedName = normalizeFullName(teacher.full_name);
 
   if (trimmedName.length === 0) {
@@ -50,13 +48,10 @@ export function validateTeacher(teacher: Teacher): void {
   if (trimmedName.length > 200) {
     throw new ValidationError('Full name cannot exceed 200 characters');
   }
-}
+};
 
 /**
  * Type guard to assert that an arbitrary value satisfies the Teacher contract.
  */
-export function isValidTeacher(teacher: Partial<Teacher>): teacher is Teacher {
-  return (
-    typeof teacher.uuid === 'string' && typeof teacher.full_name === 'string'
-  );
-}
+export const isValidTeacher = (teacher: Partial<Teacher>): teacher is Teacher =>
+  typeof teacher.uuid === 'string' && typeof teacher.full_name === 'string';

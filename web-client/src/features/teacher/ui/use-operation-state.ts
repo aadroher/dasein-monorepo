@@ -26,7 +26,7 @@ export interface UseOperationStateReturn {
  *
  * @returns Operation state and handlers
  */
-export function useOperationState(): UseOperationStateReturn {
+export const useOperationState = (): UseOperationStateReturn => {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 

@@ -6,13 +6,13 @@ import { MemoryAdapter } from './features/teacher/storage/memory-adapter';
 import { TeacherPage } from './features/teacher/ui/teacher-page';
 import type { TeacherStoragePort } from './features/teacher/storage/storage-port';
 
-function App() {
+const App = () => {
   const [storage, setStorage] = useState<TeacherStoragePort | null>(null);
   const [storageError, setStorageError] = useState<string | null>(null);
 
   // Initialize storage adapter (IndexedDB with fallback to Memory)
   useEffect(() => {
-    async function initializeStorage() {
+    const initializeStorage = async () => {
       const indexedDB = new IndexedDBAdapter();
       const result = await indexedDB.initialize();
 
@@ -31,7 +31,7 @@ function App() {
           setStorageError('Failed to initialize storage');
         }
       }
-    }
+    };
 
     initializeStorage();
   }, []);

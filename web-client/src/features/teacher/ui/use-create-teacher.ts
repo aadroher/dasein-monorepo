@@ -27,10 +27,10 @@ export interface UseCreateTeacherReturn {
  * @param onCreated - Callback invoked after successful teacher creation
  * @returns Form state and handlers
  */
-export function useCreateTeacher(
+export const useCreateTeacher = (
   storage: TeacherStoragePort,
   onCreated?: (teacher: Teacher) => void
-): UseCreateTeacherReturn {
+): UseCreateTeacherReturn => {
   const [fullName, setFullName] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isCreating, setIsCreating] = useState(false);

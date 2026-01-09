@@ -30,7 +30,7 @@ export interface PerformanceTimerResult {
  * console.log(`Operation took ${result.duration}ms`);
  * ```
  */
-export function startTimer(operation: string): PerformanceTimerResult {
+export const startTimer = (operation: string): PerformanceTimerResult => {
   const startTime = performance.now();
   const startTimestamp = Date.now();
 
@@ -38,7 +38,7 @@ export function startTimer(operation: string): PerformanceTimerResult {
     get duration() {
       return performance.now() - startTime;
     },
-    end(): PerformanceTiming {
+    end: (): PerformanceTiming => {
       const endTime = performance.now();
       return {
         operation,
@@ -47,7 +47,7 @@ export function startTimer(operation: string): PerformanceTimerResult {
       };
     },
   };
-}
+};
 
 /**
  * Measure the duration of an async operation.
@@ -64,15 +64,15 @@ export function startTimer(operation: string): PerformanceTimerResult {
  * console.log(`Loaded ${result.data.length} teachers in ${timing.duration}ms`);
  * ```
  */
-export async function measureAsync<T>(
+export const measureAsync = async <T>(
   operation: string,
   fn: () => Promise<T>
-): Promise<{ result: T; timing: PerformanceTiming }> {
+): Promise<{ result: T; timing: PerformanceTiming }> => {
   const timer = startTimer(operation);
   const result = await fn();
   const timing = timer.end();
   return { result, timing };
-}
+};
 
 /**
  * Measure the duration of a synchronous operation.
@@ -89,15 +89,15 @@ export async function measureAsync<T>(
  * console.log(`Sorted ${result.length} teachers in ${timing.duration}ms`);
  * ```
  */
-export function measureSync<T>(
+export const measureSync = <T>(
   operation: string,
   fn: () => T
-): { result: T; timing: PerformanceTiming } {
+): { result: T; timing: PerformanceTiming } => {
   const timer = startTimer(operation);
   const result = fn();
   const timing = timer.end();
   return { result, timing };
-}
+};
 
 /**
  * Format timing duration for display.
@@ -105,7 +105,7 @@ export function measureSync<T>(
  * @param duration - Duration in milliseconds
  * @returns Formatted string with appropriate units
  */
-export function formatDuration(duration: number): string {
+export const formatDuration = (duration: number): string => {
   if (duration < 1) {
     return `${(duration * 1000).toFixed(2)}µs`;
   } else if (duration < 1000) {
@@ -113,4 +113,4 @@ export function formatDuration(duration: number): string {
   } else {
     return `${(duration / 1000).toFixed(2)}s`;
   }
-}
+};

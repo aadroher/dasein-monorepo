@@ -12,7 +12,7 @@ import {
  * - Normalizes the full name (trim)
  * - Applies domain validation rules
  */
-export function createTeacher(fullName: string): Teacher {
+export const createTeacher = (fullName: string): Teacher => {
   const normalizedFullName = normalizeFullName(fullName);
   const timestamp = new Date().toISOString();
 
@@ -26,4 +26,4 @@ export function createTeacher(fullName: string): Teacher {
   validateTeacher(teacher);
 
   return teacher;
-}
+};

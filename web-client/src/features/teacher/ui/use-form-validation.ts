@@ -17,7 +17,7 @@ export interface UseFormValidationReturn {
  * @param initialValue - Initial value for the full name field
  * @returns Form field state and handlers
  */
-export function useFormValidation(initialValue = ''): UseFormValidationReturn {
+export const useFormValidation = (initialValue = ''): UseFormValidationReturn => {
   const [fullName, setFullName] = useState(initialValue);
 
   const reset = useCallback(() => {

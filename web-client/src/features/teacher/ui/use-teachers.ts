@@ -22,7 +22,7 @@ export interface UseTeachersReturn {
  * @param storage - Storage adapter for loading teachers
  * @returns Teachers list state and refresh function
  */
-export function useTeachers(storage: TeacherStoragePort): UseTeachersReturn {
+export const useTeachers = (storage: TeacherStoragePort): UseTeachersReturn => {
   const [teachers, setTeachers] = useState<Teacher[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

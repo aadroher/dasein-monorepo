@@ -10,35 +10,32 @@ import { Teacher } from '../model/teacher';
  * @param teachers - Array of teacher objects to sort
  * @returns New array with teachers sorted alphabetically
  */
-export function sortTeachersAlphabetically(teachers: Teacher[]): Teacher[] {
-  return [...teachers].sort((a, b) =>
+export const sortTeachersAlphabetically = (teachers: Teacher[]): Teacher[] =>
+  [...teachers].sort((a, b) =>
     a.full_name.toLowerCase().localeCompare(b.full_name.toLowerCase())
   );
-}
 
 /**
  * Sort teachers by creation date (newest first)
  * @param teachers - Array of teacher objects to sort
  * @returns New array with teachers sorted by creation date
  */
-export function sortTeachersByCreationDate(teachers: Teacher[]): Teacher[] {
-  return [...teachers].sort(
+export const sortTeachersByCreationDate = (teachers: Teacher[]): Teacher[] =>
+  [...teachers].sort(
     (a, b) =>
       new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
   );
-}
 
 /**
  * Sort teachers by last update date (most recently updated first)
  * @param teachers - Array of teacher objects to sort
  * @returns New array with teachers sorted by update date
  */
-export function sortTeachersByUpdateDate(teachers: Teacher[]): Teacher[] {
-  return [...teachers].sort(
+export const sortTeachersByUpdateDate = (teachers: Teacher[]): Teacher[] =>
+  [...teachers].sort(
     (a, b) =>
       new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
   );
-}
 
 /**
  * Generic sorting function for teachers
@@ -47,12 +44,12 @@ export function sortTeachersByUpdateDate(teachers: Teacher[]): Teacher[] {
  * @param order - Sort order (asc or desc)
  * @returns New array with teachers sorted according to criteria
  */
-export function sortTeachers(
+export const sortTeachers = (
   teachers: Teacher[],
   sortBy: keyof Teacher = 'full_name',
   order: 'asc' | 'desc' = 'asc'
-): Teacher[] {
-  return [...teachers].sort((a, b) => {
+): Teacher[] =>
+  [...teachers].sort((a, b) => {
     const aValue = a[sortBy];
     const bValue = b[sortBy];
 
@@ -72,4 +69,3 @@ export function sortTeachers(
 
     return order === 'desc' ? -comparison : comparison;
   });
-}

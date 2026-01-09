@@ -38,17 +38,17 @@ const defaultAxeOptions: RunOptions = {
  * @param element - DOM element to test (defaults to document.body)
  * @param options - Additional axe options
  */
-export async function assertA11y(
+export const assertA11y = async (
   element: Element = document.body,
   options?: RunOptions
-): Promise<void> {
+): Promise<void> => {
   const mergedOptions: RunOptions = {
     ...defaultAxeOptions,
     ...options,
   };
   const results = await axe(element, mergedOptions);
   expect(results).toHaveNoViolations();
-}
+};
 
 /**
  * Get detailed accessibility results without throwing
@@ -56,13 +56,13 @@ export async function assertA11y(
  * @param options - Additional axe options
  * @returns Promise resolving to axe results
  */
-export async function getA11yResults(
+export const getA11yResults = async (
   element: Element = document.body,
   options?: RunOptions
-): Promise<AxeResults> {
+): Promise<AxeResults> => {
   const mergedOptions: RunOptions = {
     ...defaultAxeOptions,
     ...options,
   };
   return await axe(element, mergedOptions);
-}
+};

@@ -15,7 +15,7 @@ import { colors } from '../../../src/design-system/tokens';
  * Calculate relative luminance per WCAG formula
  * https://www.w3.org/WAI/GL/wiki/Relative_luminance
  */
-function getLuminance(hex: string): number {
+const getLuminance = (hex: string): number => {
   const rgb = parseInt(hex.slice(1), 16);
   const r = (rgb >> 16) & 0xff;
   const g = (rgb >> 8) & 0xff;
@@ -27,19 +27,19 @@ function getLuminance(hex: string): number {
   });
 
   return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
-}
+};
 
 /**
  * Calculate contrast ratio between two colors
  * https://www.w3.org/WAI/GL/wiki/Contrast_ratio
  */
-function getContrastRatio(color1: string, color2: string): number {
+const getContrastRatio = (color1: string, color2: string): number => {
   const lum1 = getLuminance(color1);
   const lum2 = getLuminance(color2);
   const lighter = Math.max(lum1, lum2);
   const darker = Math.min(lum1, lum2);
   return (lighter + 0.05) / (darker + 0.05);
-}
+};
 
 describe('Contrast Ratio Validation', () => {
   const WCAG_AA_NORMAL = 4.5; // Normal text

@@ -37,13 +37,13 @@ export interface TeacherListItemProps {
  * @param onDelete - Callback after successful deletion
  * @param isEditing - Whether this teacher is currently being edited
  */
-export function TeacherListItem({
+export const TeacherListItem = ({
   teacher,
   storage,
   onEdit,
   onDelete,
   isEditing,
-}: TeacherListItemProps) {
+}: TeacherListItemProps) => {
   const { isDeleting, handleDelete: performDelete } = useDeleteTeacher(
     storage,
     onDelete
