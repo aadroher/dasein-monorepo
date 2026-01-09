@@ -34,6 +34,7 @@
     "@vitejs/plugin-react": "^4.2.0",
     "autoprefixer": "^10.4.22",
     "axe-core": "^4.9.1",
+    "baseline-browser-mapping": "^2.9.14",
     "canvas": "^2.11.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
