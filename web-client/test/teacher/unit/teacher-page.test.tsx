@@ -17,16 +17,20 @@ describe('TeacherPage - Integration', () => {
   });
 
   describe('Rendering', () => {
-    it('renders page header with "Teachers" title', () => {
+    it('renders page header with "Teachers" title', async () => {
       render(<TeacherPage storage={storage} />);
-      expect(screen.getByText('Teachers')).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText('Teachers')).toBeInTheDocument();
+      });
     });
 
-    it('renders create form section', () => {
+    it('renders create form section', async () => {
       render(<TeacherPage storage={storage} />);
-      expect(
-        screen.getByRole('textbox', { name: /full name/i })
-      ).toBeInTheDocument();
+      await waitFor(() => {
+        expect(
+          screen.getByRole('textbox', { name: /full name/i })
+        ).toBeInTheDocument();
+      });
     });
 
     it('renders teacher list section', async () => {
@@ -78,10 +82,12 @@ describe('TeacherPage - Integration', () => {
   });
 
   describe('Page Structure', () => {
-    it('has proper semantic sections', () => {
+    it('has proper semantic sections', async () => {
       const { container } = render(<TeacherPage storage={storage} />);
-      const sections = container.querySelectorAll('section');
-      expect(sections.length).toBeGreaterThanOrEqual(2); // At least create and list sections
+      await waitFor(() => {
+        const sections = container.querySelectorAll('section');
+        expect(sections.length).toBeGreaterThanOrEqual(2); // At least create and list sections
+      });
     });
   });
 });

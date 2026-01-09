@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { TeacherList } from '../teacher-list';
 import { MemoryAdapter } from '../../storage/memory-adapter';
 import { createTeacher } from '../../services/create-teacher';
@@ -103,6 +104,7 @@ describe('TeacherList Accessibility', () => {
   });
 
   it('should have no accessibility violations with edit form open', async () => {
+    const user = userEvent.setup();
     const teachers: Teacher[] = [createTeacher('Test Teacher')];
 
     const { container } = render(
@@ -111,7 +113,7 @@ describe('TeacherList Accessibility', () => {
 
     // Click edit button to open edit form
     const editButton = screen.getByRole('button', { name: /edit/i });
-    editButton.click();
+    await user.click(editButton);
 
     // Wait for edit form to appear
     await screen.findByRole('textbox', { name: /full name/i });
@@ -120,13 +122,14 @@ describe('TeacherList Accessibility', () => {
   });
 
   it('should maintain focus management when editing', async () => {
+    const user = userEvent.setup();
     const teachers: Teacher[] = [createTeacher('Test Teacher')];
 
     render(<TeacherList teachers={teachers} storage={storage} />);
 
     // Get edit button
     const editButton = screen.getByRole('button', { name: /edit/i });
-    editButton.click();
+    await user.click(editButton);
 
     // Edit form input should appear
     const input = await screen.findByRole('textbox', { name: /full name/i });

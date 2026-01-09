@@ -1,5 +1,5 @@
 import { describe, it, beforeEach } from 'vitest';
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { TeacherPage } from '../../../src/features/teacher/ui/teacher-page';
 import { assertA11y } from '../../../src/test/a11y/assertA11y';
 import { MemoryAdapter } from '../../../src/features/teacher/storage/memory-adapter';
@@ -25,7 +25,9 @@ describe('TeacherPage - Accessibility (WCAG 2.1 AA)', () => {
   describe('Empty State', () => {
     it('has no accessibility violations with no teachers', async () => {
       const { container } = render(<TeacherPage storage={storage} />);
-      await assertA11y(container);
+      await waitFor(async () => {
+        await assertA11y(container);
+      });
     });
   });
 
@@ -46,21 +48,27 @@ describe('TeacherPage - Accessibility (WCAG 2.1 AA)', () => {
       });
 
       const { container } = render(<TeacherPage storage={storage} />);
-      await assertA11y(container);
+      await waitFor(async () => {
+        await assertA11y(container);
+      });
     });
   });
 
   describe('Page Structure', () => {
     it('has no accessibility violations with heading hierarchy', async () => {
       const { container } = render(<TeacherPage storage={storage} />);
-      await assertA11y(container);
+      await waitFor(async () => {
+        await assertA11y(container);
+      });
     });
   });
 
   describe('Form Section', () => {
     it('has no accessibility violations in create form section', async () => {
       const { container } = render(<TeacherPage storage={storage} />);
-      await assertA11y(container);
+      await waitFor(async () => {
+        await assertA11y(container);
+      });
     });
   });
 
@@ -74,7 +82,9 @@ describe('TeacherPage - Accessibility (WCAG 2.1 AA)', () => {
       });
 
       const { container } = render(<TeacherPage storage={storage} />);
-      await assertA11y(container);
+      await waitFor(async () => {
+        await assertA11y(container);
+      });
     });
   });
 });
