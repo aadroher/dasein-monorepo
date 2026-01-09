@@ -12,6 +12,54 @@ Follow instructions in [speckit.analyze.prompt.md](file:///Users/aadroher/DevPro
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
 
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "49a8d341-846f-488f-8217-9dea1b560509",
+  "terminalCommandId": "tool-2f839893-c90d-434c-8538-8680c94e0744",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo &amp;&amp; .specify/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks",
+    "toolEdited": ".specify/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
 I'll execute the `/analyze` command following the instructions in the prompt file. 
 
 ---

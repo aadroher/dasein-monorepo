@@ -13,6 +13,434 @@ Phase 6
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
 
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "61064544-e084-4a63-a070-3f4c5f002b06",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo &amp;&amp; .specify/scripts/bash/check-prerequisites.sh --json",
+    "toolEdited": ".specify/scripts/bash/check-prerequisites.sh --json"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/001-teacher-crud/plan.md#1-1), lines 1 to 100</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/001-teacher-crud/plan.md#1-1), lines 1 to 100
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/001-teacher-crud/spec.md#1-1), lines 1 to 100</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/001-teacher-crud/spec.md#1-1), lines 1 to 100
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/001-teacher-crud/tasks.md)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/001-teacher-crud/tasks.md)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/001-teacher-crud/spec.md#100-100), lines 100 to 149</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/001-teacher-crud/spec.md#100-100), lines 100 to 149
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_findFiles">
+<details>
+<summary>Tool use: **copilot_findFiles**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_findFiles",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Searching for files matching &#96;**/web-client/src/features/teacher/ui/*.tsx&#96;",
+  "pastTenseMessage": "Searched for files matching &#96;**/web-client/src/features/teacher/ui/*.tsx&#96;, 8 matches",
+  "resultDetails": [
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-delete-button.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-delete-button.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-delete-button.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-edit-form.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-edit-form.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-edit-form.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-list.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-list.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-list.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-create-form.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-create-form.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-create-form.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-delete-button.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-delete-button.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-delete-button.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-edit-form.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-edit-form.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-edit-form.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-list.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-list.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-list.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-create-form.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-create-form.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-create-form.tsx",
+      "scheme": "file"
+    }
+  ],
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-list.tsx#1-1), lines 1 to 50</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-list.tsx#1-1), lines 1 to 50
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/use-teachers.ts#1-1), lines 1 to 50</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/use-teachers.ts#1-1), lines 1 to 50
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/services/sort.ts)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/services/sort.ts)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/services/__tests__/sort.test.ts)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/services/__tests__/sort.test.ts)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_findFiles">
+<details>
+<summary>Tool use: **copilot_findFiles**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_findFiles",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Searching for files matching &#96;**/web-client/test/teacher/unit/list-load.test.ts&#96;",
+  "pastTenseMessage": "Searched for files matching &#96;**/web-client/test/teacher/unit/list-load.test.ts&#96;, no matches",
+  "resultDetails": [],
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_findFiles">
+<details>
+<summary>Tool use: **copilot_findFiles**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_findFiles",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Searching for files matching &#96;**/web-client/test/teacher/e2e/*list*.spec.ts&#96;",
+  "pastTenseMessage": "Searched for files matching &#96;**/web-client/test/teacher/e2e/*list*.spec.ts&#96;, no matches",
+  "resultDetails": [],
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_listDirectory">
+<details>
+<summary>Tool use: **copilot_listDirectory**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/e2e",
+  "relativeWorkspacePath": "e2e"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_listDirectory",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/e2e)",
+  "pastTenseMessage": "Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/e2e)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_findFiles">
+<details>
+<summary>Tool use: **copilot_findFiles**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_findFiles",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Searching for files matching &#96;**/web-client/src/features/teacher/ui/__tests__/*list*.test.tsx&#96;",
+  "pastTenseMessage": "Searched for files matching &#96;**/web-client/src/features/teacher/ui/__tests__/*list*.test.tsx&#96;, no matches",
+  "resultDetails": [],
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/e2e/app.spec.ts)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/e2e/app.spec.ts)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;markdown\n## Phase 6: User Story 4 - View Teachers List (P4)\n**Goal**: User sees ordered list (alphabetical) and empty state when none.\n**Independent Test**: E2E list display + ordering + empty state.\n\n### Tests First\n- [x] T090 [US4] Unit test: sorting function &#96;web-client/src/features/teacher/services/__tests__/sort.test.ts&#96;\n- [ ] T091 [US4] Integration: load + list render &#96;web-client/test/teacher/unit/list-load.test.ts&#96;\n- [ ] T092 [US4] E2E: list ordering &amp; empty state &#96;web-client/test/teacher/e2e/view-list.spec.ts&#96;\n- [ ] T093 [P] [US4] A11y component test &#96;web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx&#96;\n\n### Implementation\n- [x] T100 [US4] Implement list component &#96;web-client/src/features/teacher/ui/teacher-list.tsx&#96;\n- [x] T101 [US4] Hook for list loading &#96;web-client/src/features/teacher/ui/use-teachers.ts&#96;\n- [x] T102 [US4] Empty state in list component (integrated in &#96;web-client/src/features/teacher/ui/teacher-list.tsx&#96;)\n- [x] T103 [US4] Integrate alphabetical order function in rendering\n- [ ] T104 [US4] Axe assertions for list component tests\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "## Phase 6: User Story 4 - View Teachers List (P4)\n**Goal**: User sees ordered list (alphabetical) and empty state when none.\n**Independent Test**: E2E list display + ordering + empty state.\n\n### Tests First\n- [x] T090 [US4] Unit test: sorting function &#96;web-client/src/features/teacher/services/__tests__/sort.test.ts&#96;\n- [ ] T091 [US4] Integration: load + list render &#96;web-client/test/teacher/unit/list-load.test.ts&#96;\n- [ ] T092 [US4] E2E: list ordering &amp; empty state &#96;web-client/test/teacher/e2e/view-list.spec.ts&#96;\n- [ ] T093 [P] [US4] A11y component test &#96;web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx&#96;\n\n### Implementation\n- [x] T100 [US4] Implement list component &#96;web-client/src/features/teacher/ui/teacher-list.tsx&#96;\n- [x] T101 [US4] Hook for list loading &#96;web-client/src/features/teacher/ui/use-teachers.ts&#96;\n- [x] T102 [US4] Empty state in list component (integrated in &#96;web-client/src/features/teacher/ui/teacher-list.tsx&#96;)\n- [x] T103 [US4] Integrate alphabetical order function in rendering\n- [ ] T104 [US4] Axe assertions for list component tests",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
 I'll help you generate tasks for Phase 6. Let me start by running the prerequisite check and loading the necessary documents. Now let me load the necessary documents to understand the feature and generate Phase 6 tasks. Let me read the rest of the spec and check what has already been completed to understand Phase 6 better. Let me check what currently exists in the implementation to see what's been completed: Now let me check what test files exist for Phase 6: Now let me check the E2E test directory to see what's already there: Let me check the app.spec.ts to see if it covers the list view: Good! Now I understand the current state. Looking at the `tasks.md` file, Phase 6 tasks are already defined but not completed. Let me now update the `tasks.md` to mark the completed tasks from Phase 6 based on what I found in the codebase:
 
 1. T090 - Sort test exists ✅
@@ -25,11 +453,7 @@ I'll help you generate tasks for Phase 6. Let me start by running the prerequisi
 8. T103 - Sort function integration exists ✅
 9. T104 - Axe assertions don't exist yet ❌
 
-Let me update the `tasks.md` file to reflect the current state: 
-```
-
-```
-Perfect! I've updated the `tasks.md` file to reflect the current state of Phase 6. Here's what I found:
+Let me update the `tasks.md` file to reflect the current state: Perfect! I've updated the `tasks.md` file to reflect the current state of Phase 6. Here's what I found:
 
 ## Phase 6 Status Summary
 
@@ -64,15 +488,685 @@ Cool. Let's implement the remaining tasks for phase 6
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
 
-I'll implement the remaining tasks for Phase 6. Let me create a todo list to track progress and then implement each remaining task. Let me first check the existing test files to understand the testing patterns used: Now let me check the storage adapter's list method to understand sorting: Great! Now let me create the integration test for list load (T091): Now let me check the existing E2E tests to understand the pattern: Now let me create the E2E test for viewing the list (T092): Now let me check the existing a11y test patterns: Now let me create the accessibility test for the list component (T093): Now for the last task (T104), I need to update the `tasks.md` to mark T093 as using axe assertions (which it already does). Let me check if there are any other list-related component tests that need axe assertions: Perfect! The `list-a11y.test.tsx` already includes axe assertions via the `assertA11y` helper. Task T104 is actually already completed as part of T093. Let me now run the tests to verify everything works: Excellent! Now let's run the accessibility test: There's a small issue with the last test. Let me fix it: 
-```
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
 
-```
-Now let's run the test again: Perfect! Now let me update the `tasks.md` to mark all Phase 6 tasks as completed: 
-```
+**Created 4 todos**
 
+- [ ] T091: Create integration test for list load
+  > Create web-client/test/teacher/unit/list-load.test.ts to test loading and rendering the teachers list
+- [ ] T092: Create E2E test for list view
+  > Create web-client/test/teacher/e2e/view-list.spec.ts to test list ordering and empty state
+- [ ] T093: Create A11y component test
+  > Create web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx for accessibility testing
+- [ ] T104: Add axe assertions to list tests
+  > Add axe accessibility assertions to the list component tests
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting (1/4) *T091: Create integration test for list load***
+
+- [-] T091: Create integration test for list load
+  > Create web-client/test/teacher/unit/list-load.test.ts to test loading and rendering the teachers list
+- [ ] T092: Create E2E test for list view
+  > Create web-client/test/teacher/e2e/view-list.spec.ts to test list ordering and empty state
+- [ ] T093: Create A11y component test
+  > Create web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx for accessibility testing
+- [ ] T104: Add axe assertions to list tests
+  > Add axe accessibility assertions to the list component tests
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/unit/create-persist.test.ts)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/unit/create-persist.test.ts)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/storage/indexeddb-adapter.ts#1-1), lines 1 to 50</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/storage/indexeddb-adapter.ts#1-1), lines 1 to 50
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="copilot_findTextInFiles">
+<details>
+<summary>Tool use: **copilot_findTextInFiles** • Searching text for `async list\(\)` (`**/web-client/src/features/teacher/storage/indexeddb-adapter.ts`)</summary>
+
+
+Searched text for `async list\(\)` (`**/web-client/src/features/teacher/storage/indexeddb-adapter.ts`), 1 result
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/storage/indexeddb-adapter.ts#69-69), lines 69 to 120</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/storage/indexeddb-adapter.ts#69-69), lines 69 to 120
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/unit/list-load.test.ts",
+  "relativeWorkspacePath": "list-load.test.ts"
+}
 ```
-Perfect! Now let me run all the Phase 6 tests together to confirm everything works: Excellent! All Phase 6 tests are passing. Now let me create a summary of what was accomplished:
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/unit/list-load.test.ts)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/unit/list-load.test.ts)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import { describe, it, expect, beforeEach } from 'vitest';\nimport { createTeacher } from '../../../src/features/teacher/services/create-teacher';\nimport { MemoryAdapter } from '../../../src/features/teacher/storage/memory-adapter';\nimport { sortTeachersAlphabetically } from '../../../src/features/teacher/services/sort';\nimport type { StorageResult } from '../../../src/features/teacher/storage/storage-port';\n\nfunction unwrapResult&lt;T&gt;(result: StorageResult&lt;T&gt;): T {\n  if (!result.success) {\n    throw result.error.cause ?? new Error(result.error.message);\n  }\n  return result.data;\n}\n\ndescribe('List Load Integration', () =&gt; {\n  let adapter: MemoryAdapter;\n\n  beforeEach(async () =&gt; {\n    adapter = new MemoryAdapter();\n    unwrapResult(await adapter.initialize());\n    unwrapResult(await adapter.clear());\n  });\n\n  it('should load an empty list when no teachers exist', async () =&gt; {\n    const teachers = unwrapResult(await adapter.list());\n\n    expect(teachers).toEqual([]);\n    expect(teachers).toHaveLength(0);\n  });\n\n  it('should load all teachers from storage', async () =&gt; {\n    const teacher1 = createTeacher('John Smith');\n    const teacher2 = createTeacher('Alice Johnson');\n    const teacher3 = createTeacher('Bob Wilson');\n\n    unwrapResult(await adapter.create(teacher1));\n    unwrapResult(await adapter.create(teacher2));\n    unwrapResult(await adapter.create(teacher3));\n\n    const teachers = unwrapResult(await adapter.list());\n\n    expect(teachers).toHaveLength(3);\n    expect(teachers.map(t =&gt; t.full_name)).toContain('John Smith');\n    expect(teachers.map(t =&gt; t.full_name)).toContain('Alice Johnson');\n    expect(teachers.map(t =&gt; t.full_name)).toContain('Bob Wilson');\n  });\n\n  it('should load teachers in alphabetical order', async () =&gt; {\n    // Create teachers in non-alphabetical order\n    const teacherZ = createTeacher('Zara Adams');\n    const teacherA = createTeacher('Alice Baker');\n    const teacherM = createTeacher('Michael Chen');\n\n    unwrapResult(await adapter.create(teacherZ));\n    unwrapResult(await adapter.create(teacherA));\n    unwrapResult(await adapter.create(teacherM));\n\n    const teachers = unwrapResult(await adapter.list());\n\n    // Memory adapter returns unsorted, so we sort them\n    const sorted = sortTeachersAlphabetically(teachers);\n\n    expect(sorted[0].full_name).toBe('Alice Baker');\n    expect(sorted[1].full_name).toBe('Michael Chen');\n    expect(sorted[2].full_name).toBe('Zara Adams');\n  });\n\n  it('should handle case-insensitive alphabetical sorting', async () =&gt; {\n    const teacher1 = createTeacher('alice');\n    const teacher2 = createTeacher('Bob');\n    const teacher3 = createTeacher('CHARLIE');\n\n    unwrapResult(await adapter.create(teacher1));\n    unwrapResult(await adapter.create(teacher2));\n    unwrapResult(await adapter.create(teacher3));\n\n    const teachers = unwrapResult(await adapter.list());\n    const sorted = sortTeachersAlphabetically(teachers);\n\n    expect(sorted[0].full_name).toBe('alice');\n    expect(sorted[1].full_name).toBe('Bob');\n    expect(sorted[2].full_name).toBe('CHARLIE');\n  });\n\n  it('should maintain all teacher properties when loading', async () =&gt; {\n    const teacher = createTeacher('Test Teacher');\n\n    unwrapResult(await adapter.create(teacher));\n    const teachers = unwrapResult(await adapter.list());\n\n    expect(teachers[0]).toEqual({\n      uuid: teacher.uuid,\n      full_name: teacher.full_name,\n      created_at: teacher.created_at,\n      updated_at: teacher.updated_at,\n    });\n  });\n\n  it('should reflect changes after CRUD operations', async () =&gt; {\n    // Create initial teacher\n    const teacher1 = createTeacher('Original Teacher');\n    unwrapResult(await adapter.create(teacher1));\n\n    // Add another teacher\n    const teacher2 = createTeacher('Second Teacher');\n    unwrapResult(await adapter.create(teacher2));\n\n    let teachers = unwrapResult(await adapter.list());\n    expect(teachers).toHaveLength(2);\n\n    // Update one teacher\n    const updated = {\n      ...teacher1,\n      full_name: 'Updated Teacher',\n      updated_at: new Date().toISOString(),\n    };\n    unwrapResult(await adapter.update(updated));\n\n    teachers = unwrapResult(await adapter.list());\n    expect(teachers).toHaveLength(2);\n    expect(teachers.find(t =&gt; t.uuid === teacher1.uuid)?.full_name).toBe(\n      'Updated Teacher'\n    );\n\n    // Delete one teacher\n    unwrapResult(await adapter.delete(teacher2.uuid));\n\n    teachers = unwrapResult(await adapter.list());\n    expect(teachers).toHaveLength(1);\n    expect(teachers[0].full_name).toBe('Updated Teacher');\n  });\n\n  it('should handle duplicate names correctly', async () =&gt; {\n    const teacher1 = createTeacher('John Smith');\n    const teacher2 = createTeacher('John Smith');\n    const teacher3 = createTeacher('John Smith');\n\n    unwrapResult(await adapter.create(teacher1));\n    unwrapResult(await adapter.create(teacher2));\n    unwrapResult(await adapter.create(teacher3));\n\n    const teachers = unwrapResult(await adapter.list());\n\n    expect(teachers).toHaveLength(3);\n    // Ensure they have different UUIDs\n    const uuids = teachers.map(t =&gt; t.uuid);\n    expect(new Set(uuids).size).toBe(3);\n  });\n\n  it('should return empty list after clearing storage', async () =&gt; {\n    const teacher1 = createTeacher('Teacher One');\n    const teacher2 = createTeacher('Teacher Two');\n\n    unwrapResult(await adapter.create(teacher1));\n    unwrapResult(await adapter.create(teacher2));\n\n    let teachers = unwrapResult(await adapter.list());\n    expect(teachers).toHaveLength(2);\n\n    unwrapResult(await adapter.clear());\n\n    teachers = unwrapResult(await adapter.list());\n    expect(teachers).toEqual([]);\n  });\n});\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting (2/4) *T092: Create E2E test for list view***
+
+- [x] T091: Create integration test for list load
+  > Create web-client/test/teacher/unit/list-load.test.ts to test loading and rendering the teachers list
+- [-] T092: Create E2E test for list view
+  > Create web-client/test/teacher/e2e/view-list.spec.ts to test list ordering and empty state
+- [ ] T093: Create A11y component test
+  > Create web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx for accessibility testing
+- [ ] T104: Add axe assertions to list tests
+  > Add axe accessibility assertions to the list component tests
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/e2e/create-teacher.spec.ts#1-1), lines 1 to 100</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/e2e/create-teacher.spec.ts#1-1), lines 1 to 100
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/e2e/view-list.spec.ts",
+  "relativeWorkspacePath": "view-list.spec.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/e2e/view-list.spec.ts)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/teacher/e2e/view-list.spec.ts)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import { test, expect } from '@playwright/test';\n\ntest.describe('View Teachers List (E2E)', () =&gt; {\n  test.beforeEach(async ({ page }) =&gt; {\n    // Navigate to the app and ensure clean state\n    await page.goto('http://localhost:5173');\n\n    // Clear any existing data\n    await page.evaluate(() =&gt; {\n      indexedDB.deleteDatabase('TeacherCRUD');\n    });\n\n    await page.reload();\n  });\n\n  test('should display empty state when no teachers exist', async ({\n    page,\n  }) =&gt; {\n    // Verify empty state message is visible\n    await expect(\n      page.getByText(/no teachers|no teachers yet|empty/i)\n    ).toBeVisible();\n\n    // Verify no teacher entries are shown\n    const teacherListItems = page.locator('[role=\"list\"] [role=\"listitem\"]');\n    await expect(teacherListItems).toHaveCount(0);\n  });\n\n  test('should display teachers list when teachers exist', async ({ page }) =&gt; {\n    // Create some teachers\n    await page.getByRole('textbox', { name: /full name/i }).fill('Alice');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n    await expect(page.getByText('Alice')).toBeVisible();\n\n    await page.getByRole('textbox', { name: /full name/i }).fill('Bob');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n    await expect(page.getByText('Bob')).toBeVisible();\n\n    // Verify list shows both teachers\n    const teacherNames = await page\n      .locator('[role=\"list\"] [role=\"listitem\"]')\n      .allTextContents();\n\n    expect(teacherNames.some(name =&gt; name.includes('Alice'))).toBeTruthy();\n    expect(teacherNames.some(name =&gt; name.includes('Bob'))).toBeTruthy();\n\n    // Verify empty state is not visible\n    await expect(\n      page.getByText(/no teachers|no teachers yet|empty/i)\n    ).not.toBeVisible();\n  });\n\n  test('should display teachers in alphabetical order', async ({ page }) =&gt; {\n    // Create teachers in non-alphabetical order\n    await page.getByRole('textbox', { name: /full name/i }).fill('Zara Wilson');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n    await expect(page.getByText('Zara Wilson')).toBeVisible();\n\n    await page\n      .getByRole('textbox', { name: /full name/i })\n      .fill('Alice Johnson');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n    await expect(page.getByText('Alice Johnson')).toBeVisible();\n\n    await page\n      .getByRole('textbox', { name: /full name/i })\n      .fill('Michael Chen');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n    await expect(page.getByText('Michael Chen')).toBeVisible();\n\n    // Verify alphabetical order\n    const teacherListItems = page.locator('[role=\"list\"] [role=\"listitem\"]');\n    const count = await teacherListItems.count();\n\n    const names: string[] = [];\n    for (let i = 0; i &lt; count; i++) {\n      const text = await teacherListItems.nth(i).textContent();\n      if (text) names.push(text);\n    }\n\n    // Check that Alice appears before Michael, and Michael before Zara\n    const aliceIndex = names.findIndex(name =&gt; name.includes('Alice Johnson'));\n    const michaelIndex = names.findIndex(name =&gt;\n      name.includes('Michael Chen')\n    );\n    const zaraIndex = names.findIndex(name =&gt; name.includes('Zara Wilson'));\n\n    expect(aliceIndex).toBeLessThan(michaelIndex);\n    expect(michaelIndex).toBeLessThan(zaraIndex);\n  });\n\n  test('should maintain alphabetical order with case-insensitive sorting', async ({\n    page,\n  }) =&gt; {\n    // Create teachers with mixed case names\n    await page.getByRole('textbox', { name: /full name/i }).fill('alice');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n\n    await page.getByRole('textbox', { name: /full name/i }).fill('Bob');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n\n    await page.getByRole('textbox', { name: /full name/i }).fill('CHARLIE');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n\n    // Get all list items\n    const teacherListItems = page.locator('[role=\"list\"] [role=\"listitem\"]');\n    const count = await teacherListItems.count();\n\n    const names: string[] = [];\n    for (let i = 0; i &lt; count; i++) {\n      const text = await teacherListItems.nth(i).textContent();\n      if (text) names.push(text);\n    }\n\n    // Verify alphabetical order regardless of case\n    const aliceIndex = names.findIndex(name =&gt;\n      name.toLowerCase().includes('alice')\n    );\n    const bobIndex = names.findIndex(name =&gt; name.toLowerCase().includes('bob'));\n    const charlieIndex = names.findIndex(name =&gt;\n      name.toLowerCase().includes('charlie')\n    );\n\n    expect(aliceIndex).toBeLessThan(bobIndex);\n    expect(bobIndex).toBeLessThan(charlieIndex);\n  });\n\n  test('should persist list order after reload', async ({ page }) =&gt; {\n    // Create teachers in non-alphabetical order\n    await page.getByRole('textbox', { name: /full name/i }).fill('Zoe');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n\n    await page.getByRole('textbox', { name: /full name/i }).fill('Alice');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n\n    await page.getByRole('textbox', { name: /full name/i }).fill('Mike');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n\n    // Reload the page\n    await page.reload();\n\n    // Wait for list to load\n    await expect(page.getByText('Alice')).toBeVisible();\n\n    // Verify alphabetical order is maintained\n    const teacherListItems = page.locator('[role=\"list\"] [role=\"listitem\"]');\n    const count = await teacherListItems.count();\n\n    const names: string[] = [];\n    for (let i = 0; i &lt; count; i++) {\n      const text = await teacherListItems.nth(i).textContent();\n      if (text) names.push(text);\n    }\n\n    const aliceIndex = names.findIndex(name =&gt; name.includes('Alice'));\n    const mikeIndex = names.findIndex(name =&gt; name.includes('Mike'));\n    const zoeIndex = names.findIndex(name =&gt; name.includes('Zoe'));\n\n    expect(aliceIndex).toBeLessThan(mikeIndex);\n    expect(mikeIndex).toBeLessThan(zoeIndex);\n  });\n\n  test('should handle duplicate names in the list', async ({ page }) =&gt; {\n    // Create multiple teachers with the same name\n    await page.getByRole('textbox', { name: /full name/i }).fill('John Smith');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n    await expect(page.getByText('John Smith').first()).toBeVisible();\n\n    await page.getByRole('textbox', { name: /full name/i }).fill('John Smith');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n\n    await page.getByRole('textbox', { name: /full name/i }).fill('John Smith');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n\n    // Verify all three instances are displayed\n    const johnSmithItems = page.getByText('John Smith');\n    await expect(johnSmithItems).toHaveCount(3);\n  });\n\n  test('should return to empty state after all teachers are deleted', async ({\n    page,\n  }) =&gt; {\n    // Create a teacher\n    await page.getByRole('textbox', { name: /full name/i }).fill('Test Teacher');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n    await expect(page.getByText('Test Teacher')).toBeVisible();\n\n    // Verify list is not empty\n    await expect(\n      page.getByText(/no teachers|no teachers yet|empty/i)\n    ).not.toBeVisible();\n\n    // Delete the teacher\n    await page\n      .getByRole('button', { name: /delete|remove/i })\n      .first()\n      .click();\n\n    // Verify empty state is shown again\n    await expect(\n      page.getByText(/no teachers|no teachers yet|empty/i)\n    ).toBeVisible();\n  });\n\n  test('should display list with proper semantic structure', async ({\n    page,\n  }) =&gt; {\n    // Create a teacher\n    await page.getByRole('textbox', { name: /full name/i }).fill('Semantic Test');\n    await page\n      .getByRole('button', { name: /add teacher|create teacher/i })\n      .click();\n\n    // Verify list has proper ARIA role\n    const list = page.locator('[role=\"list\"]');\n    await expect(list).toBeVisible();\n\n    // Verify list items have proper ARIA role\n    const listItems = page.locator('[role=\"list\"] [role=\"listitem\"]');\n    await expect(listItems).toHaveCount(1);\n  });\n\n  test('should show loading state briefly when loading teachers', async ({\n    page,\n  }) =&gt; {\n    // This test may need adjustment based on actual loading implementation\n    // Navigate to page\n    await page.goto('http://localhost:5173');\n\n    // Check if loading indicator appears (may be too fast to catch in some cases)\n    const loadingIndicator = page.getByText(/loading/i);\n\n    // Either loading appears or list loads immediately\n    const hasLoading = await loadingIndicator.isVisible().catch(() =&gt; false);\n\n    if (hasLoading) {\n      // Wait for loading to disappear\n      await expect(loadingIndicator).not.toBeVisible();\n    }\n\n    // Verify either empty state or list is shown after loading\n    const emptyState = page.getByText(/no teachers|no teachers yet|empty/i);\n    const list = page.locator('[role=\"list\"]');\n\n    const hasEmptyState = await emptyState.isVisible().catch(() =&gt; false);\n    const hasList = await list.isVisible().catch(() =&gt; false);\n\n    expect(hasEmptyState || hasList).toBeTruthy();\n  });\n});\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting (3/4) *T093: Create A11y component test***
+
+- [x] T091: Create integration test for list load
+  > Create web-client/test/teacher/unit/list-load.test.ts to test loading and rendering the teachers list
+- [x] T092: Create E2E test for list view
+  > Create web-client/test/teacher/e2e/view-list.spec.ts to test list ordering and empty state
+- [-] T093: Create A11y component test
+  > Create web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx for accessibility testing
+- [ ] T104: Add axe assertions to list tests
+  > Add axe accessibility assertions to the list component tests
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/form-a11y.test.tsx#1-1), lines 1 to 100</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/form-a11y.test.tsx#1-1), lines 1 to 100
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/test/a11y/assertA11y.ts#1-1), lines 1 to 50</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/test/a11y/assertA11y.ts#1-1), lines 1 to 50
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx",
+  "relativeWorkspacePath": "list-a11y.test.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import { describe, it, expect, beforeEach } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { TeacherList } from '../teacher-list';\nimport { MemoryAdapter } from '../../storage/memory-adapter';\nimport { createTeacher } from '../../services/create-teacher';\nimport { assertA11y } from '../../../../test/a11y/assertA11y';\nimport type { Teacher } from '../../model/teacher';\n\ndescribe('TeacherList Accessibility', () =&gt; {\n  let storage: MemoryAdapter;\n\n  beforeEach(async () =&gt; {\n    storage = new MemoryAdapter();\n    await storage.initialize();\n    await storage.clear();\n  });\n\n  it('should have no accessibility violations with empty list', async () =&gt; {\n    const { container } = render(\n      &lt;TeacherList teachers={[]} storage={storage} /&gt;\n    );\n\n    await assertA11y(container);\n  });\n\n  it('should have no accessibility violations with loading state', async () =&gt; {\n    const { container } = render(\n      &lt;TeacherList teachers={[]} storage={storage} isLoading={true} /&gt;\n    );\n\n    await assertA11y(container);\n  });\n\n  it('should have no accessibility violations with populated list', async () =&gt; {\n    const teachers: Teacher[] = [\n      createTeacher('Alice Johnson'),\n      createTeacher('Bob Wilson'),\n      createTeacher('Charlie Davis'),\n    ];\n\n    const { container } = render(\n      &lt;TeacherList teachers={teachers} storage={storage} /&gt;\n    );\n\n    await assertA11y(container);\n  });\n\n  it('should have accessible list structure', () =&gt; {\n    const teachers: Teacher[] = [\n      createTeacher('Alice Johnson'),\n      createTeacher('Bob Wilson'),\n    ];\n\n    render(&lt;TeacherList teachers={teachers} storage={storage} /&gt;);\n\n    // Verify list has proper role\n    const list = screen.getByRole('list');\n    expect(list).toBeInTheDocument();\n\n    // Verify list items have proper role\n    const listItems = screen.getAllByRole('listitem');\n    expect(listItems).toHaveLength(2);\n  });\n\n  it('should have accessible empty state message', () =&gt; {\n    render(&lt;TeacherList teachers={[]} storage={storage} /&gt;);\n\n    // Empty state should be visible and accessible\n    const emptyState = screen.getByText(/no teachers/i);\n    expect(emptyState).toBeInTheDocument();\n    expect(emptyState).toBeVisible();\n  });\n\n  it('should have accessible loading state', () =&gt; {\n    render(&lt;TeacherList teachers={[]} storage={storage} isLoading={true} /&gt;);\n\n    // Loading state should use status role and aria-live\n    const loadingState = screen.getByRole('status');\n    expect(loadingState).toBeInTheDocument();\n    expect(loadingState).toHaveAttribute('aria-live', 'polite');\n  });\n\n  it('should have accessible edit buttons', () =&gt; {\n    const teachers: Teacher[] = [createTeacher('Test Teacher')];\n\n    render(&lt;TeacherList teachers={teachers} storage={storage} /&gt;);\n\n    // Edit button should be accessible\n    const editButton = screen.getByRole('button', { name: /edit/i });\n    expect(editButton).toBeInTheDocument();\n    expect(editButton).toBeVisible();\n  });\n\n  it('should have accessible delete buttons', () =&gt; {\n    const teachers: Teacher[] = [createTeacher('Test Teacher')];\n\n    render(&lt;TeacherList teachers={teachers} storage={storage} /&gt;);\n\n    // Delete button should be accessible\n    const deleteButton = screen.getByRole('button', { name: /delete/i });\n    expect(deleteButton).toBeInTheDocument();\n    expect(deleteButton).toBeVisible();\n  });\n\n  it('should have no accessibility violations with edit form open', async () =&gt; {\n    const teachers: Teacher[] = [createTeacher('Test Teacher')];\n\n    const { container } = render(\n      &lt;TeacherList teachers={teachers} storage={storage} /&gt;\n    );\n\n    // Click edit button to open edit form\n    const editButton = screen.getByRole('button', { name: /edit/i });\n    editButton.click();\n\n    // Wait for edit form to appear\n    await screen.findByRole('textbox', { name: /full name/i });\n\n    await assertA11y(container);\n  });\n\n  it('should maintain focus management when editing', async () =&gt; {\n    const teachers: Teacher[] = [createTeacher('Test Teacher')];\n\n    render(&lt;TeacherList teachers={teachers} storage={storage} /&gt;);\n\n    // Get edit button\n    const editButton = screen.getByRole('button', { name: /edit/i });\n    editButton.click();\n\n    // Edit form input should appear\n    const input = await screen.findByRole('textbox', { name: /full name/i });\n    expect(input).toBeInTheDocument();\n\n    // Cancel button should be available\n    const cancelButton = screen.getByRole('button', { name: /cancel/i });\n    expect(cancelButton).toBeInTheDocument();\n  });\n\n  it('should have keyboard-navigable list items', () =&gt; {\n    const teachers: Teacher[] = [\n      createTeacher('Alice Johnson'),\n      createTeacher('Bob Wilson'),\n      createTeacher('Charlie Davis'),\n    ];\n\n    render(&lt;TeacherList teachers={teachers} storage={storage} /&gt;);\n\n    // All interactive elements (edit and delete buttons) should be keyboard accessible\n    const buttons = screen.getAllByRole('button');\n\n    // Should have edit and delete buttons for each teacher\n    // 3 teachers × 2 buttons (edit + delete) = 6 buttons\n    expect(buttons.length).toBeGreaterThanOrEqual(6);\n\n    // All buttons should be tab-navigable (no tabindex=-1)\n    buttons.forEach(button =&gt; {\n      const tabIndex = button.getAttribute('tabindex');\n      if (tabIndex !== null) {\n        expect(parseInt(tabIndex)).toBeGreaterThanOrEqual(0);\n      }\n    });\n  });\n\n  it('should provide proper text alternatives for teacher names', () =&gt; {\n    const teachers: Teacher[] = [createTeacher('Test Teacher Name')];\n\n    render(&lt;TeacherList teachers={teachers} storage={storage} /&gt;);\n\n    // Teacher name should be visible as text\n    expect(screen.getByText('Test Teacher Name')).toBeInTheDocument();\n  });\n\n  it('should have no accessibility violations with multiple teachers', async () =&gt; {\n    const teachers: Teacher[] = [\n      createTeacher('Alice Johnson'),\n      createTeacher('Bob Wilson'),\n      createTeacher('Charlie Davis'),\n      createTeacher('Diana Evans'),\n      createTeacher('Ethan Foster'),\n    ];\n\n    const { container } = render(\n      &lt;TeacherList teachers={teachers} storage={storage} /&gt;\n    );\n\n    await assertA11y(container);\n  });\n\n  it('should have accessible list with duplicate names', async () =&gt; {\n    const teachers: Teacher[] = [\n      createTeacher('John Smith'),\n      createTeacher('John Smith'),\n      createTeacher('John Smith'),\n    ];\n\n    const { container } = render(\n      &lt;TeacherList teachers={teachers} storage={storage} /&gt;\n    );\n\n    // Despite duplicate names, each should have unique UUID and be accessible\n    await assertA11y(container);\n  });\n\n  it('should maintain semantic HTML structure', () =&gt; {\n    const teachers: Teacher[] = [createTeacher('Test Teacher')];\n\n    const { container } = render(\n      &lt;TeacherList teachers={teachers} storage={storage} /&gt;\n    );\n\n    // Verify proper semantic HTML elements are used\n    const list = container.querySelector('[role=\"list\"]');\n    expect(list).toBeInTheDocument();\n\n    const listItems = container.querySelectorAll('[role=\"listitem\"]');\n    expect(listItems.length).toBe(1);\n  });\n});\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting (4/4) *T104: Add axe assertions to list tests***
+
+- [x] T091: Create integration test for list load
+  > Create web-client/test/teacher/unit/list-load.test.ts to test loading and rendering the teachers list
+- [x] T092: Create E2E test for list view
+  > Create web-client/test/teacher/e2e/view-list.spec.ts to test list ordering and empty state
+- [x] T093: Create A11y component test
+  > Create web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx for accessibility testing
+- [-] T104: Add axe assertions to list tests
+  > Add axe accessibility assertions to the list component tests
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_findFiles">
+<details>
+<summary>Tool use: **copilot_findFiles**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_findFiles",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Searching for files matching &#96;**/web-client/src/features/teacher/ui/__tests__/*.test.tsx&#96;",
+  "pastTenseMessage": "Searched for files matching &#96;**/web-client/src/features/teacher/ui/__tests__/*.test.tsx&#96;, 8 matches",
+  "resultDetails": [
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/form-a11y.test.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/form-a11y.test.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/form-a11y.test.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/edit-form-a11y.test.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/edit-form-a11y.test.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/edit-form-a11y.test.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/delete-action-a11y.test.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/delete-action-a11y.test.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/delete-action-a11y.test.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/form-a11y.test.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/form-a11y.test.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/form-a11y.test.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/edit-form-a11y.test.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/edit-form-a11y.test.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/edit-form-a11y.test.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/delete-action-a11y.test.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/delete-action-a11y.test.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/delete-action-a11y.test.tsx",
+      "scheme": "file"
+    },
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx",
+      "scheme": "file"
+    }
+  ],
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "95df9047-2fb3-48ae-ad80-5889befe08ae",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo/web-client &amp;&amp; npm test -- list-load.test.ts"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "6ed057b8-ca04-4aaa-b408-0c538e788499",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo/web-client &amp;&amp; npm test -- list-a11y.test.tsx",
+    "toolEdited": "npm test -- list-a11y.test.tsx"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;tsx\n  it('should maintain semantic HTML structure', () =&gt; {\n    const teachers: Teacher[] = [createTeacher('Test Teacher')];\n\n    render(&lt;TeacherList teachers={teachers} storage={storage} /&gt;);\n\n    // Verify proper semantic HTML elements are used\n    const list = screen.getByRole('list');\n    expect(list).toBeInTheDocument();\n\n    const listItems = screen.getAllByRole('listitem');\n    expect(listItems).toHaveLength(1);\n  });\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "  it('should maintain semantic HTML structure', () =&gt; {\n    const teachers: Teacher[] = [createTeacher('Test Teacher')];\n\n    render(&lt;TeacherList teachers={teachers} storage={storage} /&gt;);\n\n    // Verify proper semantic HTML elements are used\n    const list = screen.getByRole('list');\n    expect(list).toBeInTheDocument();\n\n    const listItems = screen.getAllByRole('listitem');\n    expect(listItems).toHaveLength(1);\n  });",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "69bcd4b8-5e6e-4f2f-b6a3-74b7e23cdf8f",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo/web-client &amp;&amp; npm test -- list-a11y.test.tsx",
+    "toolEdited": "npm test -- list-a11y.test.tsx"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;markdown\n## Phase 6: User Story 4 - View Teachers List (P4) ✅\n**Goal**: User sees ordered list (alphabetical) and empty state when none.\n**Independent Test**: E2E list display + ordering + empty state.\n\n### Tests First\n- [x] T090 [US4] Unit test: sorting function &#96;web-client/src/features/teacher/services/__tests__/sort.test.ts&#96;\n- [x] T091 [US4] Integration: load + list render &#96;web-client/test/teacher/unit/list-load.test.ts&#96;\n- [x] T092 [US4] E2E: list ordering &amp; empty state &#96;web-client/test/teacher/e2e/view-list.spec.ts&#96;\n- [x] T093 [P] [US4] A11y component test &#96;web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx&#96;\n\n### Implementation\n- [x] T100 [US4] Implement list component &#96;web-client/src/features/teacher/ui/teacher-list.tsx&#96;\n- [x] T101 [US4] Hook for list loading &#96;web-client/src/features/teacher/ui/use-teachers.ts&#96;\n- [x] T102 [US4] Empty state in list component (integrated in &#96;web-client/src/features/teacher/ui/teacher-list.tsx&#96;)\n- [x] T103 [US4] Integrate alphabetical order function in rendering\n- [x] T104 [US4] Axe assertions for list component tests\n\n**Checkpoint**: View list functionality complete.\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "## Phase 6: User Story 4 - View Teachers List (P4) ✅\n**Goal**: User sees ordered list (alphabetical) and empty state when none.\n**Independent Test**: E2E list display + ordering + empty state.\n\n### Tests First\n- [x] T090 [US4] Unit test: sorting function &#96;web-client/src/features/teacher/services/__tests__/sort.test.ts&#96;\n- [x] T091 [US4] Integration: load + list render &#96;web-client/test/teacher/unit/list-load.test.ts&#96;\n- [x] T092 [US4] E2E: list ordering &amp; empty state &#96;web-client/test/teacher/e2e/view-list.spec.ts&#96;\n- [x] T093 [P] [US4] A11y component test &#96;web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx&#96;\n\n### Implementation\n- [x] T100 [US4] Implement list component &#96;web-client/src/features/teacher/ui/teacher-list.tsx&#96;\n- [x] T101 [US4] Hook for list loading &#96;web-client/src/features/teacher/ui/use-teachers.ts&#96;\n- [x] T102 [US4] Empty state in list component (integrated in &#96;web-client/src/features/teacher/ui/teacher-list.tsx&#96;)\n- [x] T103 [US4] Integrate alphabetical order function in rendering\n- [x] T104 [US4] Axe assertions for list component tests\n\n**Checkpoint**: View list functionality complete.",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Completed (4/4) *T104: Add axe assertions to list tests***
+
+- [x] T091: Create integration test for list load
+  > Create web-client/test/teacher/unit/list-load.test.ts to test loading and rendering the teachers list
+- [x] T092: Create E2E test for list view
+  > Create web-client/test/teacher/e2e/view-list.spec.ts to test list ordering and empty state
+- [x] T093: Create A11y component test
+  > Create web-client/src/features/teacher/ui/__tests__/list-a11y.test.tsx for accessibility testing
+- [x] T104: Add axe assertions to list tests
+  > Add axe accessibility assertions to the list component tests
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "2b43f612-bf00-4de0-b9bc-0cc02dd4cbc0",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo/web-client &amp;&amp; npm test -- sort.test.ts list-load.test.ts list-a11y.test.tsx",
+    "toolEdited": "npm test -- sort.test.ts list-load.test.ts list-a11y.test.tsx"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+I'll implement the remaining tasks for Phase 6. Let me create a todo list to track progress and then implement each remaining task. Let me first check the existing test files to understand the testing patterns used: Now let me check the storage adapter's list method to understand sorting: Great! Now let me create the integration test for list load (T091): Now let me check the existing E2E tests to understand the pattern: Now let me create the E2E test for viewing the list (T092): Now let me check the existing a11y test patterns: Now let me create the accessibility test for the list component (T093): Now for the last task (T104), I need to update the `tasks.md` to mark T093 as using axe assertions (which it already does). Let me check if there are any other list-related component tests that need axe assertions: Perfect! The `list-a11y.test.tsx` already includes axe assertions via the `assertA11y` helper. Task T104 is actually already completed as part of T093. Let me now run the tests to verify everything works: Excellent! Now let's run the accessibility test: There's a small issue with the last test. Let me fix it: Now let's run the test again: Perfect! Now let me update the `tasks.md` to mark all Phase 6 tasks as completed: Perfect! Now let me run all the Phase 6 tests together to confirm everything works: Excellent! All Phase 6 tests are passing. Now let me create a summary of what was accomplished:
 
 ## Phase 6 Implementation Complete! ✅
 

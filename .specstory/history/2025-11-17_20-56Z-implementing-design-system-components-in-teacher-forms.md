@@ -13,49 +13,1276 @@ Phase 3
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
 
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "483b2aa4-d5c0-4c53-9e01-3369e14ed1ff",
+  "terminalCommandId": "tool-d1e308da-fdcd-4087-9c43-97aec73e4516",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo &amp;&amp; .specify/scripts/bash/check-prerequisites.sh --json",
+    "toolEdited": ".specify/scripts/bash/check-prerequisites.sh --json"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/plan.md#1-1), lines 1 to 150</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/plan.md#1-1), lines 1 to 150
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/spec.md#1-1), lines 1 to 150</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/spec.md#1-1), lines 1 to 150
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/research.md#1-1), lines 1 to 100</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/research.md#1-1), lines 1 to 100
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/.specify/templates/tasks-template.md#1-1), lines 1 to 200</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/.specify/templates/tasks-template.md#1-1), lines 1 to 200
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/tasks.md#1-1), lines 1 to 200</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/tasks.md#1-1), lines 1 to 200
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/spec.md#151-151), lines 151 to 169</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/spec.md#151-151), lines 151 to 169
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Created 20 todos**
+
+- [ ] Implement Button component (variants)
+  > T020 [P] [US1] Create Button component with primary, secondary, tertiary variants using Tailwind utilities in web-client/src/design-system/components/button.tsx
+- [ ] Implement Input component
+  > T021 [P] [US1] Create Input component with consistent styling in web-client/src/design-system/components/input.tsx
+- [ ] Implement Heading component
+  > T022 [P] [US1] Create Heading component (h1-h6) with typography scale in web-client/src/design-system/components/heading.tsx
+- [ ] Implement Link component
+  > T023 [P] [US1] Create Link component with consistent hover/focus styles in web-client/src/design-system/components/link.tsx
+- [ ] Implement Card component
+  > T024 [P] [US1] Create Card component with padding and elevation in web-client/src/design-system/components/card.tsx
+- [ ] Create components barrel export
+  > T025 [US1] Create index.ts barrel export for all components in web-client/src/design-system/components/index.ts
+- [ ] Unit/a11y test Button
+  > T026 [P] [US1] Write unit and accessibility tests for Button component in web-client/test/design-system/unit/button.test.tsx
+- [ ] Unit/a11y test Input
+  > T027 [P] [US1] Write unit and accessibility tests for Input component in web-client/test/design-system/unit/input.test.tsx
+- [ ] Unit/a11y test Heading
+  > T028 [P] [US1] Write unit and accessibility tests for Heading component in web-client/test/design-system/unit/heading.test.tsx
+- [ ] Unit/a11y test Link
+  > T029 [P] [US1] Write unit and accessibility tests for Link component in web-client/test/design-system/unit/link.test.tsx
+- [ ] Unit/a11y test Card
+  > T030 [P] [US1] Write unit and accessibility tests for Card component in web-client/test/design-system/unit/card.test.tsx
+- [ ] Implement useTheme hook
+  > T031 [US1] Create useTheme hook for theme management in web-client/src/design-system/hooks/useTheme.ts
+- [ ] Implement ThemeProvider
+  > T032 [US1] Create ThemeProvider context component in web-client/src/design-system/theme/ThemeProvider.tsx
+- [ ] Implement dark theme token overrides
+  > T033 [P] [US1] Create dark theme token overrides module in web-client/src/design-system/theme/dark.ts
+- [ ] Add theme persistence utility
+  > T034 [P] [US1] Create localStorage-based theme persistence utility in web-client/src/design-system/theme/persist.ts
+- [ ] Integrate ThemeProvider at root
+  > T035 [US1] Integrate ThemeProvider into App.tsx root component in web-client/src/App.tsx
+- [ ] Retrofit teacher create form
+  > T036 [P] [US1] Update teacher create form to use Button/Input components in web-client/src/features/teacher/ui/teacher-create-form.tsx
+- [ ] Retrofit teacher edit form
+  > T037 [P] [US1] Update teacher edit form to use Button/Input components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
+- [ ] Retrofit teacher list
+  > T038 [US1] Update teacher list to use Card/Heading/Link components in web-client/src/features/teacher/ui/teacher-list.tsx
+- [ ] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Implement Button component (variants)* (1/20)**
+
+- [-] Implement Button component (variants)
+  > T020 [P] [US1] Create Button component with primary, secondary, tertiary variants using Tailwind utilities in web-client/src/design-system/components/button.tsx
+- [ ] Implement Input component
+  > T021 [P] [US1] Create Input component with consistent styling in web-client/src/design-system/components/input.tsx
+- [ ] Implement Heading component
+  > T022 [P] [US1] Create Heading component (h1-h6) with typography scale in web-client/src/design-system/components/heading.tsx
+- [ ] Implement Link component
+  > T023 [P] [US1] Create Link component with consistent hover/focus styles in web-client/src/design-system/components/link.tsx
+- [ ] Implement Card component
+  > T024 [P] [US1] Create Card component with padding and elevation in web-client/src/design-system/components/card.tsx
+- [ ] Create components barrel export
+  > T025 [US1] Create index.ts barrel export for all components in web-client/src/design-system/components/index.ts
+- [ ] Unit/a11y test Button
+  > T026 [P] [US1] Write unit and accessibility tests for Button component in web-client/test/design-system/unit/button.test.tsx
+- [ ] Unit/a11y test Input
+  > T027 [P] [US1] Write unit and accessibility tests for Input component in web-client/test/design-system/unit/input.test.tsx
+- [ ] Unit/a11y test Heading
+  > T028 [P] [US1] Write unit and accessibility tests for Heading component in web-client/test/design-system/unit/heading.test.tsx
+- [ ] Unit/a11y test Link
+  > T029 [P] [US1] Write unit and accessibility tests for Link component in web-client/test/design-system/unit/link.test.tsx
+- [ ] Unit/a11y test Card
+  > T030 [P] [US1] Write unit and accessibility tests for Card component in web-client/test/design-system/unit/card.test.tsx
+- [ ] Implement useTheme hook
+  > T031 [US1] Create useTheme hook for theme management in web-client/src/design-system/hooks/useTheme.ts
+- [ ] Implement ThemeProvider
+  > T032 [US1] Create ThemeProvider context component in web-client/src/design-system/theme/ThemeProvider.tsx
+- [ ] Implement dark theme token overrides
+  > T033 [P] [US1] Create dark theme token overrides module in web-client/src/design-system/theme/dark.ts
+- [ ] Add theme persistence utility
+  > T034 [P] [US1] Create localStorage-based theme persistence utility in web-client/src/design-system/theme/persist.ts
+- [ ] Integrate ThemeProvider at root
+  > T035 [US1] Integrate ThemeProvider into App.tsx root component in web-client/src/App.tsx
+- [ ] Retrofit teacher create form
+  > T036 [P] [US1] Update teacher create form to use Button/Input components in web-client/src/features/teacher/ui/teacher-create-form.tsx
+- [ ] Retrofit teacher edit form
+  > T037 [P] [US1] Update teacher edit form to use Button/Input components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
+- [ ] Retrofit teacher list
+  > T038 [US1] Update teacher list to use Card/Heading/Link components in web-client/src/features/teacher/ui/teacher-list.tsx
+- [ ] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/button.tsx",
+  "relativeWorkspacePath": "button.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/button.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/button.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import React from 'react';\n\nexport type ButtonVariant = 'primary' | 'secondary' | 'tertiary';\nexport type ButtonSize = 'small' | 'medium' | 'large';\n\nexport interface ButtonProps extends React.ButtonHTMLAttributes&lt;HTMLButtonElement&gt; {\n  variant?: ButtonVariant;\n  size?: ButtonSize;\n  children: React.ReactNode;\n}\n\nconst variantClasses: Record&lt;ButtonVariant, string&gt; = {\n  primary: 'bg-primary-500 text-surface hover:bg-primary-600 focus-visible:ring-primary-400 active:bg-primary-700',\n  secondary: 'bg-secondary-500 text-surface hover:bg-secondary-600 focus-visible:ring-secondary-400 active:bg-secondary-700',\n  tertiary: 'bg-transparent text-primary-500 border-2 border-primary-500 hover:bg-primary-50 focus-visible:ring-primary-400 active:bg-primary-100'\n};\n\nconst sizeClasses: Record&lt;ButtonSize, string&gt; = {\n  small: 'px-3 py-1.5 text-sm',\n  medium: 'px-4 py-2 text-base',\n  large: 'px-6 py-3 text-lg'\n};\n\nconst baseClasses = 'font-medium rounded-md transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';\n\nexport const Button: React.FC&lt;ButtonProps&gt; = ({\n  variant = 'primary',\n  size = 'medium',\n  className = '',\n  children,\n  disabled,\n  ...props\n}) =&gt; {\n  const classes = [\n    baseClasses,\n    variantClasses[variant],\n    sizeClasses[size],\n    className\n  ].filter(Boolean).join(' ');\n\n  return (\n    &lt;button\n      className={classes}\n      disabled={disabled}\n      {...props}\n    &gt;\n      {children}\n    &lt;/button&gt;\n  );\n};\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/input.tsx",
+  "relativeWorkspacePath": "input.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/input.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/input.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import React from 'react';\n\nexport interface InputProps extends React.InputHTMLAttributes&lt;HTMLInputElement&gt; {\n  label?: string;\n  error?: string;\n  helperText?: string;\n}\n\nconst baseClasses = 'w-full px-3 py-2 text-text-primary bg-surface border rounded-md transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed';\n\nconst normalStateClasses = 'border-neutral-300 hover:border-neutral-400';\nconst errorStateClasses = 'border-error-500 focus:ring-error-400';\n\nexport const Input: React.FC&lt;InputProps&gt; = ({\n  label,\n  error,\n  helperText,\n  id,\n  className = '',\n  ...props\n}) =&gt; {\n  const inputId = id || &#96;input-${Math.random().toString(36).substr(2, 9)}&#96;;\n  const hasError = Boolean(error);\n  \n  const inputClasses = [\n    baseClasses,\n    hasError ? errorStateClasses : normalStateClasses,\n    className\n  ].filter(Boolean).join(' ');\n\n  return (\n    &lt;div className=\"w-full\"&gt;\n      {label &amp;&amp; (\n        &lt;label\n          htmlFor={inputId}\n          className=\"block text-sm font-medium text-text-primary mb-1\"\n        &gt;\n          {label}\n        &lt;/label&gt;\n      )}\n      &lt;input\n        id={inputId}\n        className={inputClasses}\n        aria-invalid={hasError}\n        aria-describedby={\n          hasError ? &#96;${inputId}-error&#96; : helperText ? &#96;${inputId}-helper&#96; : undefined\n        }\n        {...props}\n      /&gt;\n      {error &amp;&amp; (\n        &lt;p id={&#96;${inputId}-error&#96;} className=\"mt-1 text-sm text-error-500\" role=\"alert\"&gt;\n          {error}\n        &lt;/p&gt;\n      )}\n      {!error &amp;&amp; helperText &amp;&amp; (\n        &lt;p id={&#96;${inputId}-helper&#96;} className=\"mt-1 text-sm text-neutral-500\"&gt;\n          {helperText}\n        &lt;/p&gt;\n      )}\n    &lt;/div&gt;\n  );\n};\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/heading.tsx",
+  "relativeWorkspacePath": "heading.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/heading.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/heading.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import React from 'react';\n\nexport type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;\n\nexport interface HeadingProps extends React.HTMLAttributes&lt;HTMLHeadingElement&gt; {\n  level: HeadingLevel;\n  children: React.ReactNode;\n}\n\nconst headingClasses: Record&lt;HeadingLevel, string&gt; = {\n  1: 'text-4xl font-bold leading-tight',\n  2: 'text-3xl font-bold leading-tight',\n  3: 'text-2xl font-semibold leading-snug',\n  4: 'text-xl font-semibold leading-snug',\n  5: 'text-lg font-medium leading-normal',\n  6: 'text-base font-medium leading-normal'\n};\n\nconst baseClasses = 'text-text-primary';\n\nexport const Heading: React.FC&lt;HeadingProps&gt; = ({\n  level,\n  className = '',\n  children,\n  ...props\n}) =&gt; {\n  const Tag = &#96;h${level}&#96; as keyof JSX.IntrinsicElements;\n  \n  const classes = [\n    baseClasses,\n    headingClasses[level],\n    className\n  ].filter(Boolean).join(' ');\n\n  return React.createElement(\n    Tag,\n    { className: classes, ...props },\n    children\n  );\n};\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/link.tsx",
+  "relativeWorkspacePath": "link.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/link.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/link.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import React from 'react';\n\nexport interface LinkProps extends React.AnchorHTMLAttributes&lt;HTMLAnchorElement&gt; {\n  variant?: 'default' | 'subtle';\n  children: React.ReactNode;\n}\n\nconst variantClasses: Record&lt;NonNullable&lt;LinkProps['variant']&gt;, string&gt; = {\n  default: 'text-primary-500 hover:text-primary-600 underline hover:no-underline',\n  subtle: 'text-text-primary hover:text-primary-500 no-underline hover:underline'\n};\n\nconst baseClasses = 'transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 rounded-sm';\n\nexport const Link: React.FC&lt;LinkProps&gt; = ({\n  variant = 'default',\n  className = '',\n  children,\n  ...props\n}) =&gt; {\n  const classes = [\n    baseClasses,\n    variantClasses[variant],\n    className\n  ].filter(Boolean).join(' ');\n\n  return (\n    &lt;a className={classes} {...props}&gt;\n      {children}\n    &lt;/a&gt;\n  );\n};\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/card.tsx",
+  "relativeWorkspacePath": "card.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/card.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/card.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import React from 'react';\n\nexport interface CardProps extends React.HTMLAttributes&lt;HTMLDivElement&gt; {\n  header?: React.ReactNode;\n  footer?: React.ReactNode;\n  children: React.ReactNode;\n  elevation?: 'none' | 'sm' | 'md' | 'lg';\n}\n\nconst elevationClasses: Record&lt;NonNullable&lt;CardProps['elevation']&gt;, string&gt; = {\n  none: '',\n  sm: 'shadow-sm',\n  md: 'shadow-md',\n  lg: 'shadow-lg'\n};\n\nconst baseClasses = 'bg-surface rounded-lg border border-neutral-200';\n\nexport const Card: React.FC&lt;CardProps&gt; = ({\n  header,\n  footer,\n  children,\n  elevation = 'md',\n  className = '',\n  ...props\n}) =&gt; {\n  const classes = [\n    baseClasses,\n    elevationClasses[elevation],\n    className\n  ].filter(Boolean).join(' ');\n\n  return (\n    &lt;div className={classes} {...props}&gt;\n      {header &amp;&amp; (\n        &lt;div className=\"px-6 py-4 border-b border-neutral-200\"&gt;\n          {header}\n        &lt;/div&gt;\n      )}\n      &lt;div className=\"px-6 py-4\"&gt;\n        {children}\n      &lt;/div&gt;\n      {footer &amp;&amp; (\n        &lt;div className=\"px-6 py-4 border-t border-neutral-200\"&gt;\n          {footer}\n        &lt;/div&gt;\n      )}\n    &lt;/div&gt;\n  );\n};\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Create components barrel export* (6/20)**
+
+- [x] Implement Button component (variants)
+  > T020 [P] [US1] Create Button component with primary, secondary, tertiary variants using Tailwind utilities in web-client/src/design-system/components/button.tsx
+- [x] Implement Input component
+  > T021 [P] [US1] Create Input component with consistent styling in web-client/src/design-system/components/input.tsx
+- [x] Implement Heading component
+  > T022 [P] [US1] Create Heading component (h1-h6) with typography scale in web-client/src/design-system/components/heading.tsx
+- [x] Implement Link component
+  > T023 [P] [US1] Create Link component with consistent hover/focus styles in web-client/src/design-system/components/link.tsx
+- [x] Implement Card component
+  > T024 [P] [US1] Create Card component with padding and elevation in web-client/src/design-system/components/card.tsx
+- [-] Create components barrel export
+  > T025 [US1] Create index.ts barrel export for all components in web-client/src/design-system/components/index.ts
+- [ ] Unit/a11y test Button
+  > T026 [P] [US1] Write unit and accessibility tests for Button component in web-client/test/design-system/unit/button.test.tsx
+- [ ] Unit/a11y test Input
+  > T027 [P] [US1] Write unit and accessibility tests for Input component in web-client/test/design-system/unit/input.test.tsx
+- [ ] Unit/a11y test Heading
+  > T028 [P] [US1] Write unit and accessibility tests for Heading component in web-client/test/design-system/unit/heading.test.tsx
+- [ ] Unit/a11y test Link
+  > T029 [P] [US1] Write unit and accessibility tests for Link component in web-client/test/design-system/unit/link.test.tsx
+- [ ] Unit/a11y test Card
+  > T030 [P] [US1] Write unit and accessibility tests for Card component in web-client/test/design-system/unit/card.test.tsx
+- [ ] Implement useTheme hook
+  > T031 [US1] Create useTheme hook for theme management in web-client/src/design-system/hooks/useTheme.ts
+- [ ] Implement ThemeProvider
+  > T032 [US1] Create ThemeProvider context component in web-client/src/design-system/theme/ThemeProvider.tsx
+- [ ] Implement dark theme token overrides
+  > T033 [P] [US1] Create dark theme token overrides module in web-client/src/design-system/theme/dark.ts
+- [ ] Add theme persistence utility
+  > T034 [P] [US1] Create localStorage-based theme persistence utility in web-client/src/design-system/theme/persist.ts
+- [ ] Integrate ThemeProvider at root
+  > T035 [US1] Integrate ThemeProvider into App.tsx root component in web-client/src/App.tsx
+- [ ] Retrofit teacher create form
+  > T036 [P] [US1] Update teacher create form to use Button/Input components in web-client/src/features/teacher/ui/teacher-create-form.tsx
+- [ ] Retrofit teacher edit form
+  > T037 [P] [US1] Update teacher edit form to use Button/Input components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
+- [ ] Retrofit teacher list
+  > T038 [US1] Update teacher list to use Card/Heading/Link components in web-client/src/features/teacher/ui/teacher-list.tsx
+- [ ] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/index.ts",
+  "relativeWorkspacePath": "index.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/index.ts)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/index.ts)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "export { Button } from './button';\nexport type { ButtonProps, ButtonVariant, ButtonSize } from './button';\n\nexport { Input } from './input';\nexport type { InputProps } from './input';\n\nexport { Heading } from './heading';\nexport type { HeadingProps, HeadingLevel } from './heading';\n\nexport { Link } from './link';\nexport type { LinkProps } from './link';\n\nexport { Card } from './card';\nexport type { CardProps } from './card';\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Unit/a11y test Button* (7/20)**
+
+- [x] Implement Button component (variants)
+  > T020 [P] [US1] Create Button component with primary, secondary, tertiary variants using Tailwind utilities in web-client/src/design-system/components/button.tsx
+- [x] Implement Input component
+  > T021 [P] [US1] Create Input component with consistent styling in web-client/src/design-system/components/input.tsx
+- [x] Implement Heading component
+  > T022 [P] [US1] Create Heading component (h1-h6) with typography scale in web-client/src/design-system/components/heading.tsx
+- [x] Implement Link component
+  > T023 [P] [US1] Create Link component with consistent hover/focus styles in web-client/src/design-system/components/link.tsx
+- [x] Implement Card component
+  > T024 [P] [US1] Create Card component with padding and elevation in web-client/src/design-system/components/card.tsx
+- [x] Create components barrel export
+  > T025 [US1] Create index.ts barrel export for all components in web-client/src/design-system/components/index.ts
+- [-] Unit/a11y test Button
+  > T026 [P] [US1] Write unit and accessibility tests for Button component in web-client/test/design-system/unit/button.test.tsx
+- [ ] Unit/a11y test Input
+  > T027 [P] [US1] Write unit and accessibility tests for Input component in web-client/test/design-system/unit/input.test.tsx
+- [ ] Unit/a11y test Heading
+  > T028 [P] [US1] Write unit and accessibility tests for Heading component in web-client/test/design-system/unit/heading.test.tsx
+- [ ] Unit/a11y test Link
+  > T029 [P] [US1] Write unit and accessibility tests for Link component in web-client/test/design-system/unit/link.test.tsx
+- [ ] Unit/a11y test Card
+  > T030 [P] [US1] Write unit and accessibility tests for Card component in web-client/test/design-system/unit/card.test.tsx
+- [ ] Implement useTheme hook
+  > T031 [US1] Create useTheme hook for theme management in web-client/src/design-system/hooks/useTheme.ts
+- [ ] Implement ThemeProvider
+  > T032 [US1] Create ThemeProvider context component in web-client/src/design-system/theme/ThemeProvider.tsx
+- [ ] Implement dark theme token overrides
+  > T033 [P] [US1] Create dark theme token overrides module in web-client/src/design-system/theme/dark.ts
+- [ ] Add theme persistence utility
+  > T034 [P] [US1] Create localStorage-based theme persistence utility in web-client/src/design-system/theme/persist.ts
+- [ ] Integrate ThemeProvider at root
+  > T035 [US1] Integrate ThemeProvider into App.tsx root component in web-client/src/App.tsx
+- [ ] Retrofit teacher create form
+  > T036 [P] [US1] Update teacher create form to use Button/Input components in web-client/src/features/teacher/ui/teacher-create-form.tsx
+- [ ] Retrofit teacher edit form
+  > T037 [P] [US1] Update teacher edit form to use Button/Input components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
+- [ ] Retrofit teacher list
+  > T038 [US1] Update teacher list to use Card/Heading/Link components in web-client/src/features/teacher/ui/teacher-list.tsx
+- [ ] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/button.test.tsx",
+  "relativeWorkspacePath": "button.test.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/button.test.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/button.test.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import { describe, it, expect } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { Button } from '../../../src/design-system/components/button';\nimport { assertA11y } from '../../a11y/assertA11y';\n\ndescribe('Button Component', () =&gt; {\n  describe('Rendering', () =&gt; {\n    it('renders children correctly', () =&gt; {\n      render(&lt;Button&gt;Click me&lt;/Button&gt;);\n      expect(screen.getByRole('button', { name: 'Click me' })).toBeInTheDocument();\n    });\n\n    it('applies primary variant classes by default', () =&gt; {\n      render(&lt;Button&gt;Primary Button&lt;/Button&gt;);\n      const button = screen.getByRole('button');\n      expect(button).toHaveClass('bg-primary-500');\n    });\n\n    it('applies secondary variant classes when specified', () =&gt; {\n      render(&lt;Button variant=\"secondary\"&gt;Secondary Button&lt;/Button&gt;);\n      const button = screen.getByRole('button');\n      expect(button).toHaveClass('bg-secondary-500');\n    });\n\n    it('applies tertiary variant classes when specified', () =&gt; {\n      render(&lt;Button variant=\"tertiary\"&gt;Tertiary Button&lt;/Button&gt;);\n      const button = screen.getByRole('button');\n      expect(button).toHaveClass('bg-transparent', 'border-primary-500');\n    });\n\n    it('applies medium size classes by default', () =&gt; {\n      render(&lt;Button&gt;Medium Button&lt;/Button&gt;);\n      const button = screen.getByRole('button');\n      expect(button).toHaveClass('px-4', 'py-2');\n    });\n\n    it('applies small size classes when specified', () =&gt; {\n      render(&lt;Button size=\"small\"&gt;Small Button&lt;/Button&gt;);\n      const button = screen.getByRole('button');\n      expect(button).toHaveClass('px-3', 'py-1.5');\n    });\n\n    it('applies large size classes when specified', () =&gt; {\n      render(&lt;Button size=\"large\"&gt;Large Button&lt;/Button&gt;);\n      const button = screen.getByRole('button');\n      expect(button).toHaveClass('px-6', 'py-3');\n    });\n\n    it('applies custom className alongside variant classes', () =&gt; {\n      render(&lt;Button className=\"custom-class\"&gt;Custom&lt;/Button&gt;);\n      const button = screen.getByRole('button');\n      expect(button).toHaveClass('custom-class', 'bg-primary-500');\n    });\n  });\n\n  describe('Disabled State', () =&gt; {\n    it('applies disabled opacity when disabled', () =&gt; {\n      render(&lt;Button disabled&gt;Disabled Button&lt;/Button&gt;);\n      const button = screen.getByRole('button');\n      expect(button).toBeDisabled();\n      expect(button).toHaveClass('disabled:opacity-50', 'disabled:cursor-not-allowed');\n    });\n  });\n\n  describe('Focus Styles', () =&gt; {\n    it('includes focus-visible ring classes', () =&gt; {\n      render(&lt;Button&gt;Focusable&lt;/Button&gt;);\n      const button = screen.getByRole('button');\n      expect(button).toHaveClass('focus-visible:ring-2', 'focus-visible:outline-none');\n    });\n  });\n\n  describe('Accessibility', () =&gt; {\n    it('passes accessibility checks for primary variant', async () =&gt; {\n      const { container } = render(&lt;Button&gt;Primary Accessible&lt;/Button&gt;);\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks for secondary variant', async () =&gt; {\n      const { container } = render(&lt;Button variant=\"secondary\"&gt;Secondary Accessible&lt;/Button&gt;);\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks for tertiary variant', async () =&gt; {\n      const { container } = render(&lt;Button variant=\"tertiary\"&gt;Tertiary Accessible&lt;/Button&gt;);\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks when disabled', async () =&gt; {\n      const { container } = render(&lt;Button disabled&gt;Disabled Accessible&lt;/Button&gt;);\n      await assertA11y(container);\n    });\n\n    it('maintains semantic button role', () =&gt; {\n      render(&lt;Button&gt;Semantic Button&lt;/Button&gt;);\n      expect(screen.getByRole('button')).toBeInTheDocument();\n    });\n  });\n\n  describe('HTML Attributes', () =&gt; {\n    it('forwards standard button props', () =&gt; {\n      const handleClick = vi.fn();\n      render(&lt;Button onClick={handleClick} type=\"submit\"&gt;Submit&lt;/Button&gt;);\n      const button = screen.getByRole('button');\n      expect(button).toHaveAttribute('type', 'submit');\n    });\n\n    it('forwards aria attributes', () =&gt; {\n      render(&lt;Button aria-label=\"Special action\"&gt;Icon&lt;/Button&gt;);\n      expect(screen.getByRole('button', { name: 'Special action' })).toBeInTheDocument();\n    });\n  });\n});\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/input.test.tsx",
+  "relativeWorkspacePath": "input.test.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/input.test.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/input.test.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import { describe, it, expect } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { Input } from '../../../src/design-system/components/input';\nimport { assertA11y } from '../../a11y/assertA11y';\n\ndescribe('Input Component', () =&gt; {\n  describe('Rendering', () =&gt; {\n    it('renders input field', () =&gt; {\n      render(&lt;Input /&gt;);\n      expect(screen.getByRole('textbox')).toBeInTheDocument();\n    });\n\n    it('renders with label when provided', () =&gt; {\n      render(&lt;Input label=\"Email Address\" /&gt;);\n      expect(screen.getByLabelText('Email Address')).toBeInTheDocument();\n    });\n\n    it('renders helper text when provided', () =&gt; {\n      render(&lt;Input helperText=\"Enter your email\" /&gt;);\n      expect(screen.getByText('Enter your email')).toBeInTheDocument();\n    });\n\n    it('renders error message when provided', () =&gt; {\n      render(&lt;Input error=\"Email is required\" /&gt;);\n      expect(screen.getByRole('alert')).toHaveTextContent('Email is required');\n    });\n\n    it('prioritizes error over helper text', () =&gt; {\n      render(&lt;Input error=\"Error message\" helperText=\"Helper text\" /&gt;);\n      expect(screen.getByRole('alert')).toHaveTextContent('Error message');\n      expect(screen.queryByText('Helper text')).not.toBeInTheDocument();\n    });\n  });\n\n  describe('Styling', () =&gt; {\n    it('applies base classes', () =&gt; {\n      render(&lt;Input /&gt;);\n      const input = screen.getByRole('textbox');\n      expect(input).toHaveClass('w-full', 'px-3', 'py-2', 'rounded-md');\n    });\n\n    it('applies normal state classes when no error', () =&gt; {\n      render(&lt;Input /&gt;);\n      const input = screen.getByRole('textbox');\n      expect(input).toHaveClass('border-neutral-300');\n    });\n\n    it('applies error state classes when error exists', () =&gt; {\n      render(&lt;Input error=\"Error\" /&gt;);\n      const input = screen.getByRole('textbox');\n      expect(input).toHaveClass('border-error-500');\n    });\n\n    it('applies custom className', () =&gt; {\n      render(&lt;Input className=\"custom-class\" /&gt;);\n      const input = screen.getByRole('textbox');\n      expect(input).toHaveClass('custom-class');\n    });\n  });\n\n  describe('Label Association', () =&gt; {\n    it('associates label with input via htmlFor/id', () =&gt; {\n      render(&lt;Input label=\"Username\" id=\"username-input\" /&gt;);\n      const label = screen.getByText('Username');\n      const input = screen.getByRole('textbox');\n      expect(label).toHaveAttribute('for', 'username-input');\n      expect(input).toHaveAttribute('id', 'username-input');\n    });\n\n    it('generates unique id when not provided', () =&gt; {\n      render(&lt;Input label=\"Auto ID\" /&gt;);\n      const input = screen.getByRole('textbox');\n      expect(input).toHaveAttribute('id');\n      expect(input.id).toMatch(/^input-/);\n    });\n  });\n\n  describe('ARIA Attributes', () =&gt; {\n    it('sets aria-invalid to true when error exists', () =&gt; {\n      render(&lt;Input error=\"Error\" /&gt;);\n      expect(screen.getByRole('textbox')).toHaveAttribute('aria-invalid', 'true');\n    });\n\n    it('sets aria-invalid to false when no error', () =&gt; {\n      render(&lt;Input /&gt;);\n      expect(screen.getByRole('textbox')).toHaveAttribute('aria-invalid', 'false');\n    });\n\n    it('associates error message via aria-describedby', () =&gt; {\n      render(&lt;Input error=\"Error message\" id=\"test-input\" /&gt;);\n      const input = screen.getByRole('textbox');\n      expect(input).toHaveAttribute('aria-describedby', 'test-input-error');\n    });\n\n    it('associates helper text via aria-describedby when no error', () =&gt; {\n      render(&lt;Input helperText=\"Helper\" id=\"test-input\" /&gt;);\n      const input = screen.getByRole('textbox');\n      expect(input).toHaveAttribute('aria-describedby', 'test-input-helper');\n    });\n  });\n\n  describe('Disabled State', () =&gt; {\n    it('applies disabled styles', () =&gt; {\n      render(&lt;Input disabled /&gt;);\n      const input = screen.getByRole('textbox');\n      expect(input).toBeDisabled();\n      expect(input).toHaveClass('disabled:opacity-50', 'disabled:cursor-not-allowed');\n    });\n  });\n\n  describe('Accessibility', () =&gt; {\n    it('passes accessibility checks with label', async () =&gt; {\n      const { container } = render(&lt;Input label=\"Name\" /&gt;);\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks with error', async () =&gt; {\n      const { container } = render(&lt;Input label=\"Email\" error=\"Invalid email\" /&gt;);\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks with helper text', async () =&gt; {\n      const { container } = render(&lt;Input label=\"Password\" helperText=\"8+ characters\" /&gt;);\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks when disabled', async () =&gt; {\n      const { container } = render(&lt;Input label=\"Disabled\" disabled /&gt;);\n      await assertA11y(container);\n    });\n  });\n\n  describe('HTML Attributes', () =&gt; {\n    it('forwards standard input props', () =&gt; {\n      render(&lt;Input type=\"email\" placeholder=\"user@example.com\" /&gt;);\n      const input = screen.getByRole('textbox');\n      expect(input).toHaveAttribute('type', 'email');\n      expect(input).toHaveAttribute('placeholder', 'user@example.com');\n    });\n\n    it('forwards value and onChange', () =&gt; {\n      const handleChange = vi.fn();\n      render(&lt;Input value=\"test\" onChange={handleChange} /&gt;);\n      const input = screen.getByRole('textbox');\n      expect(input).toHaveValue('test');\n    });\n  });\n});\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/heading.test.tsx",
+  "relativeWorkspacePath": "heading.test.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/heading.test.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/heading.test.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import { describe, it, expect } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { Heading } from '../../../src/design-system/components/heading';\nimport { assertA11y } from '../../a11y/assertA11y';\n\ndescribe('Heading Component', () =&gt; {\n  describe('Rendering', () =&gt; {\n    it('renders h1 element when level is 1', () =&gt; {\n      render(&lt;Heading level={1}&gt;Heading 1&lt;/Heading&gt;);\n      const heading = screen.getByRole('heading', { level: 1 });\n      expect(heading).toBeInTheDocument();\n      expect(heading.tagName).toBe('H1');\n    });\n\n    it('renders h2 element when level is 2', () =&gt; {\n      render(&lt;Heading level={2}&gt;Heading 2&lt;/Heading&gt;);\n      const heading = screen.getByRole('heading', { level: 2 });\n      expect(heading).toBeInTheDocument();\n      expect(heading.tagName).toBe('H2');\n    });\n\n    it('renders h3 element when level is 3', () =&gt; {\n      render(&lt;Heading level={3}&gt;Heading 3&lt;/Heading&gt;);\n      const heading = screen.getByRole('heading', { level: 3 });\n      expect(heading).toBeInTheDocument();\n      expect(heading.tagName).toBe('H3');\n    });\n\n    it('renders h4 element when level is 4', () =&gt; {\n      render(&lt;Heading level={4}&gt;Heading 4&lt;/Heading&gt;);\n      const heading = screen.getByRole('heading', { level: 4 });\n      expect(heading).toBeInTheDocument();\n      expect(heading.tagName).toBe('H4');\n    });\n\n    it('renders h5 element when level is 5', () =&gt; {\n      render(&lt;Heading level={5}&gt;Heading 5&lt;/Heading&gt;);\n      const heading = screen.getByRole('heading', { level: 5 });\n      expect(heading).toBeInTheDocument();\n      expect(heading.tagName).toBe('H5');\n    });\n\n    it('renders h6 element when level is 6', () =&gt; {\n      render(&lt;Heading level={6}&gt;Heading 6&lt;/Heading&gt;);\n      const heading = screen.getByRole('heading', { level: 6 });\n      expect(heading).toBeInTheDocument();\n      expect(heading.tagName).toBe('H6');\n    });\n\n    it('renders children content', () =&gt; {\n      render(&lt;Heading level={2}&gt;Custom Content&lt;/Heading&gt;);\n      expect(screen.getByText('Custom Content')).toBeInTheDocument();\n    });\n  });\n\n  describe('Typography Classes', () =&gt; {\n    it('applies text-4xl font-bold for h1', () =&gt; {\n      render(&lt;Heading level={1}&gt;H1&lt;/Heading&gt;);\n      expect(screen.getByRole('heading', { level: 1 })).toHaveClass('text-4xl', 'font-bold');\n    });\n\n    it('applies text-3xl font-bold for h2', () =&gt; {\n      render(&lt;Heading level={2}&gt;H2&lt;/Heading&gt;);\n      expect(screen.getByRole('heading', { level: 2 })).toHaveClass('text-3xl', 'font-bold');\n    });\n\n    it('applies text-2xl font-semibold for h3', () =&gt; {\n      render(&lt;Heading level={3}&gt;H3&lt;/Heading&gt;);\n      expect(screen.getByRole('heading', { level: 3 })).toHaveClass('text-2xl', 'font-semibold');\n    });\n\n    it('applies text-xl font-semibold for h4', () =&gt; {\n      render(&lt;Heading level={4}&gt;H4&lt;/Heading&gt;);\n      expect(screen.getByRole('heading', { level: 4 })).toHaveClass('text-xl', 'font-semibold');\n    });\n\n    it('applies text-lg font-medium for h5', () =&gt; {\n      render(&lt;Heading level={5}&gt;H5&lt;/Heading&gt;);\n      expect(screen.getByRole('heading', { level: 5 })).toHaveClass('text-lg', 'font-medium');\n    });\n\n    it('applies text-base font-medium for h6', () =&gt; {\n      render(&lt;Heading level={6}&gt;H6&lt;/Heading&gt;);\n      expect(screen.getByRole('heading', { level: 6 })).toHaveClass('text-base', 'font-medium');\n    });\n\n    it('applies text-text-primary base class to all levels', () =&gt; {\n      for (let level = 1; level &lt;= 6; level++) {\n        const { unmount } = render(&lt;Heading level={level as 1}&gt;Text&lt;/Heading&gt;);\n        expect(screen.getByRole('heading')).toHaveClass('text-text-primary');\n        unmount();\n      }\n    });\n  });\n\n  describe('Custom Classes', () =&gt; {\n    it('applies custom className alongside default classes', () =&gt; {\n      render(&lt;Heading level={2} className=\"custom-class\"&gt;Custom&lt;/Heading&gt;);\n      const heading = screen.getByRole('heading', { level: 2 });\n      expect(heading).toHaveClass('custom-class', 'text-3xl', 'font-bold');\n    });\n  });\n\n  describe('Accessibility', () =&gt; {\n    it('passes accessibility checks for h1', async () =&gt; {\n      const { container } = render(&lt;Heading level={1}&gt;Main Title&lt;/Heading&gt;);\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks for h2', async () =&gt; {\n      const { container } = render(&lt;Heading level={2}&gt;Section Title&lt;/Heading&gt;);\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks for h3', async () =&gt; {\n      const { container } = render(&lt;Heading level={3}&gt;Subsection Title&lt;/Heading&gt;);\n      await assertA11y(container);\n    });\n\n    it('maintains proper heading hierarchy', () =&gt; {\n      const { container } = render(\n        &lt;div&gt;\n          &lt;Heading level={1}&gt;Main&lt;/Heading&gt;\n          &lt;Heading level={2}&gt;Section&lt;/Heading&gt;\n          &lt;Heading level={3}&gt;Subsection&lt;/Heading&gt;\n        &lt;/div&gt;\n      );\n      \n      expect(container.querySelector('h1')).toBeInTheDocument();\n      expect(container.querySelector('h2')).toBeInTheDocument();\n      expect(container.querySelector('h3')).toBeInTheDocument();\n    });\n  });\n\n  describe('HTML Attributes', () =&gt; {\n    it('forwards standard HTML attributes', () =&gt; {\n      render(&lt;Heading level={2} id=\"section-title\" data-testid=\"heading\"&gt;Title&lt;/Heading&gt;);\n      const heading = screen.getByRole('heading', { level: 2 });\n      expect(heading).toHaveAttribute('id', 'section-title');\n      expect(heading).toHaveAttribute('data-testid', 'heading');\n    });\n\n    it('forwards aria attributes', () =&gt; {\n      render(&lt;Heading level={2} aria-label=\"Custom label\"&gt;Title&lt;/Heading&gt;);\n      expect(screen.getByLabelText('Custom label')).toBeInTheDocument();\n    });\n  });\n});\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/link.test.tsx",
+  "relativeWorkspacePath": "link.test.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/link.test.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/link.test.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import { describe, it, expect } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { Link } from '../../../src/design-system/components/link';\nimport { assertA11y } from '../../a11y/assertA11y';\n\ndescribe('Link Component', () =&gt; {\n  describe('Rendering', () =&gt; {\n    it('renders anchor element', () =&gt; {\n      render(&lt;Link href=\"/test\"&gt;Test Link&lt;/Link&gt;);\n      expect(screen.getByRole('link', { name: 'Test Link' })).toBeInTheDocument();\n    });\n\n    it('renders children content', () =&gt; {\n      render(&lt;Link href=\"/\"&gt;Click here&lt;/Link&gt;);\n      expect(screen.getByText('Click here')).toBeInTheDocument();\n    });\n\n    it('applies href attribute', () =&gt; {\n      render(&lt;Link href=\"/about\"&gt;About&lt;/Link&gt;);\n      expect(screen.getByRole('link')).toHaveAttribute('href', '/about');\n    });\n  });\n\n  describe('Variants', () =&gt; {\n    it('applies default variant classes by default', () =&gt; {\n      render(&lt;Link href=\"/default\"&gt;Default Link&lt;/Link&gt;);\n      const link = screen.getByRole('link');\n      expect(link).toHaveClass('text-primary-500', 'underline');\n    });\n\n    it('applies subtle variant classes when specified', () =&gt; {\n      render(&lt;Link href=\"/subtle\" variant=\"subtle\"&gt;Subtle Link&lt;/Link&gt;);\n      const link = screen.getByRole('link');\n      expect(link).toHaveClass('text-text-primary', 'no-underline');\n    });\n\n    it('includes hover classes for default variant', () =&gt; {\n      render(&lt;Link href=\"/hover\"&gt;Hover Link&lt;/Link&gt;);\n      const link = screen.getByRole('link');\n      expect(link).toHaveClass('hover:text-primary-600', 'hover:no-underline');\n    });\n\n    it('includes hover classes for subtle variant', () =&gt; {\n      render(&lt;Link href=\"/subtle\" variant=\"subtle\"&gt;Subtle&lt;/Link&gt;);\n      const link = screen.getByRole('link');\n      expect(link).toHaveClass('hover:text-primary-500', 'hover:underline');\n    });\n  });\n\n  describe('Focus Styles', () =&gt; {\n    it('includes focus-visible ring classes', () =&gt; {\n      render(&lt;Link href=\"/focus\"&gt;Focus Link&lt;/Link&gt;);\n      const link = screen.getByRole('link');\n      expect(link).toHaveClass(\n        'focus-visible:outline-none',\n        'focus-visible:ring-2',\n        'focus-visible:ring-primary-400'\n      );\n    });\n\n    it('includes focus ring offset', () =&gt; {\n      render(&lt;Link href=\"/offset\"&gt;Offset Link&lt;/Link&gt;);\n      const link = screen.getByRole('link');\n      expect(link).toHaveClass('focus-visible:ring-offset-2');\n    });\n  });\n\n  describe('Custom Classes', () =&gt; {\n    it('applies custom className alongside variant classes', () =&gt; {\n      render(&lt;Link href=\"/custom\" className=\"custom-link\"&gt;Custom&lt;/Link&gt;);\n      const link = screen.getByRole('link');\n      expect(link).toHaveClass('custom-link', 'text-primary-500');\n    });\n  });\n\n  describe('Accessibility', () =&gt; {\n    it('passes accessibility checks for default variant', async () =&gt; {\n      const { container } = render(&lt;Link href=\"/test\"&gt;Accessible Link&lt;/Link&gt;);\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks for subtle variant', async () =&gt; {\n      const { container } = render(\n        &lt;Link href=\"/test\" variant=\"subtle\"&gt;Subtle Accessible Link&lt;/Link&gt;\n      );\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks with external link', async () =&gt; {\n      const { container } = render(\n        &lt;Link href=\"https://example.com\" target=\"_blank\" rel=\"noopener noreferrer\"&gt;\n          External Link\n        &lt;/Link&gt;\n      );\n      await assertA11y(container);\n    });\n\n    it('maintains semantic link role', () =&gt; {\n      render(&lt;Link href=\"/semantic\"&gt;Semantic Link&lt;/Link&gt;);\n      expect(screen.getByRole('link')).toBeInTheDocument();\n    });\n  });\n\n  describe('HTML Attributes', () =&gt; {\n    it('forwards standard anchor props', () =&gt; {\n      render(\n        &lt;Link href=\"https://example.com\" target=\"_blank\" rel=\"noopener\"&gt;\n          External\n        &lt;/Link&gt;\n      );\n      const link = screen.getByRole('link');\n      expect(link).toHaveAttribute('target', '_blank');\n      expect(link).toHaveAttribute('rel', 'noopener');\n    });\n\n    it('forwards aria attributes', () =&gt; {\n      render(\n        &lt;Link href=\"/aria\" aria-label=\"Descriptive label\"&gt;\n          Icon Link\n        &lt;/Link&gt;\n      );\n      expect(screen.getByRole('link', { name: 'Descriptive label' })).toBeInTheDocument();\n    });\n\n    it('forwards data attributes', () =&gt; {\n      render(&lt;Link href=\"/data\" data-testid=\"test-link\"&gt;Data Link&lt;/Link&gt;);\n      const link = screen.getByRole('link');\n      expect(link).toHaveAttribute('data-testid', 'test-link');\n    });\n  });\n\n  describe('Transition Classes', () =&gt; {\n    it('includes transition-colors duration class', () =&gt; {\n      render(&lt;Link href=\"/transition\"&gt;Transition Link&lt;/Link&gt;);\n      const link = screen.getByRole('link');\n      expect(link).toHaveClass('transition-colors', 'duration-150');\n    });\n  });\n});\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/card.test.tsx",
+  "relativeWorkspacePath": "card.test.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/card.test.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/test/design-system/unit/card.test.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import { describe, it, expect } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { Card } from '../../../src/design-system/components/card';\nimport { assertA11y } from '../../a11y/assertA11y';\n\ndescribe('Card Component', () =&gt; {\n  describe('Rendering', () =&gt; {\n    it('renders children content', () =&gt; {\n      render(&lt;Card&gt;Card Content&lt;/Card&gt;);\n      expect(screen.getByText('Card Content')).toBeInTheDocument();\n    });\n\n    it('renders header when provided', () =&gt; {\n      render(&lt;Card header=\"Card Header\"&gt;Content&lt;/Card&gt;);\n      expect(screen.getByText('Card Header')).toBeInTheDocument();\n    });\n\n    it('renders footer when provided', () =&gt; {\n      render(&lt;Card footer=\"Card Footer\"&gt;Content&lt;/Card&gt;);\n      expect(screen.getByText('Card Footer')).toBeInTheDocument();\n    });\n\n    it('renders header, content, and footer together', () =&gt; {\n      render(\n        &lt;Card header=\"Header\" footer=\"Footer\"&gt;\n          Body Content\n        &lt;/Card&gt;\n      );\n      expect(screen.getByText('Header')).toBeInTheDocument();\n      expect(screen.getByText('Body Content')).toBeInTheDocument();\n      expect(screen.getByText('Footer')).toBeInTheDocument();\n    });\n\n    it('renders complex header content', () =&gt; {\n      render(\n        &lt;Card header={&lt;div data-testid=\"complex-header\"&gt;Complex Header&lt;/div&gt;}&gt;\n          Content\n        &lt;/Card&gt;\n      );\n      expect(screen.getByTestId('complex-header')).toBeInTheDocument();\n    });\n  });\n\n  describe('Styling', () =&gt; {\n    it('applies base classes', () =&gt; {\n      const { container } = render(&lt;Card&gt;Content&lt;/Card&gt;);\n      const card = container.firstChild as HTMLElement;\n      expect(card).toHaveClass('bg-surface', 'rounded-lg', 'border', 'border-neutral-200');\n    });\n\n    it('applies medium elevation by default', () =&gt; {\n      const { container } = render(&lt;Card&gt;Content&lt;/Card&gt;);\n      const card = container.firstChild as HTMLElement;\n      expect(card).toHaveClass('shadow-md');\n    });\n\n    it('applies no elevation when specified', () =&gt; {\n      const { container } = render(&lt;Card elevation=\"none\"&gt;Content&lt;/Card&gt;);\n      const card = container.firstChild as HTMLElement;\n      expect(card).not.toHaveClass('shadow-sm', 'shadow-md', 'shadow-lg');\n    });\n\n    it('applies small elevation when specified', () =&gt; {\n      const { container } = render(&lt;Card elevation=\"sm\"&gt;Content&lt;/Card&gt;);\n      const card = container.firstChild as HTMLElement;\n      expect(card).toHaveClass('shadow-sm');\n    });\n\n    it('applies large elevation when specified', () =&gt; {\n      const { container } = render(&lt;Card elevation=\"lg\"&gt;Content&lt;/Card&gt;);\n      const card = container.firstChild as HTMLElement;\n      expect(card).toHaveClass('shadow-lg');\n    });\n\n    it('applies custom className', () =&gt; {\n      const { container } = render(&lt;Card className=\"custom-card\"&gt;Content&lt;/Card&gt;);\n      const card = container.firstChild as HTMLElement;\n      expect(card).toHaveClass('custom-card', 'bg-surface');\n    });\n  });\n\n  describe('Layout Structure', () =&gt; {\n    it('applies padding to content section', () =&gt; {\n      const { container } = render(&lt;Card&gt;Content&lt;/Card&gt;);\n      const contentDiv = container.querySelector('div &gt; div');\n      expect(contentDiv).toHaveClass('px-6', 'py-4');\n    });\n\n    it('applies padding and border to header section', () =&gt; {\n      const { container } = render(&lt;Card header=\"Header\"&gt;Content&lt;/Card&gt;);\n      const headerDiv = container.querySelector('div &gt; div:first-child');\n      expect(headerDiv).toHaveClass('px-6', 'py-4', 'border-b', 'border-neutral-200');\n    });\n\n    it('applies padding and border to footer section', () =&gt; {\n      const { container } = render(&lt;Card footer=\"Footer\"&gt;Content&lt;/Card&gt;);\n      const footerDiv = container.querySelector('div &gt; div:last-child');\n      expect(footerDiv).toHaveClass('px-6', 'py-4', 'border-t', 'border-neutral-200');\n    });\n\n    it('maintains correct order: header, content, footer', () =&gt; {\n      const { container } = render(\n        &lt;Card header=\"Header\" footer=\"Footer\"&gt;\n          Content\n        &lt;/Card&gt;\n      );\n      const divs = container.querySelectorAll('div &gt; div');\n      expect(divs[0]).toHaveTextContent('Header');\n      expect(divs[1]).toHaveTextContent('Content');\n      expect(divs[2]).toHaveTextContent('Footer');\n    });\n  });\n\n  describe('Accessibility', () =&gt; {\n    it('passes accessibility checks with content only', async () =&gt; {\n      const { container } = render(&lt;Card&gt;Simple Content&lt;/Card&gt;);\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks with header and content', async () =&gt; {\n      const { container } = render(&lt;Card header=\"Title\"&gt;Content&lt;/Card&gt;);\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks with full structure', async () =&gt; {\n      const { container } = render(\n        &lt;Card header=\"Card Title\" footer=\"Card Footer\"&gt;\n          Card body content\n        &lt;/Card&gt;\n      );\n      await assertA11y(container);\n    });\n\n    it('passes accessibility checks with complex nested content', async () =&gt; {\n      const { container } = render(\n        &lt;Card header={&lt;h3&gt;Semantic Heading&lt;/h3&gt;}&gt;\n          &lt;p&gt;Paragraph content&lt;/p&gt;\n          &lt;ul&gt;\n            &lt;li&gt;List item&lt;/li&gt;\n          &lt;/ul&gt;\n        &lt;/Card&gt;\n      );\n      await assertA11y(container);\n    });\n  });\n\n  describe('HTML Attributes', () =&gt; {\n    it('forwards standard div props', () =&gt; {\n      const { container } = render(\n        &lt;Card data-testid=\"test-card\" id=\"card-1\"&gt;\n          Content\n        &lt;/Card&gt;\n      );\n      const card = container.firstChild as HTMLElement;\n      expect(card).toHaveAttribute('data-testid', 'test-card');\n      expect(card).toHaveAttribute('id', 'card-1');\n    });\n\n    it('forwards aria attributes', () =&gt; {\n      const { container } = render(\n        &lt;Card aria-label=\"Product card\"&gt;\n          Content\n        &lt;/Card&gt;\n      );\n      const card = container.firstChild as HTMLElement;\n      expect(card).toHaveAttribute('aria-label', 'Product card');\n    });\n  });\n});\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/test/a11y/assertA11y.ts#1-1), lines 1 to 30</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/test/a11y/assertA11y.ts#1-1), lines 1 to 30
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_multiReplaceString">
+<details>
+<summary>Tool use: **copilot_multiReplaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_multiReplaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Multi-Replace String in Files\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;\n&#96;&#96;&#96;tsx\nimport { describe, it, expect } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { Card } from '../../../src/design-system/components/card';\nimport { assertA11y } from '../../../src/test/a11y/assertA11y';\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "import { describe, it, expect, vi } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { Button } from '../../../src/design-system/components/button';\nimport { assertA11y } from '../../../src/test/a11y/assertA11y';import { describe, it, expect, vi } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { Input } from '../../../src/design-system/components/input';\nimport { assertA11y } from '../../../src/test/a11y/assertA11y';import { describe, it, expect } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { Heading } from '../../../src/design-system/components/heading';\nimport { assertA11y } from '../../../src/test/a11y/assertA11y';import { describe, it, expect } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { Link } from '../../../src/design-system/components/link';\nimport { assertA11y } from '../../../src/test/a11y/assertA11y';import { describe, it, expect } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport { Card } from '../../../src/design-system/components/card';\nimport { assertA11y } from '../../../src/test/a11y/assertA11y';",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Implement useTheme hook* (1/9)**
+
+- [-] Implement useTheme hook
+  > T031 [US1] Create useTheme hook for theme management in web-client/src/design-system/hooks/useTheme.ts
+- [ ] Implement ThemeProvider
+  > T032 [US1] Create ThemeProvider context component in web-client/src/design-system/theme/ThemeProvider.tsx
+- [ ] Implement dark theme token overrides
+  > T033 [P] [US1] Create dark theme token overrides module in web-client/src/design-system/theme/dark.ts
+- [ ] Add theme persistence utility
+  > T034 [P] [US1] Create localStorage-based theme persistence utility in web-client/src/design-system/theme/persist.ts
+- [ ] Integrate ThemeProvider at root
+  > T035 [US1] Integrate ThemeProvider into App.tsx root component in web-client/src/App.tsx
+- [ ] Retrofit teacher create form
+  > T036 [P] [US1] Update teacher create form to use Button/Input components in web-client/src/features/teacher/ui/teacher-create-form.tsx
+- [ ] Retrofit teacher edit form
+  > T037 [P] [US1] Update teacher edit form to use Button/Input components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
+- [ ] Retrofit teacher list
+  > T038 [US1] Update teacher list to use Card/Heading/Link components in web-client/src/features/teacher/ui/teacher-list.tsx
+- [ ] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/theme/persist.ts",
+  "relativeWorkspacePath": "persist.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/theme/persist.ts)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/theme/persist.ts)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "export type Theme = 'light' | 'dark';\n\nexport const THEME_STORAGE_KEY = 'dasein-theme-preference';\n\nexport const getStoredTheme = (): Theme | null =&gt; {\n  try {\n    const stored = localStorage.getItem(THEME_STORAGE_KEY);\n    if (stored === 'light' || stored === 'dark') {\n      return stored;\n    }\n    return null;\n  } catch {\n    // localStorage not available (SSR, privacy mode, etc.)\n    return null;\n  }\n};\n\nexport const setStoredTheme = (theme: Theme): void =&gt; {\n  try {\n    localStorage.setItem(THEME_STORAGE_KEY, theme);\n  } catch {\n    // Silently fail if localStorage is not available\n  }\n};\n\nexport const getSystemTheme = (): Theme =&gt; {\n  if (typeof window !== 'undefined' &amp;&amp; window.matchMedia) {\n    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';\n  }\n  return 'light';\n};\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/theme/dark.ts",
+  "relativeWorkspacePath": "dark.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/theme/dark.ts)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/theme/dark.ts)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "/**\n * Dark theme token overrides\n * These values are applied when dark mode is active\n */\n\nexport const darkThemeTokens = {\n  // Background colors (darker for dark mode)\n  background: '#1A1A19',\n  surface: '#2E2E2C',\n  \n  // Text colors (lighter for dark mode)\n  textPrimary: '#F6F5F2',\n  textSecondary: '#D7D5CF',\n  \n  // Neutral scale adjustments (inverted)\n  neutral: {\n    50: '#33372D',\n    100: '#3D4136',\n    200: '#4A4F40',\n    300: '#5A604E',\n    400: '#686E5A',\n    500: '#888F7C',\n    600: '#A8AE9E',\n    700: '#D1D5CB',\n    800: '#E8EAE5',\n    900: '#F7F8F6',\n  },\n  \n  // Primary (bronze-copper) - slightly lighter for visibility\n  primary: {\n    50: '#4D2E1A',\n    100: '#5C361F',\n    200: '#6F4226',\n    300: '#8A5230',\n    400: '#9E5E36',\n    500: '#C17953',\n    600: '#D89870',\n    700: '#EBCAB4',\n    800: '#F7E5D9',\n    900: '#FDF6F2',\n  },\n  \n  // Secondary (olive-green) - slightly lighter for visibility\n  secondary: {\n    50: '#33372D',\n    100: '#3D4136',\n    200: '#4A4F40',\n    300: '#5A604E',\n    400: '#686E5A',\n    500: '#888F7C',\n    600: '#A8AE9E',\n    700: '#D1D5CB',\n    800: '#E8EAE5',\n    900: '#F7F8F6',\n  },\n  \n  // Semantic colors remain similar but adjusted for dark backgrounds\n  success: '#7AA368',\n  warning: '#D99B52',\n  error: '#C86F64',\n  info: '#6A8FA2',\n} as const;\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/hooks/useTheme.ts",
+  "relativeWorkspacePath": "useTheme.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/hooks/useTheme.ts)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/hooks/useTheme.ts)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import { createContext, useContext } from 'react';\n\nexport type Theme = 'light' | 'dark';\n\nexport interface ThemeContextValue {\n  theme: Theme;\n  setTheme: (theme: Theme) =&gt; void;\n  toggleTheme: () =&gt; void;\n}\n\nexport const ThemeContext = createContext&lt;ThemeContextValue | undefined&gt;(undefined);\n\nexport const useTheme = (): ThemeContextValue =&gt; {\n  const context = useContext(ThemeContext);\n  if (!context) {\n    throw new Error('useTheme must be used within a ThemeProvider');\n  }\n  return context;\n};\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/theme/ThemeProvider.tsx",
+  "relativeWorkspacePath": "ThemeProvider.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/theme/ThemeProvider.tsx)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/theme/ThemeProvider.tsx)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "import React, { useState, useEffect, useMemo } from 'react';\nimport { ThemeContext, type Theme } from '../hooks/useTheme';\nimport { getStoredTheme, setStoredTheme, getSystemTheme } from './persist';\n\nexport interface ThemeProviderProps {\n  children: React.ReactNode;\n  defaultTheme?: Theme;\n}\n\nexport const ThemeProvider: React.FC&lt;ThemeProviderProps&gt; = ({ \n  children, \n  defaultTheme \n}) =&gt; {\n  const [theme, setThemeState] = useState&lt;Theme&gt;(() =&gt; {\n    // Priority: 1. Stored preference, 2. Default prop, 3. System preference\n    const stored = getStoredTheme();\n    if (stored) return stored;\n    if (defaultTheme) return defaultTheme;\n    return getSystemTheme();\n  });\n\n  const setTheme = (newTheme: Theme) =&gt; {\n    setThemeState(newTheme);\n    setStoredTheme(newTheme);\n    \n    // Apply theme to document root\n    if (newTheme === 'dark') {\n      document.documentElement.classList.add('dark');\n    } else {\n      document.documentElement.classList.remove('dark');\n    }\n  };\n\n  const toggleTheme = () =&gt; {\n    setTheme(theme === 'light' ? 'dark' : 'light');\n  };\n\n  // Apply initial theme on mount\n  useEffect(() =&gt; {\n    if (theme === 'dark') {\n      document.documentElement.classList.add('dark');\n    } else {\n      document.documentElement.classList.remove('dark');\n    }\n  }, [theme]);\n\n  // Listen to system theme changes (optional enhancement)\n  useEffect(() =&gt; {\n    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');\n    \n    const handleChange = (e: MediaQueryListEvent) =&gt; {\n      // Only update if no stored preference exists\n      if (!getStoredTheme()) {\n        setThemeState(e.matches ? 'dark' : 'light');\n      }\n    };\n\n    mediaQuery.addEventListener('change', handleChange);\n    return () =&gt; mediaQuery.removeEventListener('change', handleChange);\n  }, []);\n\n  const value = useMemo(\n    () =&gt; ({ theme, setTheme, toggleTheme }),\n    [theme]\n  );\n\n  return (\n    &lt;ThemeContext.Provider value={value}&gt;\n      {children}\n    &lt;/ThemeContext.Provider&gt;\n  );\n};\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;tsx\n  // Apply initial theme on mount\n  useEffect(() =&gt; {\n    if (theme === 'dark') {\n      document.documentElement.classList.add('dark');\n    } else {\n      document.documentElement.classList.remove('dark');\n    }\n  }, [theme]);\n\n  // Listen to system theme changes (optional enhancement)\n  useEffect(() =&gt; {\n    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');\n    \n    const handleChange = (e: MediaQueryListEvent) =&gt; {\n      // Only update if no stored preference exists\n      if (!getStoredTheme()) {\n        setThemeState(e.matches ? 'dark' : 'light');\n      }\n    };\n\n    mediaQuery.addEventListener('change', handleChange);\n    return () =&gt; mediaQuery.removeEventListener('change', handleChange);\n  }, []);\n\n  const value = useMemo(\n    () =&gt; ({\n      theme,\n      setTheme: (newTheme: Theme) =&gt; {\n        setThemeState(newTheme);\n        setStoredTheme(newTheme);\n        \n        // Apply theme to document root\n        if (newTheme === 'dark') {\n          document.documentElement.classList.add('dark');\n        } else {\n          document.documentElement.classList.remove('dark');\n        }\n      },\n      toggleTheme: () =&gt; {\n        const newTheme = theme === 'light' ? 'dark' : 'light';\n        setThemeState(newTheme);\n        setStoredTheme(newTheme);\n        \n        if (newTheme === 'dark') {\n          document.documentElement.classList.add('dark');\n        } else {\n          document.documentElement.classList.remove('dark');\n        }\n      }\n    }),\n    [theme]\n  );\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "  // Apply initial theme on mount\n  useEffect(() =&gt; {\n    if (theme === 'dark') {\n      document.documentElement.classList.add('dark');\n    } else {\n      document.documentElement.classList.remove('dark');\n    }\n  }, [theme]);\n\n  // Listen to system theme changes (optional enhancement)\n  useEffect(() =&gt; {\n    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');\n    \n    const handleChange = (e: MediaQueryListEvent) =&gt; {\n      // Only update if no stored preference exists\n      if (!getStoredTheme()) {\n        setThemeState(e.matches ? 'dark' : 'light');\n      }\n    };\n\n    mediaQuery.addEventListener('change', handleChange);\n    return () =&gt; mediaQuery.removeEventListener('change', handleChange);\n  }, []);\n\n  const value = useMemo(\n    () =&gt; ({\n      theme,\n      setTheme: (newTheme: Theme) =&gt; {\n        setThemeState(newTheme);\n        setStoredTheme(newTheme);\n        \n        // Apply theme to document root\n        if (newTheme === 'dark') {\n          document.documentElement.classList.add('dark');\n        } else {\n          document.documentElement.classList.remove('dark');\n        }\n      },\n      toggleTheme: () =&gt; {\n        const newTheme = theme === 'light' ? 'dark' : 'light';\n        setThemeState(newTheme);\n        setStoredTheme(newTheme);\n        \n        if (newTheme === 'dark') {\n          document.documentElement.classList.add('dark');\n        } else {\n          document.documentElement.classList.remove('dark');\n        }\n      }\n    }),\n    [theme]\n  );",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Integrate ThemeProvider at root* (5/9)**
+
+- [x] Implement useTheme hook
+  > T031 [US1] Create useTheme hook for theme management in web-client/src/design-system/hooks/useTheme.ts
+- [x] Implement ThemeProvider
+  > T032 [US1] Create ThemeProvider context component in web-client/src/design-system/theme/ThemeProvider.tsx
+- [x] Implement dark theme token overrides
+  > T033 [P] [US1] Create dark theme token overrides module in web-client/src/design-system/theme/dark.ts
+- [x] Add theme persistence utility
+  > T034 [P] [US1] Create localStorage-based theme persistence utility in web-client/src/design-system/theme/persist.ts
+- [-] Integrate ThemeProvider at root
+  > T035 [US1] Integrate ThemeProvider into App.tsx root component in web-client/src/App.tsx
+- [ ] Retrofit teacher create form
+  > T036 [P] [US1] Update teacher create form to use Button/Input components in web-client/src/features/teacher/ui/teacher-create-form.tsx
+- [ ] Retrofit teacher edit form
+  > T037 [P] [US1] Update teacher edit form to use Button/Input components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
+- [ ] Retrofit teacher list
+  > T038 [US1] Update teacher list to use Card/Heading/Link components in web-client/src/features/teacher/ui/teacher-list.tsx
+- [ ] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/App.tsx#1-1), lines 1 to 50</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/App.tsx#1-1), lines 1 to 50
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/App.tsx#50-50), lines 50 to 94</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/App.tsx#50-50), lines 50 to 94
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;tsx\nimport React, { useState, useEffect } from 'react';\nimport { ThemeProvider } from './design-system/theme/ThemeProvider';\nimport { IndexedDBAdapter } from './features/teacher/storage/indexeddb-adapter';\nimport { MemoryAdapter } from './features/teacher/storage/memory-adapter';\nimport { TeacherCreateForm } from './features/teacher/ui/teacher-create-form';\nimport { TeacherList } from './features/teacher/ui/teacher-list';\nimport { useTeachers } from './features/teacher/ui/use-teachers';\nimport type { TeacherStoragePort } from './features/teacher/storage/storage-port';\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;tsx\n  return (\n    &lt;ThemeProvider&gt;\n      &lt;div className=\"app\"&gt;\n        &lt;header&gt;\n          &lt;h1&gt;Teacher Management&lt;/h1&gt;\n        &lt;/header&gt;\n\n        &lt;main&gt;\n          &lt;section className=\"create-section\"&gt;\n            &lt;h2&gt;Add New Teacher&lt;/h2&gt;\n            &lt;TeacherCreateForm storage={storage} onCreated={refresh} /&gt;\n          &lt;/section&gt;\n\n          &lt;section className=\"list-section\"&gt;\n            {error &amp;&amp; (\n              &lt;div className=\"error-message\" role=\"alert\"&gt;\n                {error}\n              &lt;/div&gt;\n            )}\n            &lt;TeacherList\n              teachers={teachers}\n              storage={storage}\n              isLoading={isLoading}\n              onTeacherUpdated={refresh}\n              onTeacherDeleted={refresh}\n            /&gt;\n          &lt;/section&gt;\n        &lt;/main&gt;\n      &lt;/div&gt;\n    &lt;/ThemeProvider&gt;\n  );\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "import React, { useState, useEffect } from 'react';\nimport { ThemeProvider } from './design-system/theme/ThemeProvider';\nimport { IndexedDBAdapter } from './features/teacher/storage/indexeddb-adapter';\nimport { MemoryAdapter } from './features/teacher/storage/memory-adapter';\nimport { TeacherCreateForm } from './features/teacher/ui/teacher-create-form';\nimport { TeacherList } from './features/teacher/ui/teacher-list';\nimport { useTeachers } from './features/teacher/ui/use-teachers';\nimport type { TeacherStoragePort } from './features/teacher/storage/storage-port';  return (\n    &lt;ThemeProvider&gt;\n      &lt;div className=\"app\"&gt;\n        &lt;header&gt;\n          &lt;h1&gt;Teacher Management&lt;/h1&gt;\n        &lt;/header&gt;\n\n        &lt;main&gt;\n          &lt;section className=\"create-section\"&gt;\n            &lt;h2&gt;Add New Teacher&lt;/h2&gt;\n            &lt;TeacherCreateForm storage={storage} onCreated={refresh} /&gt;\n          &lt;/section&gt;\n\n          &lt;section className=\"list-section\"&gt;\n            {error &amp;&amp; (\n              &lt;div className=\"error-message\" role=\"alert\"&gt;\n                {error}\n              &lt;/div&gt;\n            )}\n            &lt;TeacherList\n              teachers={teachers}\n              storage={storage}\n              isLoading={isLoading}\n              onTeacherUpdated={refresh}\n              onTeacherDeleted={refresh}\n            /&gt;\n          &lt;/section&gt;\n        &lt;/main&gt;\n      &lt;/div&gt;\n    &lt;/ThemeProvider&gt;\n  );",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Retrofit teacher create form* (2/5)**
+
+- [x] Integrate ThemeProvider at root
+  > T035 [US1] Integrate ThemeProvider into App.tsx root component in web-client/src/App.tsx
+- [-] Retrofit teacher create form
+  > T036 [P] [US1] Update teacher create form to use Button/Input components in web-client/src/features/teacher/ui/teacher-create-form.tsx
+- [ ] Retrofit teacher edit form
+  > T037 [P] [US1] Update teacher edit form to use Button/Input components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
+- [ ] Retrofit teacher list
+  > T038 [US1] Update teacher list to use Card/Heading/Link components in web-client/src/features/teacher/ui/teacher-list.tsx
+- [ ] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-create-form.tsx)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-create-form.tsx)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;tsx\nimport React from 'react';\nimport { Button } from '../../../design-system/components/button';\nimport { Input } from '../../../design-system/components/input';\nimport type { Teacher } from '../model/teacher';\nimport type { TeacherStoragePort } from '../storage/storage-port';\nimport { useCreateTeacher } from './use-create-teacher';\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;tsx\n  return (\n    &lt;form onSubmit={handleSubmit} className=\"teacher-create-form\"&gt;\n      &lt;Input\n        id=\"teacher-full-name\"\n        type=\"text\"\n        label=\"Full Name\"\n        value={fullName}\n        onChange={e =&gt; setFullName(e.target.value)}\n        error={error || undefined}\n        disabled={isCreating}\n        placeholder=\"Enter teacher's full name\"\n        aria-required=\"true\"\n      /&gt;\n\n      &lt;Button\n        type=\"submit\"\n        disabled={isCreating || !fullName.trim()}\n        aria-label={isCreating ? 'Creating teacher...' : 'Add teacher'}\n      &gt;\n        {isCreating ? 'Adding...' : 'Add Teacher'}\n      &lt;/Button&gt;\n    &lt;/form&gt;\n  );\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "import React from 'react';\nimport { Button } from '../../../design-system/components/button';\nimport { Input } from '../../../design-system/components/input';\nimport type { Teacher } from '../model/teacher';\nimport type { TeacherStoragePort } from '../storage/storage-port';\nimport { useCreateTeacher } from './use-create-teacher';  return (\n    &lt;form onSubmit={handleSubmit} className=\"teacher-create-form\"&gt;\n      &lt;Input\n        id=\"teacher-full-name\"\n        type=\"text\"\n        label=\"Full Name\"\n        value={fullName}\n        onChange={e =&gt; setFullName(e.target.value)}\n        error={error || undefined}\n        disabled={isCreating}\n        placeholder=\"Enter teacher's full name\"\n        aria-required=\"true\"\n      /&gt;\n\n      &lt;Button\n        type=\"submit\"\n        disabled={isCreating || !fullName.trim()}\n        aria-label={isCreating ? 'Creating teacher...' : 'Add teacher'}\n      &gt;\n        {isCreating ? 'Adding...' : 'Add Teacher'}\n      &lt;/Button&gt;\n    &lt;/form&gt;\n  );",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Updated todo list**
+
+- [x] Retrofit teacher create form
+  > T036 [P] [US1] Update teacher create form to use Button/Input components in web-client/src/features/teacher/ui/teacher-create-form.tsx
+- [-] Retrofit teacher edit form
+  > T037 [P] [US1] Update teacher edit form to use Button/Input components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
+- [ ] Retrofit teacher list
+  > T038 [US1] Update teacher list to use Card/Heading/Link components in web-client/src/features/teacher/ui/teacher-list.tsx
+- [ ] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-edit-form.tsx)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-edit-form.tsx)
+
+</details>
+</tool-use>
+
+---
+
 I'll follow the instructions to generate tasks for Phase 3 of the layout-design-system feature. Let me start by running the prerequisites check. Now let me read the rest of the spec to see if there are more user stories: Perfect! I can see the `tasks.md` file already exists and is comprehensive. The user is asking me to follow the instructions for "Phase 3" specifically. Looking at the current tasks.md, I can see that Phase 3 corresponds to **User Story 1 - Visual Consistency Across All Pages (Priority: P1)**.
 
-Let me check the current status of Phase 3 tasks to understand what's been completed: Now I'll start implementing Phase 3 tasks systematically. Let me begin with the parallelizable components: Now let me create the test files for the components: I need to check the existing test structure and fix the imports: Now I need to fix the imports in the test files: 
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-Now let me create the theming infrastructure: 
-```
-
-```
-Now let me read and update App.tsx: 
-```
-
-```
-
-```
-
-```
-Now let me retrofit the teacher forms to use the design system components: 
-```
-
-```
-
-```
-
-```
-[object Object]
+Let me check the current status of Phase 3 tasks to understand what's been completed: Now I'll start implementing Phase 3 tasks systematically. Let me begin with the parallelizable components: Now let me create the test files for the components: I need to check the existing test structure and fix the imports: Now I need to fix the imports in the test files: Now let me create the theming infrastructure: Now let me read and update App.tsx: Now let me retrofit the teacher forms to use the design system components: [object Object]
 
 ---
 
@@ -67,39 +1294,487 @@ _**User (2025-11-17 21:06Z)**_
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
 
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
 
-```
+Additional data:
 
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
 ```
+Result:
 
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;tsx\nimport React, { useEffect } from 'react';\nimport { Button } from '../../../design-system/components/button';\nimport { Input } from '../../../design-system/components/input';\nimport type { Teacher } from '../model/teacher';\nimport type { TeacherStoragePort } from '../storage/storage-port';\nimport { useEditTeacher } from './use-edit-teacher';\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;tsx\n  return (\n    &lt;form onSubmit={handleFormSubmit} className=\"teacher-edit-form\"&gt;\n      &lt;Input\n        id={&#96;teacher-edit-name-${teacher.uuid}&#96;}\n        type=\"text\"\n        label=\"Full Name\"\n        value={fullName}\n        onChange={e =&gt; setFullName(e.target.value)}\n        error={error || undefined}\n        disabled={isUpdating}\n        placeholder=\"Enter teacher's full name\"\n        aria-required=\"true\"\n      /&gt;\n\n      &lt;div className=\"form-actions\"&gt;\n        &lt;Button\n          type=\"submit\"\n          disabled={isUpdating || !fullName.trim()}\n          aria-label={isUpdating ? 'Saving changes...' : 'Save changes'}\n        &gt;\n          {isUpdating ? 'Saving...' : 'Save'}\n        &lt;/Button&gt;\n        &lt;Button\n          type=\"button\"\n          variant=\"secondary\"\n          onClick={handleCancelClick}\n          disabled={isUpdating}\n          aria-label=\"Cancel editing\"\n        &gt;\n          Cancel\n        &lt;/Button&gt;\n      &lt;/div&gt;\n    &lt;/form&gt;\n  );\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "import React, { useEffect } from 'react';\nimport { Button } from '../../../design-system/components/button';\nimport { Input } from '../../../design-system/components/input';\nimport type { Teacher } from '../model/teacher';\nimport type { TeacherStoragePort } from '../storage/storage-port';\nimport { useEditTeacher } from './use-edit-teacher';  return (\n    &lt;form onSubmit={handleFormSubmit} className=\"teacher-edit-form\"&gt;\n      &lt;Input\n        id={&#96;teacher-edit-name-${teacher.uuid}&#96;}\n        type=\"text\"\n        label=\"Full Name\"\n        value={fullName}\n        onChange={e =&gt; setFullName(e.target.value)}\n        error={error || undefined}\n        disabled={isUpdating}\n        placeholder=\"Enter teacher's full name\"\n        aria-required=\"true\"\n      /&gt;\n\n      &lt;div className=\"form-actions\"&gt;\n        &lt;Button\n          type=\"submit\"\n          disabled={isUpdating || !fullName.trim()}\n          aria-label={isUpdating ? 'Saving changes...' : 'Save changes'}\n        &gt;\n          {isUpdating ? 'Saving...' : 'Save'}\n        &lt;/Button&gt;\n        &lt;Button\n          type=\"button\"\n          variant=\"secondary\"\n          onClick={handleCancelClick}\n          disabled={isUpdating}\n          aria-label=\"Cancel editing\"\n        &gt;\n          Cancel\n        &lt;/Button&gt;\n      &lt;/div&gt;\n    &lt;/form&gt;\n  );",
+  "toolCallResult": null
+}
 ```
+Status: **completed**
 
-```
 
-```
+</details>
+</tool-use>
 
-```
+---
 
-```
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
 
-```
-Now let me also retrofit the delete button: 
-```
+**Updated todo list**
 
-```
+- [x] Retrofit teacher edit form
+  > T037 [P] [US1] Update teacher edit form to use Button/Input components in web-client/src/features/teacher/ui/teacher-edit-form.tsx
+- [-] Retrofit teacher list
+  > T038 [US1] Update teacher list to use Card/Heading/Link components in web-client/src/features/teacher/ui/teacher-list.tsx
+- [ ] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
 
-```
+</details>
+</tool-use>
 
-```
-Now let me update the `tasks.md` file to mark Phase 3 tasks as completed: 
-```
+---
 
-```
-Now let me run the tests to verify everything works: Excellent! Let me test a few more components: I need to fix the Card test selectors - they're selecting the wrong divs. Let me update the tests: 
-```
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-list.tsx)</summary>
 
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-list.tsx)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
 ```
-Perfect! Now let me check if there are any TypeScript errors: Excellent! Now let me create a summary document showing what was completed: Perfect! Let me create a summary of what was accomplished:
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;tsx\nimport { useState } from 'react';\nimport { Card } from '../../../design-system/components/card';\nimport { Heading } from '../../../design-system/components/heading';\nimport { Button } from '../../../design-system/components/button';\nimport type { Teacher } from '../model/teacher';\nimport type { TeacherStoragePort } from '../storage/storage-port';\nimport { TeacherEditForm } from './teacher-edit-form';\nimport { TeacherDeleteButton } from './teacher-delete-button';\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;tsx\n  return (\n    &lt;div className=\"teacher-list\"&gt;\n      &lt;Heading level={2}&gt;Teachers ({teachers.length})&lt;/Heading&gt;\n      &lt;ul aria-label=\"Teachers list\"&gt;\n        {teachers.map(teacher =&gt; (\n          &lt;li key={teacher.uuid} className=\"teacher-list-item\"&gt;\n            {editingTeacherId === teacher.uuid ? (\n              &lt;Card&gt;\n                &lt;TeacherEditForm\n                  teacher={teacher}\n                  storage={storage}\n                  onSave={handleEditSave}\n                  onCancel={handleEditCancel}\n                /&gt;\n              &lt;/Card&gt;\n            ) : (\n              &lt;Card&gt;\n                &lt;div className=\"teacher-item-view\"&gt;\n                  &lt;span className=\"teacher-name\"&gt;{teacher.full_name}&lt;/span&gt;\n                  &lt;div className=\"teacher-actions\"&gt;\n                    &lt;Button\n                      variant=\"secondary\"\n                      size=\"small\"\n                      onClick={() =&gt; handleEditClick(teacher.uuid)}\n                      aria-label={&#96;Edit ${teacher.full_name}&#96;}\n                    &gt;\n                      Edit\n                    &lt;/Button&gt;\n                    &lt;TeacherDeleteButton\n                      teacherId={teacher.uuid}\n                      teacherName={teacher.full_name}\n                      storage={storage}\n                      onDelete={handleDelete}\n                    /&gt;\n                  &lt;/div&gt;\n                &lt;/div&gt;\n              &lt;/Card&gt;\n            )}\n          &lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  );\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "import { useState } from 'react';\nimport { Card } from '../../../design-system/components/card';\nimport { Heading } from '../../../design-system/components/heading';\nimport { Button } from '../../../design-system/components/button';\nimport type { Teacher } from '../model/teacher';\nimport type { TeacherStoragePort } from '../storage/storage-port';\nimport { TeacherEditForm } from './teacher-edit-form';\nimport { TeacherDeleteButton } from './teacher-delete-button';  return (\n    &lt;div className=\"teacher-list\"&gt;\n      &lt;Heading level={2}&gt;Teachers ({teachers.length})&lt;/Heading&gt;\n      &lt;ul aria-label=\"Teachers list\"&gt;\n        {teachers.map(teacher =&gt; (\n          &lt;li key={teacher.uuid} className=\"teacher-list-item\"&gt;\n            {editingTeacherId === teacher.uuid ? (\n              &lt;Card&gt;\n                &lt;TeacherEditForm\n                  teacher={teacher}\n                  storage={storage}\n                  onSave={handleEditSave}\n                  onCancel={handleEditCancel}\n                /&gt;\n              &lt;/Card&gt;\n            ) : (\n              &lt;Card&gt;\n                &lt;div className=\"teacher-item-view\"&gt;\n                  &lt;span className=\"teacher-name\"&gt;{teacher.full_name}&lt;/span&gt;\n                  &lt;div className=\"teacher-actions\"&gt;\n                    &lt;Button\n                      variant=\"secondary\"\n                      size=\"small\"\n                      onClick={() =&gt; handleEditClick(teacher.uuid)}\n                      aria-label={&#96;Edit ${teacher.full_name}&#96;}\n                    &gt;\n                      Edit\n                    &lt;/Button&gt;\n                    &lt;TeacherDeleteButton\n                      teacherId={teacher.uuid}\n                      teacherName={teacher.full_name}\n                      storage={storage}\n                      onDelete={handleDelete}\n                    /&gt;\n                  &lt;/div&gt;\n                &lt;/div&gt;\n              &lt;/Card&gt;\n            )}\n          &lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  );",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-delete-button.tsx)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui/teacher-delete-button.tsx)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;tsx\nimport React from 'react';\nimport { Button } from '../../../design-system/components/button';\nimport { useDeleteTeacher } from './use-delete-teacher';\nimport type { TeacherStoragePort } from '../storage/storage-port';\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;tsx\n  return (\n    &lt;div className=\"teacher-delete-button\"&gt;\n      &lt;Button\n        variant=\"tertiary\"\n        size=\"small\"\n        onClick={handleClick}\n        disabled={isDeleting}\n        aria-label={&#96;Delete ${teacherName}&#96;}\n        type=\"button\"\n      &gt;\n        {isDeleting ? 'Deleting...' : 'Delete'}\n      &lt;/Button&gt;\n      {error &amp;&amp; (\n        &lt;div role=\"alert\" className=\"error-message\"&gt;\n          {error}\n        &lt;/div&gt;\n      )}\n    &lt;/div&gt;\n  );\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "import React from 'react';\nimport { Button } from '../../../design-system/components/button';\nimport { useDeleteTeacher } from './use-delete-teacher';\nimport type { TeacherStoragePort } from '../storage/storage-port';  return (\n    &lt;div className=\"teacher-delete-button\"&gt;\n      &lt;Button\n        variant=\"tertiary\"\n        size=\"small\"\n        onClick={handleClick}\n        disabled={isDeleting}\n        aria-label={&#96;Delete ${teacherName}&#96;}\n        type=\"button\"\n      &gt;\n        {isDeleting ? 'Deleting...' : 'Delete'}\n      &lt;/Button&gt;\n      {error &amp;&amp; (\n        &lt;div role=\"alert\" className=\"error-message\"&gt;\n          {error}\n        &lt;/div&gt;\n      )}\n    &lt;/div&gt;\n  );",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Updated todo list**
+
+- [x] Retrofit teacher list
+  > T038 [US1] Update teacher list to use Card/Heading/Link components in web-client/src/features/teacher/ui/teacher-list.tsx
+- [-] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/manual-testing.md",
+  "relativeWorkspacePath": "manual-testing.md"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/manual-testing.md)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/002-layout-design-system/manual-testing.md)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "# Manual Testing Checklist: Layout &amp; Design System\n\n**Feature**: 002-layout-design-system  \n**Date**: 2025-11-17  \n**Status**: Initial Draft\n\n## Overview\n\nThis document provides manual testing procedures to validate the design system implementation and ensure success criteria are met.\n\n---\n\n## Phase 3 / User Story 1: Visual Consistency Audit\n\n### Typography Consistency\n\n- [ ] **H1 Headings**: Verify all H1 elements use &#96;text-4xl font-bold&#96; classes\n- [ ] **H2 Headings**: Verify all H2 elements use &#96;text-3xl font-bold&#96; classes\n- [ ] **Body Text**: Verify standard text uses consistent &#96;text-text-primary&#96; color\n- [ ] **Font Family**: Verify all text uses the same font family from design tokens\n\n### Color Usage Consistency\n\n- [ ] **Primary Actions**: All primary buttons use &#96;bg-primary-500&#96; with consistent hover/focus states\n- [ ] **Secondary Actions**: All secondary buttons use &#96;bg-secondary-500&#96; with consistent styling\n- [ ] **Tertiary Actions**: All tertiary buttons use transparent background with primary border\n- [ ] **Background Colors**: All cards/surfaces use &#96;bg-surface&#96; token\n- [ ] **Text Colors**: All body text uses &#96;text-text-primary&#96; token\n- [ ] **Error States**: Error messages consistently use &#96;text-error-500&#96;\n\n### Spacing Consistency\n\n- [ ] **Form Fields**: Consistent spacing between input fields using design tokens\n- [ ] **Card Padding**: All cards use &#96;px-6 py-4&#96; consistent padding\n- [ ] **Button Padding**: Buttons use size-appropriate padding (small/medium/large)\n- [ ] **List Items**: Teacher list items have consistent spacing\n- [ ] **Section Gaps**: Sections maintain consistent vertical spacing\n\n### Interactive Element Consistency\n\n- [ ] **Button Variants**: Primary, secondary, tertiary buttons render with correct styles\n- [ ] **Button Sizes**: Small, medium, large button sizes apply correctly\n- [ ] **Input Fields**: All input fields use consistent styling\n- [ ] **Error Display**: Error messages appear below inputs with red text\n- [ ] **Helper Text**: Helper text appears with muted color when no error\n\n### Focus States\n\n- [ ] **Button Focus**: All buttons show visible focus ring on keyboard focus\n- [ ] **Input Focus**: All inputs show blue focus ring on focus\n- [ ] **Link Focus**: All links show focus ring with offset\n- [ ] **Focus Visibility**: Focus indicators meet WCAG visibility requirements\n\n### Component Integration\n\n- [ ] **Teacher Create Form**: Uses Button and Input components from design system\n- [ ] **Teacher Edit Form**: Uses Button and Input components from design system\n- [ ] **Teacher List**: Uses Card, Heading, and Button components\n- [ ] **Delete Button**: Uses tertiary Button variant\n- [ ] **Edit Button**: Uses secondary Button variant\n\n### Theme Support\n\n- [ ] **Light Theme**: Application defaults to light theme on first load\n- [ ] **Dark Theme Toggle**: Theme can be switched to dark mode\n- [ ] **Theme Persistence**: Theme preference persists across page reloads\n- [ ] **System Preference**: Respects system color scheme preference when no stored preference\n- [ ] **Dark Mode Contrast**: Text remains readable in dark mode\n\n### Cross-Page Consistency Check\n\nNavigate through all application pages and verify:\n\n- [ ] **Typography**: Headings, body text use identical styles across pages\n- [ ] **Colors**: Primary/secondary/tertiary colors used consistently\n- [ ] **Spacing**: Margins, padding follow same scale everywhere\n- [ ] **Buttons**: Button styles identical regardless of page location\n- [ ] **Forms**: Input fields styled identically across all forms\n\n### Edge Cases\n\n- [ ] **Long Text**: Teacher names with 50+ characters don't break layout\n- [ ] **Empty States**: Empty teacher list displays with consistent styling\n- [ ] **Loading States**: Loading messages use consistent typography\n- [ ] **Error Messages**: Error displays maintain consistent styling\n- [ ] **Disabled States**: Disabled buttons/inputs show clear disabled appearance\n\n---\n\n## Success Criteria Validation\n\n### SC-007: Design Consistency Score\n\nManual audit methodology:\n1. List all instances of buttons, inputs, headings, cards across the application\n2. Verify each uses design system components (not custom/inline styles)\n3. Calculate: (DS component instances / Total instances) × 100\n\n**Target**: ≥90% consistency score\n\n**Results**: _To be completed during final audit_\n\n---\n\n## Evidence Collection\n\nRecord screenshots or observations for:\n\n1. Teacher create form using design system components\n2. Teacher edit form using design system components  \n3. Teacher list with Card components\n4. Light theme appearance\n5. Dark theme appearance\n6. Focus states on all interactive elements\n7. Error states in forms\n8. Disabled button states\n\n---\n\n## Testing Environment\n\n- **Browser**: Chrome/Firefox/Safari (latest)\n- **Viewport**: Desktop (1440px), Tablet (800px)\n- **Theme**: Both light and dark modes\n\n---\n\n## Issues Found\n\nRecord any inconsistencies discovered during testing:\n\n| Component | Issue | Severity | Status |\n|-----------|-------|----------|--------|\n| _Example: Button_ | _Focus ring not visible in dark mode_ | _High_ | _Fixed_ |\n\n---\n\n## Sign-off\n\n- [ ] All visual consistency checks passed\n- [ ] Design system components used throughout teacher feature\n- [ ] Theme switching works correctly\n- [ ] Focus states meet accessibility requirements\n- [ ] No visual regressions detected\n\n**Tester**: _______________  \n**Date**: _______________  \n**Notes**: _______________\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Updated todo list**
+
+- [x] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;markdown\n## Phase 3: User Story 1 - Visual Consistency Across All Pages (Priority: P1) 🎯 MVP\n**Goal**: Deliver consistent typography, colors, spacing &amp; core UI components so all pages share unified appearance.\n**Independent Test**: Navigate existing pages (teacher feature) and verify identical styling for headings, body text, buttons, inputs, links, cards + spacing scale adherence.\n\n### Implementation &amp; Tests (US1)\n- [X] T020 [P] [US1] Implement Button component (variants) web-client/src/design-system/components/button.tsx\n- [X] T021 [P] [US1] Implement Input component web-client/src/design-system/components/input.tsx\n- [X] T022 [P] [US1] Implement Heading component web-client/src/design-system/components/heading.tsx\n- [X] T023 [P] [US1] Implement Link component web-client/src/design-system/components/link.tsx\n- [X] T024 [P] [US1] Implement Card component web-client/src/design-system/components/card.tsx\n- [X] T025 [US1] Create components barrel export web-client/src/design-system/components/index.ts\n- [X] T026 [P] [US1] Unit/a11y test Button web-client/test/design-system/unit/button.test.tsx\n- [X] T027 [P] [US1] Unit/a11y test Input web-client/test/design-system/unit/input.test.tsx\n- [X] T028 [P] [US1] Unit/a11y test Heading web-client/test/design-system/unit/heading.test.tsx\n- [X] T029 [P] [US1] Unit/a11y test Link web-client/test/design-system/unit/link.test.tsx\n- [X] T030 [P] [US1] Unit/a11y test Card web-client/test/design-system/unit/card.test.tsx\n- [X] T031 [US1] Implement theming hook useTheme web-client/src/design-system/hooks/useTheme.ts\n- [X] T032 [US1] Implement ThemeProvider web-client/src/design-system/theme/ThemeProvider.tsx\n- [X] T033 [P] [US1] Implement dark theme token overrides module web-client/src/design-system/theme/dark.ts\n- [X] T034 [P] [US1] Add theme persistence utility (localStorage) web-client/src/design-system/theme/persist.ts\n- [X] T035 [US1] Integrate ThemeProvider at root web-client/src/App.tsx\n- [X] T036 [P] [US1] Retrofit teacher create form to use Button/Input web-client/src/features/teacher/ui/teacher-create-form.tsx\n- [X] T037 [P] [US1] Retrofit teacher edit form to use Button/Input web-client/src/features/teacher/ui/teacher-edit-form.tsx\n- [X] T038 [US1] Retrofit teacher list to use Card/Heading/Link web-client/src/features/teacher/ui/teacher-list.tsx\n- [X] T039 [US1] Visual consistency audit checklist section (initial draft) specs/002-layout-design-system/manual-testing.md\n\n**Checkpoint**: All pages render with unified component set &amp; consistent tokens (visual audit passes).\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "## Phase 3: User Story 1 - Visual Consistency Across All Pages (Priority: P1) 🎯 MVP\n**Goal**: Deliver consistent typography, colors, spacing &amp; core UI components so all pages share unified appearance.\n**Independent Test**: Navigate existing pages (teacher feature) and verify identical styling for headings, body text, buttons, inputs, links, cards + spacing scale adherence.\n\n### Implementation &amp; Tests (US1)\n- [X] T020 [P] [US1] Implement Button component (variants) web-client/src/design-system/components/button.tsx\n- [X] T021 [P] [US1] Implement Input component web-client/src/design-system/components/input.tsx\n- [X] T022 [P] [US1] Implement Heading component web-client/src/design-system/components/heading.tsx\n- [X] T023 [P] [US1] Implement Link component web-client/src/design-system/components/link.tsx\n- [X] T024 [P] [US1] Implement Card component web-client/src/design-system/components/card.tsx\n- [X] T025 [US1] Create components barrel export web-client/src/design-system/components/index.ts\n- [X] T026 [P] [US1] Unit/a11y test Button web-client/test/design-system/unit/button.test.tsx\n- [X] T027 [P] [US1] Unit/a11y test Input web-client/test/design-system/unit/input.test.tsx\n- [X] T028 [P] [US1] Unit/a11y test Heading web-client/test/design-system/unit/heading.test.tsx\n- [X] T029 [P] [US1] Unit/a11y test Link web-client/test/design-system/unit/link.test.tsx\n- [X] T030 [P] [US1] Unit/a11y test Card web-client/test/design-system/unit/card.test.tsx\n- [X] T031 [US1] Implement theming hook useTheme web-client/src/design-system/hooks/useTheme.ts\n- [X] T032 [US1] Implement ThemeProvider web-client/src/design-system/theme/ThemeProvider.tsx\n- [X] T033 [P] [US1] Implement dark theme token overrides module web-client/src/design-system/theme/dark.ts\n- [X] T034 [P] [US1] Add theme persistence utility (localStorage) web-client/src/design-system/theme/persist.ts\n- [X] T035 [US1] Integrate ThemeProvider at root web-client/src/App.tsx\n- [X] T036 [P] [US1] Retrofit teacher create form to use Button/Input web-client/src/features/teacher/ui/teacher-create-form.tsx\n- [X] T037 [P] [US1] Retrofit teacher edit form to use Button/Input web-client/src/features/teacher/ui/teacher-edit-form.tsx\n- [X] T038 [US1] Retrofit teacher list to use Card/Heading/Link web-client/src/features/teacher/ui/teacher-list.tsx\n- [X] T039 [US1] Visual consistency audit checklist section (initial draft) specs/002-layout-design-system/manual-testing.md\n\n**Checkpoint**: All pages render with unified component set &amp; consistent tokens (visual audit passes).",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "03f11f26-b74d-4ee0-8b95-011d1a6d15a0",
+  "terminalCommandId": "tool-381d68f9-6751-4d33-a156-889740298212",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo/web-client &amp;&amp; npm run test -- test/design-system/unit/button.test.tsx"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "be6563ae-c29d-45ff-bc4d-a2d5c74558f4",
+  "terminalCommandId": "tool-ec22e27c-7613-4f73-9a0f-4da13dc9d590",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo/web-client &amp;&amp; npm run test -- test/design-system/unit/",
+    "toolEdited": "npm run test -- test/design-system/unit/"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;tsx\n  describe('Layout Structure', () =&gt; {\n    it('applies padding to content section', () =&gt; {\n      const { container } = render(&lt;Card&gt;Content&lt;/Card&gt;);\n      const contentDiv = container.querySelector('.px-6.py-4');\n      expect(contentDiv).toHaveClass('px-6', 'py-4');\n    });\n\n    it('applies padding and border to header section', () =&gt; {\n      const { container } = render(&lt;Card header=\"Header\"&gt;Content&lt;/Card&gt;);\n      const headerDiv = container.querySelector('.border-b');\n      expect(headerDiv).toHaveClass(\n        'px-6',\n        'py-4',\n        'border-b',\n        'border-neutral-200'\n      );\n    });\n\n    it('applies padding and border to footer section', () =&gt; {\n      const { container } = render(&lt;Card footer=\"Footer\"&gt;Content&lt;/Card&gt;);\n      const footerDiv = container.querySelector('.border-t');\n      expect(footerDiv).toHaveClass(\n        'px-6',\n        'py-4',\n        'border-t',\n        'border-neutral-200'\n      );\n    });\n\n    it('maintains correct order: header, content, footer', () =&gt; {\n      const { container } = render(\n        &lt;Card header=\"Header\" footer=\"Footer\"&gt;\n          Content\n        &lt;/Card&gt;\n      );\n      const cardElement = container.firstChild as HTMLElement;\n      const childDivs = Array.from(cardElement.children) as HTMLElement[];\n      \n      expect(childDivs[0]).toHaveTextContent('Header');\n      expect(childDivs[1]).toHaveTextContent('Content');\n      expect(childDivs[2]).toHaveTextContent('Footer');\n    });\n  });\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "  describe('Layout Structure', () =&gt; {\n    it('applies padding to content section', () =&gt; {\n      const { container } = render(&lt;Card&gt;Content&lt;/Card&gt;);\n      const contentDiv = container.querySelector('.px-6.py-4');\n      expect(contentDiv).toHaveClass('px-6', 'py-4');\n    });\n\n    it('applies padding and border to header section', () =&gt; {\n      const { container } = render(&lt;Card header=\"Header\"&gt;Content&lt;/Card&gt;);\n      const headerDiv = container.querySelector('.border-b');\n      expect(headerDiv).toHaveClass(\n        'px-6',\n        'py-4',\n        'border-b',\n        'border-neutral-200'\n      );\n    });\n\n    it('applies padding and border to footer section', () =&gt; {\n      const { container } = render(&lt;Card footer=\"Footer\"&gt;Content&lt;/Card&gt;);\n      const footerDiv = container.querySelector('.border-t');\n      expect(footerDiv).toHaveClass(\n        'px-6',\n        'py-4',\n        'border-t',\n        'border-neutral-200'\n      );\n    });\n\n    it('maintains correct order: header, content, footer', () =&gt; {\n      const { container } = render(\n        &lt;Card header=\"Header\" footer=\"Footer\"&gt;\n          Content\n        &lt;/Card&gt;\n      );\n      const cardElement = container.firstChild as HTMLElement;\n      const childDivs = Array.from(cardElement.children) as HTMLElement[];\n      \n      expect(childDivs[0]).toHaveTextContent('Header');\n      expect(childDivs[1]).toHaveTextContent('Content');\n      expect(childDivs[2]).toHaveTextContent('Footer');\n    });\n  });",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "7d994be5-7dee-451d-992e-64117b18b4a9",
+  "terminalCommandId": "tool-45d688e1-64ec-4ab4-98c2-a1adda2506f7",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo/web-client &amp;&amp; npm run test -- test/design-system/unit/card.test.tsx",
+    "toolEdited": "npm run test -- test/design-system/unit/card.test.tsx"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_getErrors">
+<details>
+<summary>Tool use: **copilot_getErrors**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system",
+  "relativeWorkspacePath": "design-system"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_getErrors",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Checking [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system), [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features/teacher/ui)",
+  "pastTenseMessage": "Checked , no problems found",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Read todo list**
+
+- [x] Visual consistency audit checklist
+  > T039 [US1] Create initial visual consistency audit checklist section in specs/002-layout-design-system/manual-testing.md
+
+</details>
+</tool-use>
+
+---
+
+Now let me also retrofit the delete button: Now let me update the `tasks.md` file to mark Phase 3 tasks as completed: Now let me run the tests to verify everything works: Excellent! Let me test a few more components: I need to fix the Card test selectors - they're selecting the wrong divs. Let me update the tests: Perfect! Now let me check if there are any TypeScript errors: Excellent! Now let me create a summary document showing what was completed: Perfect! Let me create a summary of what was accomplished:
 
 ## Phase 3 Implementation Complete ✅
 
@@ -164,19 +1839,289 @@ I you run the Typescript typechecker on `src/design-system/components/heading.ts
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
 
-Let me run the TypeScript typechecker on that file to identify the error: I can see the issue. The `heading.tsx` component is using `JSX.IntrinsicElements` which requires importing React properly, but there's a TypeScript configuration issue. Let me check the file and fix it: The issue is with using `JSX.IntrinsicElements`. A cleaner approach that TypeScript will handle better is to use a more explicit type or create the element differently. Let me fix this: 
-```
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
 
-```
-Good! The `JSX.IntrinsicElements` error is fixed. The remaining error is about the React import, but let me check if the project's tsconfig has esModuleInterop enabled or if we should use a different import style: I see! The tsconfig has `"esModuleInterop": false` and `"jsx": "react-jsx"`. With the new JSX transform (`"jsx": "react-jsx"`), we don't need to import React at all in this file since we're not using JSX syntax. Let me fix this: 
-```
 
-```
+Parameters:
 
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "9bcf0b39-2682-41a5-99c4-48a158f3abc4",
+  "terminalCommandId": "tool-3881f5c3-f6d9-4ac5-b7f7-a86050330d8e",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo/web-client &amp;&amp; npx tsc --noEmit src/design-system/components/heading.tsx",
+    "toolEdited": "npx tsc --noEmit src/design-system/components/heading.tsx"
+  },
+  "language": "sh"
+}
 ```
+Additional data:
 
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
 ```
-Perfect! The TypeScript error is now fixed. Let me verify the tests still pass: Excellent! The TypeScript error has been fixed. The issue was:
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/heading.tsx)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/components/heading.tsx)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;tsx\nexport const Heading: React.FC&lt;HeadingProps&gt; = ({\n  level,\n  className = '',\n  children,\n  ...props\n}) =&gt; {\n  const Tag = &#96;h${level}&#96; as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';\n\n  const classes = [baseClasses, headingClasses[level], className]\n    .filter(Boolean)\n    .join(' ');\n\n  return React.createElement(Tag, { className: classes, ...props }, children);\n};\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "export const Heading: React.FC&lt;HeadingProps&gt; = ({\n  level,\n  className = '',\n  children,\n  ...props\n}) =&gt; {\n  const Tag = &#96;h${level}&#96; as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';\n\n  const classes = [baseClasses, headingClasses[level], className]\n    .filter(Boolean)\n    .join(' ');\n\n  return React.createElement(Tag, { className: classes, ...props }, children);\n};",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "3dbaf5c4-d948-4a09-823e-13a00b761d52",
+  "terminalCommandId": "tool-694ca779-bc65-49ca-ad04-e16d103de9d6",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo/web-client &amp;&amp; npx tsc --noEmit src/design-system/components/heading.tsx",
+    "toolEdited": "npx tsc --noEmit src/design-system/components/heading.tsx"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/tsconfig.json#1-1), lines 1 to 30</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/tsconfig.json#1-1), lines 1 to 30
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;tsx\nimport { createElement } from 'react';\nimport type { FC, HTMLAttributes, ReactNode } from 'react';\n\nexport type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;\n\nexport interface HeadingProps extends HTMLAttributes&lt;HTMLHeadingElement&gt; {\n  level: HeadingLevel;\n  children: ReactNode;\n}\n&#96;&#96;&#96;\n\n&#96;&#96;&#96;tsx\nexport const Heading: FC&lt;HeadingProps&gt; = ({\n  level,\n  className = '',\n  children,\n  ...props\n}) =&gt; {\n  const Tag = &#96;h${level}&#96; as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';\n\n  const classes = [baseClasses, headingClasses[level], className]\n    .filter(Boolean)\n    .join(' ');\n\n  return createElement(Tag, { className: classes, ...props }, children);\n};\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "import { createElement } from 'react';\nimport type { FC, HTMLAttributes, ReactNode } from 'react';\n\nexport type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;\n\nexport interface HeadingProps extends HTMLAttributes&lt;HTMLHeadingElement&gt; {\n  level: HeadingLevel;\n  children: ReactNode;\n}export const Heading: FC&lt;HeadingProps&gt; = ({\n  level,\n  className = '',\n  children,\n  ...props\n}) =&gt; {\n  const Tag = &#96;h${level}&#96; as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';\n\n  const classes = [baseClasses, headingClasses[level], className]\n    .filter(Boolean)\n    .join(' ');\n\n  return createElement(Tag, { className: classes, ...props }, children);\n};",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "12b43dca-de93-4ad5-a380-229f085a39d3",
+  "terminalCommandId": "tool-565b4471-ecbb-4dd3-8d0f-05ce7ac813be",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo/web-client &amp;&amp; npx tsc --noEmit src/design-system/components/heading.tsx",
+    "toolEdited": "npx tsc --noEmit src/design-system/components/heading.tsx"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "16e31e21-141d-4762-830d-fa81adc36fc1",
+  "terminalCommandId": "tool-cad1246f-3528-477e-80d5-c6787a7f5cdd",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo/web-client &amp;&amp; npm run test -- test/design-system/unit/heading.test.tsx",
+    "toolEdited": "npm run test -- test/design-system/unit/heading.test.tsx"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+Let me run the TypeScript typechecker on that file to identify the error: I can see the issue. The `heading.tsx` component is using `JSX.IntrinsicElements` which requires importing React properly, but there's a TypeScript configuration issue. Let me check the file and fix it: The issue is with using `JSX.IntrinsicElements`. A cleaner approach that TypeScript will handle better is to use a more explicit type or create the element differently. Let me fix this: Good! The `JSX.IntrinsicElements` error is fixed. The remaining error is about the React import, but let me check if the project's tsconfig has esModuleInterop enabled or if we should use a different import style: I see! The tsconfig has `"esModuleInterop": false` and `"jsx": "react-jsx"`. With the new JSX transform (`"jsx": "react-jsx"`), we don't need to import React at all in this file since we're not using JSX syntax. Let me fix this: Perfect! The TypeScript error is now fixed. Let me verify the tests still pass: Excellent! The TypeScript error has been fixed. The issue was:
 
 1. **Original problem**: Using `JSX.IntrinsicElements` which required the `JSX` namespace
 2. **First fix**: Changed to explicit union type `'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'`

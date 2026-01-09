@@ -20,11 +20,241 @@ Update teacher management page design with at least the following changes:
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
 
-I'll help you create a specification for this UI redesign feature. Let me start by generating a short name and creating the feature structure. Now let me create the specification based on the feature description: 
-```
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
 
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "487fc867-4d7e-478a-a8a9-9cf4bf17bfcb",
+  "terminalCommandId": "tool-1bcaa6f8-a70c-4d93-a66e-50422e6320fe",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo &amp;&amp; .specify/scripts/bash/create-new-feature.sh --json \"Update teacher management page design with layout components, common header with logo, improved list layout, icon-based actions, and better spacing\" --short-name \"teacher-page-redesign\"",
+    "toolEdited": ".specify/scripts/bash/create-new-feature.sh --json \"Update teacher management page design with layout components, common header with logo, improved list layout, icon-based actions, and better spacing\" --short-name \"teacher-page-redesign\""
+  },
+  "language": "sh"
+}
 ```
-Now let me create the quality checklist and validate the specification: Perfect! The specification has been created and validated. Let me provide you with a summary:
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/.specify/templates/spec-template.md)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/.specify/templates/spec-template.md)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/spec.md",
+  "relativeWorkspacePath": "spec.md"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/spec.md)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/spec.md)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/spec.md#1-1), lines 1 to 50</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/spec.md#1-1), lines 1 to 50
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;markdown\n# Feature Specification: Teacher Management Page Redesign\n\n**Feature Branch**: &#96;003-teacher-page-redesign&#96;  \n**Created**: 2025-11-21  \n**Status**: Draft  \n**Input**: User description: \"Update teacher management page design with layout components, common header with logo, improved list layout, icon-based actions, and better spacing\"\n\n## User Scenarios &amp; Testing *(mandatory)*\n\n### User Story 1 - View Teacher List in Improved Layout (Priority: P1)\n\nA user opens the teacher management page and views the list of teachers in a clean, structured format where each teacher's information and available actions are presented on a single row.\n\n**Why this priority**: This is the core visual improvement that affects how users interact with teacher data every time they use the application. A well-organized list improves scanning efficiency and reduces cognitive load.\n\n**Independent Test**: Can be fully tested by navigating to the teacher management page and verifying that teachers are displayed in a list/table format with actions on the same row as teacher names.\n\n**Acceptance Scenarios**:\n\n1. **Given** the user is on the teacher management page, **When** they view the list of teachers, **Then** each teacher's name and actions appear on the same horizontal row\n2. **Given** multiple teachers exist in the system, **When** the user views the list, **Then** teachers are displayed in a list or table format rather than individual cards\n3. **Given** the user is viewing the teacher list, **When** they look at action buttons, **Then** each button displays an icon instead of text while maintaining accessibility\n\n---\n\n### User Story 2 - Navigate Using Common Application Header (Priority: P2)\n\nA user accesses the teacher management page and sees a consistent header across the application featuring the application logo and name \"Dasein\", providing brand identity and navigation context.\n\n**Why this priority**: Establishes visual hierarchy and brand presence, which is important for user orientation but secondary to the functional improvements of the teacher list itself.\n\n**Independent Test**: Can be tested by loading the teacher management page and verifying the common header appears with logo placeholder and \"Dasein\" branding.\n\n**Acceptance Scenarios**:\n\n1. **Given** the user navigates to the teacher management page, **When** the page loads, **Then** they see a common header at the top with a logo placeholder on the left and \"Dasein\" as the application name\n2. **Given** the user is on the teacher management page, **When** they view the page header, **Then** they see \"Teachers\" as the page-specific heading below the common header\n3. **Given** the user views the page-specific heading, **When** comparing to the previous design, **Then** the \"Teachers\" heading uses a smaller font size than the old \"Teacher management\" heading\n\n---\n\n### User Story 3 - Create New Teachers with Improved Form Layout (Priority: P3)\n\nA user fills out the teacher creation form with improved spacing between form elements, making the form easier to complete and less visually cluttered.\n\n**Why this priority**: While important for user experience, form spacing improvements are aesthetic enhancements that don't change core functionality, making them lower priority than structural layout changes.\n\n**Independent Test**: Can be tested by accessing the teacher creation section and verifying improved spacing between form fields and buttons.\n\n**Acceptance Scenarios**:\n\n1. **Given** the user is viewing the teacher creation section, **When** they examine the form layout, **Then** form elements have improved spacing between them\n2. **Given** the user interacts with the creation form, **When** they move between fields, **Then** the visual grouping makes it clear which elements belong together\n\n---\n\n### Edge Cases\n\n- What happens when the teacher list is empty (no teachers created yet)?\n- How does the layout adapt to very long teacher names?\n- What happens when there are many teachers (scrolling behavior)?\n- How do icon-based action buttons handle hover states for discoverability?\n\n## Requirements *(mandatory)*\n\n### Functional Requirements\n\n- **FR-001**: System MUST display a common header component on the teacher management page containing a logo placeholder and the application name \"Dasein\"\n- **FR-002**: System MUST position the logo placeholder at the top left of the common header\n- **FR-003**: System MUST display \"Teachers\" as a secondary page heading below the common header\n- **FR-004**: System MUST display teachers in a list or table format rather than card-based layout\n- **FR-005**: System MUST display action buttons (edit, delete) on the same row as each teacher's name\n- **FR-006**: System MUST use icons from Heroicons library for action buttons instead of text labels\n- **FR-007**: System MUST maintain accessibility properties on icon-based action buttons (ARIA labels, roles, keyboard navigation)\n- **FR-008**: System MUST apply improved spacing between elements in the teacher creation form section\n- **FR-009**: System MUST use a smaller font size for the \"Teachers\" heading compared to the current \"Teacher management\" heading\n- **FR-010**: System MUST extract the teacher management page into a separate component that can be included in the common layout\n\n### Key Entities\n\n- **Common Layout Component**: Wraps page content and provides consistent header across the application with logo and branding\n- **Teacher Management Page Component**: Contains teacher list and creation form, designed to fit within the common layout\n- **Teacher List Item**: Represents a single teacher entry with name and inline action buttons\n- **Action Icons**: Visual representations for edit and delete operations using Heroicons\n\n## Success Criteria *(mandatory)*\n\n### Measurable Outcomes\n\n- **SC-001**: Users can identify individual teachers and their available actions without scrolling horizontally or searching multiple visual areas\n- **SC-002**: The page heading clearly communicates the page purpose in 30% fewer characters than the previous heading\n- **SC-003**: Action button interactions remain fully keyboard-accessible and screen-reader compatible after icon conversion\n- **SC-004**: Users can visually scan the teacher list 40% faster due to improved horizontal alignment of information\n- **SC-005**: The teacher creation form completion feels less cluttered due to improved element spacing\n\n## Assumptions\n\n- The application will use Heroicons library for icon assets (https://heroicons.com/)\n- The logo placeholder will be a simple visual element (e.g., colored box or icon) until final branding is provided\n- The common layout will be reusable for future pages beyond teacher management\n- Current teacher management functionality (create, edit, delete) remains unchanged; only visual presentation changes\n- List/table format means horizontal alignment of data, not necessarily a full HTML table element\n- Improved spacing refers to increasing margins/padding between form elements for better visual breathing room\n- Existing teacher data structure and storage mechanisms remain unchanged\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "# Feature Specification: Teacher Management Page Redesign\n\n**Feature Branch**: &#96;003-teacher-page-redesign&#96;  \n**Created**: 2025-11-21  \n**Status**: Draft  \n**Input**: User description: \"Update teacher management page design with layout components, common header with logo, improved list layout, icon-based actions, and better spacing\"\n\n## User Scenarios &amp; Testing *(mandatory)*\n\n### User Story 1 - View Teacher List in Improved Layout (Priority: P1)\n\nA user opens the teacher management page and views the list of teachers in a clean, structured format where each teacher's information and available actions are presented on a single row.\n\n**Why this priority**: This is the core visual improvement that affects how users interact with teacher data every time they use the application. A well-organized list improves scanning efficiency and reduces cognitive load.\n\n**Independent Test**: Can be fully tested by navigating to the teacher management page and verifying that teachers are displayed in a list/table format with actions on the same row as teacher names.\n\n**Acceptance Scenarios**:\n\n1. **Given** the user is on the teacher management page, **When** they view the list of teachers, **Then** each teacher's name and actions appear on the same horizontal row\n2. **Given** multiple teachers exist in the system, **When** the user views the list, **Then** teachers are displayed in a list or table format rather than individual cards\n3. **Given** the user is viewing the teacher list, **When** they look at action buttons, **Then** each button displays an icon instead of text while maintaining accessibility\n\n---\n\n### User Story 2 - Navigate Using Common Application Header (Priority: P2)\n\nA user accesses the teacher management page and sees a consistent header across the application featuring the application logo and name \"Dasein\", providing brand identity and navigation context.\n\n**Why this priority**: Establishes visual hierarchy and brand presence, which is important for user orientation but secondary to the functional improvements of the teacher list itself.\n\n**Independent Test**: Can be tested by loading the teacher management page and verifying the common header appears with logo placeholder and \"Dasein\" branding.\n\n**Acceptance Scenarios**:\n\n1. **Given** the user navigates to the teacher management page, **When** the page loads, **Then** they see a common header at the top with a logo placeholder on the left and \"Dasein\" as the application name\n2. **Given** the user is on the teacher management page, **When** they view the page header, **Then** they see \"Teachers\" as the page-specific heading below the common header\n3. **Given** the user views the page-specific heading, **When** comparing to the previous design, **Then** the \"Teachers\" heading uses a smaller font size than the old \"Teacher management\" heading\n\n---\n\n### User Story 3 - Create New Teachers with Improved Form Layout (Priority: P3)\n\nA user fills out the teacher creation form with improved spacing between form elements, making the form easier to complete and less visually cluttered.\n\n**Why this priority**: While important for user experience, form spacing improvements are aesthetic enhancements that don't change core functionality, making them lower priority than structural layout changes.\n\n**Independent Test**: Can be tested by accessing the teacher creation section and verifying improved spacing between form fields and buttons.\n\n**Acceptance Scenarios**:\n\n1. **Given** the user is viewing the teacher creation section, **When** they examine the form layout, **Then** form elements have improved spacing between them\n2. **Given** the user interacts with the creation form, **When** they move between fields, **Then** the visual grouping makes it clear which elements belong together\n\n---\n\n### Edge Cases\n\n- What happens when the teacher list is empty (no teachers created yet)?\n- How does the layout adapt to very long teacher names?\n- What happens when there are many teachers (scrolling behavior)?\n- How do icon-based action buttons handle hover states for discoverability?\n\n## Requirements *(mandatory)*\n\n### Functional Requirements\n\n- **FR-001**: System MUST display a common header component on the teacher management page containing a logo placeholder and the application name \"Dasein\"\n- **FR-002**: System MUST position the logo placeholder at the top left of the common header\n- **FR-003**: System MUST display \"Teachers\" as a secondary page heading below the common header\n- **FR-004**: System MUST display teachers in a list or table format rather than card-based layout\n- **FR-005**: System MUST display action buttons (edit, delete) on the same row as each teacher's name\n- **FR-006**: System MUST use icons from Heroicons library for action buttons instead of text labels\n- **FR-007**: System MUST maintain accessibility properties on icon-based action buttons (ARIA labels, roles, keyboard navigation)\n- **FR-008**: System MUST apply improved spacing between elements in the teacher creation form section\n- **FR-009**: System MUST use a smaller font size for the \"Teachers\" heading compared to the current \"Teacher management\" heading\n- **FR-010**: System MUST extract the teacher management page into a separate component that can be included in the common layout\n\n### Key Entities\n\n- **Common Layout Component**: Wraps page content and provides consistent header across the application with logo and branding\n- **Teacher Management Page Component**: Contains teacher list and creation form, designed to fit within the common layout\n- **Teacher List Item**: Represents a single teacher entry with name and inline action buttons\n- **Action Icons**: Visual representations for edit and delete operations using Heroicons\n\n## Success Criteria *(mandatory)*\n\n### Measurable Outcomes\n\n- **SC-001**: Users can identify individual teachers and their available actions without scrolling horizontally or searching multiple visual areas\n- **SC-002**: The page heading clearly communicates the page purpose in 30% fewer characters than the previous heading\n- **SC-003**: Action button interactions remain fully keyboard-accessible and screen-reader compatible after icon conversion\n- **SC-004**: Users can visually scan the teacher list 40% faster due to improved horizontal alignment of information\n- **SC-005**: The teacher creation form completion feels less cluttered due to improved element spacing\n\n## Assumptions\n\n- The application will use Heroicons library for icon assets (https://heroicons.com/)\n- The logo placeholder will be a simple visual element (e.g., colored box or icon) until final branding is provided\n- The common layout will be reusable for future pages beyond teacher management\n- Current teacher management functionality (create, edit, delete) remains unchanged; only visual presentation changes\n- List/table format means horizontal alignment of data, not necessarily a full HTML table element\n- Improved spacing refers to increasing margins/padding between form elements for better visual breathing room\n- Existing teacher data structure and storage mechanisms remain unchanged",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createDirectory">
+<details>
+<summary>Tool use: **copilot_createDirectory**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/checklists",
+  "relativeWorkspacePath": "checklists"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createDirectory",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/checklists)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/checklists)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/checklists/requirements.md",
+  "relativeWorkspacePath": "requirements.md"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/checklists/requirements.md)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/checklists/requirements.md)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "# Specification Quality Checklist: Teacher Management Page Redesign\n\n**Purpose**: Validate specification completeness and quality before proceeding to planning  \n**Created**: 2025-11-21  \n**Feature**: [spec.md](../spec.md)\n\n## Content Quality\n\n- [x] No implementation details (languages, frameworks, APIs)\n- [x] Focused on user value and business needs\n- [x] Written for non-technical stakeholders\n- [x] All mandatory sections completed\n\n## Requirement Completeness\n\n- [x] No [NEEDS CLARIFICATION] markers remain\n- [x] Requirements are testable and unambiguous\n- [x] Success criteria are measurable\n- [x] Success criteria are technology-agnostic (no implementation details)\n- [x] All acceptance scenarios are defined\n- [x] Edge cases are identified\n- [x] Scope is clearly bounded\n- [x] Dependencies and assumptions identified\n\n## Feature Readiness\n\n- [x] All functional requirements have clear acceptance criteria\n- [x] User scenarios cover primary flows\n- [x] Feature meets measurable outcomes defined in Success Criteria\n- [x] No implementation details leak into specification\n\n## Validation Results\n\n**Status**: ✅ PASSED\n\nAll checklist items have been validated and passed:\n\n1. **Content Quality**: The specification focuses on user experience improvements (layout, spacing, icons) without mentioning specific frameworks, components libraries (beyond Heroicons for icons, which is user-specified), or implementation approaches.\n\n2. **Requirement Completeness**: All 10 functional requirements are specific and testable. No clarification markers are present. All requirements can be verified through UI inspection and interaction testing.\n\n3. **Success Criteria**: All 5 success criteria are measurable and technology-agnostic:\n   - SC-001: Testable by visual inspection (no horizontal scrolling needed)\n   - SC-002: Measurable (30% character reduction)\n   - SC-003: Testable via keyboard navigation and screen reader\n   - SC-004: Measurable through user testing (40% faster scanning)\n   - SC-005: Qualitative but verifiable through user feedback\n\n4. **Feature Readiness**: \n   - All user stories have clear acceptance scenarios with Given/When/Then format\n   - Three prioritized user stories cover the main flows (list view, header/navigation, form layout)\n   - Edge cases identified for empty states, long names, scrolling, and interaction patterns\n   - Assumptions clearly document design decisions and scope boundaries\n\n## Notes\n\nThe specification is ready for &#96;/speckit.plan&#96; phase. No updates required.\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+I'll help you create a specification for this UI redesign feature. Let me start by generating a short name and creating the feature structure. Now let me create the specification based on the feature description: Now let me create the quality checklist and validate the specification: Perfect! The specification has been created and validated. Let me provide you with a summary:
 
 ---
 
@@ -68,19 +298,923 @@ Follow instructions in [speckit.plan.prompt.md](file:///Users/aadroher/DevProjec
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
 
-I'll follow the instructions in the speckit.plan.prompt.md to create the implementation plan. Let me start by running the setup script. Now let me check the current project structure to understand the context better: Now let me create a comprehensive implementation plan. Let me start by filling out the `plan.md` file: Now let me replace the `plan.md` template with the actual implementation plan: 
-```
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
 
-```
 
-```
+Parameters:
 
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "dc670f36-e9b8-4b3f-8fe6-ee9336c341d4",
+  "terminalCommandId": "tool-dac5a032-8a29-49ba-984e-1e42bd599b3a",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo &amp;&amp; .specify/scripts/bash/setup-plan.sh --json",
+    "toolEdited": ".specify/scripts/bash/setup-plan.sh --json"
+  },
+  "language": "sh"
+}
 ```
+Additional data:
 
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
 ```
+Result:
 
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
 ```
-Now let me generate the research.md file for Phase 0: Now let me create the data-model.md (which for this UI feature will document component structure rather than data entities): Now let me create the contracts directory and component interface contracts: Now let me create the quickstart.md guide: Now let me update the agent context: [object Object]
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/.specify/memory/constitution.md)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/.specify/memory/constitution.md)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/spec.md)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/spec.md)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/plan.md)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/plan.md)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/package.json)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/package.json)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_listDirectory">
+<details>
+<summary>Tool use: **copilot_listDirectory**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src",
+  "relativeWorkspacePath": "src"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_listDirectory",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src)",
+  "pastTenseMessage": "Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="copilot_findTextInFiles">
+<details>
+<summary>Tool use: **copilot_findTextInFiles** • Searching for text `Teacher|teacher` (`**/web-client/src/**/*.tsx`)</summary>
+
+
+Searched for text `Teacher|teacher` (`**/web-client/src/**/*.tsx`), 20 results
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_listDirectory">
+<details>
+<summary>Tool use: **copilot_listDirectory**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features",
+  "relativeWorkspacePath": "features"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_listDirectory",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features)",
+  "pastTenseMessage": "Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/features)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_listDirectory">
+<details>
+<summary>Tool use: **copilot_listDirectory**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system",
+  "relativeWorkspacePath": "design-system"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_listDirectory",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system)",
+  "pastTenseMessage": "Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/App.tsx#1-1), lines 1 to 50</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/App.tsx#1-1), lines 1 to 50
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_findFiles">
+<details>
+<summary>Tool use: **copilot_findFiles**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_findFiles",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Searching for files matching &#96;**/*.svg&#96;",
+  "pastTenseMessage": "Searched for files matching &#96;**/*.svg&#96;, 1 match",
+  "resultDetails": [
+    {
+      "$mid": 1,
+      "fsPath": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/assets/dasein_logo.svg",
+      "external": "file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/assets/dasein_logo.svg",
+      "path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/src/design-system/assets/dasein_logo.svg",
+      "scheme": "file"
+    }
+  ],
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Created 8 todos**
+
+- [-] Fill Technical Context section
+  > Analyze the project and fill in language, dependencies, testing framework, and constraints
+- [ ] Perform Constitution Check
+  > Review constitution.md and validate feature against core principles
+- [ ] Define Project Structure
+  > Document the source code structure for this UI redesign feature
+- [ ] Generate research.md (Phase 0)
+  > Research Heroicons integration, React component patterns, and accessibility best practices
+- [ ] Generate data-model.md (Phase 1)
+  > Document UI component structure and data flow (no data model changes for this feature)
+- [ ] Generate contracts (Phase 1)
+  > Define component interfaces and props contracts
+- [ ] Generate quickstart.md (Phase 1)
+  > Create development setup and testing guide for the redesigned UI
+- [ ] Update agent context
+  > Run update-agent-context.sh to update Copilot instructions
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/tsconfig.json)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/tsconfig.json)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/vite.config.ts)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/web-client/vite.config.ts)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/plan.md#1-1), lines 1 to 50</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/plan.md#1-1), lines 1 to 50
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;markdown\n# Implementation Plan: Teacher Management Page Redesign\n\n**Branch**: &#96;003-teacher-page-redesign&#96; | **Date**: 2025-11-21 | **Spec**: [spec.md](./spec.md)\n**Input**: Feature specification from &#96;/specs/003-teacher-page-redesign/spec.md&#96;\n\n## Summary\n\nRedesign the teacher management page UI to improve information hierarchy, visual organization, and accessibility. This involves creating a reusable common layout component with header and branding, converting the teacher list from card-based to table/list layout with inline actions using Heroicons, and improving form spacing. The redesign focuses purely on presentation layer changes without modifying underlying data models or business logic.\n\n## Technical Context\n\n**Language/Version**: TypeScript (ESNext target) + React 19.0.0  \n**Primary Dependencies**: React 19, Vite 5.x, Tailwind CSS 4.x, Heroicons (to be added), Vitest, Playwright  \n**Storage**: IndexedDB with in-memory fallback (no changes required for this feature)  \n**Testing**: Vitest (unit/integration), Playwright (E2E), jest-axe (accessibility), @testing-library/react  \n**Target Platform**: Modern web browsers (desktop and mobile)  \n**Project Type**: Web application (single-page, client-side)  \n**Performance Goals**: 60fps UI interactions, &lt;100ms response to user input, maintain current page load performance  \n**Constraints**: WCAG 2.1 AA compliance, keyboard navigation, screen reader compatibility, local-first architecture  \n**Scale/Scope**: Single feature module redesign affecting ~5-8 components, estimated 300-500 LOC changes\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "# Implementation Plan: Teacher Management Page Redesign\n\n**Branch**: &#96;003-teacher-page-redesign&#96; | **Date**: 2025-11-21 | **Spec**: [spec.md](./spec.md)\n**Input**: Feature specification from &#96;/specs/003-teacher-page-redesign/spec.md&#96;\n\n## Summary\n\nRedesign the teacher management page UI to improve information hierarchy, visual organization, and accessibility. This involves creating a reusable common layout component with header and branding, converting the teacher list from card-based to table/list layout with inline actions using Heroicons, and improving form spacing. The redesign focuses purely on presentation layer changes without modifying underlying data models or business logic.\n\n## Technical Context\n\n**Language/Version**: TypeScript (ESNext target) + React 19.0.0  \n**Primary Dependencies**: React 19, Vite 5.x, Tailwind CSS 4.x, Heroicons (to be added), Vitest, Playwright  \n**Storage**: IndexedDB with in-memory fallback (no changes required for this feature)  \n**Testing**: Vitest (unit/integration), Playwright (E2E), jest-axe (accessibility), @testing-library/react  \n**Target Platform**: Modern web browsers (desktop and mobile)  \n**Project Type**: Web application (single-page, client-side)  \n**Performance Goals**: 60fps UI interactions, &lt;100ms response to user input, maintain current page load performance  \n**Constraints**: WCAG 2.1 AA compliance, keyboard navigation, screen reader compatibility, local-first architecture  \n**Scale/Scope**: Single feature module redesign affecting ~5-8 components, estimated 300-500 LOC changes",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/plan.md#29-29), lines 29 to 98</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/plan.md#29-29), lines 29 to 98
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Perform Constitution Check* (2/8)**
+
+- [x] Fill Technical Context section
+  > Analyze the project and fill in language, dependencies, testing framework, and constraints
+- [-] Perform Constitution Check
+  > Review constitution.md and validate feature against core principles
+- [ ] Define Project Structure
+  > Document the source code structure for this UI redesign feature
+- [ ] Generate research.md (Phase 0)
+  > Research Heroicons integration, React component patterns, and accessibility best practices
+- [ ] Generate data-model.md (Phase 1)
+  > Document UI component structure and data flow (no data model changes for this feature)
+- [ ] Generate contracts (Phase 1)
+  > Define component interfaces and props contracts
+- [ ] Generate quickstart.md (Phase 1)
+  > Create development setup and testing guide for the redesigned UI
+- [ ] Update agent context
+  > Run update-agent-context.sh to update Copilot instructions
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;markdown\n\n## Constitution Check\n\n*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*\n\n### Core Principles Validation\n\n**I. Web app (NON-NEGOTIABLE)**: ✅ PASS  \nThis feature is a web UI redesign. No violations.\n\n**II. Local-first (NON-NEGOTIABLE)**: ✅ PASS  \nNo changes to storage layer. UI redesign maintains existing IndexedDB/memory adapter architecture.\n\n**III. Centralized authentication**: ✅ PASS  \nNot applicable to this feature. No authentication changes.\n\n**IV. Privacy by design (NON-NEGOTIABLE)**: ✅ PASS  \nNo data collection or privacy implications. Pure UI presentation changes.\n\n**V. Test-first (NON-NEGOTIABLE)**: ⚠️ REQUIRES ATTENTION  \nAll existing E2E tests must be updated to reflect new UI structure (list vs cards, icons vs text). New tests required for:\n- Common layout component accessibility\n- Icon button keyboard navigation\n- Updated teacher list layout\nTests must pass before implementation is considered complete.\n\n**VI. Accessibility (NON-NEGOTIABLE)**: ✅ PASS  \nFeature specification explicitly requires WCAG 2.1 AA compliance:\n- FR-007: Maintain accessibility on icon buttons (ARIA labels, roles, keyboard nav)\n- SC-003: Keyboard and screen reader compatibility validation\nAll accessibility properties must be preserved during redesign.\n\n**VII. Observability**: ✅ PASS  \nNot applicable to this feature. UI changes don't affect observability infrastructure.\n\n**VIII. Vendor neutrality**: ✅ PASS  \nHeroicons is an open-source icon library. No vendor lock-in concerns.\n\n**IX. Technology agnostic**: ✅ PASS  \nPrinciples maintained. Using React/TypeScript consistent with existing stack.\n\n**X. Separation of concerns**: ✅ PASS  \nFeature creates proper component separation:\n- Common layout component (reusable)\n- Teacher management page component (feature-specific)\n- Clear component boundaries maintained\n\n**XI. Functional programming style**: ✅ PASS  \nReact components use functional style. No violations expected.\n\n**XII. Monorepo**: ✅ PASS  \nAll changes within existing web-client folder in monorepo.\n\n### Gate Summary\n\n**Status**: ✅ PASS with attention to Test-First principle\n\nAll constitutional gates pass. Test-first principle requires updating existing E2E tests and creating new accessibility tests for modified components before implementation completion.\n\n\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "\n## Constitution Check\n\n*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*\n\n### Core Principles Validation\n\n**I. Web app (NON-NEGOTIABLE)**: ✅ PASS  \nThis feature is a web UI redesign. No violations.\n\n**II. Local-first (NON-NEGOTIABLE)**: ✅ PASS  \nNo changes to storage layer. UI redesign maintains existing IndexedDB/memory adapter architecture.\n\n**III. Centralized authentication**: ✅ PASS  \nNot applicable to this feature. No authentication changes.\n\n**IV. Privacy by design (NON-NEGOTIABLE)**: ✅ PASS  \nNo data collection or privacy implications. Pure UI presentation changes.\n\n**V. Test-first (NON-NEGOTIABLE)**: ⚠️ REQUIRES ATTENTION  \nAll existing E2E tests must be updated to reflect new UI structure (list vs cards, icons vs text). New tests required for:\n- Common layout component accessibility\n- Icon button keyboard navigation\n- Updated teacher list layout\nTests must pass before implementation is considered complete.\n\n**VI. Accessibility (NON-NEGOTIABLE)**: ✅ PASS  \nFeature specification explicitly requires WCAG 2.1 AA compliance:\n- FR-007: Maintain accessibility on icon buttons (ARIA labels, roles, keyboard nav)\n- SC-003: Keyboard and screen reader compatibility validation\nAll accessibility properties must be preserved during redesign.\n\n**VII. Observability**: ✅ PASS  \nNot applicable to this feature. UI changes don't affect observability infrastructure.\n\n**VIII. Vendor neutrality**: ✅ PASS  \nHeroicons is an open-source icon library. No vendor lock-in concerns.\n\n**IX. Technology agnostic**: ✅ PASS  \nPrinciples maintained. Using React/TypeScript consistent with existing stack.\n\n**X. Separation of concerns**: ✅ PASS  \nFeature creates proper component separation:\n- Common layout component (reusable)\n- Teacher management page component (feature-specific)\n- Clear component boundaries maintained\n\n**XI. Functional programming style**: ✅ PASS  \nReact components use functional style. No violations expected.\n\n**XII. Monorepo**: ✅ PASS  \nAll changes within existing web-client folder in monorepo.\n\n### Gate Summary\n\n**Status**: ✅ PASS with attention to Test-First principle\n\nAll constitutional gates pass. Test-first principle requires updating existing E2E tests and creating new accessibility tests for modified components before implementation completion.\n\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Define Project Structure* (3/8)**
+
+- [x] Fill Technical Context section
+  > Analyze the project and fill in language, dependencies, testing framework, and constraints
+- [x] Perform Constitution Check
+  > Review constitution.md and validate feature against core principles
+- [-] Define Project Structure
+  > Document the source code structure for this UI redesign feature
+- [ ] Generate research.md (Phase 0)
+  > Research Heroicons integration, React component patterns, and accessibility best practices
+- [ ] Generate data-model.md (Phase 1)
+  > Document UI component structure and data flow (no data model changes for this feature)
+- [ ] Generate contracts (Phase 1)
+  > Define component interfaces and props contracts
+- [ ] Generate quickstart.md (Phase 1)
+  > Create development setup and testing guide for the redesigned UI
+- [ ] Update agent context
+  > Run update-agent-context.sh to update Copilot instructions
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;markdown\n\n## Project Structure\n\n### Documentation (this feature)\n\n&#96;&#96;&#96;\nspecs/003-teacher-page-redesign/\n├── plan.md              # This file (/speckit.plan command output)\n├── research.md          # Phase 0 output (/speckit.plan command)\n├── data-model.md        # Phase 1 output (/speckit.plan command)\n├── quickstart.md        # Phase 1 output (/speckit.plan command)\n├── contracts/           # Phase 1 output (/speckit.plan command)\n│   └── component-interfaces.md\n└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)\n&#96;&#96;&#96;\n\n### Source Code (repository root)\n\n&#96;&#96;&#96;\nweb-client/\n├── src/\n│   ├── design-system/\n│   │   ├── layout/\n│   │   │   ├── app-layout.tsx        # Existing - to be modified\n│   │   │   ├── common-layout.tsx     # NEW - common header/branding wrapper\n│   │   │   └── page-header.tsx       # NEW - page-level heading component\n│   │   ├── components/\n│   │   │   └── icon-button.tsx       # NEW - accessible icon button wrapper\n│   │   └── assets/\n│   │       └── dasein_logo.svg       # Existing - to be used in header\n│   └── features/\n│       └── teacher/\n│           └── ui/\n│               ├── teacher-list.tsx           # MODIFY - convert to table/list layout\n│               ├── teacher-list-item.tsx      # NEW - single row component\n│               ├── teacher-create-form.tsx    # MODIFY - improve spacing\n│               ├── teacher-edit-form.tsx      # MODIFY - icon buttons\n│               ├── teacher-delete-button.tsx  # MODIFY - icon buttons\n│               └── teacher-page.tsx           # NEW - extracted page component\n└── test/\n    ├── design-system/\n    │   └── layout/\n    │       ├── common-layout.test.tsx         # NEW\n    │       └── common-layout-a11y.test.tsx    # NEW\n    └── teacher/\n        ├── teacher-page.test.tsx              # NEW\n        ├── teacher-page-a11y.test.tsx         # NEW\n        └── teacher-list-layout.e2e.ts         # MODIFY existing E2E tests\n&#96;&#96;&#96;\n\n**Structure Decision**: Web application structure (Option 2 variant). This is a pure frontend feature affecting the &#96;web-client/&#96; folder only. Changes focus on the design system's layout components and the teacher feature's UI components. No backend, API, or storage changes required. Follows existing pattern of separating design-system (reusable) from features (domain-specific).\n\n\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "\n## Project Structure\n\n### Documentation (this feature)\n\n&#96;&#96;&#96;\nspecs/003-teacher-page-redesign/\n├── plan.md              # This file (/speckit.plan command output)\n├── research.md          # Phase 0 output (/speckit.plan command)\n├── data-model.md        # Phase 1 output (/speckit.plan command)\n├── quickstart.md        # Phase 1 output (/speckit.plan command)\n├── contracts/           # Phase 1 output (/speckit.plan command)\n│   └── component-interfaces.md\n└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)\n&#96;&#96;&#96;\n\n### Source Code (repository root)\n\n&#96;&#96;&#96;\nweb-client/\n├── src/\n│   ├── design-system/\n│   │   ├── layout/\n│   │   │   ├── app-layout.tsx        # Existing - to be modified\n│   │   │   ├── common-layout.tsx     # NEW - common header/branding wrapper\n│   │   │   └── page-header.tsx       # NEW - page-level heading component\n│   │   ├── components/\n│   │   │   └── icon-button.tsx       # NEW - accessible icon button wrapper\n│   │   └── assets/\n│   │       └── dasein_logo.svg       # Existing - to be used in header\n│   └── features/\n│       └── teacher/\n│           └── ui/\n│               ├── teacher-list.tsx           # MODIFY - convert to table/list layout\n│               ├── teacher-list-item.tsx      # NEW - single row component\n│               ├── teacher-create-form.tsx    # MODIFY - improve spacing\n│               ├── teacher-edit-form.tsx      # MODIFY - icon buttons\n│               ├── teacher-delete-button.tsx  # MODIFY - icon buttons\n│               └── teacher-page.tsx           # NEW - extracted page component\n└── test/\n    ├── design-system/\n    │   └── layout/\n    │       ├── common-layout.test.tsx         # NEW\n    │       └── common-layout-a11y.test.tsx    # NEW\n    └── teacher/\n        ├── teacher-page.test.tsx              # NEW\n        ├── teacher-page-a11y.test.tsx         # NEW\n        └── teacher-list-layout.e2e.ts         # MODIFY existing E2E tests\n&#96;&#96;&#96;\n\n**Structure Decision**: Web application structure (Option 2 variant). This is a pure frontend feature affecting the &#96;web-client/&#96; folder only. Changes focus on the design system's layout components and the teacher feature's UI components. No backend, API, or storage changes required. Follows existing pattern of separating design-system (reusable) from features (domain-specific).\n\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Generate research.md (Phase 0)* (4/8)**
+
+- [x] Fill Technical Context section
+  > Analyze the project and fill in language, dependencies, testing framework, and constraints
+- [x] Perform Constitution Check
+  > Review constitution.md and validate feature against core principles
+- [x] Define Project Structure
+  > Document the source code structure for this UI redesign feature
+- [-] Generate research.md (Phase 0)
+  > Research Heroicons integration, React component patterns, and accessibility best practices
+- [ ] Generate data-model.md (Phase 1)
+  > Document UI component structure and data flow (no data model changes for this feature)
+- [ ] Generate contracts (Phase 1)
+  > Define component interfaces and props contracts
+- [ ] Generate quickstart.md (Phase 1)
+  > Create development setup and testing guide for the redesigned UI
+- [ ] Update agent context
+  > Run update-agent-context.sh to update Copilot instructions
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/research.md",
+  "relativeWorkspacePath": "research.md"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/research.md)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/research.md)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "# Research: Teacher Management Page Redesign\n\n**Created**: 2025-11-21  \n**Feature**: [spec.md](./spec.md)  \n**Plan**: [plan.md](./plan.md)\n\n## Purpose\n\nResearch technical approaches for implementing the teacher management page redesign, focusing on Heroicons integration, accessible icon button patterns, React component composition, and layout best practices.\n\n## Research Questions\n\n### 1. Heroicons Integration with React\n\n**Decision**: Use &#96;@heroicons/react&#96; npm package (v2.x)\n\n**Rationale**:\n- Official React package from Heroicons team (Tailwind Labs)\n- Provides both outline and solid icon variants as React components\n- Tree-shakeable - only imports icons actually used\n- TypeScript support out of the box\n- No additional build configuration needed with Vite\n- Zero runtime dependencies (icons are just SVG components)\n\n**Implementation approach**:\n&#96;&#96;&#96;tsx\nimport { PencilIcon, TrashIcon } from '@heroicons/react/24/outline';\n\n// Usage\n&lt;PencilIcon className=\"h-5 w-5\" aria-hidden=\"true\" /&gt;\n&#96;&#96;&#96;\n\n**Alternatives considered**:\n- **Heroicons CDN/SVG sprites**: Rejected - requires additional HTTP requests, no tree-shaking\n- **Copy SVG files manually**: Rejected - harder to maintain, no type safety\n- **react-icons**: Rejected - bundles multiple icon sets, larger bundle size\n\n**Package to install**: &#96;@heroicons/react@^2.0.0&#96;\n\n---\n\n### 2. Accessible Icon Button Pattern\n\n**Decision**: Create wrapper component combining button semantics with icon presentation\n\n**Rationale**:\n- Icon-only buttons need text alternative for screen readers\n- &#96;aria-label&#96; provides accessible name while hiding visual text\n- &#96;aria-hidden=\"true\"&#96; on icon prevents double-announcement\n- Consistent pattern across all icon buttons\n- Centralizes accessibility implementation\n\n**Implementation pattern**:\n&#96;&#96;&#96;tsx\ninterface IconButtonProps {\n  icon: React.ComponentType&lt;{ className?: string }&gt;;\n  label: string;\n  onClick: () =&gt; void;\n  variant?: 'primary' | 'danger';\n}\n\nfunction IconButton({ icon: Icon, label, onClick, variant }: IconButtonProps) {\n  return (\n    &lt;button\n      type=\"button\"\n      onClick={onClick}\n      aria-label={label}\n      className={/* variant styles */}\n    &gt;\n      &lt;Icon className=\"h-5 w-5\" aria-hidden=\"true\" /&gt;\n    &lt;/button&gt;\n  );\n}\n&#96;&#96;&#96;\n\n**Alternatives considered**:\n- **Visible text + icon**: Rejected - spec requires icon-only for space efficiency\n- **Title attribute**: Rejected - not accessible to keyboard-only users\n- **Tooltip component**: Deferred - adds complexity, aria-label sufficient for MVP\n\n**WCAG Compliance**: \n- 1.1.1 Non-text Content (Level A): ✅ aria-label provides text alternative\n- 2.1.1 Keyboard (Level A): ✅ Button element natively keyboard accessible\n- 4.1.2 Name, Role, Value (Level A): ✅ Button role and accessible name provided\n\n---\n\n### 3. List vs Table Layout for Teachers\n\n**Decision**: Use semantic HTML table with responsive considerations\n\n**Rationale**:\n- Teachers with actions = tabular data (entity + operations)\n- Screen readers benefit from table semantics (th, td, scope)\n- Easier to implement consistent column alignment\n- Better than div-based \"faux table\" for accessibility\n- Can be made responsive with CSS (e.g., card view on mobile if needed later)\n\n**Implementation approach**:\n&#96;&#96;&#96;tsx\n&lt;table className=\"min-w-full divide-y\"&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th scope=\"col\"&gt;Teacher Name&lt;/th&gt;\n      &lt;th scope=\"col\"&gt;Actions&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    {teachers.map(teacher =&gt; (\n      &lt;tr key={teacher.id}&gt;\n        &lt;td&gt;{teacher.fullName}&lt;/td&gt;\n        &lt;td&gt;\n          &lt;div className=\"flex gap-2\"&gt;\n            &lt;IconButton icon={PencilIcon} label={&#96;Edit ${teacher.fullName}&#96;} ... /&gt;\n            &lt;IconButton icon={TrashIcon} label={&#96;Delete ${teacher.fullName}&#96;} ... /&gt;\n          &lt;/div&gt;\n        &lt;/td&gt;\n      &lt;/tr&gt;\n    ))}\n  &lt;/tbody&gt;\n&lt;/table&gt;\n&#96;&#96;&#96;\n\n**Alternatives considered**:\n- **Unordered list (ul/li)**: Rejected - loses semantic relationship between name and actions\n- **Definition list (dl/dt/dd)**: Rejected - not appropriate for multiple entities\n- **Div-based grid**: Rejected - harder to maintain accessibility, more CSS complexity\n\n**Accessibility notes**:\n- Include visually-hidden column headers if design doesn't show them\n- Consider &#96;aria-label&#96; on action cell for context: \"Actions for [teacher name]\"\n- Maintain focus management when deleting rows\n\n---\n\n### 4. React Component Composition Strategy\n\n**Decision**: Extract teachermanagement into separate page component, create reusable common layout\n\n**Rationale**:\n- Separation of concerns: layout (design-system) vs domain logic (features)\n- Common layout becomes reusable for future pages\n- Teacher page component can be independently tested\n- Easier to modify page-specific layout without affecting global structure\n- Follows React composition over inheritance principle\n\n**Component hierarchy**:\n&#96;&#96;&#96;\n&lt;CommonLayout&gt;             // design-system/layout/\n  &lt;PageHeader title=\"Teachers\" /&gt;\n  &lt;TeacherPage&gt;            // features/teacher/ui/\n    &lt;TeacherCreateForm /&gt;\n    &lt;TeacherList /&gt;\n  &lt;/TeacherPage&gt;\n&lt;/CommonLayout&gt;\n&#96;&#96;&#96;\n\n**Alternatives considered**:\n- **Single monolithic component**: Rejected - violates separation of concerns\n- **Context-based layout**: Rejected - adds unnecessary complexity for simple header\n- **Nested layouts**: Deferred - not needed until multiple layout types emerge\n\n---\n\n### 5. Form Spacing Improvements\n\n**Decision**: Use Tailwind CSS spacing utilities with consistent scale\n\n**Rationale**:\n- Tailwind already in project (v4.x)\n- Consistent spacing scale (4px base: space-2, space-4, space-6, etc.)\n- Easy to adjust and maintain\n- No additional dependencies\n- Design tokens already defined in Tailwind config\n\n**Recommended spacing pattern**:\n&#96;&#96;&#96;tsx\n&lt;form className=\"space-y-6\"&gt;          {/* 24px between major sections */}\n  &lt;div className=\"space-y-2\"&gt;         {/* 8px between label and input */}\n    &lt;label&gt;...&lt;/label&gt;\n    &lt;input /&gt;\n    &lt;p className=\"text-sm\"&gt;...&lt;/p&gt;    {/* helper text */}\n  &lt;/div&gt;\n  &lt;div className=\"flex gap-3\"&gt;        {/* 12px between buttons */}\n    &lt;button&gt;Submit&lt;/button&gt;\n    &lt;button&gt;Cancel&lt;/button&gt;\n  &lt;/div&gt;\n&lt;/form&gt;\n&#96;&#96;&#96;\n\n**Spacing scale**:\n- Form sections: &#96;space-y-6&#96; (24px)\n- Field groups: &#96;space-y-2&#96; (8px)\n- Inline elements: &#96;gap-3&#96; (12px)\n\n**Alternatives considered**:\n- **Custom CSS margins**: Rejected - inconsistent, harder to maintain\n- **CSS Grid**: Deferred - overkill for simple form layout\n- **Spacer components**: Rejected - adds unnecessary abstraction\n\n---\n\n### 6. Logo Implementation\n\n**Decision**: Use existing SVG with accessible wrapper component\n\n**Rationale**:\n- &#96;dasein_logo.svg&#96; already exists in &#96;web-client/src/design-system/assets/&#96;\n- SVG provides scalability and small file size\n- Can be styled with CSS/Tailwind\n- Inline SVG for better control vs img tag\n\n**Implementation**:\n&#96;&#96;&#96;tsx\nimport LogoSvg from '../assets/dasein_logo.svg?react';  // Vite SVG import\n\nfunction AppLogo() {\n  return (\n    &lt;div className=\"flex items-center gap-3\"&gt;\n      &lt;LogoSvg className=\"h-8 w-8\" aria-hidden=\"true\" /&gt;\n      &lt;span className=\"text-xl font-semibold\"&gt;Dasein&lt;/span&gt;\n      &lt;span className=\"sr-only\"&gt;Dasein - Educational Schedule Management&lt;/span&gt;\n    &lt;/div&gt;\n  );\n}\n&#96;&#96;&#96;\n\n**Accessibility**:\n- Logo SVG marked &#96;aria-hidden=\"true\"&#96; (decorative)\n- Text \"Dasein\" provides visible label\n- &#96;sr-only&#96; span adds context for screen readers\n\n**Alternatives considered**:\n- **Image tag**: Rejected - less flexibility for styling\n- **Background image**: Rejected - not semantic, harder to make responsive\n- **Icon font**: Rejected - SVG provides better quality and accessibility\n\n---\n\n## Dependencies to Add\n\n&#96;&#96;&#96;json\n{\n  \"dependencies\": {\n    \"@heroicons/react\": \"^2.1.0\"\n  }\n}\n&#96;&#96;&#96;\n\n**Installation**: &#96;npm install @heroicons/react&#96;\n\n---\n\n## Testing Strategy\n\n### Unit/Integration Tests (Vitest + Testing Library)\n- Common layout renders with logo and title\n- Icon buttons have correct aria-labels\n- Table structure has proper semantics\n- Form spacing meets design specs\n\n### Accessibility Tests (jest-axe)\n- No axe violations in common layout\n- Icon buttons pass color contrast\n- Table has proper headers and scope\n- Keyboard navigation works for all interactive elements\n\n### E2E Tests (Playwright)\n- Update existing teacher CRUD tests for new selectors\n- Verify list layout instead of cards\n- Test icon button click handlers\n- Validate responsive behavior\n\n---\n\n## Best Practices Applied\n\n1. **Semantic HTML**: Use table, th, td for tabular data\n2. **ARIA patterns**: aria-label for icon buttons, aria-hidden for decorative icons\n3. **Keyboard accessibility**: All button elements are natively keyboard accessible\n4. **Screen reader support**: Descriptive labels include context (e.g., \"Edit John Doe\")\n5. **Focus management**: Maintain logical tab order\n6. **Tailwind conventions**: Use spacing scale consistently\n7. **Component composition**: Reusable layout components\n8. **Tree-shaking**: Import only needed Heroicons\n9. **TypeScript**: Strong typing for component props\n10. **Test-first**: Write failing tests before implementation\n\n---\n\n## Open Questions / Future Considerations\n\n1. **Mobile responsive strategy**: Current spec focuses on desktop. Consider responsive table→cards transformation for narrow screens.\n2. **Empty state design**: Spec mentions edge case but doesn't define visual treatment.\n3. **Sort/filter**: Not in spec but common for lists. Document as future enhancement.\n4. **Pagination**: Not in spec. Consider if teacher list grows beyond ~50 items.\n5. **Animation**: Consider subtle transitions for delete/edit actions to improve UX.\n\n---\n\n## References\n\n- [Heroicons Documentation](https://heroicons.com/)\n- [WAI-ARIA Authoring Practices - Button](https://www.w3.org/WAI/ARIA/apg/patterns/button/)\n- [WAI-ARIA Authoring Practices - Table](https://www.w3.org/WAI/ARIA/apg/patterns/table/)\n- [Tailwind CSS Spacing](https://tailwindcss.com/docs/customizing-spacing)\n- [Vite Asset Handling](https://vitejs.dev/guide/assets.html)\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Generate data-model.md (Phase 1)* (5/8)**
+
+- [x] Fill Technical Context section
+  > Analyze the project and fill in language, dependencies, testing framework, and constraints
+- [x] Perform Constitution Check
+  > Review constitution.md and validate feature against core principles
+- [x] Define Project Structure
+  > Document the source code structure for this UI redesign feature
+- [x] Generate research.md (Phase 0)
+  > Research Heroicons integration, React component patterns, and accessibility best practices
+- [-] Generate data-model.md (Phase 1)
+  > Document UI component structure and data flow (no data model changes for this feature)
+- [ ] Generate contracts (Phase 1)
+  > Define component interfaces and props contracts
+- [ ] Generate quickstart.md (Phase 1)
+  > Create development setup and testing guide for the redesigned UI
+- [ ] Update agent context
+  > Run update-agent-context.sh to update Copilot instructions
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/data-model.md",
+  "relativeWorkspacePath": "data-model.md"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/data-model.md)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/data-model.md)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "# Data Model: Teacher Management Page Redesign\n\n**Created**: 2025-11-21  \n**Feature**: [spec.md](./spec.md)  \n**Plan**: [plan.md](./plan.md)\n\n## Overview\n\nThis feature is a UI redesign that does **not modify** the underlying data models or storage layer. The existing &#96;Teacher&#96; entity and storage mechanisms remain unchanged. This document describes the UI component structure and visual data representation.\n\n---\n\n## Existing Data Model (Unchanged)\n\n### Teacher Entity\n\n**Source**: &#96;web-client/src/features/teacher/model/teacher.ts&#96;\n\n&#96;&#96;&#96;typescript\ninterface Teacher {\n  id: string;\n  fullName: string;\n  createdAt: Date;\n}\n&#96;&#96;&#96;\n\n**Validation Rules** (unchanged):\n- &#96;fullName&#96;: Required, non-empty string, trimmed, whitespace-only names invalid\n- &#96;id&#96;: UUID v4 generated client-side\n- &#96;createdAt&#96;: Timestamp of creation\n\n**Storage**: IndexedDB (primary) with in-memory fallback, managed by &#96;TeacherStoragePort&#96;\n\n---\n\n## Component Structure\n\nThis section describes the visual components and their data requirements.\n\n### 1. CommonLayout Component\n\n**Location**: &#96;web-client/src/design-system/layout/common-layout.tsx&#96; (NEW)\n\n**Purpose**: Reusable application shell with header, logo, and content area\n\n**Visual Structure**:\n&#96;&#96;&#96;\n┌─────────────────────────────────────┐\n│ [Logo] Dasein                       │  ← Header (fixed)\n├─────────────────────────────────────┤\n│                                     │\n│  {children}                         │  ← Content area\n│                                     │\n└─────────────────────────────────────┘\n&#96;&#96;&#96;\n\n**Data Requirements**:\n- Logo SVG asset: &#96;design-system/assets/dasein_logo.svg&#96;\n- Application name: \"Dasein\" (hardcoded, accessible via screen reader)\n- Children: React nodes (page content)\n\n**Props**:\n&#96;&#96;&#96;typescript\ninterface CommonLayoutProps {\n  children: React.ReactNode;\n}\n&#96;&#96;&#96;\n\n---\n\n### 2. PageHeader Component\n\n**Location**: &#96;web-client/src/design-system/layout/page-header.tsx&#96; (NEW)\n\n**Purpose**: Page-level heading with consistent typography\n\n**Visual Structure**:\n&#96;&#96;&#96;\nTeachers                              ← h2, smaller than previous h1\n&#96;&#96;&#96;\n\n**Data Requirements**:\n- Title text (string)\n\n**Props**:\n&#96;&#96;&#96;typescript\ninterface PageHeaderProps {\n  title: string;\n}\n&#96;&#96;&#96;\n\n---\n\n### 3. TeacherPage Component\n\n**Location**: &#96;web-client/src/features/teacher/ui/teacher-page.tsx&#96; (NEW)\n\n**Purpose**: Container for teacher management functionality (extracted from App.tsx)\n\n**Visual Structure**:\n&#96;&#96;&#96;\n┌─────────────────────────────────────┐\n│ [Create Teacher Form]               │\n├─────────────────────────────────────┤\n│ [Teacher List]                      │\n│  - Teacher 1  [Edit] [Delete]       │\n│  - Teacher 2  [Edit] [Delete]       │\n│  - Teacher 3  [Edit] [Delete]       │\n└─────────────────────────────────────┘\n&#96;&#96;&#96;\n\n**Data Requirements**:\n- &#96;TeacherStoragePort&#96; instance\n- Manages teacher list state via &#96;useTeachers&#96; hook\n\n**Props**:\n&#96;&#96;&#96;typescript\ninterface TeacherPageProps {\n  storage: TeacherStoragePort;\n}\n&#96;&#96;&#96;\n\n---\n\n### 4. TeacherList Component (Modified)\n\n**Location**: &#96;web-client/src/features/teacher/ui/teacher-list.tsx&#96; (EXISTING - MODIFY)\n\n**Purpose**: Display teachers in table/list format with inline actions\n\n**Current Structure**: Card-based layout with actions below name\n\n**New Structure**: Table layout with actions on same row\n\n**Visual Structure**:\n&#96;&#96;&#96;\n┌────────────────────┬──────────────┐\n│ Teacher Name       │ Actions      │  ← Header row\n├────────────────────┼──────────────┤\n│ Alice Johnson      │ [✏️] [🗑️]    │  ← Data rows\n│ Bob Smith          │ [✏️] [🗑️]    │\n│ Carol Williams     │ [✏️] [🗑️]    │\n└────────────────────┴──────────────┘\n&#96;&#96;&#96;\n\n**Data Requirements**:\n- Array of &#96;Teacher&#96; objects\n- Sorted alphabetically by &#96;fullName&#96;\n- &#96;TeacherStoragePort&#96; for edit/delete operations\n\n**Props** (existing, unchanged):\n&#96;&#96;&#96;typescript\ninterface TeacherListProps {\n  storage: TeacherStoragePort;\n}\n&#96;&#96;&#96;\n\n**Internal State**:\n- Teachers array (from storage)\n- Edit mode (which teacher is being edited, if any)\n\n---\n\n### 5. TeacherListItem Component\n\n**Location**: &#96;web-client/src/features/teacher/ui/teacher-list-item.tsx&#96; (NEW)\n\n**Purpose**: Render single teacher row with inline actions\n\n**Visual Structure**:\n&#96;&#96;&#96;\n│ John Doe           │ [✏️] [🗑️]    │\n&#96;&#96;&#96;\n\n**Data Requirements**:\n- Single &#96;Teacher&#96; object\n- Edit handler callback\n- Delete handler callback\n\n**Props**:\n&#96;&#96;&#96;typescript\ninterface TeacherListItemProps {\n  teacher: Teacher;\n  onEdit: (teacher: Teacher) =&gt; void;\n  onDelete: (teacher: Teacher) =&gt; void;\n  isEditing: boolean;\n}\n&#96;&#96;&#96;\n\n---\n\n### 6. IconButton Component\n\n**Location**: &#96;web-client/src/design-system/components/icon-button.tsx&#96; (NEW)\n\n**Purpose**: Accessible icon-only button wrapper\n\n**Visual Structure**:\n&#96;&#96;&#96;\n[✏️]  or  [🗑️]\n&#96;&#96;&#96;\n(Actual icons from Heroicons, not emoji)\n\n**Data Requirements**:\n- Icon component (from @heroicons/react)\n- Accessible label (for screen readers)\n- Click handler\n- Variant (primary/danger for styling)\n\n**Props**:\n&#96;&#96;&#96;typescript\ninterface IconButtonProps {\n  icon: React.ComponentType&lt;{ className?: string; 'aria-hidden'?: boolean }&gt;;\n  label: string;\n  onClick: () =&gt; void;\n  variant?: 'primary' | 'danger';\n  className?: string;\n}\n&#96;&#96;&#96;\n\n**Accessibility Attributes**:\n- &#96;aria-label&#96;: Contextual label (e.g., \"Edit Alice Johnson\", \"Delete Alice Johnson\")\n- &#96;aria-hidden=\"true\"&#96; on icon itself\n- &#96;type=\"button\"&#96; to prevent form submission\n\n---\n\n### 7. TeacherCreateForm Component (Modified)\n\n**Location**: &#96;web-client/src/features/teacher/ui/teacher-create-form.tsx&#96; (EXISTING - MODIFY)\n\n**Purpose**: Form for creating new teachers\n\n**Changes**: \n- Improved spacing between form elements\n- No structural changes to data handling\n\n**Visual Structure** (spacing improved):\n&#96;&#96;&#96;\n┌─────────────────────────────────────┐\n│ Create New Teacher                  │  ← Section heading\n│                                     │  ← space-y-6 (24px)\n│ Full Name:                          │\n│ [____________________]              │  ← space-y-2 (8px)\n│                                     │\n│ [Add Teacher]  [Clear]              │  ← gap-3 (12px between buttons)\n└─────────────────────────────────────┘\n&#96;&#96;&#96;\n\n**Data Requirements** (unchanged):\n- &#96;TeacherStoragePort&#96; for storage operations\n- Form state (fullName input value)\n- Validation state (error messages)\n\n**Props** (existing, unchanged):\n&#96;&#96;&#96;typescript\ninterface TeacherCreateFormProps {\n  storage: TeacherStoragePort;\n}\n&#96;&#96;&#96;\n\n---\n\n### 8. TeacherEditForm Component (Modified)\n\n**Location**: &#96;web-client/src/features/teacher/ui/teacher-edit-form.tsx&#96; (EXISTING - MODIFY)\n\n**Purpose**: Inline form for editing teacher name\n\n**Changes**:\n- Replace text buttons with icon buttons\n- No data model changes\n\n**Data Requirements** (unchanged):\n- Teacher being edited\n- Storage port\n- Callbacks for save/cancel\n\n**Props** (existing, may need icon variant added):\n&#96;&#96;&#96;typescript\ninterface TeacherEditFormProps {\n  teacher: Teacher;\n  storage: TeacherStoragePort;\n  onSave: () =&gt; void;\n  onCancel: () =&gt; void;\n}\n&#96;&#96;&#96;\n\n---\n\n### 9. TeacherDeleteButton Component (Modified)\n\n**Location**: &#96;web-client/src/features/teacher/ui/teacher-delete-button.tsx&#96; (EXISTING - MODIFY)\n\n**Purpose**: Delete button with confirmation dialog\n\n**Changes**:\n- Convert from text button to icon button\n- Maintain existing confirmation logic\n\n**Data Requirements** (unchanged):\n- Teacher to delete\n- Storage port\n- Success callback\n\n**Props** (existing, unchanged):\n&#96;&#96;&#96;typescript\ninterface TeacherDeleteButtonProps {\n  teacher: Teacher;\n  storage: TeacherStoragePort;\n  onDelete: () =&gt; void;\n}\n&#96;&#96;&#96;\n\n---\n\n## Component Data Flow\n\n&#96;&#96;&#96;\nApp.tsx (existing)\n  └─&gt; CommonLayout (NEW)\n        ├─&gt; AppLogo (NEW)\n        └─&gt; PageHeader (NEW)\n              └─&gt; TeacherPage (NEW)\n                    ├─&gt; TeacherCreateForm (MODIFIED - spacing)\n                    └─&gt; TeacherList (MODIFIED - table layout)\n                          └─&gt; TeacherListItem (NEW) × N\n                                ├─&gt; IconButton (edit) (NEW)\n                                └─&gt; IconButton (delete) (NEW)\n                                      └─&gt; TeacherDeleteButton (MODIFIED - icon)\n&#96;&#96;&#96;\n\n**State Management**:\n- No state management changes\n- Existing &#96;useTeachers&#96; hook continues to manage teacher list\n- Storage layer (IndexedDB/Memory) unchanged\n- Component local state for edit mode, form inputs unchanged\n\n---\n\n## Visual Data Representation Changes\n\n### Before (Current)\n\n&#96;&#96;&#96;\nTeacher Management                     ← h1, large\n\n┌─────────────────────┐\n│ Alice Johnson       │                ← Card layout\n│ [Edit] [Delete]     │\n└─────────────────────┘\n\n┌─────────────────────┐\n│ Bob Smith           │\n│ [Edit] [Delete]     │\n└─────────────────────┘\n&#96;&#96;&#96;\n\n### After (New Design)\n\n&#96;&#96;&#96;\n[Logo] Dasein                          ← Common header (new)\n\nTeachers                               ← h2, smaller (new)\n\n┌────────────────────┬──────────┐\n│ Teacher Name       │ Actions  │     ← Table layout (new)\n├────────────────────┼──────────┤\n│ Alice Johnson      │ [✏️] [🗑️] │     ← Icons instead of text (new)\n│ Bob Smith          │ [✏️] [🗑️] │\n└────────────────────┴──────────┘\n&#96;&#96;&#96;\n\n**Key Differences**:\n1. Common header added (reusable across future pages)\n2. Page title reduced in size and prominence\n3. Card layout → table layout (horizontal alignment)\n4. Actions moved from below name to same row\n5. Text buttons → icon buttons (space efficient)\n\n---\n\n## Empty State\n\n**Scenario**: No teachers exist\n\n**Visual Representation**:\n&#96;&#96;&#96;\n┌────────────────────┬──────────┐\n│ Teacher Name       │ Actions  │\n├────────────────────┼──────────┤\n│ (No teachers yet)              │     ← Empty state message\n└────────────────────────────────┘\n&#96;&#96;&#96;\n\n**Implementation**: &#96;tbody&#96; with single &#96;tr&#96; spanning columns, or hidden table with message div.\n\n---\n\n## Accessibility Data Attributes\n\n### Icon Buttons\n- &#96;aria-label&#96;: Dynamic, includes teacher name for context\n  - Edit: &#96;\"Edit {teacher.fullName}\"&#96;\n  - Delete: &#96;\"Delete {teacher.fullName}\"&#96;\n- &#96;aria-hidden=\"true\"&#96;: On icon SVG elements\n\n### Table\n- &#96;&lt;th scope=\"col\"&gt;&#96;: Column headers\n- Optional &#96;&lt;caption&gt;&#96;: \"List of teachers\" (can be visually hidden)\n\n### Logo\n- &#96;&lt;span className=\"sr-only\"&gt;&#96;: \"Dasein - Educational Schedule Management\"\n- &#96;aria-hidden=\"true\"&#96;: On logo SVG\n\n---\n\n## Summary\n\nThis feature modifies **presentation only**, not data:\n\n**Unchanged**:\n- Teacher entity structure\n- Storage layer (IndexedDB, TeacherStoragePort)\n- Business logic (CRUD operations, validation)\n- State management patterns\n\n**Changed**:\n- Visual layout (cards → table)\n- Component composition (extracted page, added common layout)\n- Button presentation (text → icons)\n- Spacing/typography (improved whitespace)\n\n**New Components**: 6 (CommonLayout, PageHeader, AppLogo, IconButton, TeacherPage, TeacherListItem)  \n**Modified Components**: 4 (TeacherList, TeacherCreateForm, TeacherEditForm, TeacherDeleteButton)\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Generate contracts (Phase 1)* (6/8)**
+
+- [x] Fill Technical Context section
+  > Analyze the project and fill in language, dependencies, testing framework, and constraints
+- [x] Perform Constitution Check
+  > Review constitution.md and validate feature against core principles
+- [x] Define Project Structure
+  > Document the source code structure for this UI redesign feature
+- [x] Generate research.md (Phase 0)
+  > Research Heroicons integration, React component patterns, and accessibility best practices
+- [x] Generate data-model.md (Phase 1)
+  > Document UI component structure and data flow (no data model changes for this feature)
+- [-] Generate contracts (Phase 1)
+  > Define component interfaces and props contracts
+- [ ] Generate quickstart.md (Phase 1)
+  > Create development setup and testing guide for the redesigned UI
+- [ ] Update agent context
+  > Run update-agent-context.sh to update Copilot instructions
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/contracts/component-interfaces.md",
+  "relativeWorkspacePath": "component-interfaces.md"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/contracts/component-interfaces.md)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/contracts/component-interfaces.md)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "# Component Interface Contracts\n\n**Created**: 2025-11-21  \n**Feature**: [spec.md](../spec.md)  \n**Plan**: [plan.md](../plan.md)\n\n## Overview\n\nThis document defines the interface contracts (props, callbacks, events) for all components in the teacher page redesign. These contracts are transport-agnostic and define the logical operations and data shapes each component expects.\n\n---\n\n## Design System Components\n\n### CommonLayout\n\n**Purpose**: Application-wide layout wrapper providing consistent header with branding\n\n**Interface**:\n&#96;&#96;&#96;typescript\ninterface CommonLayoutProps {\n  /** Page content to render within the layout */\n  children: React.ReactNode;\n}\n&#96;&#96;&#96;\n\n**Contract**:\n- **Input**: ReactNode children (any valid React content)\n- **Output**: Rendered layout with header + children in content area\n- **Side Effects**: None\n- **Invariants**: \n  - Header always displays logo and \"Dasein\" text\n  - Logo is always positioned at top-left\n  - Children always render below header\n\n**Usage Example**:\n&#96;&#96;&#96;tsx\n&lt;CommonLayout&gt;\n  &lt;div&gt;Your page content here&lt;/div&gt;\n&lt;/CommonLayout&gt;\n&#96;&#96;&#96;\n\n---\n\n### PageHeader\n\n**Purpose**: Standardized page-level heading component\n\n**Interface**:\n&#96;&#96;&#96;typescript\ninterface PageHeaderProps {\n  /** Page title text */\n  title: string;\n}\n&#96;&#96;&#96;\n\n**Contract**:\n- **Input**: String title\n- **Output**: Rendered h2 element with consistent styling\n- **Side Effects**: None\n- **Invariants**:\n  - Always renders as h2 (not h1)\n  - Font size smaller than main app header\n  - Title is never empty (validation responsibility of caller)\n\n**Usage Example**:\n&#96;&#96;&#96;tsx\n&lt;PageHeader title=\"Teachers\" /&gt;\n&#96;&#96;&#96;\n\n---\n\n### IconButton\n\n**Purpose**: Accessible icon-only button with semantic label\n\n**Interface**:\n&#96;&#96;&#96;typescript\ninterface IconButtonProps {\n  /** Heroicon component to render */\n  icon: React.ComponentType&lt;{\n    className?: string;\n    'aria-hidden'?: boolean;\n  }&gt;;\n  \n  /** Accessible label for screen readers (required) */\n  label: string;\n  \n  /** Click handler */\n  onClick: () =&gt; void;\n  \n  /** Visual variant for styling */\n  variant?: 'primary' | 'danger';\n  \n  /** Additional CSS classes */\n  className?: string;\n  \n  /** Disabled state */\n  disabled?: boolean;\n}\n&#96;&#96;&#96;\n\n**Contract**:\n- **Input**: Icon component, accessible label, click handler, optional variant/classes\n- **Output**: Button element with icon, proper ARIA attributes\n- **Side Effects**: Executes onClick when activated\n- **Invariants**:\n  - Icon has &#96;aria-hidden=\"true\"&#96;\n  - Button has &#96;aria-label&#96; matching &#96;label&#96; prop\n  - Button is keyboard accessible (tab, enter, space)\n  - &#96;type=\"button\"&#96; prevents form submission\n  - When disabled, onClick is not executed\n\n**Accessibility**:\n- WCAG 2.1 AA compliant\n- Label must include context (e.g., \"Edit John Doe\", not just \"Edit\")\n- Minimum touch target: 44×44px (mobile)\n- Color contrast ratio ≥ 4.5:1\n\n**Usage Example**:\n&#96;&#96;&#96;tsx\n&lt;IconButton\n  icon={PencilIcon}\n  label=\"Edit Alice Johnson\"\n  onClick={handleEdit}\n  variant=\"primary\"\n/&gt;\n&#96;&#96;&#96;\n\n---\n\n### AppLogo\n\n**Purpose**: Application branding component (logo + name)\n\n**Interface**:\n&#96;&#96;&#96;typescript\n// No props - self-contained component\n&#96;&#96;&#96;\n\n**Contract**:\n- **Input**: None\n- **Output**: Logo SVG + \"Dasein\" text with screen reader context\n- **Side Effects**: None\n- **Invariants**:\n  - Logo SVG has &#96;aria-hidden=\"true\"&#96;\n  - Visible text \"Dasein\" always present\n  - Screen-reader-only text provides full context\n\n**Accessibility**:\n- Logo decorative (aria-hidden)\n- Visible text label \"Dasein\"\n- SR-only span: \"Dasein - Educational Schedule Management\"\n\n**Usage Example**:\n&#96;&#96;&#96;tsx\n&lt;AppLogo /&gt;\n&#96;&#96;&#96;\n\n---\n\n## Feature Components (Teacher Management)\n\n### TeacherPage\n\n**Purpose**: Container for teacher management functionality\n\n**Interface**:\n&#96;&#96;&#96;typescript\ninterface TeacherPageProps {\n  /** Storage adapter for teacher operations */\n  storage: TeacherStoragePort;\n}\n&#96;&#96;&#96;\n\n**Contract**:\n- **Input**: Storage port implementation\n- **Output**: Rendered create form + teacher list\n- **Side Effects**: \n  - Fetches teachers from storage on mount\n  - Subscribes to storage changes\n- **Invariants**:\n  - Storage must be initialized before mounting\n  - Component handles loading/error states\n  - Refreshes list after create/edit/delete\n\n**Error Handling**:\n- Storage initialization failure → error message displayed\n- Load failure → error message with retry option\n\n**Usage Example**:\n&#96;&#96;&#96;tsx\n&lt;TeacherPage storage={indexedDBAdapter} /&gt;\n&#96;&#96;&#96;\n\n---\n\n### TeacherList\n\n**Purpose**: Display teachers in table format with actions\n\n**Interface**:\n&#96;&#96;&#96;typescript\ninterface TeacherListProps {\n  /** Storage adapter for edit/delete operations */\n  storage: TeacherStoragePort;\n}\n&#96;&#96;&#96;\n\n**Contract**:\n- **Input**: Storage port implementation\n- **Output**: Table of teachers with inline edit/delete actions\n- **Side Effects**:\n  - Reads teachers from storage\n  - Writes updates/deletes to storage\n  - Manages edit mode state\n- **Invariants**:\n  - Teachers sorted alphabetically by fullName\n  - Only one teacher in edit mode at a time\n  - Empty state shown when no teachers exist\n\n**Behavior**:\n- **Empty List**: Shows message \"No teachers yet\" in table\n- **Edit Mode**: Replaces row with inline edit form\n- **Delete**: Shows confirmation dialog before deletion\n- **Focus Management**: Returns focus to trigger button after edit/delete\n\n**Usage Example**:\n&#96;&#96;&#96;tsx\n&lt;TeacherList storage={storageAdapter} /&gt;\n&#96;&#96;&#96;\n\n---\n\n### TeacherListItem\n\n**Purpose**: Render single teacher row with actions\n\n**Interface**:\n&#96;&#96;&#96;typescript\ninterface TeacherListItemProps {\n  /** Teacher data to display */\n  teacher: Teacher;\n  \n  /** Callback when edit button clicked */\n  onEdit: (teacher: Teacher) =&gt; void;\n  \n  /** Callback when delete button clicked */\n  onDelete: (teacher: Teacher) =&gt; void;\n  \n  /** Whether this teacher is currently being edited */\n  isEditing: boolean;\n}\n&#96;&#96;&#96;\n\n**Contract**:\n- **Input**: Teacher object, action callbacks, edit state\n- **Output**: Table row (&lt;tr&gt;) with teacher name and action buttons\n- **Side Effects**: \n  - Calls onEdit when edit button clicked\n  - Calls onDelete when delete button clicked\n- **Invariants**:\n  - If isEditing=true, show edit form instead of name\n  - Icon buttons include teacher name in aria-label\n\n**Accessibility**:\n- Edit button: &#96;aria-label=\"Edit {teacher.fullName}\"&#96;\n- Delete button: &#96;aria-label=\"Delete {teacher.fullName}\"&#96;\n\n**Usage Example**:\n&#96;&#96;&#96;tsx\n&lt;TeacherListItem\n  teacher={teacher}\n  onEdit={handleEdit}\n  onDelete={handleDelete}\n  isEditing={editingId === teacher.id}\n/&gt;\n&#96;&#96;&#96;\n\n---\n\n### TeacherCreateForm\n\n**Purpose**: Form for creating new teachers\n\n**Interface**:\n&#96;&#96;&#96;typescript\ninterface TeacherCreateFormProps {\n  /** Storage adapter for create operation */\n  storage: TeacherStoragePort;\n}\n&#96;&#96;&#96;\n\n**Contract**:\n- **Input**: Storage port implementation\n- **Output**: Form with name input and submit button\n- **Side Effects**:\n  - Writes new teacher to storage on submit\n  - Clears form after successful creation\n- **Invariants**:\n  - Validates fullName (non-empty, not whitespace-only)\n  - Shows error message for invalid input\n  - Disables submit while saving\n  - Form fields have proper spacing (space-y-6, space-y-2)\n\n**Validation Rules**:\n- &#96;fullName&#96;: Required, trimmed, non-empty after trim\n- Error message: \"Teacher name is required\" or \"Teacher name cannot be only whitespace\"\n\n**Accessibility**:\n- Label associated with input (&#96;htmlFor&#96;/&#96;id&#96;)\n- Error message has &#96;role=\"alert\"&#96;\n- Error message referenced by &#96;aria-describedby&#96; on input\n- Submit button disabled during submission\n\n**Usage Example**:\n&#96;&#96;&#96;tsx\n&lt;TeacherCreateForm storage={storageAdapter} /&gt;\n&#96;&#96;&#96;\n\n---\n\n### TeacherEditForm\n\n**Purpose**: Inline edit form for teacher name\n\n**Interface**:\n&#96;&#96;&#96;typescript\ninterface TeacherEditFormProps {\n  /** Teacher being edited */\n  teacher: Teacher;\n  \n  /** Storage adapter for update operation */\n  storage: TeacherStoragePort;\n  \n  /** Callback when save successful */\n  onSave: () =&gt; void;\n  \n  /** Callback when edit cancelled */\n  onCancel: () =&gt; void;\n}\n&#96;&#96;&#96;\n\n**Contract**:\n- **Input**: Teacher to edit, storage port, callbacks\n- **Output**: Inline form with input and save/cancel icon buttons\n- **Side Effects**:\n  - Writes updated teacher to storage on save\n  - Calls onSave on successful update\n  - Calls onCancel when cancelled or on Escape key\n- **Invariants**:\n  - Initial value is teacher.fullName\n  - Same validation as create form\n  - Escape key cancels edit\n  - Enter key submits (unless invalid)\n\n**Icon Buttons**:\n- Save: CheckIcon with &#96;aria-label=\"Save changes to {teacher.fullName}\"&#96;\n- Cancel: XMarkIcon with &#96;aria-label=\"Cancel editing {teacher.fullName}\"&#96;\n\n**Usage Example**:\n&#96;&#96;&#96;tsx\n&lt;TeacherEditForm\n  teacher={teacher}\n  storage={storageAdapter}\n  onSave={exitEditMode}\n  onCancel={exitEditMode}\n/&gt;\n&#96;&#96;&#96;\n\n---\n\n### TeacherDeleteButton\n\n**Purpose**: Delete button with confirmation dialog\n\n**Interface**:\n&#96;&#96;&#96;typescript\ninterface TeacherDeleteButtonProps {\n  /** Teacher to delete */\n  teacher: Teacher;\n  \n  /** Storage adapter for delete operation */\n  storage: TeacherStoragePort;\n  \n  /** Callback after successful deletion */\n  onDelete: () =&gt; void;\n}\n&#96;&#96;&#96;\n\n**Contract**:\n- **Input**: Teacher to delete, storage port, callback\n- **Output**: Icon button that shows confirmation dialog\n- **Side Effects**:\n  - Shows native confirm() dialog on click\n  - Deletes from storage if confirmed\n  - Calls onDelete after successful deletion\n- **Invariants**:\n  - Confirmation message includes teacher name\n  - No deletion if user cancels\n  - Focus returns to list after deletion\n\n**Confirmation Message**: &#96;\"Are you sure you want to delete {teacher.fullName}?\"&#96;\n\n**Icon**: TrashIcon with &#96;aria-label=\"Delete {teacher.fullName}\"&#96;\n\n**Usage Example**:\n&#96;&#96;&#96;tsx\n&lt;TeacherDeleteButton\n  teacher={teacher}\n  storage={storageAdapter}\n  onDelete={refreshList}\n/&gt;\n&#96;&#96;&#96;\n\n---\n\n## Storage Port Contract (Unchanged)\n\nFor reference, the existing storage interface that components depend on:\n\n&#96;&#96;&#96;typescript\ninterface TeacherStoragePort {\n  initialize(): Promise&lt;{ success: boolean; error?: string }&gt;;\n  create(teacher: Omit&lt;Teacher, 'id' | 'createdAt'&gt;): Promise&lt;Teacher&gt;;\n  read(): Promise&lt;Teacher[]&gt;;\n  update(teacher: Teacher): Promise&lt;void&gt;;\n  delete(id: string): Promise&lt;void&gt;;\n}\n&#96;&#96;&#96;\n\n**Note**: This interface is not modified by this feature. All components continue using it as-is.\n\n---\n\n## Validation Contract\n\nShared validation logic for teacher names:\n\n&#96;&#96;&#96;typescript\ninterface NameValidation {\n  /** Validate teacher name */\n  validate(name: string): ValidationResult;\n}\n\ninterface ValidationResult {\n  /** Whether name is valid */\n  valid: boolean;\n  \n  /** Error message if invalid */\n  error?: string;\n}\n&#96;&#96;&#96;\n\n**Rules**:\n1. Name cannot be empty string\n2. Name cannot be whitespace-only after trim\n3. Name is trimmed before storage\n\n**Implementation** (existing, unchanged):\n&#96;&#96;&#96;typescript\nfunction validateTeacherName(name: string): ValidationResult {\n  const trimmed = name.trim();\n  if (trimmed === '') {\n    return {\n      valid: false,\n      error: name.length === 0 \n        ? 'Teacher name is required'\n        : 'Teacher name cannot be only whitespace'\n    };\n  }\n  return { valid: true };\n}\n&#96;&#96;&#96;\n\n---\n\n## Event Flow Contracts\n\n### Create Teacher Flow\n\n&#96;&#96;&#96;\nUser Input (name) \n  → TeacherCreateForm.onSubmit()\n  → Validate name\n  → storage.create({ fullName })\n  → storage.read() to refresh\n  → Clear form\n&#96;&#96;&#96;\n\n**Success**: Form cleared, new teacher appears in list\n**Failure**: Error message shown, form retains input\n\n---\n\n### Edit Teacher Flow\n\n&#96;&#96;&#96;\nUser clicks edit icon\n  → TeacherList sets editingId\n  → TeacherListItem renders TeacherEditForm\n  → User edits name\n  → TeacherEditForm.onSave()\n  → Validate name\n  → storage.update(teacher)\n  → storage.read() to refresh\n  → TeacherList clears editingId\n&#96;&#96;&#96;\n\n**Cancel**: Escape key or cancel icon → clears editingId without save\n\n---\n\n### Delete Teacher Flow\n\n&#96;&#96;&#96;\nUser clicks delete icon\n  → TeacherDeleteButton.onClick()\n  → Show confirmation dialog\n  → If confirmed:\n      → storage.delete(teacher.id)\n      → storage.read() to refresh\n      → onDelete() callback\n&#96;&#96;&#96;\n\n**Cancel**: User cancels dialog → no storage operation\n\n---\n\n## Accessibility Contracts\n\nAll components must satisfy:\n\n1. **Keyboard Navigation**:\n   - All interactive elements reachable via Tab\n   - Enter/Space activate buttons\n   - Escape cancels edit mode/dialogs\n\n2. **Screen Reader Support**:\n   - All buttons have accessible names (aria-label or visible text)\n   - Decorative icons marked aria-hidden\n   - Form inputs have associated labels\n   - Error messages announced (role=\"alert\")\n\n3. **Focus Management**:\n   - Focus trapped in edit mode (Enter saves, Escape cancels)\n   - Focus returns to trigger after modal operations\n   - Tab order is logical (left-to-right, top-to-bottom)\n\n4. **Color Independence**:\n   - Information not conveyed by color alone\n   - Error states have icons/text, not just red color\n   - Sufficient contrast ratios (4.5:1 minimum)\n\n---\n\n## Testing Contracts\n\nEach component must provide:\n\n1. **Unit Tests**:\n   - Renders with required props\n   - Callbacks invoked with correct arguments\n   - Validation logic correct\n\n2. **Accessibility Tests**:\n   - No axe violations\n   - Keyboard navigation works\n   - Screen reader labels present\n\n3. **Integration Tests**:\n   - Component integrates with storage port\n   - State updates reflect in UI\n   - Error states handled gracefully\n\n4. **E2E Tests** (for full flows):\n   - Create → appears in list\n   - Edit → updates in list\n   - Delete → removes from list\n   - Accessibility maintained end-to-end\n\n---\n\n## Summary\n\n**Total Contracts**: 10 components  \n**New Contracts**: 6 (CommonLayout, PageHeader, IconButton, AppLogo, TeacherPage, TeacherListItem)  \n**Modified Contracts**: 4 (TeacherList, TeacherCreateForm, TeacherEditForm, TeacherDeleteButton)  \n\nAll contracts maintain:\n- Type safety (TypeScript)\n- Accessibility (WCAG 2.1 AA)\n- Testability (clear inputs/outputs)\n- Separation of concerns (props vs implementation)\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Generate quickstart.md (Phase 1)* (7/8)**
+
+- [x] Fill Technical Context section
+  > Analyze the project and fill in language, dependencies, testing framework, and constraints
+- [x] Perform Constitution Check
+  > Review constitution.md and validate feature against core principles
+- [x] Define Project Structure
+  > Document the source code structure for this UI redesign feature
+- [x] Generate research.md (Phase 0)
+  > Research Heroicons integration, React component patterns, and accessibility best practices
+- [x] Generate data-model.md (Phase 1)
+  > Document UI component structure and data flow (no data model changes for this feature)
+- [x] Generate contracts (Phase 1)
+  > Define component interfaces and props contracts
+- [-] Generate quickstart.md (Phase 1)
+  > Create development setup and testing guide for the redesigned UI
+- [ ] Update agent context
+  > Run update-agent-context.sh to update Copilot instructions
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_createFile">
+<details>
+<summary>Tool use: **copilot_createFile**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "/Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/quickstart.md",
+  "relativeWorkspacePath": "quickstart.md"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_createFile",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Creating [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/quickstart.md)",
+  "pastTenseMessage": "Created [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/quickstart.md)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "# Quickstart: Teacher Management Page Redesign\n\n**Created**: 2025-11-21  \n**Feature**: [spec.md](./spec.md)  \n**Plan**: [plan.md](./plan.md)\n\n## Overview\n\nThis guide helps developers get started implementing and testing the teacher management page redesign. Follow these steps to set up your environment, understand the architecture, and run tests.\n\n---\n\n## Prerequisites\n\n- Node.js 18+ installed\n- npm or yarn package manager\n- Git repository cloned\n- Basic familiarity with React, TypeScript, and Tailwind CSS\n\n---\n\n## Quick Setup\n\n### 1. Install Dependencies\n\nNavigate to the web-client directory and install the new dependency:\n\n&#96;&#96;&#96;bash\ncd /path/to/dasein-monorepo/web-client\nnpm install @heroicons/react\n&#96;&#96;&#96;\n\n**What this adds**: Heroicons React components for icon-based buttons\n\n### 2. Verify Existing Setup\n\nEnsure existing dependencies are installed:\n\n&#96;&#96;&#96;bash\nnpm install\n&#96;&#96;&#96;\n\n**Key dependencies** (already in package.json):\n- &#96;react@^19.0.0&#96; - UI framework\n- &#96;tailwindcss@^4.1.17&#96; - Styling\n- &#96;vitest@^1.5.0&#96; - Unit/integration testing\n- &#96;@playwright/test@^1.48.0&#96; - E2E testing\n- &#96;jest-axe@^8.0.0&#96; - Accessibility testing\n\n### 3. Start Development Server\n\n&#96;&#96;&#96;bash\nnpm run dev\n&#96;&#96;&#96;\n\n**Expected output**: Vite dev server at &#96;http://localhost:5173&#96;\n\n### 4. Verify Current Teacher Management Page\n\n1. Open &#96;http://localhost:5173&#96; in browser\n2. Confirm current design:\n   - \"Teacher Management\" heading\n   - Card-based teacher list\n   - Text buttons (\"Edit\", \"Delete\")\n\n---\n\n## Architecture Overview\n\n### Component Hierarchy\n\n&#96;&#96;&#96;\nApp.tsx\n  └─&gt; CommonLayout (NEW)\n        ├─&gt; AppLogo (NEW)\n        └─&gt; PageHeader (NEW)\n              └─&gt; TeacherPage (NEW)\n                    ├─&gt; TeacherCreateForm (MODIFIED)\n                    └─&gt; TeacherList (MODIFIED)\n                          └─&gt; TeacherListItem (NEW)\n                                ├─&gt; IconButton (edit) (NEW)\n                                └─&gt; IconButton (delete) (NEW)\n&#96;&#96;&#96;\n\n### Directory Structure\n\n&#96;&#96;&#96;\nweb-client/src/\n├── design-system/          # Reusable UI components\n│   ├── layout/\n│   │   ├── common-layout.tsx      (NEW)\n│   │   ├── page-header.tsx        (NEW)\n│   │   └── app-layout.tsx         (EXISTING)\n│   ├── components/\n│   │   └── icon-button.tsx        (NEW)\n│   └── assets/\n│       └── dasein_logo.svg        (EXISTING)\n│\n└── features/teacher/       # Teacher domain logic\n    ├── ui/\n    │   ├── teacher-page.tsx           (NEW)\n    │   ├── teacher-list.tsx           (MODIFIED)\n    │   ├── teacher-list-item.tsx      (NEW)\n    │   ├── teacher-create-form.tsx    (MODIFIED)\n    │   ├── teacher-edit-form.tsx      (MODIFIED)\n    │   └── teacher-delete-button.tsx  (MODIFIED)\n    ├── model/\n    │   └── teacher.ts                 (UNCHANGED)\n    └── storage/\n        └── storage-port.ts            (UNCHANGED)\n&#96;&#96;&#96;\n\n---\n\n## Development Workflow (Test-First)\n\n### Step 1: Write Tests FIRST\n\nBefore implementing any component, write tests that **fail**:\n\n#### Example: CommonLayout Component\n\n&#96;&#96;&#96;bash\n# Create test file FIRST\ntouch web-client/src/design-system/layout/__tests__/common-layout.test.tsx\n&#96;&#96;&#96;\n\n**Test content** (write this first):\n&#96;&#96;&#96;tsx\nimport { render, screen } from '@testing-library/react';\nimport { CommonLayout } from '../common-layout';\n\ndescribe('CommonLayout', () =&gt; {\n  it('renders logo and application name', () =&gt; {\n    render(\n      &lt;CommonLayout&gt;\n        &lt;div&gt;Test content&lt;/div&gt;\n      &lt;/CommonLayout&gt;\n    );\n    \n    expect(screen.getByText('Dasein')).toBeInTheDocument();\n    // Logo presence test (depends on implementation)\n  });\n\n  it('renders children in content area', () =&gt; {\n    render(\n      &lt;CommonLayout&gt;\n        &lt;div data-testid=\"test-content\"&gt;Test content&lt;/div&gt;\n      &lt;/CommonLayout&gt;\n    );\n    \n    expect(screen.getByTestId('test-content')).toBeInTheDocument();\n  });\n});\n&#96;&#96;&#96;\n\n**Run test** (should FAIL - component doesn't exist yet):\n&#96;&#96;&#96;bash\nnpm test -- common-layout.test.tsx\n&#96;&#96;&#96;\n\n### Step 2: Implement Component\n\nOnly after test fails, implement the component:\n\n&#96;&#96;&#96;tsx\n// web-client/src/design-system/layout/common-layout.tsx\nimport React from 'react';\nimport { AppLogo } from './app-logo';\n\ninterface CommonLayoutProps {\n  children: React.ReactNode;\n}\n\nexport function CommonLayout({ children }: CommonLayoutProps) {\n  return (\n    &lt;div className=\"min-h-screen flex flex-col\"&gt;\n      &lt;header className=\"bg-white border-b border-gray-200 px-6 py-4\"&gt;\n        &lt;AppLogo /&gt;\n      &lt;/header&gt;\n      &lt;main className=\"flex-1 px-6 py-8\"&gt;\n        {children}\n      &lt;/main&gt;\n    &lt;/div&gt;\n  );\n}\n&#96;&#96;&#96;\n\n### Step 3: Run Tests (should PASS)\n\n&#96;&#96;&#96;bash\nnpm test -- common-layout.test.tsx\n&#96;&#96;&#96;\n\n**Expected**: ✅ All tests pass\n\n### Step 4: Accessibility Tests\n\nAdd accessibility test:\n\n&#96;&#96;&#96;tsx\n// web-client/src/design-system/layout/__tests__/common-layout-a11y.test.tsx\nimport { render } from '@testing-library/react';\nimport { axe, toHaveNoViolations } from 'jest-axe';\nimport { CommonLayout } from '../common-layout';\n\nexpect.extend(toHaveNoViolations);\n\ndescribe('CommonLayout Accessibility', () =&gt; {\n  it('has no axe violations', async () =&gt; {\n    const { container } = render(\n      &lt;CommonLayout&gt;\n        &lt;div&gt;Content&lt;/div&gt;\n      &lt;/CommonLayout&gt;\n    );\n    \n    const results = await axe(container);\n    expect(results).toHaveNoViolations();\n  });\n});\n&#96;&#96;&#96;\n\n**Run**:\n&#96;&#96;&#96;bash\nnpm test -- common-layout-a11y.test.tsx\n&#96;&#96;&#96;\n\n---\n\n## Testing Guide\n\n### Unit Tests (Vitest + Testing Library)\n\n**Run all unit tests**:\n&#96;&#96;&#96;bash\nnpm test\n&#96;&#96;&#96;\n\n**Run specific test file**:\n&#96;&#96;&#96;bash\nnpm test -- teacher-list.test.tsx\n&#96;&#96;&#96;\n\n**Run in watch mode**:\n&#96;&#96;&#96;bash\nnpm run test:watch\n&#96;&#96;&#96;\n\n**Coverage report**:\n&#96;&#96;&#96;bash\nnpm test -- --coverage\n&#96;&#96;&#96;\n\n### Accessibility Tests (jest-axe)\n\nAll &#96;*-a11y.test.tsx&#96; files run axe checks:\n\n&#96;&#96;&#96;bash\nnpm test -- a11y\n&#96;&#96;&#96;\n\n**What to check**:\n- No axe violations\n- Proper ARIA labels\n- Keyboard navigation\n- Screen reader compatibility\n\n### E2E Tests (Playwright)\n\n**Run E2E tests**:\n&#96;&#96;&#96;bash\nnpm run e2e\n&#96;&#96;&#96;\n\n**Run in headed mode** (see browser):\n&#96;&#96;&#96;bash\nnpx playwright test --headed\n&#96;&#96;&#96;\n\n**Update tests for new UI**:\n\nOld selector (card-based):\n&#96;&#96;&#96;tsx\nawait page.locator('.teacher-card').filter({ hasText: 'Alice' });\n&#96;&#96;&#96;\n\nNew selector (table-based):\n&#96;&#96;&#96;tsx\nawait page.locator('table tbody tr').filter({ hasText: 'Alice' });\nawait page.getByRole('button', { name: 'Edit Alice Johnson' });\n&#96;&#96;&#96;\n\n### Test Coverage Requirements\n\n- **Unit tests**: All new components\n- **Accessibility tests**: All interactive components\n- **E2E tests**: Update existing teacher CRUD flows\n\n---\n\n## Common Tasks\n\n### Task 1: Create New Design System Component\n\n1. Write test first: &#96;src/design-system/components/__tests__/icon-button.test.tsx&#96;\n2. Implement component: &#96;src/design-system/components/icon-button.tsx&#96;\n3. Add accessibility test: &#96;icon-button-a11y.test.tsx&#96;\n4. Export from index: &#96;src/design-system/index.ts&#96;\n\n### Task 2: Modify Existing Teacher Component\n\n1. Read current component implementation\n2. Update tests to reflect new behavior (should fail)\n3. Modify component\n4. Run tests (should pass)\n5. Update E2E tests if selectors changed\n\n### Task 3: Add Icon to Button\n\n&#96;&#96;&#96;tsx\nimport { PencilIcon } from '@heroicons/react/24/outline';\n\n&lt;IconButton\n  icon={PencilIcon}\n  label=\"Edit Alice Johnson\"\n  onClick={handleEdit}\n  variant=\"primary\"\n/&gt;\n&#96;&#96;&#96;\n\n**Icon variants**:\n- &#96;@heroicons/react/24/outline&#96; - Outlined icons (default)\n- &#96;@heroicons/react/24/solid&#96; - Filled icons\n\n### Task 4: Update Tailwind Spacing\n\nCurrent (tight spacing):\n&#96;&#96;&#96;tsx\n&lt;div className=\"space-y-2\"&gt;\n  &lt;input /&gt;\n  &lt;button /&gt;\n&lt;/div&gt;\n&#96;&#96;&#96;\n\nNew (improved spacing):\n&#96;&#96;&#96;tsx\n&lt;form className=\"space-y-6\"&gt;          {/* 24px between sections */}\n  &lt;div className=\"space-y-2\"&gt;         {/* 8px label-to-input */}\n    &lt;label&gt;Name&lt;/label&gt;\n    &lt;input /&gt;\n  &lt;/div&gt;\n  &lt;div className=\"flex gap-3\"&gt;        {/* 12px between buttons */}\n    &lt;button&gt;Submit&lt;/button&gt;\n    &lt;button&gt;Cancel&lt;/button&gt;\n  &lt;/div&gt;\n&lt;/form&gt;\n&#96;&#96;&#96;\n\n---\n\n## Debugging Tips\n\n### Issue: Component Not Rendering\n\n**Check**:\n1. Component exported from file?\n2. Import path correct?\n3. Props passed correctly?\n4. React DevTools shows component in tree?\n\n### Issue: Tests Failing\n\n**Check**:\n1. Did you run tests BEFORE implementing? (Should fail initially)\n2. Are selectors correct? (Text content, roles, labels)\n3. Is component wrapped in necessary providers? (e.g., ThemeProvider)\n4. Are async operations awaited?\n\n### Issue: Accessibility Violations\n\n**Common fixes**:\n- Add &#96;aria-label&#96; to icon buttons\n- Add &#96;aria-hidden=\"true\"&#96; to decorative icons\n- Ensure form inputs have associated labels\n- Check color contrast with DevTools\n\n### Issue: Icons Not Showing\n\n**Check**:\n1. &#96;@heroicons/react&#96; installed?\n2. Import path correct? (&#96;@heroicons/react/24/outline&#96;)\n3. Icon component has &#96;className&#96; prop for sizing?\n4. Vite dev server restarted after install?\n\n---\n\n## Code Style Guidelines\n\n### TypeScript\n\n- Use strict mode (already enabled)\n- Define interface for all component props\n- Avoid &#96;any&#96; type\n- Use functional components (not class components)\n\n### React\n\n- Functional components with hooks\n- Use &#96;React.FC&#96; or explicit function syntax\n- Destructure props in function signature\n- One component per file\n\n### Tailwind CSS\n\n- Use utility classes, avoid custom CSS\n- Follow spacing scale: 2, 3, 4, 6, 8, 12, 16...\n- Use semantic class names for complex patterns\n- Keep className strings readable (one line per section if long)\n\n### File Naming\n\n- Components: &#96;kebab-case.tsx&#96; (e.g., &#96;teacher-list.tsx&#96;)\n- Tests: &#96;*.test.tsx&#96; for unit, &#96;*.e2e.ts&#96; for E2E\n- Accessibility tests: &#96;*-a11y.test.tsx&#96;\n\n---\n\n## Validation Checklist\n\nBefore submitting implementation:\n\n- [ ] All new tests written BEFORE implementation\n- [ ] All tests pass (&#96;npm test&#96;)\n- [ ] No accessibility violations (&#96;npm test -- a11y&#96;)\n- [ ] E2E tests updated and passing (&#96;npm run e2e&#96;)\n- [ ] Code follows style guidelines\n- [ ] No TypeScript errors (&#96;npm run build&#96;)\n- [ ] Manual testing in browser completed\n- [ ] Keyboard navigation works (Tab, Enter, Escape)\n- [ ] Screen reader tested (VoiceOver on Mac, NVDA on Windows)\n\n---\n\n## Reference Documentation\n\n### Internal Docs\n- [Feature Spec](./spec.md) - Requirements and user stories\n- [Implementation Plan](./plan.md) - Technical approach\n- [Research](./research.md) - Technology decisions\n- [Data Model](./data-model.md) - Component structure\n- [Contracts](./contracts/component-interfaces.md) - Component interfaces\n\n### External Resources\n- [Heroicons](https://heroicons.com/) - Icon library\n- [Tailwind CSS Docs](https://tailwindcss.com/docs) - Styling\n- [React Testing Library](https://testing-library.com/react) - Testing\n- [Playwright Docs](https://playwright.dev/) - E2E testing\n- [WAI-ARIA Practices](https://www.w3.org/WAI/ARIA/apg/) - Accessibility patterns\n\n---\n\n## Getting Help\n\n### Quick Reference Commands\n\n&#96;&#96;&#96;bash\n# Development\nnpm run dev                    # Start dev server\nnpm run build                  # Production build\n\n# Testing\nnpm test                       # Run all tests\nnpm run test:watch            # Watch mode\nnpm run e2e                   # E2E tests\nnpm test -- --coverage        # Coverage report\n\n# Linting\nnpm run lint                  # Check for errors\nnpm run lint:fix              # Auto-fix errors\nnpm run format                # Format code\n&#96;&#96;&#96;\n\n### Troubleshooting\n\n1. **Clear cache**: &#96;rm -rf node_modules/.vite &amp;&amp; npm run dev&#96;\n2. **Reinstall deps**: &#96;rm -rf node_modules &amp;&amp; npm install&#96;\n3. **Check TypeScript**: &#96;npx tsc --noEmit&#96;\n4. **Playwright debug**: &#96;npx playwright test --debug&#96;\n\n---\n\n## Next Steps\n\nAfter setup:\n\n1. Review [spec.md](./spec.md) for requirements\n2. Review [contracts](./contracts/component-interfaces.md) for component interfaces\n3. Start with Phase 1 Priority (P1) user story: Teacher list layout\n4. Follow test-first workflow for each component\n5. Validate accessibility continuously\n\n**Ready to start coding!** 🚀\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
+
+**Starting: *Update agent context* (8/8)**
+
+- [x] Fill Technical Context section
+  > Analyze the project and fill in language, dependencies, testing framework, and constraints
+- [x] Perform Constitution Check
+  > Review constitution.md and validate feature against core principles
+- [x] Define Project Structure
+  > Document the source code structure for this UI redesign feature
+- [x] Generate research.md (Phase 0)
+  > Research Heroicons integration, React component patterns, and accessibility best practices
+- [x] Generate data-model.md (Phase 1)
+  > Document UI component structure and data flow (no data model changes for this feature)
+- [x] Generate contracts (Phase 1)
+  > Define component interfaces and props contracts
+- [x] Generate quickstart.md (Phase 1)
+  > Create development setup and testing guide for the redesigned UI
+- [-] Update agent context
+  > Run update-agent-context.sh to update Copilot instructions
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_in_terminal">
+<details>
+<summary>Tool use: **run_in_terminal**</summary>
+
+
+Parameters:
+
+```json
+{
+  "kind": "terminal",
+  "terminalToolSessionId": "0502eb72-706d-418c-8341-e60d40af5100",
+  "terminalCommandId": "tool-b8be63aa-5e9e-44d8-9b04-65a22906995c",
+  "commandLine": {
+    "original": "cd /Users/aadroher/DevProjects/playground/dasein-monorepo &amp;&amp; .specify/scripts/bash/update-agent-context.sh copilot",
+    "toolEdited": ".specify/scripts/bash/update-agent-context.sh copilot"
+  },
+  "language": "sh"
+}
+```
+Additional data:
+
+```json
+{
+  "vscodeToolId": "run_in_terminal",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Run in Terminal\"",
+  "isConfirmed": {
+    "type": 4
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+I'll follow the instructions in the speckit.plan.prompt.md to create the implementation plan. Let me start by running the setup script. Now let me check the current project structure to understand the context better: Now let me create a comprehensive implementation plan. Let me start by filling out the `plan.md` file: Now let me replace the `plan.md` template with the actual implementation plan: Now let me generate the research.md file for Phase 0: Now let me create the data-model.md (which for this UI feature will document component structure rather than data entities): Now let me create the contracts directory and component interface contracts: Now let me create the quickstart.md guide: Now let me update the agent context: [object Object]
 
 ---
 
@@ -92,11 +1226,123 @@ _**User (2025-11-21 15:55Z)**_
 
 _**Agent (model copilot/claude-sonnet-4.5)**_
 
-Perfect! Now let me verify the generated artifacts and create a summary. Let me check if all files were created successfully: Excellent! All planning artifacts have been generated. Let me create a final summary in the plan.md: Now let me add a Phase Summary section to the `plan.md` to complete it: 
-```
+<tool-use data-tool-type="task" data-tool-name="manage_todo_list">
+<details>
+<summary>Tool use: **manage_todo_list** • Using "Manage and track todo items for task planning"</summary>
 
+**Completed: *Update agent context* (8/8)**
+
+- [x] Fill Technical Context section
+  > Analyze the project and fill in language, dependencies, testing framework, and constraints
+- [x] Perform Constitution Check
+  > Review constitution.md and validate feature against core principles
+- [x] Define Project Structure
+  > Document the source code structure for this UI redesign feature
+- [x] Generate research.md (Phase 0)
+  > Research Heroicons integration, React component patterns, and accessibility best practices
+- [x] Generate data-model.md (Phase 1)
+  > Document UI component structure and data flow (no data model changes for this feature)
+- [x] Generate contracts (Phase 1)
+  > Define component interfaces and props contracts
+- [x] Generate quickstart.md (Phase 1)
+  > Create development setup and testing guide for the redesigned UI
+- [x] Update agent context
+  > Run update-agent-context.sh to update Copilot instructions
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_listDirectory">
+<details>
+<summary>Tool use: **copilot_listDirectory**</summary>
+
+
+Parameters:
+
+```json
+{
+  "file_path": "Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign",
+  "relativeWorkspacePath": "003-teacher-page-redesign"
+}
 ```
-Perfect! Now let me provide a final summary to the user:
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_listDirectory",
+  "isHidden": false
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign)",
+  "pastTenseMessage": "Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign)",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "",
+  "textEditContent": "",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/plan.md)</summary>
+
+
+Read [](file:///Users/aadroher/DevProjects/playground/dasein-monorepo/specs/003-teacher-page-redesign/plan.md)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="copilot_replaceString">
+<details>
+<summary>Tool use: **copilot_replaceString**</summary>
+
+Additional data:
+
+```json
+{
+  "vscodeToolId": "copilot_replaceString",
+  "isHidden": true
+}
+```
+Result:
+
+```json
+{
+  "invocationMessage": "Using \"Replace String in File\"",
+  "isConfirmed": {
+    "type": 1
+  },
+  "content": "&#96;&#96;&#96;markdown\n**Structure Decision**: Web application structure (Option 2 variant). This is a pure frontend feature affecting the &#96;web-client/&#96; folder only. Changes focus on the design system's layout components and the teacher feature's UI components. No backend, API, or storage changes required. Follows existing pattern of separating design-system (reusable) from features (domain-specific).\n\n---\n\n## Phase Summary\n\n### Phase 0: Research ✅ COMPLETE\n\n**Deliverable**: [research.md](./research.md)\n\n**Key Decisions**:\n1. **Heroicons Integration**: Use &#96;@heroicons/react&#96; package (v2.x)\n2. **Accessible Icon Buttons**: Wrapper component with aria-label pattern\n3. **List Layout**: Semantic HTML table for better accessibility\n4. **Component Composition**: Extract page, create reusable common layout\n5. **Form Spacing**: Tailwind spacing utilities (space-y-6, space-y-2, gap-3)\n6. **Logo Implementation**: Use existing SVG with accessible wrapper\n\n**Dependencies Added**: &#96;@heroicons/react@^2.1.0&#96;\n\n---\n\n### Phase 1: Design &amp; Contracts ✅ COMPLETE\n\n**Deliverables**:\n- [data-model.md](./data-model.md) - Component structure and visual data representation\n- [contracts/component-interfaces.md](./contracts/component-interfaces.md) - Component props and interfaces\n- [quickstart.md](./quickstart.md) - Development setup and testing guide\n\n**Key Artifacts**:\n1. **Data Model**: \n   - No changes to Teacher entity\n   - Documented 10 component structures (6 new, 4 modified)\n   - Defined component data flow and visual transformations\n\n2. **Contracts**:\n   - 10 component interface contracts\n   - Accessibility requirements per component\n   - Validation contracts for shared logic\n   - Event flow specifications\n\n3. **Quickstart**:\n   - Setup instructions\n   - Test-first workflow examples\n   - Common tasks and debugging tips\n   - Validation checklist\n\n**Component Inventory**:\n- **New**: CommonLayout, PageHeader, AppLogo, IconButton, TeacherPage, TeacherListItem\n- **Modified**: TeacherList, TeacherCreateForm, TeacherEditForm, TeacherDeleteButton\n\n---\n\n### Phase 2: Task Breakdown (Next Step)\n\n**Command**: &#96;/speckit.tasks&#96; (NOT executed by &#96;/speckit.plan&#96;)\n\n**Expected Output**: &#96;tasks.md&#96; with:\n- Detailed implementation tasks\n- Test creation checklist\n- Task dependencies\n- Estimated effort per task\n\n---\n\n## Implementation Readiness\n\n**Status**: ✅ Ready for Phase 2 (Task Breakdown) and Implementation\n\n**Prerequisites Met**:\n- [x] Constitution gates passed\n- [x] Research completed (all NEEDS CLARIFICATION resolved)\n- [x] Component architecture defined\n- [x] Interface contracts documented\n- [x] Development workflow established\n- [x] Agent context updated\n\n**Next Steps**:\n1. Run &#96;/speckit.tasks&#96; to generate detailed task breakdown\n2. Begin test-first implementation following quickstart guide\n3. Install &#96;@heroicons/react&#96; dependency\n4. Create tests before each component implementation\n5. Validate accessibility continuously\n\n**Estimated Implementation Effort**: 2-3 days for experienced React developer\n\n**Risk Assessment**: LOW\n- Well-defined scope (UI only)\n- No data model changes\n- Existing test infrastructure\n- Clear accessibility requirements\n- Research decisions documented\n\n---\n\n## Reference Documentation\n\n- **Specification**: [spec.md](./spec.md)\n- **Research**: [research.md](./research.md)\n- **Data Model**: [data-model.md](./data-model.md)\n- **Contracts**: [contracts/component-interfaces.md](./contracts/component-interfaces.md)\n- **Quickstart**: [quickstart.md](./quickstart.md)\n- **Requirements Checklist**: [checklists/requirements.md](./checklists/requirements.md)\n\n&#96;&#96;&#96;\n\n",
+  "textEditContent": "**Structure Decision**: Web application structure (Option 2 variant). This is a pure frontend feature affecting the &#96;web-client/&#96; folder only. Changes focus on the design system's layout components and the teacher feature's UI components. No backend, API, or storage changes required. Follows existing pattern of separating design-system (reusable) from features (domain-specific).\n\n---\n\n## Phase Summary\n\n### Phase 0: Research ✅ COMPLETE\n\n**Deliverable**: [research.md](./research.md)\n\n**Key Decisions**:\n1. **Heroicons Integration**: Use &#96;@heroicons/react&#96; package (v2.x)\n2. **Accessible Icon Buttons**: Wrapper component with aria-label pattern\n3. **List Layout**: Semantic HTML table for better accessibility\n4. **Component Composition**: Extract page, create reusable common layout\n5. **Form Spacing**: Tailwind spacing utilities (space-y-6, space-y-2, gap-3)\n6. **Logo Implementation**: Use existing SVG with accessible wrapper\n\n**Dependencies Added**: &#96;@heroicons/react@^2.1.0&#96;\n\n---\n\n### Phase 1: Design &amp; Contracts ✅ COMPLETE\n\n**Deliverables**:\n- [data-model.md](./data-model.md) - Component structure and visual data representation\n- [contracts/component-interfaces.md](./contracts/component-interfaces.md) - Component props and interfaces\n- [quickstart.md](./quickstart.md) - Development setup and testing guide\n\n**Key Artifacts**:\n1. **Data Model**: \n   - No changes to Teacher entity\n   - Documented 10 component structures (6 new, 4 modified)\n   - Defined component data flow and visual transformations\n\n2. **Contracts**:\n   - 10 component interface contracts\n   - Accessibility requirements per component\n   - Validation contracts for shared logic\n   - Event flow specifications\n\n3. **Quickstart**:\n   - Setup instructions\n   - Test-first workflow examples\n   - Common tasks and debugging tips\n   - Validation checklist\n\n**Component Inventory**:\n- **New**: CommonLayout, PageHeader, AppLogo, IconButton, TeacherPage, TeacherListItem\n- **Modified**: TeacherList, TeacherCreateForm, TeacherEditForm, TeacherDeleteButton\n\n---\n\n### Phase 2: Task Breakdown (Next Step)\n\n**Command**: &#96;/speckit.tasks&#96; (NOT executed by &#96;/speckit.plan&#96;)\n\n**Expected Output**: &#96;tasks.md&#96; with:\n- Detailed implementation tasks\n- Test creation checklist\n- Task dependencies\n- Estimated effort per task\n\n---\n\n## Implementation Readiness\n\n**Status**: ✅ Ready for Phase 2 (Task Breakdown) and Implementation\n\n**Prerequisites Met**:\n- [x] Constitution gates passed\n- [x] Research completed (all NEEDS CLARIFICATION resolved)\n- [x] Component architecture defined\n- [x] Interface contracts documented\n- [x] Development workflow established\n- [x] Agent context updated\n\n**Next Steps**:\n1. Run &#96;/speckit.tasks&#96; to generate detailed task breakdown\n2. Begin test-first implementation following quickstart guide\n3. Install &#96;@heroicons/react&#96; dependency\n4. Create tests before each component implementation\n5. Validate accessibility continuously\n\n**Estimated Implementation Effort**: 2-3 days for experienced React developer\n\n**Risk Assessment**: LOW\n- Well-defined scope (UI only)\n- No data model changes\n- Existing test infrastructure\n- Clear accessibility requirements\n- Research decisions documented\n\n---\n\n## Reference Documentation\n\n- **Specification**: [spec.md](./spec.md)\n- **Research**: [research.md](./research.md)\n- **Data Model**: [data-model.md](./data-model.md)\n- **Contracts**: [contracts/component-interfaces.md](./contracts/component-interfaces.md)\n- **Quickstart**: [quickstart.md](./quickstart.md)\n- **Requirements Checklist**: [checklists/requirements.md](./checklists/requirements.md)\n",
+  "toolCallResult": null
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+Perfect! Now let me verify the generated artifacts and create a summary. Let me check if all files were created successfully: Excellent! All planning artifacts have been generated. Let me create a final summary in the plan.md: Now let me add a Phase Summary section to the `plan.md` to complete it: Perfect! Now let me provide a final summary to the user:
 
 ---
 
