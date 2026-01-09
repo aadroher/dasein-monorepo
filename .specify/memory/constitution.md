@@ -54,6 +54,8 @@ Dasein's codebase should adhere to functional programming principles where feasi
 Using a functional programming style can enhance code readability, maintainability, and testability, aligning with Dasein's overall architectural principles.
 However, this does not mean that we can shoehorn the functional style into every part of the codebase regardless of the technology used.
 For example, while in Rust it is possible to keep cloning values around to maintain immutability, this would be too big of a performance penalty to indiscriminately apply this principle everywhere. In such cases, we will use functional programming principles where they make sense, while balancing performance and practicality.
+#### Javascript specific style
+- Prefer arrow functions as they better represent the fact that functions are a value just as any other (they are first class citizens). If possible, use expression body functions instead of using curly braces and the `return` keyboard.
 
 ### XII. Monorepo
 Dasein's codebase will be organized as a monorepo, consolidating all related projects, services, and libraries into a single repository. This approach facilitates easier code sharing, dependency management, and coordinated releases across the entire codebase.
